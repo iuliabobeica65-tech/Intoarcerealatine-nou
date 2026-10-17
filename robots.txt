@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spontaneous-quokka-e0bede.netlify.app/sitemap.xml
