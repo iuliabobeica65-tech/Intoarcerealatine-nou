@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://spontaneous-quokka-e0bede.netlify.app/</loc></url>
-<url><loc>https://spontaneous-quokka-e0bede.netlify.app/termeni-utilizare.html</loc></url>
-<url><loc>https://spontaneous-quokka-e0bede.netlify.app/politica-confidentialitate.html</loc></url>
-<url><loc>https://spontaneous-quokka-e0bede.netlify.app/politica-cookies.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/acasa.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/metoda-clar.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/constelatii.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/lucram-impreuna.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/despre-mine.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/live.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/termeni-utilizare.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/politica-confidentialitate.html</loc></url>
+  <url><loc>https://spontaneous-quokka-e0bede.netlify.app/politica-cookies.html</loc></url>
 </urlset>
