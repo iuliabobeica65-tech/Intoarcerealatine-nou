@@ -1,6 +1,6 @@
 # Testare înainte de lansare – Întoarcerea la tine
 
-Acesta este checklist-ul de verificare pentru versiunea din ramura `audit-gdpr-cookies-seo`. Pagina de producție rămâne pe `main` până la aprobarea testării.
+Acesta este checklist-ul de verificare pentru versiunea din ramura `audit-gdpr-cookies-seo`. Pagina de producție rămâne pe `main` până la aprobarea testării. Repository-ul dedicat site-ului a devenit public după verificarea fișierelor și a istoricului; arhivele și materialele metodei nu sunt în acest repository.
 
 ## Vizual și funcțional
 - [ ] Versiunea de previzualizare Netlify este accesibilă (Deploy Preview pentru PR #1).
