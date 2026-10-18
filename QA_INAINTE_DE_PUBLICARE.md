@@ -44,3 +44,9 @@
 **Conținut și consimțământ:** confirmă că ora LIVE este încă valabilă, că prezentarea CLAR reflectă fidel metoda și că textele juridice corespund funcționării reale. Nu adăuga formulare, cookies noi, fotografii generate sau mecanisme de plată fără aprobarea proprietarei.
 
 **Publicare:** mai întâi previzualizare separată, apoi aprobarea expresă a proprietarei; numai după aceea se poate înlocui pagina publică. Ramura de lucru nu trebuie confundată cu site-ul public.
+
+## Cerință vizuală fermă — 18 octombrie 2026
+
+**Paleta de culori trebuie preluată IDENTIC din pâlnia LIVE deja existentă.** Nu se aprobă palete noi, reinterpretări sau aproximări. Culorile actuale din prototip nu sunt considerate validate prin asemănare vizuală. Înainte de orice altă modificare cromatică, este necesară sursa exactă a pâlniei LIVE (link public verificat sau fișier HTML/CSS). Se vor extrage valorile reale și aplica identic pe toate cele șase pagini. Nu se folosește paleta dintr-un document de marketing marcat „propunere” ca substitut pentru pâlnia efectivă.
+
+Verificare statică multipagină: cele șase pagini au câte un singur H1; ancorele interne și legăturile dintre paginile HTML existente au destinații valide în cod. Testarea vizuală și navigarea efectivă în browser rămân necesare.
