@@ -32,3 +32,15 @@
 7. Confirmare explicită a utilizatoarei înainte de orice înlocuire a paginii publice.
 
 **Stare:** versiune de lucru; fără publicare.
+
+## Plan de verificare vizuală — înainte de aprobarea proprietarei
+
+**Telefon (lățimi 360–430 px):** verifică antetul, fotografia originală, lizibilitatea titlului, cele două butoane din primul ecran, secțiunile CLAR și Constelații, contactul și subsolul; niciun text sau buton nu trebuie să depășească lățimea ecranului.
+
+**Desktop (1280–1440 px):** verifică echilibrul dintre text și portret, ordinea vizuală a secțiunilor, meniul și spațierile; toate informațiile importante trebuie să fie vizibile fără elemente suprapuse.
+
+**Funcțional:** deschide fiecare ancoră de meniu, toate cele opt răspunsuri FAQ, Messenger, WhatsApp, email și cele trei documente legale. Testează cu tastatura, inclusiv legătura „Mergi la conținut”.
+
+**Conținut și consimțământ:** confirmă că ora LIVE este încă valabilă, că prezentarea CLAR reflectă fidel metoda și că textele juridice corespund funcționării reale. Nu adăuga formulare, cookies noi, fotografii generate sau mecanisme de plată fără aprobarea proprietarei.
+
+**Publicare:** mai întâi previzualizare separată, apoi aprobarea expresă a proprietarei; numai după aceea se poate înlocui pagina publică. Ramura de lucru nu trebuie confundată cu site-ul public.
