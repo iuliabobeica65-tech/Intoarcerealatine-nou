@@ -13,6 +13,8 @@ body{background:#F5EBDD}
 #iulia-live .visual-note{max-width:calc(100% - 8px)}
 @media(max-width:700px){#iulia-live .hero h1{font-size:clamp(34px,9vw,44px);line-height:1.16}#iulia-live .hero-copy{min-width:0}#iulia-live .visual-note{right:0;left:auto;padding:14px 16px}#iulia-live .visual-note p{font-size:clamp(14px,4.2vw,18px)}#iulia-live .visual-note>span{font-size:28px}#iulia-live .brand{font-size:clamp(19px,5.5vw,22px)}}
 @media(max-width:360px){#iulia-live .wrap{width:calc(100% - 28px)}#iulia-live .hero h1{font-size:33px}#iulia-live .site-header{gap:12px}#iulia-live .button{padding-inline:14px}}
+/* Mobile heading: allow natural word wrapping instead of forcing an overlong line. */
+@media(max-width:700px){#iulia-live .hero h1{font-size:clamp(32px,8.1vw,41px);line-height:1.18;overflow-wrap:normal;word-break:normal}#iulia-live .hero h1 .desktop-break{display:none}}
 </style>
 <div id="iulia-live" lang="ro">
   <a class="skip-link" href="#continut">Mergi la conținut</a>
@@ -29,7 +31,7 @@ body{background:#F5EBDD}
     <section class="hero wrap" id="inceput" aria-labelledby="titlu">
       <div class="hero-copy">
         <p class="eyebrow"><span class="small-star" aria-hidden="true">✧</span> UN TIMP PENTRU TINE. O PERSPECTIVĂ NOUĂ.</p>
-        <h1 id="titlu">Dar dacă există<br>și un alt fel de a privi<br><em>ceea ce trăiești?</em></h1>
+        <h1 id="titlu">Dar dacă există<br>și un alt fel de a privi<br class="desktop-break"> <em>ceea ce trăiești?</em></h1>
         <p class="hero-subtitle">Poate că ceea ce cunoști acum despre tine nu este tot ceea ce poți fi.</p>
         <div class="event-details"><p>Întoarcerea la tine <span>LIVE săptămânal cu Iulia Bobeica</span></p><p class="schedule">În fiecare luni, 19:00–20:00 <span>Online, pe Jitsi · Participare gratuită</span></p></div>
         <a class="button primary" href="#participare">Descoperă cum poți participa <span class="arrow" aria-hidden="true"></span></a>
