@@ -1,28 +1,25 @@
-# Testare înainte de lansare – Întoarcerea la tine
+# Verificare tehnică — versiune de lucru, 18.10.2026
 
-Acesta este checklist-ul de verificare pentru versiunea din ramura `audit-gdpr-cookies-seo`. Pagina de producție rămâne pe `main` până la aprobarea testării. Repository-ul dedicat site-ului a devenit public după verificarea fișierelor și a istoricului; arhivele și materialele metodei nu sunt în acest repository.
+**Fișier verificat:** `previzualizare-metoda-clar.html`, ramura `propunere-metoda-clar-2026-10`. Această verificare este statică, nu o testare vizuală într-un browser și nu constituie aprobare juridică.
 
-## Vizual și funcțional
-- [ ] Versiunea de previzualizare Netlify este accesibilă (Deploy Preview pentru PR #1).
-- [ ] Fotografiei principale i se păstrează aspectul și se încarcă pe mobil/desktop.
-- [ ] Titlul principal nu depășește ecranul la lățimi de 320, 360, 390 și 430 px.
-- [ ] Linkurile interne către secțiuni funcționează.
-- [ ] Butoanele către WhatsApp și Messenger deschid destinațiile așteptate.
-- [ ] Întrebările FAQ se extind corect.
-- [ ] Documentele legale sunt accesibile din subsol.
-- [ ] Nu mai apare mesajul „PAGINĂ ÎN CURS DE FINALIZARE” și nu se afișează conținut vechi Systeme.io.
-- [ ] Datele anunțate pentru LIVE sunt confirmate (luni 19:00-20:00, Jitsi).
+## Confirmat în fișiere
+- 11 secțiuni HTML.
+- 14 legături interne către secțiuni; 0 destinații lipsă.
+- 0 identificatori HTML duplicați.
+- 1 imagine HTML; fotografia principală există în depozit, la calea indicată în pagină.
+- 0 formulare HTML și 0 butoane HTML; invitațiile sunt legături.
+- Linkurile către documentele juridice indică trei fișiere existente: termeni, confidențialitate, cookies.
+- Meta robots `noindex, nofollow` pe pagina de previzualizare.
+- Paleta vizuală este crem, camel, auriu și negru. Fotografia originală cu pălărie nu a fost înlocuită.
+- Fișierul `index.html` nu a fost înlocuit cu această previzualizare.
 
-## Cookies și date
-- [ ] Testare în browser în mod incognito: Storage / Cookies, Network, solicitări către terți.
-- [ ] Verificare dacă Netlify sau orice serviciu activ setează tehnologii neesențiale.
-- [ ] Banner de consimțământ numai dacă auditul confirmă că este necesar; dacă da, blocare reală înainte de consimțământ.
-- [ ] Politicile de confidențialitate/cookies completate pe baza serviciilor reale și verificate juridic.
+## De verificat înainte de publicare
+1. Aspect vizual real pe telefon și desktop: tăieri de text, contraste, fotografie, meniuri, spațieri.
+2. Testarea efectivă a navigării și linkurilor WhatsApp/Messenger, a e-mailului și a paginilor legale în mediul Netlify.
+3. Verificarea finală a textelor în raport cu materialele-sursă ale metodei, fără a prezenta conceptele drept rezultate științific dovedite.
+4. Aprobarea separată a oricăror imagini noi; nu se schimbă portretul principal.
+5. Verificarea juridică a politicilor și a comportamentului real al serviciilor/cookie-urilor după publicare.
+6. Stabilirea unei soluții pentru editarea vizuală simplă de către proprietară, fără cod, înainte de a considera site-ul finalizat.
+7. Confirmare explicită a utilizatoarei înainte de orice înlocuire a paginii publice.
 
-## SEO și accesibilitate
-- [ ] Metadatele pentru partajare și imaginea OG funcționează.
-- [ ] robots.txt și sitemap.xml sunt accesibile.
-- [ ] Linkuri externe securizate, titluri și alternative text.
-- [ ] Contrast, navigare cu tastatura și zoom mobil.
-
-**Nu se închide/unește PR #1 înainte de validarea punctelor critice.**
+**Stare:** versiune de lucru; fără publicare.
