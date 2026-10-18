@@ -13,6 +13,15 @@
 - Paleta vizuală este crem, camel, auriu și negru. Fotografia originală cu pălărie nu a fost înlocuită.
 - Fișierul `index.html` nu a fost înlocuit cu această previzualizare.
 
+## Verificări statice suplimentare — 18.10.2026
+- Un singur titlu principal `<h1>` și o regiune principală `<main id="continut">`.
+- Există legătură de acces rapid la conținut pentru navigarea cu tastatura.
+- Opt întrebări frecvente în elemente HTML `<details>`; acestea pot fi deschise fără JavaScript.
+- Butoanele principale sunt linkuri, nu formulare de colectare a datelor.
+- Legăturile externe includ Messenger, WhatsApp și e-mail; funcționarea efectivă nu este încă testată.
+- Există reguli CSS pentru ecrane înguste și pentru preferința de mișcare redusă; acestea nu echivalează cu testarea vizuală.
+- **Blocaj actual pentru aprobarea vizuală:** pagina propusă se află numai pe o ramură GitHub, nu există încă o adresă de previzualizare web confirmată pentru această ramură. Adresa Netlify existentă poate afișa altă versiune și nu trebuie prezentată ca previzualizarea noii pagini.
+
 ## De verificat înainte de publicare
 1. Aspect vizual real pe telefon și desktop: tăieri de text, contraste, fotografie, meniuri, spațieri.
 2. Testarea efectivă a navigării și linkurilor WhatsApp/Messenger, a e-mailului și a paginilor legale în mediul Netlify.
