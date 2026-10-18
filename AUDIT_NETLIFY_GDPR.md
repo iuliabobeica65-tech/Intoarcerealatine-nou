@@ -22,3 +22,10 @@ Pagina publicată nu a fost modificată. Corecțiile de navigare și SEO sunt î
 
 ## Limitări
 Acest fișier este un audit al codului, nu o confirmare de conformitate juridică sau o inspecție a cookie-urilor în browser.
+
+## Testare după legarea Netlify de GitHub (18.10.2026)
+- Netlify a fost legat de repository-ul existent, ramura de producție fiind `main`. În interfață apare o publicare a ramurii `main` încheiată în aproximativ 3 secunde.
+- Următorul test trebuie efectuat pe **Deploy Preview #1**, din ramura `audit-gdpr-cookies-seo`, nu pe adresa publică. Cererea GitHub este PR #1 (draft).
+- Verifică în preview că se afișează imaginea, titlul este lizibil pe ecrane înguste, paginile legale se deschid și linkurile de contact funcționează.
+- Verifică pe mobil și desktop toate încărcările resurselor, consimțământul necesar și eventualele erori din consolă; nu presupune conformitatea doar din absența JavaScript-ului în pagina principală.
+- `main` și publicarea curentă nu trebuie modificate înainte de aprobarea vizuală și a documentelor.
