@@ -1,42 +1,40 @@
-# EDITORUL SIMPLU — ÎNTOARCEREA LA TINE
-Data: 19 octombrie 2026
+# EDITORUL SITE-ULUI „ÎNTOARCEREA LA TINE” — GHID RAPID
+Revizie: 19 octombrie 2026
 
-## Ce am pregătit
-Editorul este **Pages CMS**, o interfață de administrare a fișierelor GitHub, nu un editor direct peste fotografia site-ului.
-Site oficial: https://spontaneous-quokka-e0bede.netlify.app/
-Repository de conectat: `iuliabobeica65-tech/Intoarcerealatine-nou`
+## Ce este deja pregătit
+Pages CMS este configurat în `.pages.yml`. Toate cele șapte pagini de conținut au câmpuri pentru titlu, introducere și alte secțiuni; pagina Acasă are și imaginea principală, cele trei oferte, cele patru situații, invitația de contact, calendarul și cele șapte descrieri de sub carusel.
 
-**IMPORTANT: până la aprobarea publicării, modificările se salvează NUMAI în ramura `pregatire-site-v2-cu-carusel-editor-2026-10-19` și NU în `main`.** Ramura `main` poate declanșa automat Netlify production deploy și cost de credite.
+În grupul **„Texte și butoane suplimentare”** sunt disponibile încă **173 de texte** și **40 de linkuri/butoane** din cele 7 pagini. Sunt editabile fără scriere manuală de cod; identificatorii tehnici sunt protejați. Textele cu sublinieri/italice își păstrează aspectul dacă nu sunt editate; după o modificare, un text poate deveni simplu (fără evidențiere) și trebuie verificat vizual. Fotografiile originale din carusel nu au fost modificate.
 
-## Acces / activare de către proprietară
-1. Intră pe https://app.pagescms.org/ în Chrome, pe laptop.
-2. Alege **Sign in with GitHub** și conectează contul personal GitHub pe care este repository-ul.
-3. La autorizarea Pages CMS, limitează accesul aplicației la repository-ul **Intoarcerealatine-nou** (nu la alte repository-uri). Nu transmite parole.
-4. Alege repository-ul `iuliabobeica65-tech/Intoarcerealatine-nou`.
-5. **Selectează ramura `pregatire-site-v2-cu-carusel-editor-2026-10-19`, nu `main`.** Dacă interfața nu permite schimbarea ramurii, **nu salva nimic**. Solicită o captură pentru verificare.
-6. Caută secțiunile **Prima pagină**, **Calendar**, **Metoda CLAR**, **Constelații**, **Lucrăm împreună**, **Despre mine**, **LIVE**, **Resurse**. Fișierul de configurare `.pages.yml` este deja pregătit pe ramura V2.
-7. Pentru prima verificare, fă o modificare mică doar în ramura de previzualizare, apoi deschide linkul Deploy Preview furnizat de Netlify; verifică atât telefonul, cât și desktopul. **Nu trece la `main` și nu apăsa «merge» pe pull request.**
+## Cum intri
+1. Pe laptop, deschide https://app.pagescms.org/ .
+2. Autentifică-te prin contul **GitHub** care deține `iuliabobeica65-tech/Intoarcerealatine-nou`.
+3. Autorizează doar acest repository, nu pâlnia LIVE și nici alte proiecte.
+4. **Alege ramura `pregatire-site-v2-cu-carusel-editor-2026-10-19`**. **NU salva pe `main`** înainte de publicarea aprobată. Dacă nu poți selecta ramura, te oprești și verificăm.
+5. Pentru început, modifică un singur câmp în ramura de test; salvează și verifică rezultatul în Deploy Preview:
+   https://deploy-preview-3--spontaneous-quokka-e0bede.netlify.app/acasa.html
+6. Dacă modificarea arată corect, poți continua. Pages CMS scrie în GitHub; gazda site-ului publică o versiune nouă la fiecare schimbare conform setărilor sale.
 
-## Ce poate modifica editorul pregătit
-- Prima pagină: titlu, subtitlu, fotografia principală, cele două butoane și linkurile lor, introducere, 3 oferte, 4 situații, exemplul ilustrativ, prezentarea Iuliei, textele sub cele 7 imagini.
-- Calendar: descrieri, date confirmate, locație și linkuri.
-- Cele 6 pagini interioare: titlu principal, introducere și primul subtitlu.
-- Fișierele foto încărcate pot fi selectate cu ajutorul interfeței media (după verificarea practică).
-- Restul paragrafelor din interiorul paginilor, fotografii suplimentare și alte butoane necesită configurări adiționale înainte de a fi editate din interfață; nu pretindem că tot site-ul este deja editabil.
+## Unde găsești ce ai nevoie
+- **„Prima pagină — texte și butoane”**: titlu, mesajul blocajului, portret, prezentarea metodei, cele 3 oferte, 4 situații, exemplul, invitația la dialog, legendele caruselului.
+- **„Calendar — LIVE și constelații”**: întâlniri, locații, date, linkuri; marchează drept confirmate NUMAI întâlnirile confirmate.
+- **„Metoda CLAR / Constelații / Lucrăm împreună / Despre mine / LIVE / Resurse”**: principalele titluri și introduceri; pagina Resurse are cele trei exerciții practice.
+- **„Texte și butoane suplimentare”**: restul textelor simple și al linkurilor din fiecare pagină.
 
-## Limitări / reguli importante
-- Pages CMS salvează modificări în **GitHub**; Netlify este cel care publică. Editarea NU ocolește un deploy și costul lui de producție.
-- Nu există formular de înscriere, plăți sau colectare de emailuri pe site.
-- Nu se introduc în calendar date ori locații neconfirmate.
-- Păstrează vocea Iuliei: caldă, naturală, blândă, fără formulări dramatice sau promisiuni de rezultate.
-- Caruselul are **exact 7 imagini**. Editorul de mai sus modifică textele de sub ele, fără să înlocuiască fișierele originale.
-- Nu schimba numărul ofertelor (3), al situațiilor (4), al paragrafelor din exemplu (3), al legendelor (7) până la extinderea template-ului.
-- Înainte de lansare: verifică mobile, securitate, GDPR/cookie-uri, funcționalitatea editorului, linkurile, SEO și domeniul.
+## Reguli pentru a nu strica paginile
+- Editează DOAR câmpurile „Textul afișat” sau „Textul butonului”, respectiv „Destinația linkului”, nu câmpurile tehnice.
+- Nu reordona și nu șterge elementele din listele „texte”, „linkuri”, „oferte”, „situații”, „carusel”: ordinea este legată de design.
+- Nu schimba ori înlocui direct fișierele `assets/carusel-metoda/01.webp`–`07.webp` fără verificare și acord.
+- Linkurile trebuie să ducă la o pagină corectă, https, WhatsApp, Messenger sau e-mail.
+- Site-ul nu colectează date prin formulare și nu procesează plăți. Nu introduce servicii de urmărire fără audit juridic.
+- Formulările publice rămân calde, firești, curioase; fără promisiuni de vindecare, povești inventate sau cauze presupuse.
 
-## Cum economisim credite
-1. Lucrăm numai pe ramura de test și în Deploy Preview.
-2. Finalizăm toate schimbările și verificările.
-3. După aprobarea explicită, facem un singur merge spre `main`. Acesta ar trebui să genereze un singur deploy de producție, dacă configurația Netlify nu s-a schimbat.
-4. Domeniul nou se adaugă la același site Netlify, fără a crea alt proiect.
+## Ce NU este încă verificat direct
+- Autentificarea ta în Pages CMS și prima salvare reală prin interfața CMS.
+- Testarea vizuală completă cu un browser la dimensiuni 320/390/768/1440 px; verificările automatizate au fost statice.
+- Comportamentul cookie-urilor în browser și verificarea juridică finală.
+- Domeniul personalizat și gazda definitivă (Netlify / Cloudflare), de stabilit după achiziția domeniului.
+- Schimbarea tuturor elementelor de navigare și a textelor din subsol sau din paginile juridice nu este acoperită integral de editorul pregătit.
 
-Document tehnic: `VERIFICARE_SITE_V2_2026-10-19.md`.
+## Economisirea creditelor
+Nu se face merge în `main` și nu se cere producție Netlify până când varianta de test este aprobată. Site-ul oficial rămâne la https://spontaneous-quokka-e0bede.netlify.app/ .
