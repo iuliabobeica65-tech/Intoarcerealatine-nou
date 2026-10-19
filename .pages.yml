@@ -4,6 +4,31 @@ media:
   output: /assets
   extensions: [png, jpg, jpeg, webp]
 content:
+  - name: setari_site
+    label: "Setări generale — nume, meniu, contact"
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/setari-site.json
+    format: json
+    fields:
+      - { name: brand, label: Numele afișat al site-ului, type: string }
+      - { name: subtitlu_brand, label: Numele afișat sub siglă, type: string }
+      - name: meniu
+        label: Etichetele meniului
+        type: object
+        list:
+          min: 7
+          max: 7
+          collapsible:
+            collapsed: true
+            summary: "{eticheta}"
+        description: Editează doar eticheta vizibilă; adresa internă a paginii este protejată.
+        fields:
+          - { name: pagina, label: Fișier intern al paginii, type: string, readonly: true }
+          - { name: eticheta, label: Textul afișat în meniu, type: string }
+      - { name: mesaj_subsol, label: Mesajul informativ din subsol, type: text }
+      - { name: email_contact, label: Adresa de e-mail de contact, type: string }
+      - { name: whatsapp_contact, label: Numărul WhatsApp internațional (fără spații), type: string }
   - name: homepage
     label: Prima pagină — texte și butoane
     type: file
