@@ -4,4 +4,21 @@ fetch("content/evenimente.json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promis
 fetch("content/resurse.json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(Error("Resurse not found"))).then(c=>{if(!Array.isArray(c.materiale))return;for(const [i,item] of c.materiale.slice(0,3).entries()){const card=document.querySelector('[data-cms-material="'+i+'"]');if(!card||!item)continue;for(const [name,key] of [["title","titlu"],["lead","introducere"],["body","exercitiu"],["note","nota"]]){const el=card.querySelector('[data-cms-material-'+name+']');if(el&&typeof item[key]==="string")el.textContent=item[key];}}}).catch(()=>{});
 /* Paginile interioare pastreaza stilizarea originala daca nu ai editat campul. */
 const page=document.body.getAttribute("data-cms-file");if(page&&/^(metoda|constelatii|colaborare|despre|live|resurse)$/.test(page)){fetch("./content/"+page+".json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(Error("Content not found"))).then(c=>{const update=(selector,value)=>{const el=document.querySelector(selector);if(!el||typeof value!=="string"||!value.trim())return;const norm=t=>t.replace(/\s+/g," ").trim();if(norm(el.textContent)!==norm(value))el.textContent=value;};update("[data-cms=inner-title]",c.titlu);update("[data-cms=inner-intro]",c.introducere);update("[data-cms=inner-section-title]",c.titlu_sectiune);}).catch(()=>{});}
+
+/* Textele suplimentare sunt separate de campurile principale si de aspectul HTML.
+   Cand textul ramane identic, pastram marcajul HTML original; altfel setam doar textContent,
+   evitand interpretarea codului furnizat prin editor. */
+const extraPage=document.body.getAttribute("data-cms-extra");
+if(extraPage&&/^(acasa|metoda-clar|constelatii|lucram-impreuna|despre-mine|resurse|live)$/.test(extraPage)){
+ fetch("./content/texte-"+extraPage+".json",{cache:"no-cache"})
+ .then(r=>r.ok?r.json():Promise.reject(Error("Extra content not found")))
+ .then(c=>{if(!Array.isArray(c.texte))return;
+  for(const item of c.texte){if(!item||typeof item.id!=="string"||!/^text-\d+$/.test(item.id)||typeof item.continut!=="string")continue;
+   const el=document.querySelector('[data-cms-edit="'+item.id+'"]');if(!el||!item.continut.trim())continue;
+   const clean=t=>t.replace(/\s+/g," ").trim();
+   if(clean(el.textContent)!==clean(item.continut))el.textContent=item.continut;
+  }
+ }).catch(()=>{});
+}
+
 })();
