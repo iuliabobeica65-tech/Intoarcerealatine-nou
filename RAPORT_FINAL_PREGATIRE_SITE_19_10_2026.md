@@ -71,3 +71,11 @@ Autoarea a confirmat în conversație:
 - Verificare statică repetată: 173 de texte și 40 de linkuri au corespondent HTML și JSON; șapte pagini cu un H1, fără ID-uri duplicate, fără fișiere relative lipsă; JavaScript cu sintaxă validă.
 - Domeniul `intoarcerealatine.ro` **nu a fost încă achiziționat**; utilizatoarea dorește lansare la prima oportunitate. O adresă `pages.dev` poate fi folosită înainte de cumpărarea domeniului, după autorizarea/configurarea efectivă Cloudflare.
 - **Rămâne obligatoriu:** test cu contul proprietarei în Pages CMS, audit real al cookie-urilor și găzduirii, test vizual/browser, alegerea/configurarea gazdei; site-ul oficial `main` nu s-a modificat.
+
+## Actualizare QA și pregătire de lansare
+- Verificările statice suplimentare au trecut: 12 pagini HTML inspectate, niciun fișier intern sau ancoră internă lipsă în linkurile HTML; 16 fișiere JSON verificate și nicio cale locală lipsă. Verificarea aceasta NU înlocuiește execuția în browser.
+- Testul Chromium pentru 7 pagini × 4 rezoluții și verificarea comportamentului editorului prin simularea unui fișier JSON sunt **pregătite în `qa/browser-smoke.mjs`**, iar workflow-ul GitHub Actions este în `.github/workflows/qa-site-v2.yml`. Nu afirmăm că testele Chromium au rulat: în acest moment nu există un raport de execuție disponibil în GitHub Actions.
+- Sunt documentate limitele de audit în `qa/README.md` și `CHECKLIST_GDPR_COOKIES_LANSARE_2026-10-19.md`.
+- `main` rămâne separat de ramura V2; deploy preview a raportat succes. Editorul necesită încă prima autentificare și salvare reală Pages CMS.
+- Domeniul propriu este încă necumpărat. Se poate publica întâi pe un `*.pages.dev` numai după ce proprietara conectează un cont Cloudflare la GitHub și autorizează configurația. **Nu trebuie cerută achiziția domeniului pentru a lansa pe adresa gratuită.**
+- Înainte de prima lansare publică pe Cloudflare trebuie actualizate metadatele SEO și politicile GDPR pentru adresa/gazda reală, apoi inspectate cookie-urile publicate. Fără această verificare, nu pretindem conformitate GDPR finală.
