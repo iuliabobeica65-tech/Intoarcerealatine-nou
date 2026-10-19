@@ -204,9 +204,9 @@ content:
         label: Trei materiale practice
         type: object
         list:
-          min: 4
-          max: 4
-2615
+          min: 3
+          max: 3
+          collapsible:
             collapsed: true
             summary: "{titlu}"
         description: Pastreaza trei materiale pentru pagina Resurse.
