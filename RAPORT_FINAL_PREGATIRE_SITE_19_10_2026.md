@@ -79,3 +79,9 @@ Autoarea a confirmat în conversație:
 - `main` rămâne separat de ramura V2; deploy preview a raportat succes. Editorul necesită încă prima autentificare și salvare reală Pages CMS.
 - Domeniul propriu este încă necumpărat. Se poate publica întâi pe un `*.pages.dev` numai după ce proprietara conectează un cont Cloudflare la GitHub și autorizează configurația. **Nu trebuie cerută achiziția domeniului pentru a lansa pe adresa gratuită.**
 - Înainte de prima lansare publică pe Cloudflare trebuie actualizate metadatele SEO și politicile GDPR pentru adresa/gazda reală, apoi inspectate cookie-urile publicate. Fără această verificare, nu pretindem conformitate GDPR finală.
+
+## CONFIRMARE AUTOMATĂ DE BROWSER — GitHub Actions
+- GitHub Actions a executat efectiv testul Chromium pe ramura de lucru, în rularea https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/actions/runs/39316722615, concluzie **success**.
+- Logul spune explicit: **«QA browser: 28 verificări (7 pagini × 4 dimensiuni). Probleme: 0.»** S-au testat server local, pagini, responsive (overflow), erori JS și o suprascriere simulată a JSON-ului editorului.
+- Rularea a salvat artefactul «verificare-browser-site-v2» care include capturi pe telefon și desktop și un fișier de observații tehnice privind cookie-urile din Deploy Preview (dacă inspectarea online a putut rula). **Capturile și inventarul cookie-urilor nu au fost inspectate vizual încă**; testele automate nu echivalează cu audit juridic.
+- Noi commituri au fost făcute după această rulare; verificăm din nou rezultatele pe cel mai recent commit înainte de publicare.
