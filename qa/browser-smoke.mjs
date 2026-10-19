@@ -101,6 +101,7 @@ try {
       status = response ? String(response.status()) : "fara raspuns";
       const cookies = (await external.cookies()).map(x => ({ name: x.name, domain: x.domain, secure: x.secure, sameSite: x.sameSite, httpOnly: x.httpOnly }));
       writeFileSync(resolve(directory, "cookie-observations.json"), JSON.stringify({ source: preview, status, cookies, setCookieNames: setCookies, origins: [...origins] }, null, 2));
+      console.log("AUDIT COOKIES PREVIEW:", JSON.stringify({ status, cookieNames: cookies.map(x => x.name), setCookieNames: setCookies, origins: [...origins] }));
       if (!response?.ok()) failures.push("Preview online: HTTP " + status);
     } catch (e) {
       writeFileSync(resolve(directory, "cookie-observations.json"), JSON.stringify({ source: preview, status: "nu s-a putut incarca", message: String(e.message || e) }, null, 2));
