@@ -1,0 +1,37 @@
+{
+  "brand": "Întoarcerea la tine",
+  "subtitlu_brand": "IULIA BOBEICA",
+  "meniu": [
+    {
+      "pagina": "acasa.html",
+      "eticheta": "Acasă"
+    },
+    {
+      "pagina": "metoda-clar.html",
+      "eticheta": "Metoda CLAR"
+    },
+    {
+      "pagina": "constelatii.html",
+      "eticheta": "Constelații"
+    },
+    {
+      "pagina": "lucram-impreuna.html",
+      "eticheta": "Lucrăm împreună"
+    },
+    {
+      "pagina": "despre-mine.html",
+      "eticheta": "Despre mine"
+    },
+    {
+      "pagina": "resurse.html",
+      "eticheta": "Resurse"
+    },
+    {
+      "pagina": "live.html",
+      "eticheta": "LIVE"
+    }
+  ],
+  "mesaj_subsol": "Fără formular de înscriere, plăți sau programări automate.",
+  "email_contact": "Iuliabobeica65@gmail.com",
+  "whatsapp_contact": "40758321125"
+}
