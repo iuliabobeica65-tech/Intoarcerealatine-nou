@@ -20,5 +20,12 @@
       "id": "text-5",
       "continut": "În LIVE-ul săptămânal explorăm experiențe și perspective. Poți participa și doar ca să asculți."
     }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Detalii despre LIVE →",
+      "url": "./live.html#participare"
+    }
   ]
 }
