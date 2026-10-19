@@ -85,3 +85,10 @@ Autoarea a confirmat în conversație:
 - Logul spune explicit: **«QA browser: 28 verificări (7 pagini × 4 dimensiuni). Probleme: 0.»** S-au testat server local, pagini, responsive (overflow), erori JS și o suprascriere simulată a JSON-ului editorului.
 - Rularea a salvat artefactul «verificare-browser-site-v2» care include capturi pe telefon și desktop și un fișier de observații tehnice privind cookie-urile din Deploy Preview (dacă inspectarea online a putut rula). **Capturile și inventarul cookie-urilor nu au fost inspectate vizual încă**; testele automate nu echivalează cu audit juridic.
 - Noi commituri au fost făcute după această rulare; verificăm din nou rezultatele pe cel mai recent commit înainte de publicare.
+
+## CONFIRMARE CEA MAI RECENTĂ — 19 OCTOMBRIE, TEST BROWSER ȘI COOKIES NETLIFY
+- GitHub Actions #39317731522 a încheiat cu **success**; 7 pagini × 4 dimensiuni = **28 de verificări Chromium, 0 probleme**. A fost verificat și afișajul exact al site-ului V2 din Netlify Preview, nu un ecran de autentificare.
+- Preview `https://deploy-preview-3--spontaneous-quokka-e0bede.netlify.app/acasa.html` a returnat HTTP **200**, cu titlul site-ului corect și regiunile site-ului prezente.
+- La vizita automatizată inițială, Chromium a raportat **zero cookie-uri persistate în context** și **zero antete `Set-Cookie` captate**, dar s-au observat conexiuni către `app.netlify.com`, `cdn.segment.com` și `sessions.bugsnag.com`, în plus față de adresa de preview. Acestea pot avea legătură cu interfața de preview / Netlify, dar **nu am demonstrat cauza exactă ori statutul lor legal**. Nu concluzionăm că nu există analytics/tracking; verificăm dacă apar pe găzduirea publică aleasă.
+- Rularea completă este: https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/actions/runs/39317731522 .
+- Autentificarea reală Pages CMS, confirmarea operatorului gazdei finale și testul efectiv GDPR pe aceeași gazdă rămân în așteptarea conectării conturilor de către proprietară. Nu se publică automat pe Netlify production.
