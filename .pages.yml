@@ -140,3 +140,16 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - name: materiale
+        label: Trei materiale practice
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        description: Pastreaza trei materiale pentru pagina Resurse.
+        fields:
+          - { name: titlu, label: Titlu, type: string }
+          - { name: introducere, label: Introducere, type: text }
+          - { name: exercitiu, label: Intrebari de reflectie, type: text }
+          - { name: nota, label: Nota la final, type: text }
