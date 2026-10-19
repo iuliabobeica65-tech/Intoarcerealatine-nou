@@ -7,6 +7,7 @@ content:
   - name: homepage
     label: Prima pagină — texte și butoane
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/acasa.json
     format: json
     fields:
@@ -70,6 +71,7 @@ content:
   - name: events
     label: Calendar — LIVE și constelații
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/evenimente.json
     format: json
     fields:
@@ -89,6 +91,7 @@ content:
   - name: metoda
     label: Metoda CLAR — text
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/metoda.json
     format: json
     fields:
@@ -98,6 +101,7 @@ content:
   - name: constelatii
     label: Constelații — text
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/constelatii.json
     format: json
     fields:
@@ -107,6 +111,7 @@ content:
   - name: colaborare
     label: Lucrăm împreună — text
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/colaborare.json
     format: json
     fields:
@@ -116,6 +121,7 @@ content:
   - name: despre
     label: Despre mine — text
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/despre.json
     format: json
     fields:
@@ -125,6 +131,7 @@ content:
   - name: live
     label: LIVE — text
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/live.json
     format: json
     fields:
@@ -134,6 +141,7 @@ content:
   - name: resurse
     label: Resurse — text
     type: file
+    operations: { create: false, rename: false, delete: false }
     path: content/resurse.json
     format: json
     fields:
@@ -154,226 +162,237 @@ content:
           - { name: exercitiu, label: Intrebari de reflectie, type: text }
           - { name: nota, label: Nota la final, type: text }
 
-  - name: texte_acasa
-    label: "Prima pagină – restul textelor"
-    type: file
-    path: content/texte-acasa.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+  - name: editari_detaliate
+    label: "Texte și butoane suplimentare"
+    type: group
+    items:
+      - name: texte_acasa
+        label: "Prima pagină – restul textelor"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-acasa.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
 
-  - name: texte_metoda_clar
-    label: "Metoda CLAR – toate explicațiile"
-    type: file
-    path: content/texte-metoda-clar.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+      - name: texte_metoda_clar
+        label: "Metoda CLAR – toate explicațiile"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-metoda-clar.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
 
-  - name: texte_constelatii
-    label: "Constelații – explicații suplimentare"
-    type: file
-    path: content/texte-constelatii.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+      - name: texte_constelatii
+        label: "Constelații – explicații suplimentare"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-constelatii.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
 
-  - name: texte_lucram_impreuna
-    label: "Colaborare – explicații suplimentare"
-    type: file
-    path: content/texte-lucram-impreuna.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+      - name: texte_lucram_impreuna
+        label: "Colaborare – explicații suplimentare"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-lucram-impreuna.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
 
-  - name: texte_despre_mine
-    label: "Despre mine – povestea și motivația"
-    type: file
-    path: content/texte-despre-mine.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+      - name: texte_despre_mine
+        label: "Despre mine – povestea și motivația"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-despre-mine.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
 
-  - name: texte_resurse
-    label: "Resurse – exemple și exerciții"
-    type: file
-    path: content/texte-resurse.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+      - name: texte_resurse
+        label: "Resurse – exemple și exerciții"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-resurse.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
 
-  - name: texte_live
-    label: "LIVE – explicații, întrebări și răspunsuri"
-    type: file
-    path: content/texte-live.json
-    format: json
-    fields:
-      - name: texte
-        label: Textele din pagină, în ordinea afișării
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{continut}"
-        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+      - name: texte_live
+        label: "LIVE – explicații, întrebări și răspunsuri"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-live.json
+        format: json
         fields:
-          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
-          - { name: continut, label: Textul afișat pe site, type: text }
-          - { name: initial, type: text, hidden: true, readonly: true }
-      - name: linkuri
-        label: Butoane și linkuri din pagină
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{text}"
-        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
-        fields:
-          - { name: id, label: Identificator intern, type: string, readonly: true }
-          - { name: text, label: Textul butonului sau linkului, type: string }
-          - { name: url, label: Destinația linkului, type: string }
-          - { name: initial, type: text, hidden: true, readonly: true }
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
