@@ -91,6 +91,51 @@
     {
       "id": "text-23",
       "continut": "Organizez întâlniri de grup online și față în față, în funcție de cerere. Nu afișez date sau locuri înainte de confirmare."
+    },
+    {
+      "id": "rich-1",
+      "continut": "Nu. Constelațiile rămân o activitate separată . Ele pot ajuta uneori la identificarea unor percepții polarizate, dar explorarea și echilibrarea acestora se pot face și fără constelații."
+    },
+    {
+      "id": "rich-2",
+      "continut": "Te atrage lucrul prin constelații sistemice? Organizez periodic întâlniri online și față în față, în funcție de cerere. Scrie-mi pentru detalii despre următoarea întâlnire. Nu există înscriere sau plată direct pe site."
+    }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Cere detalii despre constelații",
+      "url": "https://m.me/legiuniversaleconstelatii"
+    },
+    {
+      "id": "link-2",
+      "text": "Metoda CLAR",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-3",
+      "text": "Constelații sistemice",
+      "url": "./constelatii.html"
+    },
+    {
+      "id": "link-4",
+      "text": "Lucrăm împreună",
+      "url": "./lucram-impreuna.html"
+    },
+    {
+      "id": "link-5",
+      "text": "Despre mine",
+      "url": "./despre-mine.html"
+    },
+    {
+      "id": "link-6",
+      "text": "LIVE săptămânal",
+      "url": "./live.html"
+    },
+    {
+      "id": "link-7",
+      "text": "Vezi calendarul și cum poți solicita detalii →",
+      "url": "./acasa.html#calendar"
     }
   ]
 }
