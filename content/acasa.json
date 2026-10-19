@@ -1,8 +1,8 @@
 {
   "titlu": "Poate că e timpul să te vezi și pe tine.",
-  "subtitlu": "Printre toate lucrurile pe care le faci pentru ceilalți, unde mai e locul tău? Poate că ai grijă de toate, dar pe tine te lași mereu la urmă.",
-  "titlu_recunoastere": "Ai grijă de toate. Dar de tine?",
-  "text_recunoastere": "Poate spui prea des «da», deși înăuntrul tău este «nu». Poate o situație revine sub altă formă. Nu îți propun încă o listă cu lucruri pe care «ar trebui» să le faci. Pornim de la ceea ce trăiești și privim împreună ce se repetă.",
+  "subtitlu": "Poate că știi deja ce ai vrea să schimbi în viața ta. Și totuși, când vine momentul să faci un pas, ceva pare să te oprească.",
+  "titlu_recunoastere": "Când ceva te ține pe loc, de unde începi?",
+  "text_recunoastere": "Poate ai de luat o decizie, ai vrea să pui o limită sau observi că aceeași reacție revine. Nu este nevoie să cunoști deja cauza. Pornim de la un moment concret și privim împreună ce înseamnă pentru tine.",
   "buton_principal": "Descoperă Metoda CLAR",
   "link_principal": "./metoda-clar.html#metoda-clar",
   "buton_secundar": "Participă la LIVE",
@@ -72,16 +72,21 @@
       "descriere": "Putem privi și perspectiva opusă, fără să negăm ce ai trăit. Apoi verificăm ce s-a schimbat pentru tine."
     },
     {
-      "titlu": "Constelațiile sistemice aduc ordine în ceea ce părea blocat",
-      "descriere": "Constelațiile sunt un spațiu de explorare a relațiilor și perspectivelor; nu oferă certitudini despre trecut."
+      "titlu": "Constelațiile sistemice pot deschide o altă perspectivă asupra relațiilor",
+      "descriere": "Privim împreună relațiile și legăturile care contează pentru tine, fără să pretindem că știm dinainte de unde vine un blocaj."
     },
     {
       "titlu": "Legile universale te ajută să înțelegi mesajul din spatele experienței",
       "descriere": "Folosesc legile universale ca repere pentru întrebări, pentru a privi o experiență din mai multe unghiuri."
     },
     {
-      "titlu": "Creația conștientă nu începe după vindecare. Începe chiar aici.",
-      "descriere": "Creația conștientă este prezentă pe tot parcursul: explorăm percepțiile și alegem pașii potriviți în prezent."
+      "titlu": "Creația conștientă poate începe chiar acum",
+      "descriere": "Nu este nevoie să aștepți ca totul să fie rezolvat. Explorăm felul în care privești ceea ce trăiești și ce poți alege astăzi."
     }
-  ]
+  ],
+  "text_hero_continuare": "Uneori îți este greu să spui „nu”, amâni o alegere sau observi că revii într-o situație cunoscută. Pornim de la ceea ce trăiești acum și explorăm împreună percepțiile și tiparele care ar putea avea legătură cu aceste dificultăți.",
+  "contact_titlu": "Poți să-mi scrii, chiar dacă nu știi de unde să începi.",
+  "contact_text": "Dacă te-ai regăsit într-una dintre situațiile de mai sus și vrei să explorăm ce ar fi potrivit pentru tine, îmi poți povesti într-un mesaj. Nu este nevoie să decizi acum dacă lucrăm împreună.",
+  "contact_buton": "Scrie-mi pe WhatsApp",
+  "contact_link": "https://wa.me/40758321125"
 }
