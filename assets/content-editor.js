@@ -31,4 +31,43 @@ if(extraPage&&/^(acasa|metoda-clar|constelatii|lucram-impreuna|despre-mine|resur
  }).catch(()=>{});
 }
 
+
+/* Setari globale pentru identitatea afisata, etichetele meniului si contact.
+   Nu schimba DNS-ul sau numele real al proiectului de gazduire. */
+fetch("./content/setari-site.json",{cache:"no-cache"})
+ .then(r=>r.ok?r.json():Promise.reject(Error("Site settings not found")))
+ .then(c=>{
+   if(c&&typeof c.brand==="string"&&c.brand.trim()){
+    document.querySelectorAll("a.brand").forEach(a=>{
+     const span=a.querySelector("span,small");
+     const first=[...a.childNodes].find(n=>n.nodeType===3);
+     if(first&&first.textContent.trim().toLocaleLowerCase("ro")!==c.brand.trim().toLocaleLowerCase("ro"))first.textContent=c.brand;
+     if(span&&typeof c.subtitlu_brand==="string"&&c.subtitlu_brand.trim()&&span.textContent.trim()!==c.subtitlu_brand.trim())span.textContent=c.subtitlu_brand;
+    });
+   }
+   if(Array.isArray(c.meniu)){
+    const known=new Set(["acasa.html","metoda-clar.html","constelatii.html","lucram-impreuna.html","despre-mine.html","resurse.html","live.html"]);
+    for(const item of c.meniu){
+     if(!item||!known.has(item.pagina)||typeof item.eticheta!=="string"||!item.eticheta.trim())continue;
+     document.querySelectorAll(".site-header nav a").forEach(a=>{
+      if(a.getAttribute("href")==="./"+item.pagina&&a.textContent.trim()!==item.eticheta.trim())a.textContent=item.eticheta;
+     });
+    }
+   }
+   if(typeof c.mesaj_subsol==="string"&&c.mesaj_subsol.trim())setText(".footer-status",c.mesaj_subsol);
+   if(typeof c.email_contact==="string"&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email_contact)){
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{
+     if(a.getAttribute("href")==="mailto:Iuliabobeica65@gmail.com"||a.getAttribute("href")==="mailto:"+c.email_contact){
+      a.href="mailto:"+c.email_contact;if(a.textContent.includes("@"))a.textContent=c.email_contact;
+     }
+    });
+   }
+   if(typeof c.whatsapp_contact==="string"&&/^\+?[0-9]{10,15}$/.test(c.whatsapp_contact)){
+    const phone=c.whatsapp_contact.replace("+","");
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a=>{
+      try{const old=new URL(a.href);if(old.pathname!=="/"+phone){old.pathname="/"+phone;a.href=old.href;}}catch(e){}
+    });
+   }
+ }).catch(()=>{});
+
 })();
