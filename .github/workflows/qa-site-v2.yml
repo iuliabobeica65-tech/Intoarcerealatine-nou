@@ -21,6 +21,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Verifica schema si datele editorului Pages CMS
+        run: |
+          python3 -m pip install --quiet PyYAML==6.0.2
+          python3 qa/check-cms.py
       - name: Instaleaza Chromium pentru QA
         run: |
           npm install --no-save playwright@1.56.1
