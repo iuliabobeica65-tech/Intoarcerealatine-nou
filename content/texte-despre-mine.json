@@ -2,135 +2,166 @@
   "texte": [
     {
       "id": "text-1",
-      "continut": "DESPRE MINE"
+      "continut": "DESPRE MINE",
+      "initial": "DESPRE MINE"
     },
     {
       "id": "text-2",
-      "continut": "OMUL DIN SPATELE ÎNTÂLNIRILOR"
+      "continut": "OMUL DIN SPATELE ÎNTÂLNIRILOR",
+      "initial": "OMUL DIN SPATELE ÎNTÂLNIRILOR"
     },
     {
       "id": "text-3",
-      "continut": "Sunt Iulia Bobeica, consilier pentru dezvoltare personală și absolventă de Economie și Administrarea Afacerilor, specializarea Marketing."
+      "continut": "Sunt Iulia Bobeica, consilier pentru dezvoltare personală și absolventă de Economie și Administrarea Afacerilor, specializarea Marketing.",
+      "initial": "Sunt Iulia Bobeica, consilier pentru dezvoltare personală și absolventă de Economie și Administrarea Afacerilor, specializarea Marketing."
     },
     {
       "id": "text-4",
-      "continut": "Îmi place să pun întrebări. Nu ca să găsesc repede o explicație care sună bine, ci ca să descopăr ce se află dincolo de prima reacție, de prima concluzie și, uneori, de povestea pe care ne-o spunem despre noi."
+      "continut": "Îmi place să pun întrebări. Nu ca să găsesc repede o explicație care sună bine, ci ca să descopăr ce se află dincolo de prima reacție, de prima concluzie și, uneori, de povestea pe care ne-o spunem despre noi.",
+      "initial": "Îmi place să pun întrebări. Nu ca să găsesc repede o explicație care sună bine, ci ca să descopăr ce se află dincolo de prima reacție, de prima concluzie și, uneori, de povestea pe care ne-o spunem despre noi."
     },
     {
       "id": "text-5",
-      "continut": "Mă preocupă mai ales acele momente în care o femeie știe ce își dorește, dar se simte blocată: spune „da” când ar vrea să spună „nu”, amână o alegere importantă sau ajunge iar într-o situație despre care își promisese că nu o va mai repeta. Nu cred că este suficient să-i spunem să gândească pozitiv ori să aibă mai mult curaj."
+      "continut": "Mă preocupă mai ales acele momente în care o femeie știe ce își dorește, dar se simte blocată: spune „da” când ar vrea să spună „nu”, amână o alegere importantă sau ajunge iar într-o situație despre care își promisese că nu o va mai repeta. Nu cred că este suficient să-i spunem să gândească pozitiv ori să aibă mai mult curaj.",
+      "initial": "Mă preocupă mai ales acele momente în care o femeie știe ce își dorește, dar se simte blocată: spune „da” când ar vrea să spună „nu”, amână o alegere importantă sau ajunge iar într-o situație despre care își promisese că nu o va mai repeta. Nu cred că este suficient să-i spunem să gândească pozitiv ori să aibă mai mult curaj."
     },
     {
       "id": "text-6",
-      "continut": "În lucrul cu mine contează și valorile tale. Nu îmi doresc să înlocuim o regulă veche cu una nouă despre cum „ar trebui” să fii. Mă interesează ce alegi tu, atunci când nu mai privești o situație doar dintr-o singură parte."
+      "continut": "În lucrul cu mine contează și valorile tale. Nu îmi doresc să înlocuim o regulă veche cu una nouă despre cum „ar trebui” să fii. Mă interesează ce alegi tu, atunci când nu mai privești o situație doar dintr-o singură parte.",
+      "initial": "În lucrul cu mine contează și valorile tale. Nu îmi doresc să înlocuim o regulă veche cu una nouă despre cum „ar trebui” să fii. Mă interesează ce alegi tu, atunci când nu mai privești o situație doar dintr-o singură parte."
     },
     {
       "id": "text-7",
-      "continut": "Îmi place profunzimea, dar nu vreau să rămânem doar la explicații. După ce explorăm o situație, mă interesează cum te raportezi la ea acum, ce observi în corp și în reacțiile tale și ce poți alege diferit în viața de zi cu zi. Dacă o schimbare nu se menține, verificăm din nou, fără să forțăm un rezultat."
+      "continut": "Îmi place profunzimea, dar nu vreau să rămânem doar la explicații. După ce explorăm o situație, mă interesează cum te raportezi la ea acum, ce observi în corp și în reacțiile tale și ce poți alege diferit în viața de zi cu zi. Dacă o schimbare nu se menține, verificăm din nou, fără să forțăm un rezultat.",
+      "initial": "Îmi place profunzimea, dar nu vreau să rămânem doar la explicații. După ce explorăm o situație, mă interesează cum te raportezi la ea acum, ce observi în corp și în reacțiile tale și ce poți alege diferit în viața de zi cu zi. Dacă o schimbare nu se menține, verificăm din nou, fără să forțăm un rezultat."
     },
     {
       "id": "text-8",
-      "continut": "DE CE ÎMI PASĂ"
+      "continut": "DE CE ÎMI PASĂ",
+      "initial": "DE CE ÎMI PASĂ"
     },
     {
       "id": "text-9",
-      "continut": "Mă interesează mai puțin să punem repede o etichetă unui blocaj și mai mult să ascultăm ce se întâmplă cu adevărat într-un moment concret. Uneori, când privim lucrurile dintr-o singură parte, nu mai vedem și alte posibilități."
+      "continut": "Mă interesează mai puțin să punem repede o etichetă unui blocaj și mai mult să ascultăm ce se întâmplă cu adevărat într-un moment concret. Uneori, când privim lucrurile dintr-o singură parte, nu mai vedem și alte posibilități.",
+      "initial": "Mă interesează mai puțin să punem repede o etichetă unui blocaj și mai mult să ascultăm ce se întâmplă cu adevărat într-un moment concret. Uneori, când privim lucrurile dintr-o singură parte, nu mai vedem și alte posibilități."
     },
     {
       "id": "text-10",
-      "continut": "De aceea îmi plac întrebările care nu forțează un răspuns. Întrebările care ne ajută să descoperim ce am presupus, ce am învățat despre noi și ce alegem să păstrăm."
+      "continut": "De aceea îmi plac întrebările care nu forțează un răspuns. Întrebările care ne ajută să descoperim ce am presupus, ce am învățat despre noi și ce alegem să păstrăm.",
+      "initial": "De aceea îmi plac întrebările care nu forțează un răspuns. Întrebările care ne ajută să descoperim ce am presupus, ce am învățat despre noi și ce alegem să păstrăm."
     },
     {
       "id": "text-11",
-      "continut": "Pentru mine, lucrul împreună înseamnă să fii ascultată fără să ți se spună cine ar trebui să devii. Iar la final să revenim la viața de zi cu zi: ce observi diferit și care este pasul potrivit pentru tine?"
+      "continut": "Pentru mine, lucrul împreună înseamnă să fii ascultată fără să ți se spună cine ar trebui să devii. Iar la final să revenim la viața de zi cu zi: ce observi diferit și care este pasul potrivit pentru tine?",
+      "initial": "Pentru mine, lucrul împreună înseamnă să fii ascultată fără să ți se spună cine ar trebui să devii. Iar la final să revenim la viața de zi cu zi: ce observi diferit și care este pasul potrivit pentru tine?"
     },
     {
       "id": "text-12",
-      "continut": "DINCOLO DE „NU POT”"
+      "continut": "DINCOLO DE „NU POT”",
+      "initial": "DINCOLO DE „NU POT”"
     },
     {
       "id": "text-13",
-      "continut": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou."
+      "continut": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou.",
+      "initial": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou."
     },
     {
       "id": "text-14",
-      "continut": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape."
+      "continut": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape.",
+      "initial": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape."
     },
     {
       "id": "text-15",
-      "continut": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine."
+      "continut": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine.",
+      "initial": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine."
     },
     {
       "id": "text-16",
-      "continut": "Un exemplu de explorare, nu povestea unei cliente."
+      "continut": "Un exemplu de explorare, nu povestea unei cliente.",
+      "initial": "Un exemplu de explorare, nu povestea unei cliente."
     },
     {
       "id": "text-17",
-      "continut": "EXPLOREAZĂ MAI DEPARTE"
+      "continut": "EXPLOREAZĂ MAI DEPARTE",
+      "initial": "EXPLOREAZĂ MAI DEPARTE"
     },
     {
       "id": "rich-1",
-      "continut": "Iulia Bobeica Consilier pentru dezvoltare personală Absolventă de Economie și Administrarea Afacerilor, specializarea Marketing"
+      "continut": "Iulia Bobeica Consilier pentru dezvoltare personală Absolventă de Economie și Administrarea Afacerilor, specializarea Marketing",
+      "initial": "Iulia Bobeica Consilier pentru dezvoltare personală Absolventă de Economie și Administrarea Afacerilor, specializarea Marketing"
     },
     {
       "id": "rich-2",
-      "continut": "Eu vreau să înțelegem ce anume se repetă, ce semnificație a primit o experiență și cum influențează acea percepție alegerile de astăzi . Uneori găsim o legătură cu o situație mai veche; alteori avem nevoie să explorăm mai multe momente. Nu presupun cauza înainte să lucrăm."
+      "continut": "Eu vreau să înțelegem ce anume se repetă, ce semnificație a primit o experiență și cum influențează acea percepție alegerile de astăzi . Uneori găsim o legătură cu o situație mai veche; alteori avem nevoie să explorăm mai multe momente. Nu presupun cauza înainte să lucrăm.",
+      "initial": "Eu vreau să înțelegem ce anume se repetă, ce semnificație a primit o experiență și cum influențează acea percepție alegerile de astăzi . Uneori găsim o legătură cu o situație mai veche; alteori avem nevoie să explorăm mai multe momente. Nu presupun cauza înainte să lucrăm."
     },
     {
       "id": "rich-3",
-      "continut": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat."
+      "continut": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat.",
+      "initial": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat."
     },
     {
       "id": "rich-4",
-      "continut": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor."
+      "continut": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor.",
+      "initial": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor."
     },
     {
       "id": "rich-5",
-      "continut": "De aceea am creat „Întoarcerea la tine”: un spațiu în care să te poți privi cu mai multă curiozitate, să înțelegi ce te ține pe loc și să începi să alegi conștient, chiar dacă nu ai rezolvat toate blocajele."
+      "continut": "De aceea am creat „Întoarcerea la tine”: un spațiu în care să te poți privi cu mai multă curiozitate, să înțelegi ce te ține pe loc și să începi să alegi conștient, chiar dacă nu ai rezolvat toate blocajele.",
+      "initial": "De aceea am creat „Întoarcerea la tine”: un spațiu în care să te poți privi cu mai multă curiozitate, să înțelegi ce te ține pe loc și să începi să alegi conștient, chiar dacă nu ai rezolvat toate blocajele."
     },
     {
       "id": "rich-6",
-      "continut": "Nu doar să înțelegem. Ci să vedem ce devine posibil."
+      "continut": "Nu doar să înțelegem. Ci să vedem ce devine posibil.",
+      "initial": "Nu doar să înțelegem. Ci să vedem ce devine posibil."
     },
     {
       "id": "rich-7",
-      "continut": "Blocajul nu este întreaga ta poveste."
+      "continut": "Blocajul nu este întreaga ta poveste.",
+      "initial": "Blocajul nu este întreaga ta poveste."
     },
     {
       "id": "rich-8",
-      "continut": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?"
+      "continut": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?",
+      "initial": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?"
     }
   ],
   "linkuri": [
     {
       "id": "link-1",
       "text": "Dacă vrei, ne putem cunoaște la LIVE →",
-      "url": "./live.html#participare"
+      "url": "./live.html#participare",
+      "initial": "Dacă vrei, ne putem cunoaște la LIVE →"
     },
     {
       "id": "link-2",
       "text": "Metoda CLAR",
-      "url": "./metoda-clar.html"
+      "url": "./metoda-clar.html",
+      "initial": "Metoda CLAR"
     },
     {
       "id": "link-3",
       "text": "Constelații sistemice",
-      "url": "./constelatii.html"
+      "url": "./constelatii.html",
+      "initial": "Constelații sistemice"
     },
     {
       "id": "link-4",
       "text": "Lucrăm împreună",
-      "url": "./lucram-impreuna.html"
+      "url": "./lucram-impreuna.html",
+      "initial": "Lucrăm împreună"
     },
     {
       "id": "link-5",
       "text": "Despre mine",
-      "url": "./despre-mine.html"
+      "url": "./despre-mine.html",
+      "initial": "Despre mine"
     },
     {
       "id": "link-6",
       "text": "LIVE săptămânal",
-      "url": "./live.html"
+      "url": "./live.html",
+      "initial": "LIVE săptămânal"
     }
   ]
 }
