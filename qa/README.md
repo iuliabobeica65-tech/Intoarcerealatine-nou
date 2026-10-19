@@ -18,7 +18,7 @@ SITE_URL=http://127.0.0.1:4173 PREVIEW_URL=https://deploy-preview-3--spontaneous
 Pe Windows, variabilele de mediu se setează diferit; este mai simplu să rulezi workflow-ul GitHub Actions.
 
 ## GitHub Actions
-Workflow: `.github/workflows/qa-site-v2.yml`. El **nu face publicare**, nu face merge și nu modifică `main`. Dacă GitHub Actions sunt activate, raportul apare în Actions > QA site V2 (fara publicare) > Artifacts. Dacă nu apare nicio rulare, **nu considerăm testarea Chromium efectuată**.
+Workflow: `.github/workflows/qa-site-v2.yml`. El **nu face publicare**, nu face merge și nu modifică `main`. Dacă GitHub Actions sunt activate, raportul apare în Actions > QA site V2 (fara publicare) > Artifacts. Există o rulare de succes a testelor automate Chromium: https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/actions/runs/39316722615 — 28 verificări, 0 erori în log. Verifică mereu și ultima rulare după modificări. Capturile și rezultatele de cookie se găsesc în artefactele GitHub Actions, nu au fost validate juridic.
 
 ## Important pentru auditul cookie
 Observațiile de browser sunt un inventar tehnic, nu certificare GDPR. Un cookie poate fi strict necesar, poate fi furnizat de gazdă sau de o protecție antiboți. Scopul și temeiul legal necesită evaluare; un banner fără blocarea tehnologiilor neesențiale nu rezolvă nimic. Rularea locală nu demonstrează comportamentul viitorului domeniu.
