@@ -171,6 +171,20 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
 
   - name: texte_metoda_clar
     label: "Metoda CLAR – toate explicațiile"
@@ -189,6 +203,20 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
 
   - name: texte_constelatii
     label: "Constelații – explicații suplimentare"
@@ -207,6 +235,20 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
 
   - name: texte_lucram_impreuna
     label: "Colaborare – explicații suplimentare"
@@ -225,6 +267,20 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
 
   - name: texte_despre_mine
     label: "Despre mine – povestea și motivația"
@@ -243,6 +299,20 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
 
   - name: texte_resurse
     label: "Resurse – exemple și exerciții"
@@ -261,6 +331,20 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
 
   - name: texte_live
     label: "LIVE – explicații, întrebări și răspunsuri"
@@ -279,3 +363,17 @@ content:
         fields:
           - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
           - { name: continut, label: Textul afișat pe site, type: text }
+          - { name: initial, type: text, hidden: true, readonly: true }
+      - name: linkuri
+        label: Butoane și linkuri din pagină
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+        fields:
+          - { name: id, label: Identificator intern, type: string, readonly: true }
+          - { name: text, label: Textul butonului sau linkului, type: string }
+          - { name: url, label: Destinația linkului, type: string }
+          - { name: initial, type: text, hidden: true, readonly: true }
