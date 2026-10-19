@@ -167,6 +167,47 @@
     {
       "id": "text-42",
       "continut": "EXPLOREAZĂ MAI DEPARTE"
+    },
+    {
+      "id": "rich-1",
+      "continut": "Explorăm apoi și perspectivele pe care nu le-a luat în calcul, prin întrebări și legile universale, fără să negăm experiența ei. O constelație sistemică poate uneori să facă vizibile relații, poziționări sau interpretări care merită explorate mai departe, dar nu este o etapă obligatorie a Metodei CLAR și nu stabilește automat adevărul despre trecut."
+    }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Află separat cum se desfășoară o constelație →",
+      "url": "./constelatii.html#constelatii"
+    },
+    {
+      "id": "link-2",
+      "text": "Vezi cum folosesc cele șapte legi universale →",
+      "url": "./metoda-clar.html#cele-sapte-legi"
+    },
+    {
+      "id": "link-3",
+      "text": "Metoda CLAR",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-4",
+      "text": "Constelații sistemice",
+      "url": "./constelatii.html"
+    },
+    {
+      "id": "link-5",
+      "text": "Lucrăm împreună",
+      "url": "./lucram-impreuna.html"
+    },
+    {
+      "id": "link-6",
+      "text": "Despre mine",
+      "url": "./despre-mine.html"
+    },
+    {
+      "id": "link-7",
+      "text": "LIVE săptămânal",
+      "url": "./live.html"
     }
   ]
 }
