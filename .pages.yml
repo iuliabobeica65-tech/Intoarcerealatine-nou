@@ -12,6 +12,7 @@ content:
     fields:
       - { name: titlu, label: Titlul principal, type: string }
       - { name: subtitlu, label: Textul de sub titlu, type: text }
+      - { name: fotografie, label: Fotografia de pe prima pagină, type: image }
       - { name: titlu_recunoastere, label: Titlul situațiilor, type: string }
       - { name: text_recunoastere, label: Introducerea situațiilor, type: text }
       - { name: buton_principal, label: Text buton principal, type: string }
