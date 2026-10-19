@@ -61,3 +61,13 @@ Autoarea a confirmat în conversație:
 - Metadatele SEO au încă URL-uri Netlify. Ele se ajustează o singură dată, înainte de lansarea pe hostul ales, la domeniul activ sau adresa intermediară.
 
 **NU face merge în main și nu lansa o gazdă nouă fără configurarea/confirmarea contului de către proprietară.**
+
+## ACTUALIZARE — confirmările utilizatoarei și caruselul, 19.10.2026
+- Confirmate de autoare: calificările deja prezentate și programul individual de patru luni. Nu s-au introdus alte diplome sau rezultate garantate.
+- Autoarea a confirmat că mesajele din imaginile la care s-a referit sunt în regulă; originalele sunt păstrate.
+- Prima imagine a caruselului este acum **`assets/carusel-metoda/07.webp`**, cu tema „Creația conștientă”. Ordinea vizuală: **07, 01, 02, 03, 04, 05, 06**. Și cele șapte legende JSON sunt sincronizate cu HTML.
+- Editor: `.pages.yml` are `settings.content.merge: true` pentru a preveni pierderea câmpurilor ascunse/unmanaged la salvare; 3 oferte, 4 situații și 7 legende sunt liste cu dimensiune fixată.
+- Audit nou: **`AUDIT_LANSARE_EDITOR_GDPR_19_10_2026.md`**. Nu echivalează cu validare juridică sau testare în browser.
+- Verificare statică repetată: 173 de texte și 40 de linkuri au corespondent HTML și JSON; șapte pagini cu un H1, fără ID-uri duplicate, fără fișiere relative lipsă; JavaScript cu sintaxă validă.
+- Domeniul `intoarcerealatine.ro` **nu a fost încă achiziționat**; utilizatoarea dorește lansare la prima oportunitate. O adresă `pages.dev` poate fi folosită înainte de cumpărarea domeniului, după autorizarea/configurarea efectivă Cloudflare.
+- **Rămâne obligatoriu:** test cu contul proprietarei în Pages CMS, audit real al cookie-urilor și găzduirii, test vizual/browser, alegerea/configurarea gazdei; site-ul oficial `main` nu s-a modificat.
