@@ -12,6 +12,11 @@ content:
     fields:
       - { name: titlu, label: Titlul principal, type: string }
       - { name: subtitlu, label: Textul de sub titlu, type: text }
+      - { name: text_hero_continuare, label: Continuarea mesajului despre blocaj, type: text }
+      - { name: contact_titlu, label: Titlul invitației la dialog, type: string }
+      - { name: contact_text, label: Textul invitației la dialog, type: text }
+      - { name: contact_buton, label: Textul butonului de contact, type: string }
+      - { name: contact_link, label: Linkul butonului de contact, type: string }
       - { name: fotografie, label: Fotografia de pe prima pagină, type: image }
       - { name: titlu_recunoastere, label: Titlul situațiilor, type: string }
       - { name: text_recunoastere, label: Introducerea situațiilor, type: text }
