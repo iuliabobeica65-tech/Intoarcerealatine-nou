@@ -79,6 +79,49 @@
     {
       "id": "text-20",
       "continut": "Pe telefon, glisează spre stânga pentru a continua."
+    },
+    {
+      "id": "rich-1",
+      "continut": "✧ UN TIMP PENTRU TINE. O PERSPECTIVĂ NOUĂ."
+    },
+    {
+      "id": "rich-2",
+      "continut": "Metoda CLAR Explorăm tiparele, rădăcinile și percepțiile care îți influențează alegerile."
+    },
+    {
+      "id": "rich-3",
+      "continut": "Constelații sistemice Întâlniri de grup online și față în față, organizate periodic."
+    },
+    {
+      "id": "rich-4",
+      "continut": "Mai aproape de tine. Cu loc pentru ce devine posibil."
+    }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Află cum pornim de la o situație concretă →",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-2",
+      "text": "Descoperă Metoda CLAR →",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-3",
+      "text": "Citește mai mult despre mine →",
+      "url": "./despre-mine.html"
+    },
+    {
+      "id": "link-4",
+      "text": "Află detalii →",
+      "url": "./live.html#participare"
+    },
+    {
+      "id": "link-5",
+      "text": "Află detalii →",
+      "url": "./constelatii.html"
     }
   ]
 }
