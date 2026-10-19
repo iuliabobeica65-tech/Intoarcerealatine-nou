@@ -1,0 +1,22 @@
+{
+  "titlu": "Ne întâlnim și dincolo de paginile acestui site",
+  "introducere": "LIVE-ul de luni este un loc pentru întrebări. Pentru constelațiile de grup, comunic datele de îndată ce sunt confirmate. Poți să-mi scrii fără nicio obligație.",
+  "evenimente": [
+    {
+      "nume": "LIVE săptămânal gratuit",
+      "descriere": "O întâlnire pentru întrebări și perspective diferite. Poți veni și doar să asculți.",
+      "data": "În fiecare luni, 19:00–20:00",
+      "loc": "Online, Jitsi",
+      "link": "./live.html#participare",
+      "confirmat": true
+    },
+    {
+      "nume": "Constelații sistemice de grup",
+      "descriere": "Întâlniri online și față în față, organizate în funcție de cerere.",
+      "data": "",
+      "loc": "Online sau fizic",
+      "link": "./constelatii.html",
+      "confirmat": false
+    }
+  ]
+}
