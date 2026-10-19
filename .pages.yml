@@ -98,6 +98,9 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
   - name: constelatii
     label: Constelații — text
     type: file
@@ -108,6 +111,9 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
   - name: colaborare
     label: Lucrăm împreună — text
     type: file
@@ -118,6 +124,9 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
   - name: despre
     label: Despre mine — text
     type: file
@@ -128,6 +137,9 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
   - name: live
     label: LIVE — text
     type: file
@@ -138,6 +150,9 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
   - name: resurse
     label: Resurse — text
     type: file
@@ -148,6 +163,9 @@ content:
       - { name: titlu, label: Titlul paginii, type: string }
       - { name: introducere, label: Textul introductiv, type: text }
       - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
       - name: materiale
         label: Trei materiale practice
         type: object
