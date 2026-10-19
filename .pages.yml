@@ -1,3 +1,6 @@
+settings:
+  content:
+    merge: true
 # Editor de continut — pagina publica nu se schimba pana la publicarea aprobata.
 media:
   input: assets
@@ -201,7 +204,9 @@ content:
         label: Trei materiale practice
         type: object
         list:
-          collapsible:
+          min: 4
+          max: 4
+2615
             collapsed: true
             summary: "{titlu}"
         description: Pastreaza trei materiale pentru pagina Resurse.
