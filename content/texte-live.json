@@ -135,6 +135,56 @@
     {
       "id": "text-34",
       "continut": "EXPLOREAZĂ MAI DEPARTE"
+    },
+    {
+      "id": "rich-1",
+      "continut": "Și dacă ai descoperi că există și alte posibilități pentru tine?"
+    },
+    {
+      "id": "rich-2",
+      "continut": "Câteva răspunsuri, înainte să vii."
+    }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Vezi detaliile participării",
+      "url": "./live.html#participare"
+    },
+    {
+      "id": "link-2",
+      "text": "Scrie-mi pe Messenger",
+      "url": "https://m.me/legiuniversaleconstelatii"
+    },
+    {
+      "id": "link-3",
+      "text": "Scrie pe WhatsApp",
+      "url": "https://wa.me/40758321125"
+    },
+    {
+      "id": "link-4",
+      "text": "Metoda CLAR",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-5",
+      "text": "Constelații sistemice",
+      "url": "./constelatii.html"
+    },
+    {
+      "id": "link-6",
+      "text": "Lucrăm împreună",
+      "url": "./lucram-impreuna.html"
+    },
+    {
+      "id": "link-7",
+      "text": "Despre mine",
+      "url": "./despre-mine.html"
+    },
+    {
+      "id": "link-8",
+      "text": "LIVE săptămânal",
+      "url": "./live.html"
     }
   ]
 }
