@@ -1,0 +1,39 @@
+# Editor de continut — pagina publica nu se schimba pana la publicarea aprobata.
+media:
+  input: assets
+  output: /assets
+  extensions: [png, jpg, jpeg, webp]
+content:
+  - name: homepage
+    label: Prima pagină — texte și butoane
+    type: file
+    path: content/acasa.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul principal, type: string }
+      - { name: subtitlu, label: Textul de sub titlu, type: text }
+      - { name: titlu_recunoastere, label: Titlul situațiilor, type: string }
+      - { name: text_recunoastere, label: Introducerea situațiilor, type: text }
+      - { name: buton_principal, label: Text buton principal, type: string }
+      - { name: link_principal, label: Link buton principal, type: string }
+      - { name: buton_secundar, label: Text buton secundar, type: string }
+      - { name: link_secundar, label: Link buton secundar, type: string }
+  - name: events
+    label: Calendar — LIVE și constelații
+    type: file
+    path: content/evenimente.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul calendarului, type: string }
+      - { name: introducere, label: Text introductiv, type: text }
+      - name: evenimente
+        label: Întâlniri
+        type: object
+        list: true
+        fields:
+          - { name: nume, label: Numele întâlnirii, type: string }
+          - { name: descriere, label: Descriere scurtă, type: text }
+          - { name: data, label: Data confirmată (opțional), type: string }
+          - { name: loc, label: Locație / Online, type: string }
+          - { name: link, label: Link de detalii, type: string }
+          - { name: confirmat, label: Afișează ca eveniment confirmat, type: boolean }
