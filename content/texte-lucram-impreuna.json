@@ -60,5 +60,37 @@
       "id": "text-15",
       "continut": "EXPLOREAZĂ MAI DEPARTE"
     }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Vreau să aflu mai multe",
+      "url": "https://wa.me/40758321125?text=Bun%C4%83%2C%20Iulia!%20A%C8%99%20vrea%20s%C4%83%20aflu%20mai%20multe%20despre%20lucrul%20individual."
+    },
+    {
+      "id": "link-2",
+      "text": "Metoda CLAR",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-3",
+      "text": "Constelații sistemice",
+      "url": "./constelatii.html"
+    },
+    {
+      "id": "link-4",
+      "text": "Lucrăm împreună",
+      "url": "./lucram-impreuna.html"
+    },
+    {
+      "id": "link-5",
+      "text": "Despre mine",
+      "url": "./despre-mine.html"
+    },
+    {
+      "id": "link-6",
+      "text": "LIVE săptămânal",
+      "url": "./live.html"
+    }
   ]
 }
