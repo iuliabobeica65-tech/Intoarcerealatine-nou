@@ -54,6 +54,8 @@ content:
         label: Cele trei modalități de lucru
         type: object
         list:
+          min: 3
+          max: 3
           collapsible:
             collapsed: true
             summary: "{titlu}"
@@ -67,6 +69,8 @@ content:
         label: Situații în care o femeie se poate recunoaște
         type: object
         list:
+          min: 4
+          max: 4
           collapsible:
             collapsed: true
             summary: "{titlu}"
@@ -87,6 +91,8 @@ content:
         description: Modifică doar textele de sub imagini. Fișierele vizuale originale rămân neschimbate.
         type: object
         list:
+          min: 7
+          max: 7
           collapsible:
             collapsed: true
             summary: "{titlu}"
