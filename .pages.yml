@@ -38,3 +38,57 @@ content:
           - { name: loc, label: Locație / Online, type: string }
           - { name: link, label: Link de detalii, type: string }
           - { name: confirmat, label: Afișează ca eveniment confirmat, type: boolean }
+  - name: metoda
+    label: Metoda CLAR — text
+    type: file
+    path: content/metoda.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+  - name: constelatii
+    label: Constelații — text
+    type: file
+    path: content/constelatii.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+  - name: colaborare
+    label: Lucrăm împreună — text
+    type: file
+    path: content/colaborare.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+  - name: despre
+    label: Despre mine — text
+    type: file
+    path: content/despre.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+  - name: live
+    label: LIVE — text
+    type: file
+    path: content/live.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+  - name: resurse
+    label: Resurse — text
+    type: file
+    path: content/resurse.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
