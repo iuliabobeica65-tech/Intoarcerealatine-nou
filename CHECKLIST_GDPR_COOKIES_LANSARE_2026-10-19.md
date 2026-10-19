@@ -27,3 +27,15 @@ Data: 19.10.2026 · Site: „Întoarcerea la tine” · **document tehnic de con
 - Nu introduce din proprie inițiativă pixeli, analytics, pluginuri de marketing, formulare sau procesatori de plăți.
 - Nu lansa dacă sunt identificate tehnologii neesențiale fără un mecanism real și funcțional de consimțământ.
 - Păstrează versiunile legale și istoricul modificărilor în GitHub.
+
+## Rezultat real al inspecției automate a previzualizării Netlify — 19.10.2026
+Un test automat Chromium, lansat prin GitHub Actions și fără autentificare în Netlify, a deschis adresa
+`https://deploy-preview-3--spontaneous-quokka-e0bede.netlify.app/acasa.html` și a consemnat:
+- răspuns HTTP 200;
+- **0 cookie-uri observate de contextul Chromium** după încărcarea paginii;
+- **0 headere Set-Cookie detectate în răspunsurile inspectate**;
+- cereri de rețea către: domeniul preview Netlify, `app.netlify.com`, `cdn.segment.com`, `sessions.bugsnag.com`.
+
+**Atenție:** Acesta este un rezultat de navigare automată într-un context nou, nu o certificare GDPR și nici dovada că toate vizitele vor fi lipsite de cookie-uri. Domeniile externe observate pot proveni din interfața de previzualizare/Netlify și trebuie investigate înainte de lansare; nu sunt atribuite automat codului propriu. Nu extrapola rezultatul de la Deploy Preview la domeniul final sau la Cloudflare.
+
+Rapoartele capturate sunt atașate rulării GitHub Actions `QA site V2 (fara publicare)`, în artefactul de test `cookie-observations.json`. Pentru validare juridică trebuie repetată inspecția la prima vizită pe gazda de producție și analizate scopurile, tipurile de date și temeiurile prelucrării pentru orice terț.
