@@ -153,3 +153,129 @@ content:
           - { name: introducere, label: Introducere, type: text }
           - { name: exercitiu, label: Intrebari de reflectie, type: text }
           - { name: nota, label: Nota la final, type: text }
+
+  - name: texte_acasa
+    label: "Prima pagină – restul textelor"
+    type: file
+    path: content/texte-acasa.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
+
+  - name: texte_metoda_clar
+    label: "Metoda CLAR – toate explicațiile"
+    type: file
+    path: content/texte-metoda-clar.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
+
+  - name: texte_constelatii
+    label: "Constelații – explicații suplimentare"
+    type: file
+    path: content/texte-constelatii.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
+
+  - name: texte_lucram_impreuna
+    label: "Colaborare – explicații suplimentare"
+    type: file
+    path: content/texte-lucram-impreuna.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
+
+  - name: texte_despre_mine
+    label: "Despre mine – povestea și motivația"
+    type: file
+    path: content/texte-despre-mine.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
+
+  - name: texte_resurse
+    label: "Resurse – exemple și exerciții"
+    type: file
+    path: content/texte-resurse.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
+
+  - name: texte_live
+    label: "LIVE – explicații, întrebări și răspunsuri"
+    type: file
+    path: content/texte-live.json
+    format: json
+    fields:
+      - name: texte
+        label: Textele din pagină, în ordinea afișării
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{continut}"
+        description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+        fields:
+          - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+          - { name: continut, label: Textul afișat pe site, type: text }
