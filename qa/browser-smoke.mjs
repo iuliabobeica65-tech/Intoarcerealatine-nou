@@ -99,6 +99,10 @@ try {
     try {
       const response = await page.goto(preview, { waitUntil: "networkidle", timeout: 35000 });
       status = response ? String(response.status()) : "fara raspuns";
+      const siteMarker = await page.evaluate(() => ({title: document.title, hasOurPage: !!document.querySelector("#intoarcerea-carusel"), hasMain: !!document.querySelector("main#continut")}));
+      console.log("Preview Netlify render:", JSON.stringify(siteMarker));
+      if (response?.ok() && !siteMarker.hasOurPage) failures.push("Netlify Preview HTTP 200, dar continutul nu este site-ul V2 (posibil login/interstitial)");
+
       const cookies = (await external.cookies()).map(x => ({ name: x.name, domain: x.domain, secure: x.secure, sameSite: x.sameSite, httpOnly: x.httpOnly }));
       writeFileSync(resolve(directory, "cookie-observations.json"), JSON.stringify({ source: preview, status, cookies, setCookieNames: setCookies, origins: [...origins] }, null, 2));
       console.log("Cookie QA (doar nume, fara valori):", JSON.stringify({status, cookies: cookies.map(x => x.name), setCookieNames: setCookies.map(x => ({origin:x.origin,names:x.names})), origins: [...origins]}));
