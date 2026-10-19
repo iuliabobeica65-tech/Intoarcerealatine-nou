@@ -37,3 +37,6 @@ Se aplică `REGULA_VOCE_BLANDA_IULIA.md`: blând, cald, personal, curios, fără
 - Netlify: păstrează site-ul oficial fără schimbări până la testare și aprobare; nu cumpăra abonament fără verificarea consumului real.
 - Cloudflare Pages: GitHub poate publica aceleași pagini statice din ramura confirmată, fără compilare. Alegerea platformei și adăugarea domeniului sunt operațiuni ulterioare, după aprobarea utilizatoarei.
 - Pages CMS permite editarea câmpurilor definite, dar nu este un editor vizual direct în pagină și **nu elimină necesitatea de redeploy**.
+
+## ACTUALIZARE 19.10.2026 — VERIFICĂ RAPORTUL CEL MAI RECENT
+Acest document a fost întocmit înainte de extinderea editorului și a optimizărilor ulterioare. Rezultatele noi și limitele actuale sunt consemnate în **`RAPORT_FINAL_PREGATIRE_SITE_19_10_2026.md`** și în **`EDITOR_PENTRU_IULIA_START_AICI.md`**. Cele șapte pagini au acum câmpuri suplimentare pentru texte și linkuri; nu confunda această versiune veche a verificării cu starea actuală. Nu există aprobarea lansării în producție.
