@@ -19,6 +19,49 @@ content:
       - { name: link_principal, label: Link buton principal, type: string }
       - { name: buton_secundar, label: Text buton secundar, type: string }
       - { name: link_secundar, label: Link buton secundar, type: string }
+      - name: oferte
+        label: Cele trei modalități de lucru
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        description: Păstrează cele trei oferte existente. Ordinea lor este ordinea afișării.
+        fields:
+          - { name: titlu, label: Titlu, type: string }
+          - { name: text, label: Prezentare, type: text }
+          - { name: buton, label: Text buton, type: string }
+          - { name: link, label: Link buton, type: string }
+      - name: situatii
+        label: Situații în care o femeie se poate recunoaște
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        description: Patru situații scrise delicat. Nu afirma că toate femeile le trăiesc.
+        fields:
+          - { name: titlu, label: Titlul situației, type: string }
+          - { name: text, label: Descriere, type: text }
+      - { name: exemplu_titlu, label: Titlul exemplului practic, type: string }
+      - name: exemplu_paragrafe
+        label: Cele trei paragrafe ale exemplului
+        type: text
+        list: true
+        description: Exemplu ilustrativ, nu testimonial. Păstrează trei paragrafe.
+      - { name: despre_titlu, label: Titlul prezentării Iuliei, type: string }
+      - { name: despre_text, label: Textul prezentării Iuliei, type: text }
+      - name: carusel
+        label: Legendele celor șapte imagini
+        description: Modifică doar textele de sub imagini. Fișierele vizuale originale rămân neschimbate.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        fields:
+          - { name: titlu, label: Titlul imaginii, type: string }
+          - { name: descriere, label: Explicația de sub imagine, type: text }
   - name: events
     label: Calendar — LIVE și constelații
     type: file
