@@ -67,6 +67,70 @@
     {
       "id": "text-17",
       "continut": "EXPLOREAZĂ MAI DEPARTE"
+    },
+    {
+      "id": "rich-1",
+      "continut": "Iulia Bobeica Consilier pentru dezvoltare personală Absolventă de Economie și Administrarea Afacerilor, specializarea Marketing"
+    },
+    {
+      "id": "rich-2",
+      "continut": "Eu vreau să înțelegem ce anume se repetă, ce semnificație a primit o experiență și cum influențează acea percepție alegerile de astăzi . Uneori găsim o legătură cu o situație mai veche; alteori avem nevoie să explorăm mai multe momente. Nu presupun cauza înainte să lucrăm."
+    },
+    {
+      "id": "rich-3",
+      "continut": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat."
+    },
+    {
+      "id": "rich-4",
+      "continut": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor."
+    },
+    {
+      "id": "rich-5",
+      "continut": "De aceea am creat „Întoarcerea la tine”: un spațiu în care să te poți privi cu mai multă curiozitate, să înțelegi ce te ține pe loc și să începi să alegi conștient, chiar dacă nu ai rezolvat toate blocajele."
+    },
+    {
+      "id": "rich-6",
+      "continut": "Nu doar să înțelegem. Ci să vedem ce devine posibil."
+    },
+    {
+      "id": "rich-7",
+      "continut": "Blocajul nu este întreaga ta poveste."
+    },
+    {
+      "id": "rich-8",
+      "continut": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?"
+    }
+  ],
+  "linkuri": [
+    {
+      "id": "link-1",
+      "text": "Dacă vrei, ne putem cunoaște la LIVE →",
+      "url": "./live.html#participare"
+    },
+    {
+      "id": "link-2",
+      "text": "Metoda CLAR",
+      "url": "./metoda-clar.html"
+    },
+    {
+      "id": "link-3",
+      "text": "Constelații sistemice",
+      "url": "./constelatii.html"
+    },
+    {
+      "id": "link-4",
+      "text": "Lucrăm împreună",
+      "url": "./lucram-impreuna.html"
+    },
+    {
+      "id": "link-5",
+      "text": "Despre mine",
+      "url": "./despre-mine.html"
+    },
+    {
+      "id": "link-6",
+      "text": "LIVE săptămânal",
+      "url": "./live.html"
     }
   ]
 }
