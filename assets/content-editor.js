@@ -18,6 +18,16 @@ if(extraPage&&/^(acasa|metoda-clar|constelatii|lucram-impreuna|despre-mine|resur
    const clean=t=>t.replace(/\s+/g," ").trim();
    if(clean(el.textContent)!==clean(item.continut))el.textContent=item.continut;
   }
+  if(Array.isArray(c.linkuri))for(const item of c.linkuri){
+   if(!item||typeof item.id!=="string"||!/^link-\d+$/.test(item.id))continue;
+   const el=document.querySelector('[data-cms-link="'+item.id+'"]');if(!el)continue;
+   if(typeof item.text==="string"&&item.text.trim()){
+    const clean=t=>t.replace(/\s+/g," ").trim();
+    if(clean(el.textContent)!==clean(item.text)){const icon=el.querySelector(".arrow");if(icon){const first=[...el.childNodes].find(n=>n.nodeType===3);if(first){first.textContent=item.text+" ";}else el.insertBefore(document.createTextNode(item.text+" "),icon);}else el.textContent=item.text;}
+   }
+   const href=typeof item.url==="string"?safeLink(item.url):null;
+   if(href)el.setAttribute("href",href);
+  }
  }).catch(()=>{});
 }
 
