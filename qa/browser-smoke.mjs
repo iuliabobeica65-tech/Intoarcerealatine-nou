@@ -41,7 +41,8 @@ async function inspect(site, context, pageName, viewName, screen = false) {
       await img.scrollIntoViewIfNeeded();
       await img.evaluate(el=>el.decode());
     }
-    await page.waitForTimeout(300);
+    await page.locator(".ict-dot").first().click(); // Revin la imaginea nr. 1 după decodarea tuturor fișierelor.
+    await page.waitForTimeout(400);
   }
   const probe = await page.evaluate(() => {
     const html = document.documentElement, body = document.body;
@@ -79,7 +80,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
 
 try {
   for (const viewport of viewports) {
-    const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, deviceScaleFactor: 1, locale: "ro-RO" });
+    const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, deviceScaleFactor: 1, reducedMotion: "reduce", locale: "ro-RO" });
     for (const name of pages) await inspect(base, context, name, viewport.name, ["telefon", "desktop"].includes(viewport.name) && ["acasa", "resurse"].includes(name));
     await context.close();
   }
