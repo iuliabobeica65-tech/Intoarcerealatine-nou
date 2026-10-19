@@ -32,6 +32,17 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   page.on("pageerror", error => errors.push(String(error.message || error)));
   const response = await page.goto(site + "/" + pageName + ".html", { waitUntil: "networkidle", timeout: 40000 });
   await page.waitForTimeout(250);
+  if(pageName === "acasa") {
+    // Screenshotul fullPage poate fi facut inainte de desenarea imaginilor decodate asincron.
+    // Asteptam explicit fiecare imagine din galerie, inclusiv cele lazy, fara a modifica imaginile.
+    const images = page.locator(".ict-slide img");
+    for(let i=0;i<await images.count();i++){
+      const img=images.nth(i);
+      await img.scrollIntoViewIfNeeded();
+      await img.evaluate(el=>el.decode());
+    }
+    await page.waitForTimeout(300);
+  }
   const probe = await page.evaluate(() => {
     const html = document.documentElement, body = document.body;
     const h1 = document.querySelectorAll("h1");
@@ -46,6 +57,10 @@ async function inspect(site, context, pageName, viewName, screen = false) {
       main: !!document.querySelector("main"),
       missingImages: missing,
       firstSlide: document.querySelector(".ict-track .ict-slide img")?.getAttribute("src") || null,
+      galleryImages: [...document.querySelectorAll(".ict-slide img")].map(img=>({
+        src:img.getAttribute("src"), width:img.naturalWidth, height:img.naturalHeight,
+        display:getComputedStyle(img).display, opacity:getComputedStyle(img).opacity
+      })),
       cookieNames: document.cookie.split(";").map(x => x.trim().split("=")[0]).filter(Boolean),
       localStorageKeys: Object.keys(localStorage)
     };
@@ -57,6 +72,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   if (probe.missingImages.length) failures.push(`${pageName}/${viewName}: imagine lipsa ${probe.missingImages.join(", ")}`);
   if (errors.length) failures.push(`${pageName}/${viewName}: JavaScript ${errors.join(" | ")}`);
   if (pageName === "acasa" && !probe.firstSlide?.endsWith("/07.webp")) failures.push("Carusel: prima imagine nu este 07.webp");
+  if (pageName === "acasa" && (probe.galleryImages?.length !== 7 || probe.galleryImages.some(img=>img.width<1||img.height<1||img.display==="none"||img.opacity==="0"))) failures.push("Carusel: una dintre imaginile WebP nu se afiseaza.");
   results.push({ page: pageName, viewport: viewName, status: response?.status(), ...probe, errors });
   await page.close();
 }
