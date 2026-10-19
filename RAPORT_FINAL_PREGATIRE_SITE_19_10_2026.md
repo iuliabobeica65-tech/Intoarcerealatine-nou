@@ -48,7 +48,7 @@ Producție actuală, nealterată: https://spontaneous-quokka-e0bede.netlify.app/
 Autoarea a confirmat în conversație:
 - **Calificările publicate** în pagina „Despre mine” sunt corecte.
 - **Prezentarea programului individual de patru luni** este acceptată.
-- **Mesajele imaginilor** prezentate au fost acceptate; imaginile originale nu trebuie redesenate. Interpretăm aprobarea fără a edita imaginile originalele, inclusiv pe cele 7 imagini ale caruselului.
+- Autoarea a precizat că **mesajele din cele patru imagini menționate de ea sunt în regulă**. Caruselul tehnic conține șapte imagini; nu presupunem că aceasta înseamnă o aprobare nouă, explicită, a fiecăreia dintre celelalte trei. Originalele rămân intacte.
 - **Mută imaginea creației conștiente prima în carusel.** REALIZAT: ordinea vizuală a caruselului este `07.webp`, apoi `01.webp` – `06.webp`; legendele JSON au fost reordonate în aceeași ordine, fără modificarea fișierelor imagine.
 - Domeniul `intoarcerealatine.ro` **NU este cumpărat încă**; nu modifica DNS și nu pretinde că site-ul funcționează sub acest domeniu.
 - Autoarea dorește publicare cât mai curând posibil. Nu s-a efectuat o lansare în producție: este necesară alegerea și conectarea gazdei (Cloudflare Pages gratuit sau reactivarea Netlify), plus verificările de mai jos.
