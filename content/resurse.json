@@ -1,5 +1,25 @@
 {
   "titlu": "Uneori, o întrebare deschide un drum nou.",
   "introducere": "Aici adun întrebări și exemple din felul meu de a lucra. Nu sunt rețete și nici răspunsuri valabile pentru toată lumea. Le poți privi ca pe o invitație de a te asculta puțin mai atent.",
-  "titlu_sectiune": "De la ceea ce trăiești, spre ceea ce poți descoperi."
+  "titlu_sectiune": "De la ceea ce trăiești, spre ceea ce poți descoperi.",
+  "materiale": [
+    {
+      "titlu": "Când știi ce vrei, dar tot amâni",
+      "introducere": "Alege o singură situație din ultimele zile în care ai vrut să faci un pas și te-ai oprit.",
+      "exercitiu": "Notează: ce voiam concret să fac? Ce am făcut în schimb? Ce mi-am spus în acel moment? Ce credeam că s-ar întâmpla dacă aș fi acționat? Nu te grăbi să găsești cauza: observă întâi ce ai trăit.",
+      "nota": "Poți reveni la aceste răspunsuri și poți întreba: există și alte perspective posibile?"
+    },
+    {
+      "titlu": "Când spui «da», deși ai vrea să spui «nu»",
+      "introducere": "Amintește-ți un moment recent în care ai acceptat ceva împotriva dorinței tale.",
+      "exercitiu": "Scrie exact ce ți s-a cerut, ce ai răspuns și ce ai simțit. Ce concluzie ai tras despre tine sau despre celălalt? Ce ți-ar fi fost greu să pierzi dacă spuneai «nu»? Caută apoi și ce ai fi câștigat printr-un refuz potrivit valorilor tale.",
+      "nota": "Întrebările nu sunt un îndemn să refuzi automat, ci o invitație să observi din ce loc alegi."
+    },
+    {
+      "titlu": "Când recunoști o situație care se repetă",
+      "introducere": "Alege două întâmplări care îți par asemănătoare, fără să presupui că au aceeași cauză.",
+      "exercitiu": "Compară faptele: ce s-a întâmplat efectiv în fiecare? Ce reacție ai avut? Ce semnificație ai dat fiecărei întâmplări? Ce este diferit între ele? Dacă descoperi o concluzie veche, întreabă-te în ce alte situații a fost adevărată și când nu a fost.",
+      "nota": "Dacă revii la o situație-rădăcină, verifică la final cum privești acum și situația din prezent."
+    }
+  ]
 }
