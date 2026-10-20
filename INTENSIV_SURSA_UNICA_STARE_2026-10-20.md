@@ -42,3 +42,10 @@ Actualizare: 20 octombrie 2026, ora 17:18 (România). Acest fișier este reperul
 
 ## REGULĂ DE CONTINUITATE
 La fiecare revenire, citește ACEST document înainte să întrebi ce s-a decis. Nu înlocui „grup” cu „chat privat” ca variantă finală. Nu anunța „gata/publicat” până când deploy și destinațiile sunt verificate efectiv.
+
+## Arhitectură aleasă pentru campaniile viitoare (implementată în cod la 20 oct.)
+- Un **al doilea proiect Cloudflare Pages independent** de site-ul oficial, dar reutilizat pentru campanii viitoare.
+- Pagini distincte, cu adrese proprii /slug, păstrate și după încheierea campaniei. Nu suprascriem aceeași pagină când apare o campanie nouă.
+- Cod deja creat în `campanii/nu-mai-vreau-asa/index.html`, `campanii/assets/campaign.css` și `scripts/build-campaigns.mjs`; documentație `CAMPANII_ARHITECTURA_REUTILIZABILA.md`.
+- Același repository/ramură feature în faza de pregătire; **proiectul Cloudflare separat nu este încă creat/publicat**. Nu modifica site-ul oficial și nu face merge în producția sa.
+- Butonul direct către grupul WhatsApp este configurat folosind linkul exact deja salvat mai sus.
