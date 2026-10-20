@@ -12,7 +12,7 @@ mkdir -p "$output/assets/carusel-metoda" "$output/Intoarcerea_la_tine_files" "$o
 
 # Pagini de prezentare + trei politici; index este pagina de intrare.
 for file in index.html acasa.html metoda-clar.html constelatii.html \
-   lucram-impreuna.html despre-mine.html resurse.html live.html \
+   lucram-impreuna.html despre-mine.html resurse.html live.html articole.html \
    politica-confidentialitate.html politica-cookies.html termeni-utilizare.html \
    robots.txt sitemap.xml; do
   test -f "$file" || { echo "Lipseste $file" >&2; exit 1; }
@@ -41,4 +41,5 @@ done
 if find "$output" -type f \( -name '*.md' -o -name '.pages.yml' -o -name '*preview*' \) | grep -q .; then
   echo "Au fost exportate fisiere interne. Oprire!" >&2; exit 1
 fi
+node scripts/render-netlify-articles.mjs "$output"
 echo "Site public pregatit la $output (fara documente interne)."
