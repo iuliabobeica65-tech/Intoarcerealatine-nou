@@ -1,7 +1,8 @@
 /**
  * Pregateste doar fisierele publice pentru Cloudflare Pages, fara modificari in GitHub/Netlify.
  * Cloudflare: Build command = node scripts/build-cloudflare.mjs ; Output directory = dist
- * Domeniu propriu viitor: variabila CF_SITE_URL=https://intoarcerealatine.ro
+ * CF_SITE_URL este optional; la build Cloudflare se foloseste adresa stabila <proiect>.pages.dev.
+ * Daca exista domeniu propriu confirmat, CF_SITE_URL seteaza acel domeniu explicit.
  */
 import { cpSync, copyFileSync, existsSync, mkdirSync, rmSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
@@ -9,9 +10,25 @@ import { fileURLToPath } from "node:url";
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),".."),out=resolve(root,"dist");
 const legacy="https://spontaneous-quokka-e0bede.netlify.app";
-const raw=process.env.CF_SITE_URL||process.env.CF_PAGES_URL||"";
-const origin=raw?new URL(raw).origin:"";
-if(process.env.CF_PAGES&& !origin)throw Error("CF_PAGES_URL lipsește; nu publicăm SEO cu domeniul greșit.");
+// CF_PAGES_URL este adesea un URL unic pe deploy (<hash>.<project>.pages.dev).
+// Canonical trebuie sa indice adresa STABILA a proiectului, nu hash-ul de deploy.
+const explicit=process.env.CF_SITE_URL||"";
+let origin="";
+if(explicit){
+ const u=new URL(explicit);
+ if(u.protocol!=="https:"||u.username||u.password||u.search||u.hash||u.pathname!=="/")
+  throw Error("CF_SITE_URL trebuie sa fie doar originea HTTPS (fara cale/query).");
+ origin=u.origin;
+}else if(process.env.CF_PAGES_URL){
+ const u=new URL(process.env.CF_PAGES_URL);
+ const labels=u.hostname.split(".");
+ if(u.protocol!=="https:"||labels.length<3||labels.length>4||labels.at(-2)!=="pages"||labels.at(-1)!=="dev")
+  throw Error("CF_PAGES_URL nu este un hostname Cloudflare Pages recunoscut; seteaza CF_SITE_URL explicit.");
+ const project=labels.at(-3);
+ if(!/^[a-z0-9-]+$/.test(project))throw Error("Nume de proiect Cloudflare invalid.");
+ origin="https://"+project+".pages.dev";
+}
+if(process.env.CF_PAGES&&!origin)throw Error("Lipseste URL-ul Cloudflare; build blocat pentru SEO si politici.");
 rmSync(out,{recursive:true,force:true});mkdirSync(out,{recursive:true});
 const files=[
  "index.html","acasa.html","metoda-clar.html","constelatii.html","lucram-impreuna.html",
@@ -23,14 +40,12 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  if(origin){
   text=text.replaceAll(legacy,origin);
   if(file==="politica-confidentialitate.html"){
-   text=text.replaceAll("furnizorul de găzduire Netlify","furnizorul de găzduire Cloudflare");
-   text=text.replaceAll("<strong>Netlify</strong> pentru găzduirea site-ului","<strong>Cloudflare</strong> pentru găzduirea site-ului");
    text=text.replaceAll("https://www.netlify.com/privacy/","https://www.cloudflare.com/privacypolicy/");
-   text=text.replaceAll(">Netlify</a>",">Cloudflare</a>");
-   text=text.replaceAll("de către Netlify","de către Cloudflare");
+   text=text.replaceAll("Netlify","Cloudflare");
   }
   if(file==="politica-cookies.html"){
-   text=text.replace("Netlify găzduiește în prezent versiunea existentă. Dacă găzduirea se mută pe Cloudflare, această informație trebuie actualizată înainte de lansare.","Această versiune a site-ului este găzduită pe Cloudflare Pages. Datele tehnice și posibilele cookie-uri ale infrastructurii trebuie verificate în răspunsurile efective ale serviciului.");
+   text=text.replace("Netlify găzduiește în prezent versiunea existentă. Dacă găzduirea se mută pe Cloudflare, această informație trebuie actualizată înainte de lansare.","Această versiune a site-ului este găzduită pe Cloudflare Pages.");
+   text=text.replaceAll("Netlify","Cloudflare");
   }
  }
  writeFileSync(resolve(out,file),text,"utf8");
