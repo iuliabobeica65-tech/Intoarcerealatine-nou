@@ -7,6 +7,44 @@ media:
   output: /assets
   extensions: [png, jpg, jpeg, webp]
 content:
+  - name: sectiuni_site
+    label: "Imagini și secțiuni noi"
+    type: file
+    path: content/sectiuni-site.json
+    format: json
+    operations: { create: false, rename: false, delete: false }
+    fields:
+      - name: pagini
+        label: "Cele șapte pagini — alege unde adaugi"
+        type: object
+        list:
+          min: 7
+          max: 7
+          collapsible:
+            collapsed: true
+            summary: "{pagina}"
+        fields:
+          - { name: pagina, type: string, readonly: true }
+          - name: sectiuni
+            label: "Secțiuni noi (la finalul paginii)"
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - { name: titlu, label: Titlu, type: string }
+              - { name: text, label: Text, type: text }
+              - { name: imagine, label: Fotografie, type: image }
+              - { name: legenda, label: Legendă, type: text }
+              - name: imagini
+                label: "Galerie foto"
+                type: object
+                list: true
+                fields:
+                  - { name: imagine, label: Fotografie, type: image }
+                  - { name: legenda, label: Legendă, type: string }
+              - { name: text_buton, label: Textul butonului, type: string }
+              - { name: link_buton, label: Linkul butonului, type: string }
+              - { name: vizibil, label: Afișează pe site, type: boolean }
   - name: articole
     label: "Articole — scrie, salvează, publică"
     type: collection
