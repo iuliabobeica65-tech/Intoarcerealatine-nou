@@ -46,7 +46,7 @@ fetch("./content/setari-site.json",{cache:"no-cache"})
     });
    }
    if(Array.isArray(c.meniu)){
-    const known=new Set(["acasa.html","metoda-clar.html","constelatii.html","lucram-impreuna.html","despre-mine.html","resurse.html","live.html"]);
+    const known=new Set(["acasa.html","metoda-clar.html","constelatii.html","lucram-impreuna.html","despre-mine.html","resurse.html","articole.html","live.html"]);
     for(const item of c.meniu){
      if(!item||!known.has(item.pagina)||typeof item.eticheta!=="string"||!item.eticheta.trim())continue;
      document.querySelectorAll(".site-header nav a").forEach(a=>{

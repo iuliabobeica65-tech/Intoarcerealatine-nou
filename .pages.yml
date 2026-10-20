@@ -7,6 +7,40 @@ media:
   output: /assets
   extensions: [png, jpg, jpeg, webp]
 content:
+  - name: articole
+    label: "Articole — scrie, salvează, publică"
+    type: collection
+    path: editorial/articole
+    format: json
+    filename: "{primary}.json"
+    operations: { create: true, rename: false, delete: false }
+    view:
+      fields: [titlu, data, publicat]
+      primary: titlu
+      sort: [data, titlu]
+      default:
+        sort: data
+        order: desc
+    fields:
+      - { name: titlu, label: Titlul articolului, type: string, required: true }
+      - { name: descriere, label: Rezumatul afișat în lista de articole, type: text, required: true }
+      - { name: data, label: Data publicării (AAAA-LL-ZZ), type: date, required: true }
+      - { name: categorie, label: Tema articolului (opțional), type: string }
+      - { name: imagine, label: Fotografia articolului (opțional), type: image }
+      - { name: seo_titlu, label: Titlu SEO separat (opțional), type: string }
+      - { name: seo_descriere, label: Descriere SEO separată (opțional), type: text }
+      - name: continut
+        label: Conținutul articolului — editor vizual
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: true
+          media: false
+      - name: publicat
+        label: "Publică articolul pe website? (debifat = ciornă)"
+        type: boolean
+        description: "Debifat: articolul nu apare pe site și nu intră în pachetul public. Bifează numai după verificarea textului."
   - name: setari_site
     label: "Setări generale — nume, meniu, contact"
     type: file
@@ -20,8 +54,8 @@ content:
         label: Etichetele meniului
         type: object
         list:
-          min: 7
-          max: 7
+          min: 8
+          max: 8
           collapsible:
             collapsed: true
             summary: "{eticheta}"

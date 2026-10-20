@@ -27,6 +27,10 @@
       "eticheta": "Resurse"
     },
     {
+      "pagina": "articole.html",
+      "eticheta": "Articole"
+    },
+    {
       "pagina": "live.html",
       "eticheta": "LIVE"
     }
