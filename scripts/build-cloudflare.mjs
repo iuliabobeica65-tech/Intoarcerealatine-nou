@@ -48,6 +48,20 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
    text=text.replaceAll("Netlify","Cloudflare");
   }
  }
+ // Cloudflare Pages face redirect de la /pagina.html la /pagina (URL canonic fara extensie).
+ // Metadatele SEO si sitemap-ul trebuie sa indice direct adresa finala, fara 301.
+ if(origin){
+  const pages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+  for(const page of pages)text=text.replaceAll(origin+"/"+page+".html",origin+"/"+page);
+  if(file==="index.html"){
+   text=text.replace('href="./acasa.html"','href="'+origin+'/acasa"');
+  }
+  if(file.endsWith(".html") && file!=="index.html" && !/<link\\s+rel=["']canonical["']/i.test(text)){
+   const page=file.slice(0,-5);
+   text=text.replace("</head>",'<link rel="canonical" href="'+origin+"/"+page+'"></head>');
+  }
+  if(file==="sitemap.xml")text=text.replace('  <url><loc>'+origin+'/</loc></url>\\n','');
+ }
  writeFileSync(resolve(out,file),text,"utf8");
 }
 for(const dir of ["assets","content","Intoarcerea_la_tine_files"]){
@@ -63,6 +77,9 @@ const headers=`/content/*.json
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 `;
 writeFileSync(resolve(out,"_headers"),headers,"utf8");
+// O singura pagina de start indexabila: / redirectioneaza permanent la /acasa.
+// Regula Cloudflare are prioritate fata de fisierul index.html.
+writeFileSync(resolve(out,"_redirects"),"/ /acasa 301\\n","utf8");
 // Nu publicam fise de audit, configuratia Pages CMS, surse istorice, scripturi QA sau fisiere ascunse.
 if(existsSync(resolve(out,".pages.yml")))throw Error("Config CMS nu trebuie publicata in dist.");
 const homepage=readFileSync(resolve(out,"acasa.html"),"utf8");
