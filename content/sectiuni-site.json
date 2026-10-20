@@ -1,32 +1,36 @@
 {
   "pagini": [
     {
-      "pagina": "acasa",
-      "sectiuni": []
+      "pagina": "acasa"
     },
     {
-      "pagina": "metoda-clar",
-      "sectiuni": []
+      "pagina": "metoda-clar"
     },
     {
-      "pagina": "constelatii",
-      "sectiuni": []
+      "pagina": "constelatii"
     },
     {
-      "pagina": "lucram-impreuna",
-      "sectiuni": []
+      "pagina": "lucram-impreuna"
     },
     {
-      "pagina": "despre-mine",
-      "sectiuni": []
+      "pagina": "despre-mine"
     },
     {
       "pagina": "resurse",
-      "sectiuni": []
+      "sectiuni": [
+        {
+          "titlu": "test galerie foto-de sters",
+          "imagini": [
+            {
+              "imagine": "/assets/7ab2ff5f-f8ef-4175-9a7d-11a54ba1e796.jpg"
+            }
+          ],
+          "vizibil": false
+        }
+      ]
     },
     {
-      "pagina": "live",
-      "sectiuni": []
+      "pagina": "live"
     }
   ]
 }
