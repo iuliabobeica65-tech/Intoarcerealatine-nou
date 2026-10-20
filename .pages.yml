@@ -11,6 +11,7 @@ content:
     label: "Articole — scrie, salvează, publică"
     type: collection
     path: editorial/articole
+    exclude: [".gitkeep"]
     format: json
     filename: "{primary}.json"
     operations: { create: true, rename: false, delete: false }
