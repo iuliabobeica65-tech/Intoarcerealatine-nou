@@ -1,5 +1,5 @@
 # CAMPANIA „ÎNTOARCEREA LA TINE” — SURSA UNICĂ DE CONTINUITATE
-Actualizare: 20 octombrie 2026. Acest fișier este reperul tehnic/comercial din GitHub pentru continuarea campaniei. Nu înlocuiește și nu modifică sursele metodei.
+Actualizare: 20 octombrie 2026, ora 17:18 (România). Acest fișier este reperul tehnic/comercial din GitHub pentru continuarea campaniei. Nu înlocuiește și nu modifică sursele metodei.
 
 ## Decizii stabilite cu utilizatoarea
 - Campania este dedicată intensivului **„Nu mai vreau așa. Dar de ce fac tot la fel?”**.
@@ -17,17 +17,23 @@ Actualizare: 20 octombrie 2026. Acest fișier este reperul tehnic/comercial din 
 - `campanie-intensiv-postari-V1.md`: postări integrale cu cârlige pentru 21 oct–6 nov. (nouă postări în total).
 - `CAMPANIE_INTENSIV_20-22_OCT_2026.md`: texte suplimentare de lansare, story, descriere propusă grup și setări.
 - Reminder programat în ChatGPT: postări alternative 27 oct–6 nov, o dată la două zile la 09:00 (ora României). Alte remindere deja existente nu trebuie duplicate mecanic.
-- NIMIC din această ramură feature nu a fost declarată publicată pe Cloudflare.
+- Linkul grupului a fost furnizat de utilizatoare ca URL complet și este introdus în `intensiv.html`, butonul „INTRĂ ÎN GRUPUL WHATSAPP”.
+- NIMIC din această ramură feature nu a fost încă declarat publicat pe Cloudflare.
 - Reper producție Cloudflare pregătită: `pregatire-cloudflare-2026-10-20`.
 
-## Singurele date externe încă nerecuperate / neconfirmate la 20 octombrie
-1. **LINK GRUP WHATSAPP**: este necesar URL-ul complet real `https://chat.whatsapp.com/...`. Utilizatoarea spune că l-a trimis de mai multe ori; la verificarea contextului recuperabil și a fișierelor GitHub nu a fost găsit URL-ul exact. **Nu inventa niciodată un URL de grup**. În momentul în care apare în mesaj, salvează-l IMEDIAT în acest document și integrează-l în `intensiv.html`, verifică destinația și confirmă explicit utilizatoarei valoarea salvată. Înlocuiește CTA de conversație `wa.me` cu CTA de intrare directă în grup.
-2. URL-ul public Cloudflare final trebuie citit și verificat după deploy; nu inventa `*.pages.dev`.
-3. Data/orele întâlnirilor: nu sunt confirmate, nu fixa ca fapt.
+## Link grup WhatsApp — RECUPERAT și SALVAT (confirmat de utilizatoare)
+- **Numele grupului:** Întoarcerea la tine | Intensiv
+- **URL COMPLET EXACT primit:** https://chat.whatsapp.com/Jc7JR8fdItK82QeTleS732?s=cl&p=a&mlu=4&ilr=4
+- Utilizatoarea a furnizat atât o captură din WhatsApp, cât și acest URL copiat direct în conversație.
+- Captura arată că **la momentul capturii nu este obligatorie aprobarea administratorului** pentru intrare.
+- Linkul este destinat distribuirii prin pagina publică a campaniei; păstrează informația că membrii pot vedea numerele de telefon.
+- Nu mai cere niciodată utilizatoarei să retransmită acest URL cât timp linkul este valid. Dacă se resetează invitația, noul URL înlocuiește explicit pe cel vechi.
+- URL-ul Cloudflare al paginii /intensiv trebuie obținut prin verificare publică reală după deploy.
+- **Date încă deschise:** data și orele evenimentului; nu se inventează.
 
 ## Următorii pași de execuție după primirea URL-ului grupului
-1. Salvează linkul real în acest fișier (sursă unică) și în CTA-urile din `intensiv.html` pe aceeași ramură de lucru.
-2. Adaptează explicațiile de pe pagină pentru **intrare directă în grup**, nu conversație privată. Menține transparența: ceilalți membri pot vedea numerele de telefon, participare voluntară.
+1. ÎNDEPLINIT: linkul real este salvat aici și în butonul CTA din `intensiv.html`. Nu mai cere din nou linkul.
+2. ÎNDEPLINIT: pagina folosește intrarea directă în grup, nu conversația privată. Menține transparența: ceilalți membri pot vedea numerele de telefon, participare voluntară.
 3. Verifică build local și linkurile, diacriticele, vizualizarea pe mobil.
 4. Publică pe Cloudflare într-o manieră controlată, fără a declanșa Netlify. Ia în considerare că push pe ramura conectată la Cloudflare poate declanșa deploy imediat; menține ramura feature până la publicare intenționată.
 5. Citește și verifică **URL-ul real al paginii publicate**; actualizează în postările documentate CTA-ul final spre pagina Cloudflare. Nu trimite publicului link spre fișierul GitHub sau spre mesageria directă dacă pagina și grupul funcționează.
