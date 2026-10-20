@@ -224,3 +224,53 @@ footer{background:#160f14;color:#f0e7ed}
  .day{padding:24px}
  .cta{font-size:12px}
 }
+
+
+/* FIX CADRARE FOTO · 21 oct 2026
+   Fotografia are proportii naturale 760 × 949. Evitam decuparea fortata la 1:1.
+   Rama arcuita permite vizualizarea completa a parului, fetei si tinutei.
+   Cartonasul de sub fotografie nu mai acopera portretul. */
+.portrait-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 410px;
+  padding: 13px 14px 0;
+  justify-self: center;
+  isolation: isolate;
+}
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 760 / 949;
+  object-fit: contain;
+  object-position: 50% 50%;
+  border-radius: 48% 48% 18px 18px / 36% 36% 18px 18px;
+  border: 3px solid #edc7b5;
+  outline: 1px solid #dba2bc;
+  outline-offset: 8px;
+  box-shadow: 0 16px 46px rgb(12 7 10 / 30%);
+}
+.photo-note {
+  position: static;
+  inset: auto;
+  transform: none;
+  display: block;
+  width: min(100%, 350px);
+  max-width: none;
+  margin: 28px auto 0;
+  padding: 0 4px;
+  color: #eebfD4;
+  text-align: center;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  font: italic 500 24px/1.25 'Cormorant Garamond', Georgia, serif;
+}
+@media (max-width: 860px) {
+  .portrait-wrap { width: min(100%, 370px); }
+}
+@media (max-width: 560px) {
+  .portrait-wrap { width: min(88%, 355px); padding: 10px 9px 0; }
+  .photo-note { font-size: 22px; margin-top: 24px; }
+}
