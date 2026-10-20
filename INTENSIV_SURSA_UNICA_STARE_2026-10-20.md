@@ -49,3 +49,9 @@ La fiecare revenire, citește ACEST document înainte să întrebi ce s-a decis.
 - Cod deja creat în `campanii/nu-mai-vreau-asa/index.html`, `campanii/assets/campaign.css` și `scripts/build-campaigns.mjs`; documentație `CAMPANII_ARHITECTURA_REUTILIZABILA.md`.
 - Același repository/ramură feature în faza de pregătire; **proiectul Cloudflare separat nu este încă creat/publicat**. Nu modifica site-ul oficial și nu face merge în producția sa.
 - Butonul direct către grupul WhatsApp este configurat folosind linkul exact deja salvat mai sus.
+
+## Campania pornită — 21 octombrie 2026
+- Pagina FINALĂ de trafic confirmată de utilizatoare: `https://intoarcerea-la-tine-campanii.pages.dev/nu-mai-vreau-asa/`; eliminăm parametrul `utm_source=chatgpt.com` când postăm pe Facebook, pentru a evita atribuirea eronată.
+- Documentul `LANSARE_INTENSIV_21_OCT_2026.md` conține prima postare completă, calendarul și strategia de continuare plătită, deocamdată propusă, nevalidată.
+- Postările duc la pagina finală, pagina duce la grupul WhatsApp real. Nu au fost stabilite datele/orele intensivului. Nu confunda URL-ul campaniei cu site-ul principal Netlify.
+- Pentru verificarea în WhatsApp și browserul mobil, această sesiune nu a putut testa pagina live; nu declara verificat un pas pe care nu l-ai testat.
