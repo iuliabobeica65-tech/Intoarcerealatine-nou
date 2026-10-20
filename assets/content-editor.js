@@ -70,4 +70,26 @@ fetch("./content/setari-site.json",{cache:"no-cache"})
    }
  }).catch(()=>{});
 
+
+/* Secțiuni foto/text adăugate prin Pages CMS; structura originală rămâne neatinsă. */
+const pageName=document.body.getAttribute("data-cms-extra");
+if(pageName&&/^(acasa|metoda-clar|constelatii|lucram-impreuna|despre-mine|resurse|live)$/.test(pageName)){
+ fetch("./content/sectiuni-site.json",{cache:"no-cache"}).then(r=>r.ok?r.json():Promise.reject(Error("Missing sections"))).then(data=>{
+  const item=Array.isArray(data.pagini)?data.pagini.find(p=>p.pagina===pageName):null;
+  const main=document.querySelector("#continut");if(!main||!item||!Array.isArray(item.sectiuni))return;
+  const imageUrl=value=>{if(typeof value!=="string")return null;try{const u=new URL(value,location.href);return u.origin===location.origin&&/^\/(assets|Intoarcerea_la_tine_files)\//.test(u.pathname)?u.href:null;}catch(e){return null;}};
+  const el=(tag,value)=>{if(typeof value!=="string"||!value.trim())return null;const node=document.createElement(tag);node.textContent=value;return node;};
+  const picture=(src,caption)=>{const url=imageUrl(src);if(!url)return null;const f=document.createElement("figure");const img=document.createElement("img");img.src=url;img.alt=caption||"";img.loading="lazy";f.append(img);const cap=el("figcaption",caption);if(cap)f.append(cap);return f;};
+  for(const block of item.sectiuni){if(!block||block.vizibil!==true)continue;
+   const section=document.createElement("section");section.className="section wrap iulia-extra-section";
+   const h=el("h2",block.titlu),p=el("p",block.text);if(h)section.append(h);if(p)section.append(p);
+   const pic=picture(block.imagine,block.legenda);if(pic)section.append(pic);
+   if(Array.isArray(block.imagini)){const gallery=document.createElement("div");gallery.className="iulia-extra-gallery";
+    for(const entry of block.imagini.slice(0,24)){const fig=entry&&picture(entry.imagine,entry.legenda);if(fig)gallery.append(fig);}if(gallery.childElementCount)section.append(gallery);}
+   const href=typeof block.link_buton==="string"?safeLink(block.link_buton):null;
+   if(href&&block.text_buton){const a=el("a",block.text_buton);if(a){a.href=href;a.className="button primary";section.append(a);}}
+   if(section.childElementCount)main.append(section);
+  }
+ }).catch(()=>{});
+}
 })();
