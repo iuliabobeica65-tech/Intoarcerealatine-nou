@@ -304,8 +304,8 @@ content:
             label: Textele din pagină, în ordinea afișării
             type: object
             list:
-              min: 24
-              max: 24
+              min: 23
+              max: 23
               collapsible:
                 collapsed: true
                 summary: "{continut}"
