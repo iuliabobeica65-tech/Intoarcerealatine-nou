@@ -2,7 +2,7 @@
   "titlu": "Poate că e timpul să te vezi și pe tine.",
   "subtitlu": "Poate că știi deja ce ai vrea să schimbi în viața ta. Și totuși, când vine momentul să faci un pas, ceva pare să te oprească.",
   "titlu_recunoastere": "Când ceva te ține pe loc, de unde începi?",
-  "text_recunoastere": "Poate ai de luat o decizie, ai vrea să pui o limită sau observi că aceeași reacție revine. Nu este nevoie să cunoști deja cauza. Pornim de la un moment concret și privim împreună ce înseamnă pentru tine.",
+  "text_recunoastere": "Poate rezolvi multe pentru ceilalți, dar când vine vorba de tine, tot amâni. Ai încercat să schimbi ceva și ai revenit la aceleași reacții? Nu presupunem cauza. Începem cu o situație concretă și explorăm ce semnificație are pentru tine.",
   "buton_principal": "Descoperă Metoda CLAR",
   "link_principal": "./metoda-clar.html#metoda-clar",
   "buton_secundar": "Participă la LIVE",
@@ -10,20 +10,20 @@
   "fotografie": "./Intoarcerea_la_tine_files/6ad1278ba01de7.05166081_9d2529da-d079-4183-89d4-6b674ef83217.jpg",
   "situatii": [
     {
-      "titlu": "Ai vrea să spui „nu”.",
-      "text": "Și totuși spui „da”, de teamă să nu rănești sau să nu dezamăgești pe cineva."
+      "titlu": "Toți se bazează pe tine.",
+      "text": "Organizezi, ajuți, rezolvi. Când ai tu nevoie de sprijin, îți este greu să îl ceri sau să îl primești?"
     },
     {
-      "titlu": "O situație pare să revină.",
-      "text": "Alte împrejurări, poate alți oameni, dar o reacție care îți este cunoscută."
+      "titlu": "Spui „da” și te superi pe tine.",
+      "text": "Ai vrea să refuzi o rugăminte, dar te gândești la dezamăgirea celuilalt. Ce înseamnă pentru tine un „nu”?"
     },
     {
-      "titlu": "O alegere așteaptă.",
-      "text": "Ai cântărit posibilitățile de multe ori. Poate acum ai nevoie de o altă întrebare, nu de încă un răspuns."
+      "titlu": "Ai încercat deja multe.",
+      "text": "Cărți, cursuri, planuri. Începi cu speranță, dar schimbarea dorită nu se păstrează. Ce se întâmplă în situațiile concrete când revii la vechiul tipar?"
     },
     {
-      "titlu": "Ai grijă de atât de multe.",
-      "text": "Și începi să te întrebi ce îți dorești tu, dincolo de toate rolurile și responsabilitățile tale."
+      "titlu": "Ai grijă de toți. Dar tu?",
+      "text": "Uneori ai impresia că ai tot ce îți trebuie și totuși îți lipsește bucuria. Ce contează cu adevărat pentru tine acum?"
     }
   ],
   "oferte": [
@@ -86,7 +86,7 @@
   ],
   "text_hero_continuare": "Uneori îți este greu să spui „nu”, amâni o alegere sau observi că revii într-o situație cunoscută. Pornim de la ceea ce trăiești acum și explorăm împreună percepțiile și tiparele care ar putea avea legătură cu aceste dificultăți.",
   "contact_titlu": "Poți să-mi scrii, chiar dacă nu știi de unde să începi.",
-  "contact_text": "Dacă te-ai regăsit într-una dintre situațiile de mai sus și vrei să explorăm ce ar fi potrivit pentru tine, îmi poți povesti într-un mesaj. Nu este nevoie să decizi acum dacă lucrăm împreună.",
+  "contact_text": "Dacă te-ai recunoscut într-una dintre situații — te simți blocată, ai încercat multe sau îți este greu să te alegi pe tine — îmi poți povesti într-un mesaj un exemplu concret. Nu trebuie să cunoști cauza și nici să hotărăști acum dacă vom lucra împreună.",
   "contact_buton": "Scrie-mi pe WhatsApp",
   "contact_link": "https://wa.me/40758321125"
 }
