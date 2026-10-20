@@ -17,17 +17,7 @@
     },
     {
       "pagina": "resurse",
-      "sectiuni": [
-        {
-          "titlu": "test galerie foto-de sters",
-          "imagini": [
-            {
-              "imagine": "/assets/7ab2ff5f-f8ef-4175-9a7d-11a54ba1e796.jpg"
-            }
-          ],
-          "vizibil": false
-        }
-      ]
+      "sectiuni": []
     },
     {
       "pagina": "live"
