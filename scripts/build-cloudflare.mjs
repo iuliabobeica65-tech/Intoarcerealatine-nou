@@ -86,7 +86,7 @@ if(existsSync(resolve(out,".pages.yml")))throw Error("Config CMS nu trebuie publ
 const homepage=readFileSync(resolve(out,"acasa.html"),"utf8");
 if(!homepage.includes('assets/carusel-metoda/07.webp'))throw Error("Nu exista imaginea creației conștiente.");
 if(origin){
- const canonical=`<link rel="canonical" href="${origin}/acasa.html"`;
+ const canonical=`<link rel="canonical" href="${origin}/acasa"`;
  if(!homepage.includes(canonical))throw Error("Canonical neschimbat; oprește publicarea.");
 }
 renderArticles(out,origin);
