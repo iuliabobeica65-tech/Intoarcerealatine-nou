@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap');
 /* Design comun pentru toate campaniile. Sursa: design validat 'Întoarcerea la tine'. */
 :root{color-scheme:light;--cream:#F5EBDD;--gold:#C6A166;--pink:#F8DEE6;--ink:#302925;--muted:#655951;--line:#D9C9B7;--paper:#FFFAF3;--soft:#EDE2D5}
     *,*::before,*::after{box-sizing:border-box}
@@ -71,3 +72,84 @@
     @media(max-width:860px){.hero,.tension-grid,.group-grid,.about-grid,.faq-wrap{grid-template-columns:1fr;gap:35px}.hero{padding-block:46px}.portrait-wrap{width:min(100%,360px)}.days{grid-template-columns:1fr;gap:14px}.day{padding:26px}.section{padding-block:57px}}
     @media(max-width:560px){.wrap{width:calc(100% - 32px)}.site-header{padding-block:17px}.brand{font-size:25px}.nav{gap:12px;font-size:11px}.nav .hide-small{display:none}.hero h1{font-size:clamp(36px,9vw,49px)}.hero-lead{font-size:18px}.group-card{padding:24px}.photo-note{font-size:16px;padding:13px 18px}.cta{width:100%}h2{font-size:31px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
+
+
+/* PROIECT CAMPANII · PREVIZUALIZARE FONTURI PREMIUM
+   Ajustari tipografice si cromatice, fara schimbari de continut sau linkuri.
+   Ramura de preview ramane separata de proiectul oficial. */
+:root{
+  --cream:#fffaf8;
+  --gold:#c6a078;
+  --pink:#f9edf0;
+  --ink:#382630;
+  --muted:#66575e;
+  --line:#e7d7da;
+  --paper:#fffdfb;
+  --soft:#f4e9e4;
+}
+body{
+  font:400 16px/1.74 'DM Sans',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.brand{
+  font:400 35px/1.05 'Italiana',Georgia,serif;
+  letter-spacing:-.025em;
+}
+.brand span{
+  font:600 10px/1.4 'DM Sans',Arial,sans-serif;
+  letter-spacing:.30em;
+  color:#976779;
+}
+.nav{font:500 12px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.01em}
+h1,h2,h3{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:600;
+  letter-spacing:-.042em;
+  line-height:1.06;
+}
+h1{font-size:clamp(52px,6.25vw,88px)}
+h2{font-size:clamp(40px,4.55vw,61px)}
+h3{font-size:clamp(27px,2.85vw,38px)}
+em,h1 em,h2 em{
+  color:#a35476;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-style:italic;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+.kicker{
+  color:#985e78;
+  font:700 11px/1.5 'DM Sans',Arial,sans-serif;
+  letter-spacing:.19em;
+}
+.hero-lead{color:#4f4149;font-size:clamp(18px,2vw,22px)}
+.offerline{border-left-color:#b77d96}
+.cta{
+  background:linear-gradient(110deg,#70445e,#94617d);
+  border:1px solid #70445e;
+  border-radius:7px;
+  color:#fffaf8;
+  box-shadow:0 7px 24px rgba(75,35,56,.16);
+  font:700 12px/1.4 'DM Sans',Arial,sans-serif;
+  letter-spacing:.10em;
+}
+.cta:hover{background:linear-gradient(110deg,#5e3951,#824e6b)}
+.photo-note{
+  font:italic 500 24px/1.18 'Cormorant Garamond',Georgia,serif;
+  color:#7b4c65;
+}
+.band{background:#4b3041;letter-spacing:.14em}
+.checks li::before{color:#a35476}
+.question{
+  background:#f7e9ed;
+  color:#633d54;
+  font:italic 500 clamp(23px,2.65vw,32px)/1.25 'Cormorant Garamond',Georgia,serif;
+}
+.nav .active{text-decoration-color:#a35476}
+@media(max-width:560px){
+  .brand{font-size:28px}
+  h1{font-size:clamp(44px,11.1vw,64px)}
+  h2{font-size:clamp(37px,9.1vw,52px)}
+  .hero-lead{font-size:18px}
+  .photo-note{font-size:21px}
+}
