@@ -1,0 +1,7 @@
+# Configurare doar pe ramura V2. Nu schimba site-ul oficial pana la aprobarea merge-ului.
+[build]
+  command = "bash scripts/build-public.sh"
+  publish = "public-site"
+
+# Fara formulare, pluginuri de analytics sau servicii functionale suplimentare.
+# QA este in GitHub Actions; proiectul Netlify nu trebuie sa ruleze teste E2E ca build.

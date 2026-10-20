@@ -1,0 +1,480 @@
+settings:
+  content:
+    merge: true
+# Editor de continut — pagina publica nu se schimba pana la publicarea aprobata.
+media:
+  input: assets
+  output: /assets
+  extensions: [png, jpg, jpeg, webp]
+content:
+  - name: setari_site
+    label: "Setări generale — nume, meniu, contact"
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/setari-site.json
+    format: json
+    fields:
+      - { name: brand, label: Numele afișat al site-ului, type: string }
+      - { name: subtitlu_brand, label: Numele afișat sub siglă, type: string }
+      - name: meniu
+        label: Etichetele meniului
+        type: object
+        list:
+          min: 7
+          max: 7
+          collapsible:
+            collapsed: true
+            summary: "{eticheta}"
+        description: Editează doar eticheta vizibilă; adresa internă a paginii este protejată.
+        fields:
+          - { name: pagina, label: Fișier intern al paginii, type: string, readonly: true }
+          - { name: eticheta, label: Textul afișat în meniu, type: string }
+      - { name: mesaj_subsol, label: Mesajul informativ din subsol, type: text }
+      - { name: email_contact, label: Adresa de e-mail de contact, type: string }
+      - { name: whatsapp_contact, label: Numărul WhatsApp internațional (fără spații), type: string }
+  - name: homepage
+    label: Prima pagină — texte și butoane
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/acasa.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul principal, type: string }
+      - { name: subtitlu, label: Textul de sub titlu, type: text }
+      - { name: text_hero_continuare, label: Continuarea mesajului despre blocaj, type: text }
+      - { name: contact_titlu, label: Titlul invitației la dialog, type: string }
+      - { name: contact_text, label: Textul invitației la dialog, type: text }
+      - { name: contact_buton, label: Textul butonului de contact, type: string }
+      - { name: contact_link, label: Linkul butonului de contact, type: string }
+      - { name: fotografie, label: Fotografia de pe prima pagină, type: image }
+      - { name: titlu_recunoastere, label: Titlul situațiilor, type: string }
+      - { name: text_recunoastere, label: Introducerea situațiilor, type: text }
+      - { name: buton_principal, label: Text buton principal, type: string }
+      - { name: link_principal, label: Link buton principal, type: string }
+      - { name: buton_secundar, label: Text buton secundar, type: string }
+      - { name: link_secundar, label: Link buton secundar, type: string }
+      - name: oferte
+        label: Cele trei modalități de lucru
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        description: Păstrează cele trei oferte existente. Ordinea lor este ordinea afișării.
+        fields:
+          - { name: titlu, label: Titlu, type: string }
+          - { name: text, label: Prezentare, type: text }
+          - { name: buton, label: Text buton, type: string }
+          - { name: link, label: Link buton, type: string }
+      - name: situatii
+        label: Situații în care o femeie se poate recunoaște
+        type: object
+        list:
+          min: 4
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        description: Patru situații scrise delicat. Nu afirma că toate femeile le trăiesc.
+        fields:
+          - { name: titlu, label: Titlul situației, type: string }
+          - { name: text, label: Descriere, type: text }
+      - { name: exemplu_titlu, label: Titlul exemplului practic, type: string }
+      - name: exemplu_paragrafe
+        label: Cele trei paragrafe ale exemplului
+        type: text
+        list: true
+        description: Exemplu ilustrativ, nu testimonial. Păstrează trei paragrafe.
+      - { name: despre_titlu, label: Titlul prezentării Iuliei, type: string }
+      - { name: despre_text, label: Textul prezentării Iuliei, type: text }
+      - name: carusel
+        label: Legendele celor șapte imagini
+        description: Modifică doar textele de sub imagini. Fișierele vizuale originale rămân neschimbate.
+        type: object
+        list:
+          min: 7
+          max: 7
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        fields:
+          - { name: titlu, label: Titlul imaginii, type: string }
+          - { name: descriere, label: Explicația de sub imagine, type: text }
+  - name: events
+    label: Calendar — LIVE și constelații
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/evenimente.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul calendarului, type: string }
+      - { name: introducere, label: Text introductiv, type: text }
+      - name: evenimente
+        label: Întâlniri
+        type: object
+        list: true
+        fields:
+          - { name: nume, label: Numele întâlnirii, type: string }
+          - { name: descriere, label: Descriere scurtă, type: text }
+          - { name: data, label: Data confirmată (opțional), type: string }
+          - { name: loc, label: Locație / Online, type: string }
+          - { name: link, label: Link de detalii, type: string }
+          - { name: confirmat, label: Afișează ca eveniment confirmat, type: boolean }
+  - name: metoda
+    label: Metoda CLAR — text
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/metoda.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
+  - name: constelatii
+    label: Constelații — text
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/constelatii.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
+  - name: colaborare
+    label: Lucrăm împreună — text
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/colaborare.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
+  - name: despre
+    label: Despre mine — text
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/despre.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
+  - name: live
+    label: LIVE — text
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/live.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
+  - name: resurse
+    label: Resurse — text
+    type: file
+    operations: { create: false, rename: false, delete: false }
+    path: content/resurse.json
+    format: json
+    fields:
+      - { name: titlu, label: Titlul paginii, type: string }
+      - { name: introducere, label: Textul introductiv, type: text }
+      - { name: titlu_sectiune, label: Titlul primei secțiuni, type: string }
+      - { name: initial_titlu, type: string, hidden: true, readonly: true }
+      - { name: initial_introducere, type: text, hidden: true, readonly: true }
+      - { name: initial_titlu_sectiune, type: string, hidden: true, readonly: true }
+      - name: materiale
+        label: Trei materiale practice
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        description: Pastreaza trei materiale pentru pagina Resurse.
+        fields:
+          - { name: titlu, label: Titlu, type: string }
+          - { name: introducere, label: Introducere, type: text }
+          - { name: exercitiu, label: Intrebari de reflectie, type: text }
+          - { name: nota, label: Nota la final, type: text }
+
+  - name: editari_detaliate
+    label: "Texte și butoane suplimentare"
+    type: group
+    items:
+      - name: texte_acasa
+        label: "Prima pagină – restul textelor"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-acasa.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 24
+              max: 24
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 5
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
+
+      - name: texte_metoda_clar
+        label: "Metoda CLAR – toate explicațiile"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-metoda-clar.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 43
+              max: 43
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 7
+              max: 7
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
+
+      - name: texte_constelatii
+        label: "Constelații – explicații suplimentare"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-constelatii.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 25
+              max: 25
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 7
+              max: 7
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
+
+      - name: texte_lucram_impreuna
+        label: "Colaborare – explicații suplimentare"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-lucram-impreuna.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 15
+              max: 15
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 6
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
+
+      - name: texte_despre_mine
+        label: "Despre mine – povestea și motivația"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-despre-mine.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 25
+              max: 25
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 6
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
+
+      - name: texte_resurse
+        label: "Resurse – exemple și exerciții"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-resurse.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 5
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 1
+              max: 1
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }
+
+      - name: texte_live
+        label: "LIVE – explicații, întrebări și răspunsuri"
+        type: file
+        operations: { create: false, rename: false, delete: false }
+        path: content/texte-live.json
+        format: json
+        fields:
+          - name: texte
+            label: Textele din pagină, în ordinea afișării
+            type: object
+            list:
+              min: 36
+              max: 36
+              collapsible:
+                collapsed: true
+                summary: "{continut}"
+            description: Modifică textul, NU id-ul. Nu șterge și nu reordona elementele; structura paginii rămâne neschimbată.
+            fields:
+              - { name: id, label: Identificator intern (nu modifica), type: string, readonly: true }
+              - { name: continut, label: Textul afișat pe site, type: text }
+              - { name: initial, type: text, hidden: true, readonly: true }
+          - name: linkuri
+            label: Butoane și linkuri din pagină
+            type: object
+            list:
+              min: 8
+              max: 8
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            description: Modifică textul și adresa dacă este nevoie. Identificatorul intern rămâne neschimbat.
+            fields:
+              - { name: id, label: Identificator intern, type: string, readonly: true }
+              - { name: text, label: Textul butonului sau linkului, type: string }
+              - { name: url, label: Destinația linkului, type: string }
+              - { name: initial, type: text, hidden: true, readonly: true }

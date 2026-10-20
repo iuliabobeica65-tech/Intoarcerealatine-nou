@@ -1,0 +1,58 @@
+name: QA site V2 (fara publicare)
+on:
+  pull_request:
+    paths:
+      - "*.html"
+      - "assets/**"
+      - "content/**"
+      - "qa/**"
+      - ".pages.yml"
+      - ".github/workflows/qa-site-v2.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    name: Verificare 7 pagini si editor
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verifica schema si datele editorului Pages CMS
+        run: |
+          python3 -m pip install --quiet PyYAML==6.0.2
+          python3 qa/check-cms.py
+      - name: Instaleaza Chromium pentru QA
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Construieste doar fisierele publice
+        run: |
+          bash scripts/build-public.sh
+          test ! -e public-site/previzualizare-metoda-clar.html
+          test ! -e public-site/.pages.yml
+          test ! -e public-site/README.md
+      - name: Porneste serverul site-ului
+        run: |
+          python3 -m http.server 4173 --directory public-site --bind 127.0.0.1 > /tmp/intoarcere-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/acasa.html > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/intoarcere-http.log
+          exit 1
+      - name: Testeaza paginile, campurile JSON si cookie-urile previzualizarii
+        env:
+          SITE_URL: http://127.0.0.1:4173
+          PREVIEW_URL: https://deploy-preview-3--spontaneous-quokka-e0bede.netlify.app/acasa.html
+        run: node qa/browser-smoke.mjs
+      - name: Pastreaza rapoartele QA, inclusiv la erori
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verificare-browser-site-v2
+          path: qa-artifacts/
+          retention-days: 7
