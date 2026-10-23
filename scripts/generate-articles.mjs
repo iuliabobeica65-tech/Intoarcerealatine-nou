@@ -43,8 +43,8 @@ export function renderArticles(output,origin=""){
   const cat=(a.categorie||"").toLowerCase(),slug=a.slug;
   if(cat.includes("legile universale"))return "legi-universale";
   if(cat.includes("constelații")||cat.includes("constelatii"))return "constelatii-familiale";
-  if(cat.includes("famil")||cat.includes("relații")||cat.includes("relați")||cat.includes("cuplu")||cat.includes("maternitat"))return "relatii-si-familie";
   if(cat.includes("imagine")||cat.includes("merit")||cat.includes("vinov")||cat.includes("critică")||cat.includes("limite")||cat.includes("bani"))return "imagine-de-sine";
+  if(cat.includes("famil")||cat.includes("relații")||cat.includes("relați")||cat.includes("cuplu")||cat.includes("maternitat"))return "relatii-si-familie";
   if(slug.includes("parintii")||slug.includes("familie"))return "relatii-si-familie";
   return "blocaje-si-decizii";
  };
@@ -78,14 +78,17 @@ export function renderArticles(output,origin=""){
   page=page.replace(/<meta name="description" content="[^"]*"/,'<meta name="description" content="'+seoDesc+'"');
   page=page.replace(/<meta property="og:title" content="[^"]*"/,'<meta property="og:title" content="'+seoTitle+'"');
   page=page.replace(/<meta property="og:description" content="[^"]*"/,'<meta property="og:description" content="'+seoDesc+'"');
+  const kind=groupOf(a);
+  const cta=kind==="imagine-de-sine"?{href:"../program-nivelul-de-merit.html",label:"Descoperă programul individual «Merit să primesc?»"}:kind==="constelatii-familiale"?{href:"../constelatii.html",label:"Află despre constelații familiale și sistemice"}:kind==="legi-universale"?{href:"../metoda-clar.html#cele-sapte-legi",label:"Vezi cum folosesc cele șapte legi universale"}:{href:"../lucram-impreuna.html",label:"Vezi programele de lucru individual"};
+  const nextStep='<aside class="blog-related" aria-label="Cum putem lucra împreună"><h2>Vrei să explorăm și situația ta?</h2><p>Nu îți ofer o cauză gata pregătită. Pornim de la ceea ce trăiești și de la concluziile pe care le-ai format.</p><p><a href="'+cta.href+'">'+esc(cta.label)+' →</a></p></aside>';
   const related=articles.filter(b=>b.slug!==a.slug&&groupOf(b)===groupOf(a)).slice(0,3);
   const relatedHtml=related.length?'<aside aria-label="Citește și" class="blog-related"><h2>Citește și</h2><ul>'+related.map(b=>'<li><a href="../articole/'+b.slug+'.html">'+esc(b.titlu)+'</a></li>').join("")+'</ul></aside>':"";
-  const body='<main id="continut"><section class="section wrap blog-article"><p class="eyebrow">'+esc(a.categorie||"ARTICOLE")+'</p><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time></p>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(a.continut)+'</div>'+relatedHtml+'<p><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Vezi toate articolele din categorie</a></p></section></main>';
+  const body='<main id="continut"><section class="section wrap blog-article"><p class="eyebrow">'+esc(a.categorie||"ARTICOLE")+'</p><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · <a href="../despre-mine.html">Iulia Bobeica</a></p>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(a.continut)+'</div>'+nextStep+relatedHtml+'<p><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Vezi toate articolele din categorie</a></p></section></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
   page=page.replace(/<link rel="canonical" href="[^"]*"\s*\/>|<link rel="canonical" href="[^"]*">/g,"");
   if(canonical){
-    const schema={"@context":"https://schema.org","@type":"BlogPosting","headline":a.titlu,"description":a.seo_descriere||a.descriere,"datePublished":a.data,"author":{"@type":"Person","name":"Iulia Bobeica"},"publisher":{"@type":"Organization","name":"Întoarcerea la tine"},"mainEntityOfPage":canonical};
+    const schema={"@context":"https://schema.org","@type":"BlogPosting","headline":a.titlu,"description":a.seo_descriere||a.descriere,"datePublished":a.data,"author":{"@type":"Person","name":"Iulia Bobeica","url":origin+"/despre-mine"},"publisher":{"@type":"Organization","name":"Întoarcerea la tine"},"mainEntityOfPage":canonical};
     const json=JSON.stringify(schema).replace(/</g,"\\u003c");
     page=page.replace("</head>",'<link rel="canonical" href="'+esc(canonical)+'"><script type="application/ld+json">'+json+'</script></head>');
   }
