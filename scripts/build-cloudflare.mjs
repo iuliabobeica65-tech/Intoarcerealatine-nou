@@ -33,7 +33,7 @@ if(process.env.CF_PAGES&&!origin)throw Error("Lipseste URL-ul Cloudflare; build 
 rmSync(out,{recursive:true,force:true});mkdirSync(out,{recursive:true});
 const files=[
  "index.html","acasa.html","metoda-clar.html","constelatii.html","lucram-impreuna.html",
- "despre-mine.html","resurse.html","live.html","articole.html","politica-confidentialitate.html",
+ "despre-mine.html","resurse.html","live.html","articole.html","program-nivelul-de-merit.html","politica-confidentialitate.html",
  "politica-cookies.html","termeni-utilizare.html","robots.txt","sitemap.xml"
 ];
 for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw Error("Fișier public absent: "+file);
@@ -52,7 +52,7 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  // Cloudflare Pages face redirect de la /pagina.html la /pagina (URL canonic fara extensie).
  // Metadatele SEO si sitemap-ul trebuie sa indice direct adresa finala, fara 301.
  if(origin){
-  const pages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+  const pages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","program-nivelul-de-merit","politica-confidentialitate","politica-cookies","termeni-utilizare"];
   for(const page of pages)text=text.replaceAll(origin+"/"+page+".html",origin+"/"+page);
   if(file==="index.html"){
    text=text.replace('href="./acasa.html"','href="'+origin+'/acasa"');
