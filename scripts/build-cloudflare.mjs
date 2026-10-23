@@ -63,33 +63,6 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
   }
   if(file==="sitemap.xml")text=text.replace('  <url><loc>'+origin+'/</loc></url>\n','');
  }
- // Legături de navigare vizibile și utile pe toate paginile, fără repetarea cuvintelor-cheie în titluri.
- if(file.endsWith(".html")&&file!=="index.html"){
-  if(file==="constelatii.html"){
-   const title="Constelații familiale și sistemice | Iulia Bobeica";
-   const desc="Descoperă cum se desfășoară o constelație familială sau sistemică: roluri, reprezentanți, tipare și explorarea percepțiilor, fără concluzii impuse.";
-   text=text.replace(/<title>[^<]*<\/title>/,"<title>"+title+"</title>");
-   text=text.replace(/<meta name="description" content="[^"]*"/,'<meta name="description" content="'+desc+'"');
-   text=text.replace(/<meta property="og:title" content="[^"]*"/,'<meta property="og:title" content="'+title+'"');
-   text=text.replace(/<meta property="og:description" content="[^"]*"/,'<meta property="og:description" content="'+desc+'"');
-  }
-  if(file==="metoda-clar.html"){
-   const title="Metoda CLAR: tipare și legi universale | Iulia Bobeica";
-   const desc="Metoda CLAR din Întoarcerea la tine: explorăm tipare, percepții, valori și cele șapte legi universale prin întrebări și situații concrete.";
-   text=text.replace(/<title>[^<]*<\/title>/,"<title>"+title+"</title>");
-   text=text.replace(/<meta name="description" content="[^"]*"/,'<meta name="description" content="'+desc+'"');
-   text=text.replace(/<meta property="og:title" content="[^"]*"/,'<meta property="og:title" content="'+title+'"');
-   text=text.replace(/<meta property="og:description" content="[^"]*"/,'<meta property="og:description" content="'+desc+'"');
-  }
-  const topics='<nav class="wrap" aria-label="Teme de explorat" style="padding-top:22px;padding-bottom:12px"><span style="margin-right:12px">Descoperă și:</span><a style="text-decoration:underline;margin-right:20px" href="./constelatii.html">Constelații familiale și sistemice</a><a style="text-decoration:underline;margin-right:20px" href="./metoda-clar.html#cele-sapte-legi">Legi universale și Metoda CLAR</a><a style="text-decoration:underline" href="./articole.html">Articole pe categorii</a></nav>';
-  if(!text.includes('<footer class="site-footer">'))throw Error("Lipsește subsolul din "+file);
-  text=text.replace('<footer class="site-footer">','<footer class="site-footer">'+topics);
-  if(file==="acasa.html"&&origin){
-   const schema={"@context":"https://schema.org","@type":"WebSite","name":"Întoarcerea la tine","url":origin+"/","inLanguage":"ro-RO","creator":{"@type":"Person","name":"Iulia Bobeica"}};
-   text=text.replace("</head>",'<script type="application/ld+json">'+JSON.stringify(schema)+'</script></head>');
-  }
- }
-
  writeFileSync(resolve(out,file),text,"utf8");
 }
 for(const dir of ["assets","content","Intoarcerea_la_tine_files"]){
