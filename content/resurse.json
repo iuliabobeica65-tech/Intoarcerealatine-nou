@@ -1,25 +1,25 @@
 {
-  "titlu": "Situații de viață, nu exerciții inventate",
-  "introducere": "Aici sunt doar situații în care te poți recunoaște. Nu sunt chestionare și nu conțin întrebări noi de echilibrare. În lucrul meu, acestea provin numai din legile universale.",
-  "titlu_sectiune": "Ce poate aduce o femeie în discuție",
+  "titlu": "Poate că și tu ai trăit asta.",
+  "introducere": "Trei situații de viață în care poate te recunoști. Fără sfaturi rapide și fără explicații despre ceea ce ar fi în neregulă cu tine.",
+  "titlu_sectiune": "Citește situația care îți este cunoscută",
   "materiale": [
     {
-      "titlu": "Spui «da», deși ai vrut să refuzi",
-      "introducere": "O situație prezentă poate fi legată de o interpretare formată într-un moment anterior.",
-      "exercitiu": "Mai întâi îmi povestești exact ce s-a întâmplat. Clarific doar detaliile. Nu decid eu ce ai înțeles sau care este rădăcina.",
-      "nota": "Pentru echilibrare folosesc numai întrebările din legile universale."
+      "titlu": "Weekendul în care nu apuci să te odihnești",
+      "introducere": "După o săptămână de muncă, abia așteptai două zile de liniște.",
+      "exercitiu": "Sâmbătă găsești vasele, rufele și mesele încă de pregătit. Ai cerut ajutor și ai explicat că ești obosită. Totuși, seara vine fără odihna pe care o așteptai.",
+      "nota": "Dacă te-ai recunoscut, descoperă cum lucrez în «Întoarcerea la tine»."
     },
     {
-      "titlu": "Un conflict de familie care se repetă",
-      "introducere": "Relația cu părinții, separările și responsabilitățile familiale pot aduce percepții puternice.",
-      "exercitiu": "Constelațiile sistemice pot ajuta să explorăm mai ușor polarizarea din rădăcină. Le folosesc în funcție de context, fără să atribui cauze ascunse.",
-      "nota": "La echilibrare lucrăm cu acțiunea vizibilă și cu întrebările din legi."
+      "titlu": "Când relația de cuplu nu mai este apropiată",
+      "introducere": "Locuiți împreună, dar timpul în care simți că vă înțelegeți a devenit tot mai rar.",
+      "exercitiu": "Unele seri trec aproape fără o conversație adevărată. Poate ați discutat deja despre distanța dintre voi. Ai fi vrut să simți apropiere, iar acum a rămas dorul după cum era înainte.",
+      "nota": "Dacă tema îți este cunoscută, poți citi despre întâlnirile mele."
     },
     {
-      "titlu": "Amâni ceva important",
-      "introducere": "Ne uităm la situația concretă și la interpretarea formată despre tine.",
-      "exercitiu": "Explorarea faptelor este diferită de echilibrare. Folosesc întrebările legilor pentru echilibrare și verific ulterior dacă s-a schimbat interpretarea.",
-      "nota": "Creația conștientă are loc în timpul echilibrării."
+      "titlu": "Când ai încercat multe și dezamăgirea rămâne",
+      "introducere": "Ai sperat într-un nou început și ai investit timp și bani.",
+      "exercitiu": "Cărțile, cursurile sau planurile sunt încă acolo. Au trecut lunile și nu simți schimbarea pe care o așteptai. Uneori te doare mai ales faptul că nu mai știi ce ar putea fi diferit.",
+      "nota": "Dacă te-ai recunoscut, îmi poți scrie pentru detalii."
     }
   ],
   "initial_titlu": "Uneori, o întrebare deschide un drum nou.",
