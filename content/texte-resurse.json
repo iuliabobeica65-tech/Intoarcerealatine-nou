@@ -7,12 +7,12 @@
     },
     {
       "id": "text-2",
-      "continut": "TREI EXPERIENȚE ÎN CARE TE POȚI RECUNOAȘTE",
+      "continut": "TREI SITUAȚII ÎN CARE TE POȚI RECUNOAȘTE",
       "initial": "TREI EXERCIȚII DE REFLECȚIE"
     },
     {
       "id": "text-3",
-      "continut": "Nu sunt exerciții. Sunt situații despre oboseală, relații și dezamăgire, fără concluzii în locul tău.",
+      "continut": "Citește despre o singură experiență care îți este cunoscută. Aici nu sunt exerciții, cauze presupuse sau soluții rapide.",
       "initial": "Alege doar întrebarea care are legătură cu ce trăiești acum. Nu există răspunsuri corecte de bifat, iar exercițiile nu înlocuiesc un proces individual."
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "id": "text-5",
-      "continut": "Poți afla mai multe despre metoda mea sau îmi poți scrie pentru detalii.",
+      "continut": "Poți afla mai multe despre metoda mea sau poți solicita detalii despre întâlniri.",
       "initial": "În LIVE-ul săptămânal explorăm experiențe și perspective. Poți participa și doar ca să asculți."
     }
   ],
