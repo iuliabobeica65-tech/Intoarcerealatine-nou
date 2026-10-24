@@ -58,7 +58,7 @@ export function renderArticles(output,origin=""){
  const categorySections=activeGroups.map(g=>'<section class="blog-category-group" id="'+g.id+'" aria-labelledby="head-'+g.id+'"><h2 id="head-'+g.id+'">'+esc(g.label)+'</h2><p class="blog-group-desc">'+esc(g.desc)+'</p><div class="blog-list">'+cardsFor(g.items)+'</div></section>').join("\n");
  let html=template;
  const empty='<p>Articolele sunt în pregătire. Vezi <a href="./resurse.html">Resurse</a>.</p>';
- html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?categoryNav+categorySections:empty);
+ html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?categorySections+'<aside class="blog-categories-end"><p class="eyebrow">MAI DEPARTE, ALEGE TEMA TA</p><h2>Explorează și alte teme</h2>'+categoryNav+'</aside>':empty);
  if(html.includes("<!-- LISTA_ARTICOLE -->"))throw Error("Nu s-a putut organiza lista articolelor.");
  html=html.replace("</style>",`
 /* Editorial 24.10 – articole lizibile, feminine și centrate pe o singură experiență. */
@@ -107,6 +107,40 @@ export function renderArticles(output,origin=""){
 #iulia-live .blog-category-group h2{font-size:clamp(28px,3vw,42px);margin:0 0 8px}
 #iulia-live .blog-group-desc{margin:0 0 22px;max-width:680px;color:#665B50}
 #iulia-live .blog-card h3{font-size:clamp(23px,2.3vw,32px);line-height:1.24;margin:0 0 12px}
+</style>`);
+ html=html.replace("</style>",`
+/* Revizie feminină 24.10: navigația de categorii apare după articole. */
+#iulia-live .editorial-intro{position:relative;max-width:1030px;padding:clamp(32px,5vw,64px) clamp(22px,5.5vw,76px)!important;margin:26px auto 12px!important;border-radius:26px;background:radial-gradient(circle at 90% 20%,#f1d5dc 0,transparent 42%),linear-gradient(145deg,#fff8f3,#f7e8e4);border:1px solid #efd9d9;box-shadow:0 18px 46px rgba(97,56,69,.045)}
+#iulia-live .editorial-intro .editorial-mark{font:italic 40px Georgia,serif;color:#be8899;line-height:1}
+#iulia-live .editorial-intro .eyebrow{font-size:11px!important;letter-spacing:.16em!important;color:#996475;margin:12px 0 16px!important}
+#iulia-live .editorial-intro h1{max-width:850px;font:400 clamp(34px,5vw,62px)/1.13 Georgia,serif!important;letter-spacing:-.038em;margin:0 0 17px!important;color:#3e2932}
+#iulia-live .editorial-intro h1 em{color:#9e617b;font-style:italic}
+#iulia-live .editorial-intro>p:not(.eyebrow){max-width:690px!important;font:16px/1.72 Arial,sans-serif!important;color:#665459;margin:0!important}
+#iulia-live .editorial-catalog{padding-top:0!important}
+#iulia-live .editorial-catalog .blog-category-group{margin:18px 0 58px!important;padding:24px 0 0!important}
+#iulia-live .editorial-catalog .blog-category-group>h2{margin:0 0 6px!important;font:400 clamp(27px,3.3vw,40px)/1.16 Georgia,serif!important;color:#49323b}
+#iulia-live .editorial-catalog .blog-category-group>h2:before{content:"✧";font-size:.7em;color:#b88e9c;padding-right:12px}
+#iulia-live .editorial-catalog .blog-group-desc{color:#79686d;margin:0 0 19px}
+#iulia-live .editorial-catalog .blog-card{border:1px solid #ead1d5;background:linear-gradient(165deg,#fffaf7,#fceef1);border-radius:24px 24px 18px 18px;box-shadow:0 11px 32px rgba(120,77,90,.055);min-height:252px;padding:27px 25px 24px}
+#iulia-live .editorial-catalog .blog-card h3{font-size:clamp(22px,2.25vw,29px)!important;line-height:1.22!important}
+#iulia-live .editorial-catalog .blog-card .blog-type{color:#9a617a}
+#iulia-live .blog-categories-end{background:linear-gradient(145deg,#fff7f3,#f7e8ec);border:1px solid #ecd2d9;border-radius:22px;padding:34px clamp(20px,4vw,43px);margin:55px 0 10px}
+#iulia-live .blog-categories-end h2{font:400 clamp(27px,3.4vw,40px)/1.12 Georgia,serif!important;color:#44303a;margin:0 0 22px}
+#iulia-live .blog-categories-end .eyebrow{letter-spacing:.12em;color:#976577;font-size:11px}
+#iulia-live .blog-categories-end .blog-category-nav{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+#iulia-live .blog-categories-end .blog-category-nav a{display:inline-flex;align-items:center;gap:7px;padding:10px 14px;border-radius:32px;background:#fffaf8;border:1px solid #e2c1cb;color:#6b4353;font-size:13px;text-decoration:none}
+#iulia-live .blog-categories-end .blog-category-nav a:hover{background:#efd5e0}
+@media(max-width:700px){
+#iulia-live .editorial-intro{padding:30px 22px!important;margin:7px 14px 6px!important;border-radius:20px}
+#iulia-live .editorial-intro .editorial-mark{font-size:28px}
+#iulia-live .editorial-intro h1{font-size:clamp(32px,8.3vw,44px)!important}
+#iulia-live .editorial-intro>p:not(.eyebrow){font-size:15px!important;line-height:1.64}
+#iulia-live .editorial-catalog .blog-category-group{margin-top:0!important;margin-bottom:39px!important}
+#iulia-live .editorial-catalog .blog-card{min-height:0}
+#iulia-live .blog-categories-end{margin-top:26px;padding:27px 19px}
+#iulia-live .blog-categories-end .blog-category-nav a{font-size:13px}
+}
+
 </style>`);
  writeFileSync(join(output,"articole.html"),html,"utf8");
  const dest=join(output,"articole");mkdirSync(dest,{recursive:true});
