@@ -62,17 +62,17 @@
     },
     {
       "id": "text-13",
-      "continut": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou.",
+      "continut": "Poate din afară totul pare în regulă. Dar tu te simți obosită, neapreciată sau tot mai departe de bucuria pe care ți-o dorești.",
       "initial": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou."
     },
     {
       "id": "text-14",
-      "continut": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape.",
+      "continut": "Nu am să-ți spun dinainte care este cauza. Mai întâi vreau să înțeleg ce trăiești.",
       "initial": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape."
     },
     {
       "id": "text-15",
-      "continut": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine.",
+      "continut": "Dacă te-ai recunoscut, îți povestesc separat cum lucrez în «Întoarcerea la tine».",
       "initial": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine."
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "id": "rich-8",
-      "continut": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?",
+      "continut": "Poate ai obosit să te simți invizibilă. Poate ai încercat multe și tot nu te poți bucura de schimbarea dorită.",
       "initial": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?"
     }
   ],
