@@ -1,25 +1,25 @@
 {
-  "titlu": "Uneori, o întrebare deschide un drum nou.",
-  "introducere": "Aici adun întrebări și exemple din felul meu de a lucra. Nu sunt rețete și nici răspunsuri valabile pentru toată lumea. Le poți privi ca pe o invitație de a te asculta puțin mai atent.",
-  "titlu_sectiune": "De la ceea ce trăiești, spre ceea ce poți descoperi.",
+  "titlu": "Uneori, o întrebare schimbă felul în care privești o situație.",
+  "introducere": "Nu am pregătit aici exerciții care să îți spună de ce reacționezi într-un anumit fel. Sunt trei situații de viață pe care le putem privi cu mai multă curiozitate, fără concluzii dinainte.",
+  "titlu_sectiune": "Poate te recunoști într-una dintre aceste situații.",
   "materiale": [
     {
-      "titlu": "Când știi ce vrei, dar tot amâni",
-      "introducere": "Alege o singură situație din ultimele zile în care ai vrut să faci un pas și te-ai oprit.",
-      "exercitiu": "Notează: ce voiam concret să fac? Ce am făcut în schimb? Ce mi-am spus în acel moment? Ce credeam că s-ar întâmpla dacă aș fi acționat? Nu te grăbi să găsești cauza: observă întâi ce ai trăit.",
-      "nota": "Poți reveni la aceste răspunsuri și poți întreba: există și alte perspective posibile?"
+      "titlu": "Știi ce îți dorești, dar amâni",
+      "introducere": "Poate ai o idee importantă și, de fiecare dată când ai putea începe, apare altceva.",
+      "exercitiu": "Nu voi presupune că este frică, lipsă de voință sau un tipar din copilărie. Mă interesează cum descrii tu ultima situație în care s-a întâmplat și ce ai înțeles despre tine atunci.",
+      "nota": "Începem de la ceea ce ai trăit, nu de la o etichetă."
     },
     {
-      "titlu": "Când spui «da», deși ai vrea să spui «nu»",
-      "introducere": "Amintește-ți un moment recent în care ai acceptat ceva împotriva dorinței tale.",
-      "exercitiu": "Scrie exact ce ți s-a cerut, ce ai răspuns și ce ai simțit. Ce concluzie ai tras despre tine sau despre celălalt? Ce ți-ar fi fost greu să pierzi dacă spuneai «nu»? Caută apoi și ce ai fi câștigat printr-un refuz potrivit valorilor tale.",
-      "nota": "Întrebările nu sunt un îndemn să refuzi automat, ci o invitație să observi din ce loc alegi."
+      "titlu": "Spui «da» când ai vrea să spui «nu»",
+      "introducere": "Te-ai surprins acceptând ceva, apoi întrebându-te de ce ai făcut-o?",
+      "exercitiu": "Pentru unele femei, a ajuta este o bucurie. Pentru altele, același gest poate fi însoțit de vinovăție sau de o altă trăire. Nu știu ce înseamnă pentru tine până nu îmi povestești.",
+      "nota": "Aceeași acțiune nu are aceeași semnificație pentru toată lumea."
     },
     {
-      "titlu": "Când recunoști o situație care se repetă",
-      "introducere": "Alege două întâmplări care îți par asemănătoare, fără să presupui că au aceeași cauză.",
-      "exercitiu": "Compară faptele: ce s-a întâmplat efectiv în fiecare? Ce reacție ai avut? Ce semnificație ai dat fiecărei întâmplări? Ce este diferit între ele? Dacă descoperi o concluzie veche, întreabă-te în ce alte situații a fost adevărată și când nu a fost.",
-      "nota": "Dacă revii la o situație-rădăcină, verifică la final cum privești acum și situația din prezent."
+      "titlu": "Ajungi din nou într-o situație cunoscută",
+      "introducere": "Se schimbă oamenii sau împrejurările, dar parcă ceva din reacția ta rămâne la fel.",
+      "exercitiu": "Merită să privim faptele, ce crezi despre tine în acele momente și de unde ai ajuns să gândești astfel. Dacă descoperim o experiență relevantă, o explorăm; dacă nu, nu inventăm una.",
+      "nota": "Nu fiecare situație asemănătoare are aceeași cauză."
     }
   ],
   "initial_titlu": "Uneori, o întrebare deschide un drum nou.",
