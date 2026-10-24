@@ -1,8 +1,8 @@
 {
-  "titlu": "Poate știi ce nu mai vrei. Și totuși, te surprinzi făcând la fel.",
-  "subtitlu": "Ți-ai promis că data viitoare vei alege altfel. Dar, când ajungi într-o situație cunoscută, reacționezi aproape la fel. Aș vrea să începem tocmai de aici: de la ceea ce trăiești tu, nu de la o explicație pregătită pentru tine.",
-  "titlu_recunoastere": "Te recunoști în vreuna dintre situațiile acestea?",
-  "text_recunoastere": "Poate îți este greu să refuzi, poate amâni ceva important sau te simți prinsă într-o poveste care se repetă. Nu mă grăbesc să îți spun de ce. Mă interesează ce înseamnă toate acestea pentru tine.",
+  "titlu": "Nu mai vreau așa. Dar de ce fac tot la fel?",
+  "subtitlu": "În lucrul meu pornim de la situația pe care o trăiești acum și căutăm polarizarea aflată la rădăcină: interpretarea pe care mintea a dat-o unui eveniment. Te ascult și îți cer detalii, fără să-ți spun eu ce ai înțeles.",
+  "titlu_recunoastere": "Când aceeași situație revine, lucrăm la rădăcină.",
+  "text_recunoastere": "Îmi povestești concret ce se întâmplă și ce este important pentru tine. În metoda mea, rădăcina este polarizarea formată prin interpretarea evenimentului, uneori în primii ani de viață.",
   "buton_principal": "Vezi cum lucrez",
   "link_principal": "./metoda-clar.html#metoda-clar",
   "buton_secundar": "Vezi întâlnirile LIVE",
@@ -29,13 +29,13 @@
   "oferte": [
     {
       "titlu": "Întoarcerea la tine",
-      "text": "Pornim de la ce te preocupă acum, explorăm împreună percepțiile și verificăm ce se schimbă. Fără explicații impuse.",
+      "text": "Identificăm polarizarea din rădăcină, echilibrăm acțiunea vizibilă cu întrebările legilor universale și verificăm interpretarea. Creația conștientă are loc în timpul echilibrării.",
       "buton": "Descoperă metoda →",
       "link": "./metoda-clar.html"
     },
     {
       "titlu": "Constelații sistemice",
-      "text": "Întâlniri de grup online și față în față, organizate periodic în funcție de cerere.",
+      "text": "Le folosesc în funcție de context, pentru a explora mai ușor rădăcina polarizată și a integra lucrul cu legile universale.",
       "buton": "Vezi constelațiile →",
       "link": "./constelatii.html"
     },
@@ -46,18 +46,18 @@
       "link": "./lucram-impreuna.html"
     }
   ],
-  "exemplu_titlu": "Spui «da» și, după aceea, te întrebi de ce ai acceptat?",
+  "exemplu_titlu": "Totul începe cu ceea ce s-a întâmplat.",
   "exemplu_paragrafe": [
-    "Poate ai vrut să refuzi o rugăminte, dar ai acceptat. Nu presupun că știu motivul. Mă interesează ce s-a întâmplat în acea situație și ce ai înțeles tu din ea.",
-    "Uneori, în timp ce povestim, apar și alte situații în care ai gândit sau ai reacționat asemănător. Te întreb de unde ai tras concluziile despre tine. Nu îți spun eu care este rădăcina.",
-    "Dacă ajungem la un moment important, lucrăm cu acțiunile concrete și cu perspectiva opusă, folosind legile potrivite. Apoi verificăm ce mai este valabil pentru tine și cum privești situația de astăzi."
+    "Pornim de la o situație pe care o povestești. Eu îți cer detalii ca să înțeleg cât mai precis ce s-a întâmplat. Nu îți spun eu care este cauza și nu îți ofer interpretarea mea.",
+    "În metoda mea, căutăm rădăcina polarizată: interpretarea pe care mintea a dat-o unui eveniment, adesea încă din primii ani de viață. Momentul, tiparul și concluziile despre sine pot apărea împreună în relatarea ta.",
+    "Când lucrăm la echilibrare, aplic întrebările din legile universale asupra acțiunii vizibile. Nu adaug alte întrebări pentru a te conduce spre o perspectivă. Verificăm ulterior dacă interpretarea s-a schimbat. Creația conștientă are loc în timpul echilibrării."
   ],
   "despre_titlu": "Sunt Iulia. Îmi place să văd dincolo de ceea ce pare evident.",
-  "despre_text": "Îmi place să pun întrebări. Mai ales când cineva este foarte sigur că nu există nicio altă perspectivă. Nu ca să-i spun că greșește, ci pentru a descoperi împreună ce nu a fost văzut încă.",
+  "despre_text": "Îmi place să ascult exact ce s-a întâmplat și să aflu detaliile. Întrebările prin care clarific relatarea nu sunt întrebări de echilibrare. Pentru echilibrare folosesc întrebările legilor universale.",
   "carusel": [
     {
-      "titlu": "Creația conștientă poate începe chiar acum",
-      "descriere": "Nu este nevoie să aștepți ca totul să fie rezolvat. Explorăm felul în care privești ceea ce trăiești și ce poți alege astăzi."
+      "titlu": "Creația conștientă începe în timpul echilibrării",
+      "descriere": "Nu după o altă etapă: când se transformă interpretarea, persoana poate trăi și alege diferit."
     },
     {
       "titlu": "Și dacă ceea ce cauți nu este în afara ta?",
@@ -68,16 +68,16 @@
       "descriere": "Sunt momente în care poate merită să ne întrebăm ce căutăm la ceilalți și ce contează pentru noi."
     },
     {
-      "titlu": "Totul începe cu ceea ce trăiești acum",
-      "descriere": "Pornim de la ceea ce trăiești acum și explorăm, fără explicații impuse, ce se repetă."
+      "titlu": "Căutăm polarizarea din rădăcină",
+      "descriere": "Nu ne oprim la situația repetată astăzi. Explorăm momentul și interpretarea formată în legătură cu el."
     },
     {
-      "titlu": "Echilibrarea percepțiilor schimbă felul în care vezi",
-      "descriere": "Putem privi și perspectiva opusă, fără să negăm ce ai trăit. Apoi verificăm ce s-a schimbat pentru tine."
+      "titlu": "Lucrăm cu acțiunea vizibilă",
+      "descriere": "Echilibrarea se face cu întrebările din legile universale. Apoi verificăm semnificațiile."
     },
     {
-      "titlu": "Constelațiile sistemice pot deschide o altă perspectivă asupra relațiilor",
-      "descriere": "Privim împreună relațiile și legăturile care contează pentru tine, fără să pretindem că știm dinainte de unde vine un blocaj."
+      "titlu": "Constelațiile ajută explorarea rădăcinii",
+      "descriere": "Le folosesc în funcție de context, integrate în modul meu de lucru."
     },
     {
       "titlu": "Legile universale te ajută să înțelegi mesajul din spatele experienței",
