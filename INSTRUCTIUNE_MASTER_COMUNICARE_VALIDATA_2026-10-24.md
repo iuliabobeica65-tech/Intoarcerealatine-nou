@@ -29,3 +29,13 @@ Verificăm: o singură situație; realismul și dorința; ceea ce femeia a înce
 - Ramura aceasta este pentru revizie. Nu publicăm automat, nu modificăm «main» sau ramura de producție Cloudflare fără validare tehnică.
 - Trebuie verificată corelarea HTML fallback cu JSON CMS și SEO, generarea articolelor, afișarea pe mobil și linkurile.
 - «Metoda CLAR», planul de patru luni, anumite programe/oferta exactă au fost folosite anterior în texte fără validare comercială finală. Nu le prezentăm ca obligatorii; verificăm înaintea publicării.
+
+## Actualizări validate ulterior în aceeași conversație
+- **Metoda CLAR** rămâne neschimbată ca nume în meniul principal, cu sensul exact **Claritate prin echilibrarea percepțiilor**. Nu se înlocuiește cu „Cum lucrez” sau altă denumire.
+- Metoda CLAR este metoda folosită și descrisă în toate programele; creația conștientă are loc în timpul echilibrării, iar constelațiile pot fi folosite în funcție de context pentru identificarea rădăcinii polarizate.
+- Programul individual principal **„Întoarcerea la tine” durează 4 luni**, nu are o durată variabilă afirmată public. Ritmul și prioritățile interioare rămân adaptate persoanei; durata de patru luni se comunică explicit.
+- Programul scurt: **„Nivelul de merit – 4 săptămâni pentru tine”**, implementat **prin Metoda CLAR**. Sunt patru întâlniri individuale. Nu inventăm teme, „jurnale”, protocoale sau succesiuni forțate câte una în fiecare săptămână.
+- Prima pagină revine la estetica inițială cu **fotografia reală a Iuliei cu pălărie**, în primul plan pe mobil și cu mesajul ei: „Dar dacă există și un alt fel de a privi ceea ce trăiești?”.
+- În pagina de articole, design feminin în tonuri roz pal, spațiere inteligentă, iar navigația prin **categoriile de articole se afișează la final**, nu imediat sub introducere.
+- Conținutul de atragere arată efectele, o singură situație centrală și o singură invitație; explicațiile, întrebările și mecanismele sunt rezervate materialelor educative și descrierii programelor.
+- Cartea nu se modifică automat odată cu schimbările site-ului; după finalizarea site-ului se cere acordul Iuliei înaintea reviziei cărții.
