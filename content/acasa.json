@@ -1,8 +1,8 @@
 {
-  "titlu": "Nu mai vreau așa. Dar de ce fac tot la fel?",
-  "subtitlu": "În lucrul meu pornim de la situația pe care o trăiești acum și căutăm polarizarea aflată la rădăcină: interpretarea pe care mintea a dat-o unui eveniment. Te ascult și îți cer detalii, fără să-ți spun eu ce ai înțeles.",
-  "titlu_recunoastere": "Când aceeași situație revine, lucrăm la rădăcină.",
-  "text_recunoastere": "Îmi povestești concret ce se întâmplă și ce este important pentru tine. În metoda mea, rădăcina este polarizarea formată prin interpretarea evenimentului, uneori în primii ani de viață.",
+  "titlu": "Pentru toți ai timp. Dar pentru tine?",
+  "subtitlu": "Aștepți să se termine săptămâna, dar oboseala rămâne și în weekend. Poate ai cerut deja sprijin, ai explicat cât de greu îți este și totuși lucrurile sunt la fel. Nu e nevoie să îți explic eu de ce. Aici poți descoperi că nu ești singura care trăiește astfel.",
+  "titlu_recunoastere": "Poate te recunoști într-una dintre aceste situații.",
+  "text_recunoastere": "Fiecare situație are povestea ei. Citește-o pe cea care îți este cunoscută.",
   "buton_principal": "Vezi cum lucrez",
   "link_principal": "./metoda-clar.html#metoda-clar",
   "buton_secundar": "Vezi întâlnirile LIVE",
@@ -10,32 +10,32 @@
   "fotografie": "./Intoarcerea_la_tine_files/6ad1278ba01de7.05166081_9d2529da-d079-4183-89d4-6b674ef83217.jpg",
   "situatii": [
     {
-      "titlu": "Toți se bazează pe tine.",
-      "text": "Organizezi, ajuți, rezolvi. Când ai tu nevoie de sprijin, îți este greu să îl ceri sau să îl primești?"
+      "titlu": "Abia așteptai să te odihnești.",
+      "text": "Weekendul vine cu vase, rufe și treburi neîncheiate. Ai cerut sprijin, dar simți din nou că nu ai parte de odihna așteptată."
     },
     {
-      "titlu": "Spui „da” și te superi pe tine.",
-      "text": "Ai vrea să refuzi o rugăminte, dar te gândești la dezamăgirea celuilalt. Ce înseamnă pentru tine un „nu”?"
+      "titlu": "Te doare distanța din cuplu.",
+      "text": "Locuiți împreună, dar serile în care vă simțiți apropiați par tot mai rare. Ați mai vorbit despre asta."
     },
     {
-      "titlu": "Ai încercat deja multe.",
-      "text": "Cărți, cursuri, planuri. Începi cu speranță, dar schimbarea dorită nu se păstrează. Ce se întâmplă în situațiile concrete când revii la vechiul tipar?"
+      "titlu": "Ai încercat multe și tot te simți blocată.",
+      "text": "Ai investit timp și bani în schimbări de la care sperai mult. Lunile trec, iar dezamăgirea rămâne."
     },
     {
-      "titlu": "Ai grijă de toți. Dar tu?",
-      "text": "Uneori ai impresia că ai tot ce îți trebuie și totuși îți lipsește bucuria. Ce contează cu adevărat pentru tine acum?"
+      "titlu": "Parcă ai totul, dar nu te poți bucura.",
+      "text": "Din afară, lucrurile par în ordine. Înăuntru, simți oboseală și o nemulțumire pe care încă nu știi cum să o explici."
     }
   ],
   "oferte": [
     {
       "titlu": "Întoarcerea la tine",
-      "text": "Identificăm polarizarea din rădăcină, echilibrăm acțiunea vizibilă cu întrebările legilor universale și verificăm interpretarea. Creația conștientă are loc în timpul echilibrării.",
+      "text": "Dacă te-ai regăsit în situațiile descrise, aici poți descoperi metoda mea și felul în care lucrez.",
       "buton": "Descoperă metoda →",
       "link": "./metoda-clar.html"
     },
     {
       "titlu": "Constelații sistemice",
-      "text": "Le folosesc în funcție de context, pentru a explora mai ușor rădăcina polarizată și a integra lucrul cu legile universale.",
+      "text": "Descoperă întâlnirile de constelații și felul în care putem explora teme de familie, relații, separări și pierderi.",
       "buton": "Vezi constelațiile →",
       "link": "./constelatii.html"
     },
@@ -46,47 +46,47 @@
       "link": "./lucram-impreuna.html"
     }
   ],
-  "exemplu_titlu": "Totul începe cu ceea ce s-a întâmplat.",
+  "exemplu_titlu": "Abia așteptai să vină weekendul.",
   "exemplu_paragrafe": [
-    "Pornim de la o situație pe care o povestești. Eu îți cer detalii ca să înțeleg cât mai precis ce s-a întâmplat. Nu îți spun eu care este cauza și nu îți ofer interpretarea mea.",
-    "În metoda mea, căutăm rădăcina polarizată: interpretarea pe care mintea a dat-o unui eveniment, adesea încă din primii ani de viață. Momentul, tiparul și concluziile despre sine pot apărea împreună în relatarea ta.",
-    "Când lucrăm la echilibrare, aplic întrebările din legile universale asupra acțiunii vizibile. Nu adaug alte întrebări pentru a te conduce spre o perspectivă. Verificăm ulterior dacă interpretarea s-a schimbat. Creația conștientă are loc în timpul echilibrării."
+    "După o săptămână de serviciu, te gândeai la câteva ore de odihnă. Acasă, vasele sunt tot acolo, coșul de rufe este plin și mâncarea trebuie pregătită.",
+    "Ai mai cerut ajutor. Ai spus că ești obosită. Totuși, weekendul începe cu aceleași treburi și cu senzația că nu mai ai putere.",
+    "«De câte ori să mai spun? Eu când mă odihnesc?» Dacă te recunoști, poți descoperi cum lucrez în «Întoarcerea la tine»."
   ],
   "despre_titlu": "Sunt Iulia. Îmi place să văd dincolo de ceea ce pare evident.",
-  "despre_text": "Îmi place să ascult exact ce s-a întâmplat și să aflu detaliile. Întrebările prin care clarific relatarea nu sunt întrebări de echilibrare. Pentru echilibrare folosesc întrebările legilor universale.",
+  "despre_text": "Îmi doresc ca femeia care ajunge aici să se recunoască în ceea ce trăiește, fără să îi spun dinainte care este cauza. Despre felul în care lucrez, îți povestesc separat.",
   "carusel": [
     {
-      "titlu": "Creația conștientă începe în timpul echilibrării",
-      "descriere": "Nu după o altă etapă: când se transformă interpretarea, persoana poate trăi și alege diferit."
+      "titlu": "Când oboseala nu mai trece",
+      "descriere": "Chiar și weekendul pentru care ai așteptat atât pare prea scurt."
     },
     {
-      "titlu": "Și dacă ceea ce cauți nu este în afara ta?",
-      "descriere": "Uneori, o întrebare nouă poate deschide o perspectivă asupra a ceea ce trăiești."
+      "titlu": "Când în relație te simți singură",
+      "descriere": "Sunteți împreună, dar apropierea îți lipsește."
     },
     {
-      "titlu": "Când cauți în afară, te poți pierde de tine",
-      "descriere": "Sunt momente în care poate merită să ne întrebăm ce căutăm la ceilalți și ce contează pentru noi."
+      "titlu": "Când ai încercat deja",
+      "descriere": "Ai sperat că lucrurile se vor schimba și ai rămas dezamăgită."
     },
     {
-      "titlu": "Căutăm polarizarea din rădăcină",
-      "descriere": "Nu ne oprim la situația repetată astăzi. Explorăm momentul și interpretarea formată în legătură cu el."
+      "titlu": "Când familia rămâne cu tensiuni",
+      "descriere": "O întâlnire care trebuia să fie frumoasă se termină cu supărare."
     },
     {
-      "titlu": "Lucrăm cu acțiunea vizibilă",
-      "descriere": "Echilibrarea se face cu întrebările din legile universale. Apoi verificăm semnificațiile."
+      "titlu": "Când banii nu ajung și pentru tine",
+      "descriere": "Tricoul dorit rămâne pe raft, pentru că sunt alte cheltuieli urgente."
     },
     {
-      "titlu": "Constelațiile ajută explorarea rădăcinii",
-      "descriere": "Le folosesc în funcție de context, integrate în modul meu de lucru."
+      "titlu": "Când nu te mai bucuri de ce ai",
+      "descriere": "Din afară este bine, înăuntru parcă lipsește ceva."
     },
     {
-      "titlu": "Legile universale te ajută să înțelegi mesajul din spatele experienței",
-      "descriere": "Folosesc legile universale ca repere pentru întrebări, pentru a privi o experiență din mai multe unghiuri."
+      "titlu": "Te-ai regăsit?",
+      "descriere": "Descoperă cum lucrez în «Întoarcerea la tine»."
     }
   ],
-  "text_hero_continuare": "Uneori îți este greu să spui „nu”, amâni o alegere sau observi că revii într-o situație cunoscută. Pornim de la ceea ce trăiești acum și explorăm împreună percepțiile și tiparele care ar putea avea legătură cu aceste dificultăți.",
-  "contact_titlu": "Poți să-mi scrii, chiar dacă nu știi de unde să începi.",
-  "contact_text": "Dacă una dintre situațiile descrise aici ți-a amintit de ceva din viața ta, îmi poți scrie. Nu trebuie să ai deja o explicație sau să știi exact de unde începe povestea ta.",
+  "text_hero_continuare": "Poate e vorba despre familie, despre relații sau despre o oboseală care s-a adunat în timp. Nu îți spun eu ce ai făcut greșit și nu îți atribui o cauză.",
+  "contact_titlu": "Te-ai regăsit în ceea ce ai citit?",
+  "contact_text": "Poți să îmi scrii pentru detalii sau să descoperi întâi cum lucrez.",
   "contact_buton": "Scrie-mi pe WhatsApp",
   "contact_link": "https://wa.me/40758321125"
 }
