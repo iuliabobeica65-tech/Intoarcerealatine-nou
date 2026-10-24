@@ -1,12 +1,12 @@
 {
-  "titlu": "Pentru toți ai timp. Dar pentru tine?",
-  "subtitlu": "Aștepți să se termine săptămâna, dar oboseala rămâne și în weekend. Poate ai cerut deja sprijin, ai explicat cât de greu îți este și totuși lucrurile sunt la fel. Nu e nevoie să îți explic eu de ce. Aici poți descoperi că nu ești singura care trăiește astfel.",
+  "titlu": "Dar dacă există și un alt fel de a privi ceea ce trăiești?",
+  "subtitlu": "Poate că ceea ce cunoști acum despre tine nu este tot ceea ce poți fi.",
   "titlu_recunoastere": "Poate te recunoști într-una dintre aceste situații.",
   "text_recunoastere": "Fiecare situație are povestea ei. Citește-o pe cea care îți este cunoscută.",
-  "buton_principal": "Vezi cum lucrez",
+  "buton_principal": "Descoperă Metoda CLAR",
   "link_principal": "./metoda-clar.html#metoda-clar",
-  "buton_secundar": "Vezi întâlnirile LIVE",
-  "link_secundar": "./live.html#participare",
+  "buton_secundar": "Vezi programele",
+  "link_secundar": "./lucram-impreuna.html",
   "fotografie": "./Intoarcerea_la_tine_files/6ad1278ba01de7.05166081_9d2529da-d079-4183-89d4-6b674ef83217.jpg",
   "situatii": [
     {
@@ -28,9 +28,9 @@
   ],
   "oferte": [
     {
-      "titlu": "Întoarcerea la tine",
-      "text": "Dacă te-ai regăsit în situațiile descrise, aici poți descoperi metoda mea și felul în care lucrez.",
-      "buton": "Descoperă metoda →",
+      "titlu": "Metoda CLAR",
+      "text": "Claritate prin echilibrarea percepțiilor. Dacă te-ai recunoscut într-o situație, aici afli cum lucrăm cu ea.",
+      "buton": "Descoperă Metoda CLAR →",
       "link": "./metoda-clar.html"
     },
     {
@@ -40,9 +40,9 @@
       "link": "./constelatii.html"
     },
     {
-      "titlu": "Lucrăm împreună",
-      "text": "Colaborarea individuală pornește de la situația ta și se adaptează nevoilor, fără un termen fix presupus.",
-      "buton": "Vezi programul →",
+      "titlu": "Programul de 4 luni",
+      "text": "„Întoarcerea la tine”: patru luni în care lucrăm prin Metoda CLAR, pornind de la ceea ce trăiești tu.",
+      "buton": "Descoperă programul de 4 luni →",
       "link": "./lucram-impreuna.html"
     }
   ],
@@ -84,7 +84,7 @@
       "descriere": "Descoperă cum lucrez în «Întoarcerea la tine»."
     }
   ],
-  "text_hero_continuare": "Poate e vorba despre familie, despre relații sau despre o oboseală care s-a adunat în timp. Nu îți spun eu ce ai făcut greșit și nu îți atribui o cauză.",
+  "text_hero_continuare": "",
   "contact_titlu": "Te-ai regăsit în ceea ce ai citit?",
   "contact_text": "Poți să îmi scrii pentru detalii sau să descoperi întâi cum lucrez.",
   "contact_buton": "Scrie-mi pe WhatsApp",
