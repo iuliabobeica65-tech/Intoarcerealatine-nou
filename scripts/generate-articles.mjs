@@ -128,7 +128,10 @@ export function renderArticles(output,origin=""){
   const nextStep='<aside class="blog-next-step" aria-label="Mai multe despre metoda mea"><h2>'+(edu?"Vrei să afli cum lucrez?":"Te-ai regăsit în această situație?")+'</h2><p>'+(edu?"Poți descoperi cum integrez aceste repere în procesul meu.":"Nu trebuie să găsești singură o explicație. Dacă îți este cunoscută această trăire, poți afla cum lucrez.")+'</p><a class="button" href="'+cta.href+'">'+esc(cta.label)+' <span aria-hidden="true">→</span></a></aside>';
   // Articolele de atragere au uneori o invitație scrisă în ultimul paragraf.
   // Nu afișăm și acea invitație, și cardul CTA de la final.
-  const articleText=edu?a.continut:String(a.continut).replace(/\\n\\s*Dacă[^\\n]*\\[[^\\]]+\\]\\(https:\\/\\/intoarcerealatine-nou\\.pages\\.dev\\/[^)]+\\)\\.?\\s*$/u,"").replace(/\\n\\s*Poți[^\\n]*\\[[^\\]]+\\]\\(https:\\/\\/intoarcerealatine-nou\\.pages\\.dev\\/[^)]+\\)\\.?\\s*$/u,"");
+  const chunks=String(a.continut).trim().split("\\n\\n");
+  if(!edu && chunks.length>1 && /\\[[^\\]]+\\]\\(https:\\/\\/intoarcerealatine-nou\\.pages\\.dev\\/[^)]+\\)/u.test(chunks.at(-1))
+       && /^(Dacă|Poți|Despre|Mai multe|Dacă te)/u.test(chunks.at(-1).trim())) chunks.pop();
+  const articleText=chunks.join("\\n\\n");
   const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+nextStep+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
