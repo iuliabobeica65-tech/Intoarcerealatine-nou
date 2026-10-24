@@ -1,9 +1,9 @@
 {
-  "titlu": "Poate că e timpul să te vezi și pe tine.",
-  "subtitlu": "Poate că știi deja ce ai vrea să schimbi în viața ta. Și totuși, când vine momentul să faci un pas, ceva pare să te oprească.",
-  "titlu_recunoastere": "Când ceva te ține pe loc, de unde începi?",
-  "text_recunoastere": "Poate rezolvi multe pentru ceilalți, dar când vine vorba de tine, tot amâni. Ai încercat să schimbi ceva și ai revenit la aceleași reacții? Nu presupunem cauza. Începem cu o situație concretă și explorăm ce semnificație are pentru tine.",
-  "buton_principal": "Descoperă Metoda CLAR",
+  "titlu": "Poate știi ce nu mai vrei. Și totuși, te surprinzi făcând la fel.",
+  "subtitlu": "Ți-ai promis că data viitoare vei alege altfel. Dar, când ajungi într-o situație cunoscută, reacționezi aproape la fel. Aș vrea să începem tocmai de aici: de la ceea ce trăiești tu, nu de la o explicație pregătită pentru tine.",
+  "titlu_recunoastere": "Te recunoști în vreuna dintre situațiile acestea?",
+  "text_recunoastere": "Poate îți este greu să refuzi, poate amâni ceva important sau te simți prinsă într-o poveste care se repetă. Nu mă grăbesc să îți spun de ce. Mă interesează ce înseamnă toate acestea pentru tine.",
+  "buton_principal": "Vezi cum lucrez",
   "link_principal": "./metoda-clar.html#metoda-clar",
   "buton_secundar": "Vezi întâlnirile LIVE",
   "link_secundar": "./live.html#participare",
@@ -28,8 +28,8 @@
   ],
   "oferte": [
     {
-      "titlu": "Metoda CLAR",
-      "text": "Explorăm efectul prezent, căutăm rădăcina tiparului și verificăm schimbarea.",
+      "titlu": "Întoarcerea la tine",
+      "text": "Pornim de la ce te preocupă acum, explorăm împreună percepțiile și verificăm ce se schimbă. Fără explicații impuse.",
       "buton": "Descoperă metoda →",
       "link": "./metoda-clar.html"
     },
@@ -46,14 +46,14 @@
       "link": "./lucram-impreuna.html"
     }
   ],
-  "exemplu_titlu": "„Îmi este greu să spun nu.” Ce am putea privi altfel?",
+  "exemplu_titlu": "Spui «da» și, după aceea, te întrebi de ce ai acceptat?",
   "exemplu_paragrafe": [
-    "Nu presupunem că știm de unde vine dificultatea. Începem cu o întâmplare concretă: când ai vrut să refuzi și ai acceptat, deși nu ți-era bine?",
-    "Privim ce ai gândit atunci, ce ai simțit, ce ți-ai spus despre tine și despre celălalt. Dacă apare o experiență mai veche relevantă, putem explora și concluzia de atunci. Întrebările despre perspectiva opusă ne pot ajuta să vedem și alte posibilități.",
-    "Apoi revenim la situația de la care am pornit. Ce vezi acum diferit? Ce alegere ar fi potrivită pentru tine, în acord cu valorile tale?"
+    "Poate ai vrut să refuzi o rugăminte, dar ai acceptat. Nu presupun că știu motivul. Mă interesează ce s-a întâmplat în acea situație și ce ai înțeles tu din ea.",
+    "Uneori, în timp ce povestim, apar și alte situații în care ai gândit sau ai reacționat asemănător. Te întreb de unde ai tras concluziile despre tine. Nu îți spun eu care este rădăcina.",
+    "Dacă ajungem la un moment important, lucrăm cu acțiunile concrete și cu perspectiva opusă, folosind legile potrivite. Apoi verificăm ce mai este valabil pentru tine și cum privești situația de astăzi."
   ],
   "despre_titlu": "Sunt Iulia. Îmi place să văd dincolo de ceea ce pare evident.",
-  "despre_text": "Nu vreau să-ți spun cine ar trebui să devii. Îmi place să pun întrebări și să descoperim împreună ce nu era vizibil din prima. Uneori, schimbarea începe tocmai de la o perspectivă pe care nu o luasem în calcul.",
+  "despre_text": "Îmi place să pun întrebări. Mai ales când cineva este foarte sigur că nu există nicio altă perspectivă. Nu ca să-i spun că greșește, ci pentru a descoperi împreună ce nu a fost văzut încă.",
   "carusel": [
     {
       "titlu": "Creația conștientă poate începe chiar acum",
@@ -86,7 +86,7 @@
   ],
   "text_hero_continuare": "Uneori îți este greu să spui „nu”, amâni o alegere sau observi că revii într-o situație cunoscută. Pornim de la ceea ce trăiești acum și explorăm împreună percepțiile și tiparele care ar putea avea legătură cu aceste dificultăți.",
   "contact_titlu": "Poți să-mi scrii, chiar dacă nu știi de unde să începi.",
-  "contact_text": "Dacă te-ai recunoscut într-una dintre situații — te simți blocată, ai încercat multe sau îți este greu să te alegi pe tine — îmi poți povesti într-un mesaj un exemplu concret. Nu trebuie să cunoști cauza și nici să hotărăști acum dacă vom lucra împreună.",
+  "contact_text": "Dacă una dintre situațiile descrise aici ți-a amintit de ceva din viața ta, îmi poți scrie. Nu trebuie să ai deja o explicație sau să știi exact de unde începe povestea ta.",
   "contact_buton": "Scrie-mi pe WhatsApp",
   "contact_link": "https://wa.me/40758321125"
 }
