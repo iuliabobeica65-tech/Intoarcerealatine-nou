@@ -8,6 +8,8 @@ on:
       - "qa/**"
       - ".pages.yml"
       - ".github/workflows/qa-site-v2.yml"
+      - "scripts/**"
+      - "editorial/**"
   workflow_dispatch:
 permissions:
   contents: read
@@ -31,13 +33,14 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Construieste doar fisierele publice
         run: |
-          bash scripts/build-public.sh
-          test ! -e public-site/previzualizare-metoda-clar.html
-          test ! -e public-site/.pages.yml
-          test ! -e public-site/README.md
+          node --check scripts/generate-articles.mjs
+          CF_SITE_URL=https://intoarcerealatine-nou.pages.dev node scripts/build-cloudflare.mjs
+          test ! -e dist/previzualizare-metoda-clar.html
+          test ! -e dist/.pages.yml
+          test ! -e dist/README.md
       - name: Porneste serverul site-ului
         run: |
-          python3 -m http.server 4173 --directory public-site --bind 127.0.0.1 > /tmp/intoarcere-http.log 2>&1 &
+          python3 -m http.server 4173 --directory dist --bind 127.0.0.1 > /tmp/intoarcere-http.log 2>&1 &
           for i in $(seq 1 30); do
             if curl -fsS http://127.0.0.1:4173/acasa.html > /dev/null; then exit 0; fi
             sleep 1
@@ -47,7 +50,7 @@ jobs:
       - name: Testeaza paginile, campurile JSON si cookie-urile previzualizarii
         env:
           SITE_URL: http://127.0.0.1:4173
-          PREVIEW_URL: https://deploy-preview-3--spontaneous-quokka-e0bede.netlify.app/acasa.html
+          PREVIEW_URL: ""
         run: node qa/browser-smoke.mjs
       - name: Pastreaza rapoartele QA, inclusiv la erori
         if: always()

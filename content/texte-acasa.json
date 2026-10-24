@@ -2,37 +2,37 @@
   "texte": [
     {
       "id": "text-2",
-      "continut": "CE POȚI EXPLORA",
+      "continut": "SITUAȚII DE VIAȚĂ",
       "initial": "CE POȚI EXPLORA"
     },
     {
       "id": "text-3",
-      "continut": "POATE TE RECUNOȘTI ÎNTR-UNA DINTRE ELE",
+      "continut": "POATE TE REGĂSEȘTI",
       "initial": "POATE TE RECUNOȘTI ÎNTR-UNA DINTRE ELE"
     },
     {
       "id": "text-4",
-      "continut": "Uneori, cel mai greu nu este să știi ce îți dorești.",
+      "continut": "O singură situație poate fi suficientă ca să recunoști cât de mult te doare.",
       "initial": "Uneori, cel mai greu nu este să știi ce îți dorești."
     },
     {
       "id": "text-5",
-      "continut": "Ci să înțelegi de ce, chiar și când pare limpede ce ai de făcut, revii la aceeași alegere. Nu este nevoie să te regăsești în toate exemplele. Fiecare poveste are propriul ei context.",
+      "continut": "Aici vorbim despre ce trăiești: oboseala din weekend, distanța într-o relație sau dezamăgirea după atâtea încercări. Despre felul în care lucrez îți povestesc separat.",
       "initial": "Ci să înțelegi de ce, chiar și când pare limpede ce ai de făcut, revii la aceeași alegere. Nu este nevoie să te regăsești în toate exemplele. Fiecare poveste are propriul ei context."
     },
     {
       "id": "text-6",
-      "continut": "UN EXEMPLU DE EXPLORARE",
+      "continut": "UN EXEMPLU DIN VIAȚA DE ZI CU ZI",
       "initial": "UN EXEMPLU DE EXPLORARE"
     },
     {
       "id": "text-7",
-      "continut": "Exemplu ilustrativ, nu povestea unei cliente și nu promisiunea unui rezultat. Parcursul real se adaptează fiecărei persoane.",
+      "continut": "O situație ilustrativă, fără interpretarea cauzei ori lecții despre ce ai fi făcut greșit.",
       "initial": "Exemplu ilustrativ, nu povestea unei cliente și nu promisiunea unui rezultat. Parcursul real se adaptează fiecărei persoane."
     },
     {
       "id": "text-8",
-      "continut": "DACĂ VREI SĂ VORBIM",
+      "continut": "TE-AI REGĂSIT?",
       "initial": "DACĂ VREI SĂ VORBIM"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "id": "text-13",
-      "continut": "Luni, 19:00–20:00, online pe Jitsi. Poți participa doar ascultând.",
+      "continut": "Detaliile întâlnirilor se găsesc în pagina LIVE.",
       "initial": "Luni, 19:00–20:00, online pe Jitsi. Poți participa doar ascultând."
     },
     {
@@ -77,12 +77,12 @@
     },
     {
       "id": "text-17",
-      "continut": "ÎNTOARCEREA LA TINE · ȘAPTE PERSPECTIVE",
+      "continut": "GÂNDURI ÎN CARE POATE TE RECUNOȘTI",
       "initial": "ÎNTOARCEREA LA TINE · ȘAPTE PERSPECTIVE"
     },
     {
       "id": "text-18",
-      "continut": "O privire în imagini asupra percepțiilor, tiparelor, constelațiilor sistemice, legilor universale și creației conștiente. Parcurge mesajele în ordinea lor.",
+      "continut": "Poate ai simțit că te apasă griji pe care cei din jur nu le observă. Poți afla mai multe despre metoda mea din pagina dedicată.",
       "initial": "O privire în imagini asupra percepțiilor, tiparelor, constelațiilor sistemice, legilor universale și creației conștiente. Parcurge mesajele în ordinea lor."
     },
     {
@@ -102,12 +102,12 @@
     },
     {
       "id": "rich-2",
-      "continut": "Metoda CLAR Explorăm tiparele, rădăcinile și percepțiile care îți influențează alegerile.",
+      "continut": "Întoarcerea la tine · află cum lucrez, dacă te regăsești.",
       "initial": "Metoda CLAR Explorăm tiparele, rădăcinile și percepțiile care îți influențează alegerile."
     },
     {
       "id": "rich-3",
-      "continut": "Constelații sistemice Întâlniri de grup online și față în față, organizate periodic.",
+      "continut": "Constelații sistemice · pentru teme de familie și relații, în funcție de context.",
       "initial": "Constelații sistemice Întâlniri de grup online și față în față, organizate periodic."
     },
     {

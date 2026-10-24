@@ -1,26 +1,32 @@
 {
   "pagini": [
     {
-      "pagina": "acasa"
+      "pagina": "acasa",
+      "sectiuni": []
     },
     {
-      "pagina": "metoda-clar"
+      "pagina": "metoda-clar",
+      "sectiuni": []
     },
     {
-      "pagina": "constelatii"
+      "pagina": "constelatii",
+      "sectiuni": []
     },
     {
-      "pagina": "lucram-impreuna"
+      "pagina": "lucram-impreuna",
+      "sectiuni": []
     },
     {
-      "pagina": "despre-mine"
+      "pagina": "despre-mine",
+      "sectiuni": []
     },
     {
       "pagina": "resurse",
       "sectiuni": []
     },
     {
-      "pagina": "live"
+      "pagina": "live",
+      "sectiuni": []
     }
   ]
 }

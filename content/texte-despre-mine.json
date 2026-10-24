@@ -17,7 +17,7 @@
     },
     {
       "id": "text-4",
-      "continut": "Îmi place să pun întrebări. Nu ca să găsesc repede o explicație care sună bine, ci ca să descopăr ce se află dincolo de prima reacție, de prima concluzie și, uneori, de povestea pe care ne-o spunem despre noi.",
+      "continut": "Îmi place să ascult ce s-a întâmplat. Pun întrebări pentru a cunoaște detaliile situației, nu ca să conduc femeia la concluziile mele.",
       "initial": "Îmi place să pun întrebări. Nu ca să găsesc repede o explicație care sună bine, ci ca să descopăr ce se află dincolo de prima reacție, de prima concluzie și, uneori, de povestea pe care ne-o spunem despre noi."
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "id": "text-6",
-      "continut": "În lucrul cu mine contează și valorile tale. Nu îmi doresc să înlocuim o regulă veche cu una nouă despre cum „ar trebui” să fii. Mă interesează ce alegi tu, atunci când nu mai privești o situație doar dintr-o singură parte.",
+      "continut": "În perspectiva mea, rădăcina este interpretarea polarizată pe care mintea a dat-o unui eveniment, uneori încă din primii ani de viață. La echilibrare folosesc numai întrebările legilor universale asupra acțiunii vizibile, apoi verificăm dacă interpretarea s-a schimbat.",
       "initial": "În lucrul cu mine contează și valorile tale. Nu îmi doresc să înlocuim o regulă veche cu una nouă despre cum „ar trebui” să fii. Mă interesează ce alegi tu, atunci când nu mai privești o situație doar dintr-o singură parte."
     },
     {
       "id": "text-7",
-      "continut": "Îmi place profunzimea, dar nu vreau să rămânem doar la explicații. După ce explorăm o situație, mă interesează cum te raportezi la ea acum, ce observi în corp și în reacțiile tale și ce poți alege diferit în viața de zi cu zi. Dacă o schimbare nu se menține, verificăm din nou, fără să forțăm un rezultat.",
+      "continut": "Creația conștientă se desfășoară în timpul echilibrării percepțiilor, nu după ea. Constelațiile mă pot ajuta, în funcție de context, să explorăm mai ușor rădăcina.",
       "initial": "Îmi place profunzimea, dar nu vreau să rămânem doar la explicații. După ce explorăm o situație, mă interesează cum te raportezi la ea acum, ce observi în corp și în reacțiile tale și ce poți alege diferit în viața de zi cu zi. Dacă o schimbare nu se menține, verificăm din nou, fără să forțăm un rezultat."
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "id": "text-10",
-      "continut": "De aceea îmi plac întrebările care nu forțează un răspuns. Întrebările care ne ajută să descoperim ce am presupus, ce am învățat despre noi și ce alegem să păstrăm.",
+      "continut": "Mai întâi ascult ce a trăit persoana. Nu îi propun concluziile mele și nu îi atribui o cauză dinainte.",
       "initial": "De aceea îmi plac întrebările care nu forțează un răspuns. Întrebările care ne ajută să descoperim ce am presupus, ce am învățat despre noi și ce alegem să păstrăm."
     },
     {
@@ -62,17 +62,17 @@
     },
     {
       "id": "text-13",
-      "continut": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou.",
+      "continut": "Poate din afară totul pare în regulă. Dar tu te simți obosită, neapreciată sau tot mai departe de bucuria pe care ți-o dorești.",
       "initial": "Îți dorești să începi un proiect. Sau să faci o schimbare importantă pentru tine. Și totuși, observi că amâni. Din nou."
     },
     {
       "id": "text-14",
-      "continut": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape.",
+      "continut": "Nu am să-ți spun dinainte care este cauza. Mai întâi vreau să înțeleg ce trăiești.",
       "initial": "Înainte să tragi concluzia că îți lipsește voința, putem să ne oprim puțin și să privim mai îndeaproape."
     },
     {
       "id": "text-15",
-      "continut": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine.",
+      "continut": "Dacă te-ai recunoscut, îți povestesc separat cum lucrez în «Întoarcerea la tine».",
       "initial": "Nu pornim de la un răspuns pregătit despre viața ta. Pornim de la ceea ce trăiești și de la ceea ce este important pentru tine."
     },
     {
@@ -92,22 +92,22 @@
     },
     {
       "id": "rich-2",
-      "continut": "Eu vreau să înțelegem ce anume se repetă, ce semnificație a primit o experiență și cum influențează acea percepție alegerile de astăzi . Uneori găsim o legătură cu o situație mai veche; alteori avem nevoie să explorăm mai multe momente. Nu presupun cauza înainte să lucrăm.",
+      "continut": "Rădăcina pe care o caut este interpretarea polarizată a unui eveniment. Nu îi spun eu femeii de ce a ajuns să gândească așa. O rog să povestească ce s-a întâmplat.",
       "initial": "Eu vreau să înțelegem ce anume se repetă, ce semnificație a primit o experiență și cum influențează acea percepție alegerile de astăzi . Uneori găsim o legătură cu o situație mai veche; alteori avem nevoie să explorăm mai multe momente. Nu presupun cauza înainte să lucrăm."
     },
     {
       "id": "rich-3",
-      "continut": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat.",
+      "continut": "În «Întoarcerea la tine», întrebările pentru clarificare află faptele; întrebările de echilibrare sunt doar cele din legile universale. Echilibrarea privește acțiunea vizibilă, apoi verificăm interpretarea.",
       "initial": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat."
     },
     {
       "id": "rich-4",
-      "continut": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor.",
+      "continut": "Constelațiile sistemice fac parte din ceea ce folosesc în funcție de context, pentru a explora mai ușor polarizarea din rădăcină. În timpul echilibrării facem și creație conștientă.",
       "initial": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor."
     },
     {
       "id": "rich-5",
-      "continut": "De aceea am creat „Întoarcerea la tine”: un spațiu în care să te poți privi cu mai multă curiozitate, să înțelegi ce te ține pe loc și să începi să alegi conștient, chiar dacă nu ai rezolvat toate blocajele.",
+      "continut": "În «Întoarcerea la tine» lucrăm asupra polarizării din rădăcină și a realității trăite de persoană, fără explicații impuse.",
       "initial": "De aceea am creat „Întoarcerea la tine”: un spațiu în care să te poți privi cu mai multă curiozitate, să înțelegi ce te ține pe loc și să începi să alegi conștient, chiar dacă nu ai rezolvat toate blocajele."
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "id": "rich-8",
-      "continut": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?",
+      "continut": "Dacă te regăsești în aceste stări, poți citi despre felul în care lucrez.",
       "initial": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?"
     }
   ],
