@@ -15,7 +15,7 @@ const base = process.env.SITE_URL || "http://127.0.0.1:4173";
 const preview = process.env.PREVIEW_URL || "";
 const directory = resolve(root, "qa-artifacts");
 mkdirSync(directory, { recursive: true });
-const pages = ["acasa", "metoda-clar", "constelatii", "lucram-impreuna", "despre-mine", "resurse", "live"];
+const pages = ["acasa", "metoda-clar", "constelatii", "lucram-impreuna", "despre-mine", "resurse", "live", "articole", "program-nivelul-de-merit"];
 const viewports = [
   { name: "telefon-mic", width: 320, height: 700 },
   { name: "telefon", width: 390, height: 844 },
@@ -63,7 +63,15 @@ async function inspect(site, context, pageName, viewName, screen = false) {
         display:getComputedStyle(img).display, opacity:getComputedStyle(img).opacity
       })),
       cookieNames: document.cookie.split(";").map(x => x.trim().split("=")[0]).filter(Boolean),
-      localStorageKeys: Object.keys(localStorage)
+      localStorageKeys: Object.keys(localStorage),
+      methodMenuText: [...document.querySelectorAll('.site-header nav a[href="./metoda-clar.html"]')].map(a=>a.textContent.trim()),
+      heroHeading: document.querySelector(".hero h1")?.textContent.replace(/\s+/g," ").trim() || "",
+      heroPortrait: document.querySelector(".hero-portrait")?.getAttribute("src") || "",
+      heroPortraitLoaded: !!document.querySelector(".hero-portrait")?.naturalWidth,
+      heroPortraitTop: document.querySelector(".hero-visual")?.getBoundingClientRect().top || null,
+      heroTitleTop: document.querySelector(".hero-copy h1")?.getBoundingClientRect().top || null,
+      categoryCount: document.querySelectorAll(".blog-category-group").length,
+      categoryNavAtEnd: (() => {const nav=document.querySelector(".blog-categories-end .blog-category-nav"), last=[...document.querySelectorAll(".blog-category-group")].at(-1);return !!(nav&&last&&(last.compareDocumentPosition(nav)&Node.DOCUMENT_POSITION_FOLLOWING))})()
     };
   });
   if (screen) await page.screenshot({ path: `${directory}/${pageName}-${viewName}.png`, fullPage: true });
@@ -72,6 +80,11 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   if (probe.scrollWidth > probe.width + 2) failures.push(`${pageName}/${viewName}: overflow orizontal ${probe.scrollWidth} > ${probe.width}`);
   if (probe.missingImages.length) failures.push(`${pageName}/${viewName}: imagine lipsa ${probe.missingImages.join(", ")}`);
   if (errors.length) failures.push(`${pageName}/${viewName}: JavaScript ${errors.join(" | ")}`);
+  if (["acasa","metoda-clar","constelatii","lucram-impreuna","articole","program-nivelul-de-merit"].includes(pageName) && probe.methodMenuText.some(v=>v!=="Metoda CLAR")) failures.push(pageName+"/"+viewName+": denumirea Metoda CLAR lipseste din meniu");
+  if (pageName==="acasa" && (!probe.heroHeading.startsWith("Dar dacă există") || !probe.heroPortraitLoaded || !probe.heroPortrait.includes("6ad1278ba01de7"))) failures.push(pageName+"/"+viewName+": hero sau portretul original lipsesc");
+  if (pageName==="acasa" && viewport.width <= 390 && probe.heroPortraitTop !== null && probe.heroTitleTop !== null && probe.heroPortraitTop >= probe.heroTitleTop) failures.push(pageName+"/"+viewName+": portretul nu este inaintea titlului pe mobil");
+  if (pageName==="articole" && (probe.categoryCount<4 || !probe.categoryNavAtEnd)) failures.push(pageName+"/"+viewName+": categoriile nu sunt la final");
+  if (pageName==="program-nivelul-de-merit" && !(await page.locator("h1").textContent()).includes("Nivelul de merit")) failures.push(pageName+"/"+viewName+": titlul programului lipseste");
   if (pageName === "acasa" && !probe.firstSlide?.endsWith("/07.webp")) failures.push("Carusel: prima imagine nu este 07.webp");
   if (pageName === "acasa" && (probe.galleryImages?.length !== 7 || probe.galleryImages.some(img=>img.width<1||img.height<1||img.display==="none"||img.opacity==="0"))) failures.push("Carusel: una dintre imaginile WebP nu se afiseaza.");
   results.push({ page: pageName, viewport: viewName, status: response?.status(), ...probe, errors });
@@ -81,7 +94,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
 try {
   for (const viewport of viewports) {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, deviceScaleFactor: 1, reducedMotion: "reduce", locale: "ro-RO" });
-    for (const name of pages) await inspect(base, context, name, viewport.name, ["telefon", "desktop"].includes(viewport.name) && ["acasa", "resurse"].includes(name));
+    for (const name of pages) await inspect(base, context, name, viewport.name, ["telefon", "desktop"].includes(viewport.name) && ["acasa", "resurse", "articole", "program-nivelul-de-merit"].includes(name));
     await context.close();
   }
   // Verificare modificare reala prin JSON, fara a scrie inapoi in Github.
@@ -137,6 +150,6 @@ try {
   await browser.close();
 }
 writeFileSync(resolve(directory, "browser-results.json"), JSON.stringify({ checkedAt: new Date().toISOString(), base, failures, results }, null, 2));
-console.log(`QA browser: ${results.length} verificari (7 pagini × 4 dimensiuni). Probleme: ${failures.length}.`);
+console.log(`QA browser: ${results.length} verificari (9 pagini × 4 dimensiuni). Probleme: ${failures.length}.`);
 for (const entry of failures) console.error("- " + entry);
 if (failures.length) process.exitCode = 1;
