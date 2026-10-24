@@ -46,3 +46,12 @@ Se păstrează explicit statutul celor șapte legi drept repere în cadrul dezvo
 3. Aliniere HTML fallback cu JSON-urile actualizate.
 4. Build local cu `node scripts/build-cloudflare.mjs`; verificări pe conținut, linkuri și mobil.
 5. Publicare **o singură dată** doar după aprobare explicită.
+
+
+## Continuare audit – 24 octombrie 2026
+- Toate **28/28 fișiere JSON de articole** din `editorial/articole/` au acum modificări în ramura de audit. Modificarea este editorială și nu constituie aprobare metodologică.
+- Pentru articolele rămase au fost corectate începuturi și concluzii, ori au fost înlocuite exercițiile neverificate cu reflecții/scene ilustrative; explicațiile existente nu au fost revalidate fiecare, propoziție cu propoziție.
+- Situațiile de constelații sunt ilustrative, nu autentificate ca studii de caz ale unei școli ori ale clientelor Iuliei.
+- **IMPORTANT:** textul pre-redat în HTML (`acasa.html`, `resurse.html`, `metoda-clar.html`, alte pagini) este încă versiunea veche. JSON-urile suprascriu numai unde JavaScript se execută, astfel că înaintea oricărei publicări trebuie sincronizate HTML, metadatele SEO, schemele CMS și JSON-ul; altfel utilizatorii/crawlerele pot vedea text discordant.
+- Nu s-au făcut build local complet, verificări vizuale mobile, teste de accesibilitate ori publicare. Nu declara site-ul gata.
+- Ultima verificare: ramura inițială `pregatire-cloudflare-2026-10-20` a fost păstrată separată; nu s-a cerut merge.
