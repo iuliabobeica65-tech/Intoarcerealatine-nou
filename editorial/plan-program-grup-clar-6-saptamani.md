@@ -1,10 +1,10 @@
 # Ghid intern – pilot CLAR, 6 săptămâni (nepublicat)
 
 ## Cadru
-6–8 participante; șase întâlniri săptămânale online de aproximativ 120 minute. Fără garantarea lucrului individual complet pentru fiecare participantă la fiecare întâlnire. Acord privind confidențialitatea și participarea voluntară; nu se înregistrează relatările personale fără consimțământ explicit. Stabilirea calendarului, prețului, condițiilor de anulare și procesului de înscriere înainte de lansare.
+6–8 participante; înscrieri până la 15 noiembrie 2026; șase întâlniri săptămânale online de aproximativ 120 minute, cu constelații sistemice de grup în fiecare întâlnire. Calendar PROPUS (de confirmat cu organizatoarea): marți 17 și 24 noiembrie, 1, 8, 15 și 22 decembrie 2026, oră încă nestabilită. Finalizare până la 31 decembrie. Fără garantarea lucrului individual complet pentru fiecare participantă la fiecare întâlnire. Acord privind confidențialitatea și participarea voluntară; nu se înregistrează relatările personale fără consimțământ explicit. Stabilirea calendarului, prețului, condițiilor de anulare și procesului de înscriere înainte de lansare.
 
 ## Structura orientativă a unei întâlniri
-10 min bun-venit, limite și intenții; 15 min explicarea temei printr-o situație concretă; 65 min explorare facilitată prin Metoda CLAR cu voluntară sau demonstrație neintruzivă; 20 min observații personale și clarificări; 10 min închidere și observarea alegerilor până la întâlnirea următoare. Timpii sunt orientativi; nu se forțează închiderea unui proces intens pentru a respecta minutajul.
+10 min bun-venit, limite și intenții; 15 min explicarea temei printr-o situație concretă; 65 min constelație sistemică de grup și explorare facilitată prin Metoda CLAR cu voluntară sau demonstrație neintruzivă; 20 min observații personale și clarificări; 10 min închidere și observarea alegerilor până la întâlnirea următoare. Timpii sunt orientativi; nu se forțează închiderea unui proces intens pentru a respecta minutajul.
 
 ## Săptămânile
 1. Problema prezentă, ce își dorește să obțină, situația detaliată, emoțiile, credința despre sine, de unde a tras concluzia, când s-a mai simțit așa.
@@ -22,3 +22,6 @@ Fișele S1–S9 sunt surse externe; nu le publica sau distribui integral în pro
 
 ## Pregătire lansare
 De decis: date, ore, platformă, preț pilot, număr de locuri, termeni și condiții, formular minim/mesaj WhatsApp. Pagina publică rămâne în draft până la aprobare.
+
+## Mesaj de lansare
+«Programul mult așteptat» poate fi folosit ca titlu editorial de campanie, fără a pretinde existența unei liste de așteptare sau a unor solicitări neverificate. Mesajul principal: 6 săptămâni, constelații de grup săptămânale, explorarea problemelor prezente și echilibrarea percepțiilor. Nu promite identificarea sigură a «cauzelor profunde» și nu garanta rezultate.
