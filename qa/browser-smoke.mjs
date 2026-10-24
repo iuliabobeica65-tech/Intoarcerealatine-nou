@@ -82,7 +82,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   if (errors.length) failures.push(`${pageName}/${viewName}: JavaScript ${errors.join(" | ")}`);
   if (["acasa","metoda-clar","constelatii","lucram-impreuna","articole","program-nivelul-de-merit"].includes(pageName) && probe.methodMenuText.some(v=>v!=="Metoda CLAR")) failures.push(pageName+"/"+viewName+": denumirea Metoda CLAR lipseste din meniu");
   if (pageName==="acasa" && (!probe.heroHeading.startsWith("Dar dacă există") || !probe.heroPortraitLoaded || !probe.heroPortrait.includes("6ad1278ba01de7"))) failures.push(pageName+"/"+viewName+": hero sau portretul original lipsesc");
-  if (pageName==="acasa" && viewport.width <= 390 && probe.heroPortraitTop !== null && probe.heroTitleTop !== null && probe.heroPortraitTop >= probe.heroTitleTop) failures.push(pageName+"/"+viewName+": portretul nu este inaintea titlului pe mobil");
+  if (pageName==="acasa" && probe.width <= 390 && probe.heroPortraitTop !== null && probe.heroTitleTop !== null && probe.heroPortraitTop >= probe.heroTitleTop) failures.push(pageName+"/"+viewName+": portretul nu este inaintea titlului pe mobil");
   if (pageName==="articole" && (probe.categoryCount<4 || !probe.categoryNavAtEnd)) failures.push(pageName+"/"+viewName+": categoriile nu sunt la final");
   if (pageName==="program-nivelul-de-merit" && !(await page.locator("h1").textContent()).includes("Nivelul de merit")) failures.push(pageName+"/"+viewName+": titlul programului lipseste");
   if (pageName === "acasa" && !probe.firstSlide?.endsWith("/07.webp")) failures.push("Carusel: prima imagine nu este 07.webp");
