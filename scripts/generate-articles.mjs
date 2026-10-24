@@ -113,7 +113,7 @@ export function renderArticles(output,origin=""){
  let sitemap=readFileSync(join(output,"sitemap.xml"),"utf8");
  for(const a of articles){
   const canonical=origin?origin+"/articole/"+a.slug:"";
-  let page=html.replace(/<main id="continut">[\s\S]*?<\/main>/,template.match(/<main id="continut">[\s\S]*?<\/main>/)?.[0]||"");
+  let page=html; // stiluri și navigare identice cu indexul articolelor; secțiunea main este înlocuită mai jos
   const seoTitle=esc(a.seo_titlu||a.titlu+" | Întoarcerea la tine");
   const seoDesc=esc(a.seo_descriere||a.descriere);
   page=page.replace(/<title>[^<]*<\/title>/,'<title>'+seoTitle+'</title>');
