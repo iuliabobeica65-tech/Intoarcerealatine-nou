@@ -246,3 +246,41 @@ html,body,#iulia-live,#iulia-live .clar-section{background-color:#F5EBDD!importa
  #iulia-live .hero .event-details{margin-top:20px;margin-bottom:20px}
  #iulia-live .hero-actions{gap:10px;flex-wrap:wrap}
 }
+
+
+/* feminine-editorial-unified-2026-10-25 */
+/* Continuity with the restored site: only visual surfaces, never replace hero portrait. */
+#iulia-live{--f-rose:#f7e4e9;--f-blush:#fbedee;--f-paper:#fffaf8;--f-wine:#573944;--f-gold:#b78b67}
+#iulia-live .section:not(.hero):not(.about),#iulia-live .page-intro{scroll-margin-top:24px}
+#iulia-live .page-intro:not(.merit-hero){position:relative;border-radius:0 0 30px 30px;padding:clamp(32px,5vw,65px) clamp(22px,4vw,48px) 34px;background:linear-gradient(135deg,#fff9f5,#f8e5eb)!important;border:1px solid rgba(193,143,153,.22)}
+#iulia-live .page-intro:not(.merit-hero) h1{font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;letter-spacing:-.045em;color:#4f3340!important}
+#iulia-live .page-intro h1 em{color:#986478;font-style:italic}
+#iulia-live .page-intro .eyebrow,#iulia-live .eyebrow{color:#916274}
+#iulia-live .editorial-mark{color:#b88b75;font-size:32px;line-height:1}
+#iulia-live .clar-card,#iulia-live .blog-card,#iulia-live .merit-card,#iulia-live .clar-offer,#iulia-live .question-card{border:1px solid #e6cbd3!important;border-radius:20px!important;background:linear-gradient(145deg,#fffbf8,#faeaf0)!important;box-shadow:0 10px 27px rgba(96,57,69,.045)}
+#iulia-live .clar-offer{padding:clamp(22px,3vw,30px)!important;overflow:hidden;min-width:0}
+#iulia-live .clar-offer h2{font:400 clamp(25px,2.8vw,34px)/1.17 Georgia,'Times New Roman',serif!important;color:#553540!important;letter-spacing:-.027em}
+#iulia-live .clar-offer .clar-tag{font:700 12px/1.5 Arial,sans-serif;letter-spacing:.13em;color:#955b6e}
+#iulia-live .clar-offer .clar-promise{flex:0 0 auto!important;font-size:clamp(16px,1.5vw,19px)!important;line-height:1.54!important;color:#42303a;font-weight:500;margin:16px 0}
+#iulia-live .clar-offer .clar-benefit-label{display:block;margin-bottom:8px;font:700 11px/1.3 Arial,sans-serif;letter-spacing:.15em;color:#a06675}
+#iulia-live .clar-offer .clar-detail{font-size:15px!important;color:#5a4a4e;line-height:1.7;flex:1;margin-top:0}
+#iulia-live .clar-offer .clar-actions{margin-top:auto;padding-top:20px;gap:12px}
+#iulia-live .clar-offer .clar-more{font-size:14px;text-decoration:underline;text-underline-offset:4px}
+#iulia-live .clar-offer .clar-contact,#iulia-live .merit-cta{background:#573944!important;color:#fff9f6!important;border-radius:12px!important;box-shadow:0 4px 14px rgba(87,57,68,.12);font-weight:600;text-align:center}
+#iulia-live .clar-offer .clar-contact:hover,#iulia-live .merit-cta:hover{background:#744858!important}
+#iulia-live .blog-card h2,#iulia-live .merit-card h3{font-family:Georgia,'Times New Roman',serif!important;color:#573944}
+#iulia-live .blog-card{transition:transform .18s,box-shadow .18s}
+#iulia-live .blog-card:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(96,57,69,.09)}
+#iulia-live .site-footer{background:#392b31!important}
+#iulia-live .editorial-intro{margin-top:20px}
+#iulia-live .clar-catalog{gap:22px}
+#iulia-live #posibilitati-de-lucru article{background:linear-gradient(145deg,#fffaf7,#f7e5eb)!important;border-color:#e6cbd3!important;border-radius:20px!important;box-shadow:0 8px 23px rgba(96,57,69,.045)}
+#iulia-live #posibilitati-de-lucru article h3{color:#573944!important}
+#iulia-live .merit-panel{background:linear-gradient(145deg,#fffbf8,#f8e7ec)!important;border-color:#e6cbd3!important}
+@media(max-width:750px){
+  #iulia-live .page-intro:not(.merit-hero){padding:28px 20px 26px;border-radius:0 0 22px 22px}
+  #iulia-live .clar-catalog{grid-template-columns:minmax(0,1fr)}
+  #iulia-live .clar-offer{padding:23px!important}
+  #iulia-live .clar-offer .clar-actions{align-items:stretch}
+  #iulia-live .clar-offer .clar-contact{padding:13px 18px}
+}
