@@ -356,75 +356,96 @@ html,body,#iulia-live,#iulia-live .clar-section{background-color:#F5EBDD!importa
 @media(max-width:720px){#iulia-live .clar-intro .clar-root-list{grid-template-columns:minmax(0,1fr);gap:8px}}
 
 
-/* metoda-clar-fonts-consistency-2026-10-26 */
-/* Aceleași fonturi ca în celelalte secțiuni: Georgia pentru titluri, Arial pentru text.
-   Reguli izolate pe pagina Metoda CLAR; nu schimbă portretul sau paginile deja validate. */
+/* metoda-clar-editorial-like-articles-2026-10-26 */
+/* Corecție punctuală: păstrăm Articole ca reper, fără mărirea agresivă a literelor.
+   Stil editorial feminin, text proporționat pe mobil; fără schimbări la celelalte pagini. */
+body[data-cms-extra="metoda-clar"] #iulia-live .page-intro.editorial-intro {
+  border-radius:24px!important;
+  background:linear-gradient(145deg,#fffaf7,#f9eaf0)!important;
+  padding:clamp(24px,3vw,38px) clamp(20px,3.4vw,38px)!important;
+}
+body[data-cms-extra="metoda-clar"] #iulia-live .editorial-mark {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:26px!important;line-height:1!important;
+  color:#b78a9b!important;margin-bottom:12px;
+}
+body[data-cms-extra="metoda-clar"] #iulia-live .page-intro h1 {
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(28px,3.2vw,39px)!important;
+  font-weight:400!important;
+  line-height:1.18!important;
+  letter-spacing:-.035em!important;
+  color:#513b46!important;
+  overflow-wrap:break-word;
+}
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro h2,
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h2 {
   font-family:Georgia,"Times New Roman",serif!important;
-  font-size:clamp(27px,3vw,39px)!important;
+  font-size:clamp(23px,2.35vw,30px)!important;
   font-weight:400!important;
   font-style:normal!important;
-  line-height:1.23!important;
-  letter-spacing:-.035em!important;
-  color:#543846!important;
+  line-height:1.28!important;
+  letter-spacing:-.027em!important;
+  color:#563d49!important;
   overflow-wrap:break-word;
-  max-width:100%;
 }
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-grid .clar-card h3,
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-root-card h3,
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h3 {
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid .clar-card h3,
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-root-card h3,
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h3,
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid .clar-card h3 {
   font-family:Georgia,"Times New Roman",serif!important;
-  font-size:clamp(21px,2.2vw,27px)!important;
-  font-weight:400!important;
+  font-size:clamp(19px,1.7vw,22px)!important;
   font-style:normal!important;
-  line-height:1.27!important;
-  letter-spacing:-.025em!important;
-  color:#563b48!important;
+  font-weight:400!important;
+  line-height:1.35!important;
+  letter-spacing:-.015em!important;
+  color:#644452!important;
   overflow-wrap:break-word;
 }
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro blockquote {
-  box-sizing:border-box;
   display:block;
   width:100%;
-  max-width:760px;
-  margin:19px 0 24px;
-  padding:0 0 0 clamp(14px,2.2vw,23px);
-  border-left:2px solid #c49bac;
+  max-width:780px;
+  margin:15px 0 19px!important;
+  padding:0 0 0 14px;
+  border-left:2px solid #d3afbc;
   font-family:Georgia,"Times New Roman",serif!important;
-  font-size:clamp(19px,2.1vw,25px)!important;
+  font-size:clamp(17px,1.85vw,20px)!important;
   font-weight:400!important;
   font-style:italic!important;
-  line-height:1.42!important;
-  letter-spacing:-.015em!important;
-  color:#755567!important;
+  line-height:1.5!important;
+  letter-spacing:normal!important;
+  color:#805d70!important;
   overflow-wrap:break-word;
+}
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro p:not(.eyebrow),
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-section p:not(.eyebrow),
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro li,
+body[data-cms-extra="metoda-clar"] #iulia-live .page-intro p:not(.eyebrow) {
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:15px!important;
+  font-weight:400!important;
+  line-height:1.7!important;
+  letter-spacing:normal!important;
 }
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .wrap,
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .wrap {
   min-width:0;
-  max-width:min(1160px,calc(100% - 32px));
-}
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro p:not(.eyebrow),
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-section p:not(.eyebrow),
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro li {
-  font-family:Arial,Helvetica,sans-serif!important;
-  font-size:clamp(15px,1.35vw,16px)!important;
-  font-weight:400!important;
-  line-height:1.72!important;
-  letter-spacing:normal!important;
 }
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid,
-body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid {min-width:0}
+body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid{min-width:0}
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid > *,
 body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid > * {min-width:0;max-width:100%}
 @media(max-width:750px){
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro h2,
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h2 {font-size:clamp(26px,6.6vw,31px)!important;line-height:1.25!important}
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-grid .clar-card h3,
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-root-card h3,
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h3 {font-size:clamp(21px,5.5vw,24px)!important;line-height:1.3!important}
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro blockquote {font-size:clamp(19px,5.3vw,22px)!important;line-height:1.46!important;padding-left:14px;margin:15px 0 22px}
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid,
-  body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid {grid-template-columns:minmax(0,1fr)!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro.editorial-intro {padding:24px 20px 25px!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro h1 {font-size:28px!important;line-height:1.2!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro h2,
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h2 {font-size:23px!important;line-height:1.3!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid .clar-card h3,
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-root-card h3,
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-section h3,
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid .clar-card h3 {font-size:19px!important;line-height:1.35!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro blockquote {font-size:18px!important;line-height:1.5!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid,
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid {grid-template-columns:minmax(0,1fr)!important}
 }
