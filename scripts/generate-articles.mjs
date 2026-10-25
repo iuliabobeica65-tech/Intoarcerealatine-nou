@@ -33,6 +33,7 @@ export function renderArticles(output,origin=""){
  }
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
+  {id:"frici-si-perceptii",label:"Frici și percepții polarizate",desc:"Frica de respingere, abandon, eșec sau judecată, explorată prin situații concrete, fără cauze atribuite dinainte."},
   {id:"blocaje-si-decizii",label:"Blocaje și situații de zi cu zi",desc:"Situații de viață în care poate te recunoști, fără explicații prestabilite."},
   {id:"relatii-si-familie",label:"Relații și familie",desc:"Momente din viața de familie în care apropierea, sprijinul sau liniștea par departe."},
   {id:"imagine-de-sine",label:"Imagine de sine și bani",desc:"Când te doare felul în care te privești sau te preocupă banii și lucrurile rămase pe mai târziu."},
@@ -41,6 +42,7 @@ export function renderArticles(output,origin=""){
  ];
  const groupOf=a=>{
   const cat=(a.categorie||"").toLowerCase(),slug=a.slug;
+  if(cat.includes("frică")||cat.includes("frica")||slug.startsWith("frica-"))return "frici-si-perceptii";
   if(cat.includes("legile universale"))return "legi-universale";
   if(cat.includes("constelații")||cat.includes("constelatii"))return "constelatii-familiale";
   if(cat.includes("imagine")||cat.includes("merit")||cat.includes("vinov")||cat.includes("critică")||cat.includes("limite")||cat.includes("bani"))return "imagine-de-sine";
