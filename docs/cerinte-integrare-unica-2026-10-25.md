@@ -24,3 +24,19 @@
 - pregatire-cloudflare-2026-10-20
 ## Atenție
 Acest document este inventar de cerințe, nu dovada implementării. Ramurile au istoric divergent; compară fișierele și integrează selectiv în baza aprobată.
+## Audit de ramuri — 25.10.2026, continuare
+- Compararea GitHub confirmă că `lucru-actualizari-2026-10-25` are 11 commituri peste backup, cu modificări în paginile principale, articole, legi, resurse și sitemap. Acesta este progres real, NU validare editorială sau vizuală.
+- `seo-probleme-reale-rebase-2026-10-25`: 6 commituri înainte / 11 în urmă față de backup; modifică 28+ JSON-uri editoriale, pagini și programul Nivel de merit. **Nu se face merge automat**: inventariază fiecare articol și păstrează URL-urile aprobate.
+- `diagnostic-sitemap-gsc-2026-10-25`: schimbă scriptul de build și fluxul QA; verifică utilitatea fără a modifica configurația Cloudflare.
+- `oferta-clara-traseu-clienta-2026-10-25`, `brand-elegant-modalitati-intensiv-20261025`, `brand-sprijin-provocare-incredere-20261025`, `audit-brand-navigare-intensiv-20261025`: ramuri divergente, cu alte structuri HTML; extrage doar textele/ideile aprobate, fără înlocuirea fișierelor întregi.
+- Ramura `pregatire-cloudflare-2026-10-20` a primit modificări după deploymentul validat; rollback-ul Cloudflare **nu** a restaurat ramura GitHub. Nu o publica până la audit.
+
+## Ordine de integrare și verificare (neexecutată integral)
+1. Compară navigația, secțiunile și linkurile pentru fiecare pagină față de backupul `bf3f385`.
+2. Verifică distinct cele 14 pagini, programele și cele 28 de articole generate; nu presupune că sunt intacte doar fiindcă există fișierele.
+3. Integrează întâi textele aprobate în `lucru-actualizari-2026-10-25`, cu modificări punctuale, nu prin copierea paginilor complete de pe ramurile divergente.
+4. Auditează SEO: sitemap, canonical, robots, articole și URL-uri existente.
+5. Rulează buildul și verificările de navigare/mobil înainte de aprobarea publicării; păstrează backupul neatins.
+
+## Status
+**Pregătire / audit al surselor realizat; integrarea finală, testele și publicarea NU sunt confirmate.**
