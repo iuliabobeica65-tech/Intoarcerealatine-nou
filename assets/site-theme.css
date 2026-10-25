@@ -343,3 +343,14 @@ html,body,#iulia-live,#iulia-live .clar-section{background-color:#F5EBDD!importa
  #iulia-live .participation{padding:30px 20px!important}
 }
 @media(prefers-reduced-motion:reduce){#iulia-live .blog-card,#iulia-live .clar-offer{transition:none!important}}
+
+
+/* clar-root-editorial-compact-2026-10-25 */
+#iulia-live .clar-intro .clar-root-card{max-width:980px;margin-top:clamp(20px,2.7vw,30px);background:linear-gradient(145deg,#fffdfa,#fae9ef)!important}
+#iulia-live .clar-intro .clar-root-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 24px;list-style:none;margin:17px 0;padding:0}
+#iulia-live .clar-intro .clar-root-list li{position:relative;padding-left:21px;font-size:15px;line-height:1.65;color:#584650}
+#iulia-live .clar-intro .clar-root-list li::before{content:"✦";position:absolute;top:.15em;left:0;color:#ae7889;font-size:11px}
+#iulia-live .clar-intro .clar-root-note{border-left:2px solid #cea6b3;padding-left:15px;margin:16px 0 18px;color:#665159}
+#iulia-live .clar-intro .clar-summary{margin-top:22px;max-width:76ch;line-height:1.7}
+@media(min-width:1080px){#iulia-live .clar-intro .clar-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){#iulia-live .clar-intro .clar-root-list{grid-template-columns:minmax(0,1fr);gap:8px}}
