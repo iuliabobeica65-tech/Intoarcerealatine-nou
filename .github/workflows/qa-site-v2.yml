@@ -38,6 +38,38 @@ jobs:
           test ! -e dist/previzualizare-metoda-clar.html
           test ! -e dist/.pages.yml
           test ! -e dist/README.md
+      - name: Validează sitemap.xml local înainte de publicare
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          from urllib.parse import urlparse
+          root = Path("dist")
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          doc = ET.parse(root/"sitemap.xml").getroot()
+          urls = [n.text for n in doc.findall("s:url/s:loc", ns)]
+          pages = ["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","politica-confidentialitate","politica-cookies","termeni-utilizare"]
+          articles = sorted(p.stem for p in (root/"articole").glob("*.html"))
+          expected = {"https://intoarcerealatine-nou.pages.dev/"+p for p in pages}
+          expected.update("https://intoarcerealatine-nou.pages.dev/articole/"+p for p in articles)
+          if set(urls)!=expected or len(urls)!=len(expected):
+              raise SystemExit("SITEMAP INVALID: lipsesc "+str(sorted(expected-set(urls)))+"; exces "+str(sorted(set(urls)-expected)))
+          robot=(root/"robots.txt").read_text()
+          if "Sitemap: https://intoarcerealatine-nou.pages.dev/sitemap.xml" not in robot:
+              raise SystemExit("ROBOTS INVALID: sitemap URL incorect")
+          print(f"Sitemap valid XML: {len(pages)} pagini + {len(articles)} articole = {len(urls)} URL-uri, canonice Cloudflare; robots.txt OK")
+          PY
+      - name: Diagnostic URL public – vezi răspunsul HTTP al Cloudflare
+        continue-on-error: true
+        run: |
+          for path in sitemap.xml robots.txt acasa; do
+            echo "=== Test https://intoarcerealatine-nou.pages.dev/$path"
+            curl -fsSL --retry 1 --connect-timeout 12 --max-time 25 \
+              -w 'HTTP=%{http_code} CONTENT_TYPE=%{content_type} FINAL=%{url_effective}\\n' \
+              -o /tmp/live-response "https://intoarcerealatine-nou.pages.dev/$path" || echo "EROARE: Nu s-a putut citi /$path din runnerul GitHub"
+            head -c 140 /tmp/live-response 2>/dev/null || true
+            echo ""
+          done
       - name: Porneste serverul site-ului
         run: |
           python3 -m http.server 4173 --directory dist --bind 127.0.0.1 > /tmp/intoarcere-http.log 2>&1 &

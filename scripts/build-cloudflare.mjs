@@ -93,7 +93,7 @@ renderArticles(out,origin);
 // SEO: sitemap-ul trebuie să includă toate paginile publicate, inclusiv articolele generate.
 if(origin){
  const {readdirSync}=await import("node:fs");
- const publicPages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+ const publicPages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","politica-confidentialitate","politica-cookies","termeni-utilizare"];
  const articlePages=readdirSync(resolve(out,"articole"),{withFileTypes:true}).filter(e=>e.isFile()&&e.name.endsWith(".html")).map(e=>"articole/"+e.name.slice(0,-5));
  const urls=[...publicPages,...articlePages].map(p=>"  <url><loc>"+origin+"/"+p+"</loc></url>").join("\n");
  writeFileSync(resolve(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls+'\n</urlset>\n',"utf8");
