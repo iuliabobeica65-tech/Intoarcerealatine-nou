@@ -284,3 +284,62 @@ html,body,#iulia-live,#iulia-live .clar-section{background-color:#F5EBDD!importa
   #iulia-live .clar-offer .clar-actions{align-items:stretch}
   #iulia-live .clar-offer .clar-contact{padding:13px 18px}
 }
+
+
+/* airy-feminine-global-2026-10-25-v2 */
+/* Luminozitate, spațiere și tipografie editorială, fără modificarea portretului sau a navigației. */
+#iulia-live{--airy-card:#fffaf8;--airy-rose:#f9edf0;--airy-border:#ead5db;--airy-ink:#46333b;--airy-accent:#855568}
+#iulia-live .section:not(.hero){padding-block:clamp(55px,6.5vw,83px)}
+#iulia-live .clar-section{background:#fcf6f3!important;border-bottom:1px solid #ebdcda!important}
+#iulia-live .clar-section:nth-of-type(even){background:#f9eef0!important}
+#iulia-live .clar-intro{background:linear-gradient(145deg,#fff9f6,#f8e8ed)!important}
+#iulia-live .about.section{background:#f9ebee!important}
+#iulia-live .clar-intro blockquote{font-size:clamp(22px,2.8vw,35px);line-height:1.48;max-width:820px}
+#iulia-live .page-intro:not(.merit-hero){margin-top:clamp(14px,3vw,25px);margin-bottom:clamp(20px,3vw,40px);padding:clamp(31px,5vw,58px) clamp(22px,4vw,48px)!important;border-radius:24px!important}
+#iulia-live .page-intro:not(.merit-hero) h1{font-size:clamp(33px,4.5vw,57px)!important;line-height:1.14!important;margin:0 0 20px}
+#iulia-live .page-intro:not(.merit-hero)>p:not(.eyebrow){font-size:clamp(15.5px,1.7vw,18px)!important;line-height:1.8!important;max-width:710px}
+#iulia-live .eyebrow{letter-spacing:.15em}
+#iulia-live .clar-section>h2,#iulia-live .clar-section>.wrap>h2,#iulia-live .section.wrap>h2{font:400 clamp(28px,3.1vw,42px)/1.2 Georgia,'Times New Roman',serif!important;letter-spacing:-.035em;color:var(--airy-ink);margin-bottom:22px}
+#iulia-live .clar-section .clar-lead,#iulia-live .section.wrap>p:not(.eyebrow),#iulia-live .story-copy>p,#iulia-live .about-copy>p,#iulia-live .live-intro>p{max-width:75ch;line-height:1.82}
+#iulia-live .clar-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.6vw,29px);margin-top:32px}
+#iulia-live :is(.clar-card,.merit-card,.clar-offer,.question-card,.v2-card,.event-card,.themes,.program-week,.program-stat){background:linear-gradient(150deg,#fffdfb 0%,#f9eef0 100%)!important;border:1px solid var(--airy-border)!important;border-radius:24px!important;box-shadow:0 8px 24px rgba(93,57,69,.045)!important}
+#iulia-live :is(.clar-card,.merit-card,.v2-card,.event-card){padding:clamp(23px,2.7vw,32px)!important}
+#iulia-live .clar-card h3,#iulia-live .clar-intro .clar-grid .clar-card h3,#iulia-live .clar-section .clar-grid .clar-card h3{font:400 clamp(22px,2.3vw,29px)/1.23 Georgia,'Times New Roman',serif!important;letter-spacing:-.03em!important;margin:0 0 15px!important;color:#563b48!important}
+#iulia-live .clar-card p,#iulia-live .merit-card p,#iulia-live .v2-card p,#iulia-live .event-card p{font-size:clamp(15px,1.3vw,16px)!important;line-height:1.82!important;color:#584b4f}
+#iulia-live .clar-card p:last-child,#iulia-live .merit-card p:last-child{margin-bottom:0}
+#iulia-live .clar-catalog{grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:start;gap:clamp(18px,2.4vw,28px)!important;margin-top:30px}
+#iulia-live .clar-offer{padding:clamp(24px,3vw,34px)!important;min-height:0!important;height:auto!important}
+#iulia-live .clar-offer h2{font:400 clamp(24px,2.5vw,31px)/1.22 Georgia,'Times New Roman',serif!important;margin:12px 0 17px;color:#553a46!important}
+#iulia-live .clar-offer .clar-tag{font-size:11px!important;line-height:1.5;letter-spacing:.13em}
+#iulia-live .clar-offer .clar-promise{font-size:clamp(16px,1.65vw,18px)!important;line-height:1.65!important;margin:5px 0 14px}
+#iulia-live .clar-offer .clar-detail{font-size:15px!important;line-height:1.78;flex:none!important;margin:0 0 6px}
+#iulia-live .clar-offer .clar-actions{margin-top:18px!important;padding-top:7px!important;gap:12px;align-items:center}
+#iulia-live .clar-offer .clar-contact,#iulia-live .merit-cta{padding:13px 20px!important;border-radius:12px!important}
+#iulia-live #posibilitati-de-lucru article{padding:clamp(24px,2.7vw,32px)!important;border-radius:24px!important;background:linear-gradient(150deg,#fffdfb,#f8eaf0)!important}
+#iulia-live #posibilitati-de-lucru article h3{font:400 clamp(23px,2.4vw,30px)/1.24 Georgia,serif!important;margin-bottom:15px!important}
+#iulia-live #posibilitati-de-lucru article p{line-height:1.75!important}
+#iulia-live :is(.about-grid,.story,.live,.faq){gap:clamp(28px,4vw,60px)}
+#iulia-live .themes{padding:clamp(23px,3vw,35px)!important}
+#iulia-live .themes li{font-size:clamp(18px,1.9vw,22px)!important;line-height:1.5;padding:12px 0}
+#iulia-live .participation{background:linear-gradient(150deg,#fffaf7,#fae9ed);border:1px solid #ecd8db;border-radius:25px;padding:clamp(38px,5vw,66px)!important}
+#iulia-live .participation .invitation-copy{max-width:660px;line-height:1.85}
+#iulia-live .faq-list details{background:rgba(255,250,248,.7);border:1px solid #ead7d9!important;border-radius:14px;margin:0 0 11px;padding:0 20px}
+#iulia-live .faq-list details summary{padding:18px 26px 18px 0;font-size:16px}
+#iulia-live .faq-list details p{font-size:15px;line-height:1.78}
+#iulia-live .merit-grid,#iulia-live .program-grid{gap:clamp(18px,2.5vw,28px)}
+#iulia-live .merit-section{padding-block:clamp(50px,5.5vw,74px)!important}
+#iulia-live .merit-section h2{letter-spacing:-.035em}
+#iulia-live .merit-section .merit-copy{max-width:76ch;line-height:1.83}
+#iulia-live .merit-panel{border-radius:24px!important;padding:clamp(26px,4vw,44px)!important}
+#iulia-live .question-card{padding:clamp(22px,3vw,31px)!important;margin-block:27px}
+#iulia-live .next-steps{padding-block:35px 52px!important}
+@media(max-width:820px){
+ #iulia-live .clar-grid,#iulia-live .clar-catalog,#iulia-live .merit-grid{grid-template-columns:minmax(0,1fr)!important}
+ #iulia-live :is(.about-grid,.story,.live,.faq){gap:28px}
+ #iulia-live .page-intro:not(.merit-hero){padding:30px 22px!important}
+ #iulia-live .section:not(.hero){padding-block:clamp(44px,7vw,60px)}
+ #iulia-live .clar-offer{padding:25px!important}
+ #iulia-live .clar-offer h2{font-size:clamp(24px,6.4vw,29px)!important}
+ #iulia-live .participation{padding:30px 20px!important}
+}
+@media(prefers-reduced-motion:reduce){#iulia-live .blog-card,#iulia-live .clar-offer{transition:none!important}}
