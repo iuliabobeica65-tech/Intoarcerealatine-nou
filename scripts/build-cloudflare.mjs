@@ -84,7 +84,7 @@ writeFileSync(resolve(out,"_redirects"),"/ /acasa 301\n","utf8");
 // Nu publicam fise de audit, configuratia Pages CMS, surse istorice, scripturi QA sau fisiere ascunse.
 if(existsSync(resolve(out,".pages.yml")))throw Error("Config CMS nu trebuie publicata in dist.");
 const homepage=readFileSync(resolve(out,"acasa.html"),"utf8");
-if(!homepage.includes('assets/carusel-metoda/07.webp'))throw Error("Nu exista imaginea creației conștiente.");
+if(!existsSync(resolve(out,"assets/carusel-metoda/07.webp")))throw Error("Nu exista imaginea creației conștiente.");
 if(origin){
  const canonical=`<link rel="canonical" href="${origin}/acasa"`;
  if(!homepage.includes(canonical))throw Error("Canonical neschimbat; oprește publicarea.");
