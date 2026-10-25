@@ -1,0 +1,15 @@
+/* Stil feminin unitar pentru paginile juridice; textul legal rămâne neschimbat. */
+:root{color-scheme:light}
+body{background:#f8f1eb!important;color:#45353b!important}
+header{background:#fffaf7;border-color:#e4ccd2!important}
+header .brand{color:#503b44!important}
+main.wrap{max-width:850px;padding-top:clamp(38px,6vw,70px)!important;padding-bottom:clamp(55px,8vw,95px)!important}
+main>.eyebrow{color:#956575!important}
+main>h1{font:400 clamp(35px,5vw,56px)/1.12 Georgia,serif!important;letter-spacing:-.045em;color:#513943;margin-bottom:20px!important}
+main>.intro{font-size:clamp(17px,2vw,20px)!important;line-height:1.75;max-width:680px}
+main section{background:linear-gradient(150deg,#fffdfa,#f9eef0);border:1px solid #ead7dc;border-radius:22px;padding:clamp(24px,3.8vw,40px);margin:22px 0 32px}
+main section h2{font:400 clamp(23px,3vw,32px)/1.24 Georgia,serif!important;letter-spacing:-.02em;color:#573e4b;margin:0 0 19px!important}
+main section p,main section li{line-height:1.82;max-width:75ch}
+main a{color:#805264;text-underline-offset:4px}
+footer{border-color:#e4ccd2!important}
+@media(max-width:680px){main.wrap{width:calc(100% - 28px)!important}main section{padding:23px 20px;border-radius:18px}main>h1{font-size:clamp(33px,8.5vw,44px)!important}}
