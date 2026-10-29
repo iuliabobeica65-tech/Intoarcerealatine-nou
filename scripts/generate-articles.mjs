@@ -169,7 +169,11 @@ export function renderArticles(output,origin=""){
   const invites=["Dacă","Poți","Despre","Mai multe","Citește","Te invit"];
   if(!edu && chunks.length>1 && last.includes("](https://intoarcerealatine-nou.pages.dev/")
        && invites.some(x=>last.startsWith(x)))chunks.pop();
-  const articleText=chunks.join("\n\n");
+  // La migrarea pe domeniul propriu, articolele trebuie să trimită intern către același domeniu.
+  // În sursele editoriale păstrăm textul original; rescriem doar URL-urile interne în build.
+  const articleText=chunks.join("\n\n")
+    .replaceAll("https://intoarcerealatine-nou.pages.dev/",origin?origin+"/":"https://intoarcerealatine-nou.pages.dev/")
+    .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://spontaneous-quokka-e0bede.netlify.app/");
   const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+nextStep+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
