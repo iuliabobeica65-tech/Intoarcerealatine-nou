@@ -2,8 +2,8 @@ import { renderArticles } from "./generate-articles.mjs";
 /**
  * Pregateste doar fisierele publice pentru Cloudflare Pages, fara modificari in GitHub/Netlify.
  * Cloudflare: Build command = node scripts/build-cloudflare.mjs ; Output directory = dist
- * CF_SITE_URL este optional; la build Cloudflare se foloseste adresa stabila <proiect>.pages.dev.
- * Daca exista domeniu propriu confirmat, CF_SITE_URL seteaza acel domeniu explicit.
+ * SEO folosește domeniul oficial verificat iuliabobeica.ro, fără a schimba site-ul sursă.
+ * Preview-urile rămân separate; numai publicarea aprobată actualizează producția.
  */
 import { cpSync, copyFileSync, existsSync, mkdirSync, rmSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
@@ -11,9 +11,11 @@ import { fileURLToPath } from "node:url";
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),".."),out=resolve(root,"dist");
 const legacy="https://spontaneous-quokka-e0bede.netlify.app";
+const previousPages="https://intoarcerealatine-nou.pages.dev";
+const preferredDomain="https://iuliabobeica.ro";
 // CF_PAGES_URL este adesea un URL unic pe deploy (<hash>.<project>.pages.dev).
 // Canonical trebuie sa indice adresa STABILA a proiectului, nu hash-ul de deploy.
-const explicit=process.env.CF_SITE_URL||"";
+const explicit=preferredDomain; // Domeniul oficial, deja activ și verificat în Search Console.
 let origin="";
 if(explicit){
  const u=new URL(explicit);
@@ -39,7 +41,7 @@ const files=[
 for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw Error("Fișier public absent: "+file);
  let text=readFileSync(src,"utf8");
  if(origin){
-  text=text.replaceAll(legacy,origin);
+  text=text.replaceAll(legacy,origin).replaceAll(previousPages,origin);
   if(file==="politica-confidentialitate.html"){
    text=text.replaceAll("https://www.netlify.com/privacy/","https://www.cloudflare.com/privacypolicy/");
    text=text.replaceAll("Netlify","Cloudflare");
