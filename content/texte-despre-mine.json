@@ -124,6 +124,11 @@
       "id": "rich-8",
       "continut": "Dacă te regăsești în aceste stări, poți citi despre felul în care lucrez.",
       "initial": "Ce se întâmplă concret atunci când amâni? Ce crezi despre tine în acea situație? Ce altă perspectivă ai putea explora?"
+    },
+    {
+      "id": "text-18",
+      "continut": "De peste 11 ani studiez lucrările lui Joe Dispenza, ca parte din parcursul meu independent de învățare. M-au interesat schimbarea obiceiurilor, percepțiile și creația conștientă. Acest studiu nu reprezintă o certificare din partea lui. „Întoarcerea la tine” este metoda mea, cu o structură și un mod propriu de lucru.",
+      "initial": "De peste 11 ani studiez lucrările lui Joe Dispenza, ca parte din parcursul meu independent de învățare. M-au interesat schimbarea obiceiurilor, percepțiile și creația conștientă. Acest studiu nu reprezintă o certificare din partea lui. „Întoarcerea la tine” este metoda mea, cu o structură și un mod propriu de lucru."
     }
   ],
   "linkuri": [
@@ -162,6 +167,12 @@
       "text": "LIVE săptămânal",
       "url": "./live.html",
       "initial": "LIVE săptămânal"
+    },
+    {
+      "id": "link-7",
+      "text": "Citește despre acest parcurs →",
+      "url": "./articole/joe-dispenza-creatie-constienta-parcurs-iulia-bobeica.html",
+      "initial": "Citește despre acest parcurs →"
     }
   ]
 }
