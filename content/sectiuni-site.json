@@ -18,7 +18,18 @@
     },
     {
       "pagina": "despre-mine",
-      "sectiuni": []
+      "sectiuni": [
+        {
+          "titlu": "Un reper din formarea mea continuă",
+          "text": "De peste 11 ani studiez lucrările lui Joe Dispenza. Acest studiu independent face parte din parcursul meu de învățare despre obiceiuri, percepții și creație conștientă. «Întoarcerea la tine» este însă metoda mea, cu structura și modul ei propriu de lucru.",
+          "imagine": "",
+          "legenda": "",
+          "imagini": [],
+          "text_buton": "Citește despre parcursul meu de studiu",
+          "link_buton": "/articole/joe-dispenza-creatie-constienta-parcurs-iulia-bobeica",
+          "vizibil": true
+        }
+      ]
     },
     {
       "pagina": "resurse",
