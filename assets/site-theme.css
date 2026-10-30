@@ -625,3 +625,23 @@ body{background:#F4EFE6!important}
 #iulia-live main .cta,#iulia-live main .btn,#iulia-live main .button{border-radius:28px!important;font-family:Arial,Helvetica,sans-serif!important;font-weight:600!important}
 @media(max-width:1050px){#iulia-live .site-header>nav[aria-label="Navigare principală"]{gap:8px!important}#iulia-live .site-header>nav[aria-label="Navigare principală"]>a{font-size:12px!important}}
 @media(max-width:780px){#iulia-live .site-header>nav[aria-label="Navigare principală"]{display:none!important}#iulia-live .site-header .mobile-navigation{margin-left:auto!important}#iulia-live .method-depth{margin-block:26px 45px}}
+
+/* Identitate unitară inspirată din pagina Modalități de lucru: crem, roz pudrat, prună. */
+#iulia-live{--cream:#f5ebdd;--paper:#fff9f6;--ink:#332b2c;--muted:#685861;--line:#e7d6d6;--brand-ink:#71465b;--brand-accent:#784f62;background:#f5ebdd!important;color:#332b2c!important}
+#iulia-live .site-header{background:transparent!important;border-bottom:1px solid #ddcfc8!important}
+#iulia-live .site-header .brand{color:#71465b!important}
+#iulia-live main .eyebrow{font:700 12px/1.5 Arial,Helvetica,sans-serif!important;letter-spacing:.16em!important;color:#91657a!important;text-transform:uppercase!important}
+#iulia-live main h1,#iulia-live main h2,#iulia-live main h3{color:#71465b!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;letter-spacing:-.025em!important}
+#iulia-live main h1{font-size:clamp(36px,4.3vw,58px)!important;line-height:1.16!important}
+#iulia-live main h2{font-size:clamp(28px,3.1vw,40px)!important;line-height:1.23!important}
+#iulia-live main h3{font-size:clamp(23px,2.4vw,31px)!important;line-height:1.3!important}
+#iulia-live main p,#iulia-live main li{color:#4b4143;line-height:1.75}
+#iulia-live main .clar-card,#iulia-live main .offer-card,#iulia-live main .service-card,#iulia-live main .article-card,#iulia-live main .quick-catalog-list li{background:linear-gradient(145deg,#fffaf7 0%,#f8edf1 100%)!important;border:1px solid #e5cfd8!important;border-radius:24px!important;box-shadow:0 8px 24px rgba(94,54,73,.045)!important}
+#iulia-live main .quick-catalog-list li{padding:clamp(22px,3vw,36px)!important}
+#iulia-live main .quick-catalog-list strong{font:400 clamp(25px,2.7vw,36px)/1.22 Georgia,serif!important;color:#71465b!important}
+#iulia-live main .quick-catalog-list small{font:400 clamp(15px,1.45vw,18px)/1.7 Arial,sans-serif!important;color:#685861!important}
+#iulia-live main .quick-catalog-list li>a,#iulia-live main a.cta,#iulia-live main a.btn-primary{background:#784f62!important;color:#fff!important;border-radius:100px!important;font:700 15px/1.35 Arial,sans-serif!important;padding:14px 24px!important;text-align:center!important}
+#iulia-live main .quick-catalog-list li>a:hover,#iulia-live main a.cta:hover,#iulia-live main a.btn-primary:hover{background:#623e51!important}
+#iulia-live main .page-intro,#iulia-live main .editorial-intro{padding-block:clamp(38px,5vw,72px)!important}
+#iulia-live .site-footer{border-top:1px solid #ddcfc8!important;background:#f5ebdd!important}
+@media(max-width:700px){#iulia-live .wrap{width:calc(100% - 40px)!important}#iulia-live main h1{font-size:clamp(34px,9vw,47px)!important}#iulia-live main .quick-catalog-list li>a{display:block!important;width:100%!important;margin-top:16px!important}}
