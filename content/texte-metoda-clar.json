@@ -2,13 +2,13 @@
   "texte": [
     {
       "id": "text-1",
-      "continut": "METODA CLAR",
-      "initial": "METODA CLAR"
+      "continut": "ECHILIBRAREA RĂDĂCINILOR",
+      "initial": "ECHILIBRAREA RĂDĂCINILOR"
     },
     {
       "id": "text-2",
-      "continut": "CUM LUCREZ · METODA CLAR",
-      "initial": "METODA CLAR · CREAȚIE CONȘTIENTĂ"
+      "continut": "CUM LUCREZ · ECHILIBRAREA RĂDĂCINILOR",
+      "initial": "ECHILIBRAREA RĂDĂCINILOR · CREAȚIE CONȘTIENTĂ"
     },
     {
       "id": "text-3",
@@ -57,7 +57,7 @@
     },
     {
       "id": "text-12",
-      "continut": "LEGILE UNIVERSALE ÎN METODA CLAR",
+      "continut": "LEGILE UNIVERSALE ÎN ECHILIBRAREA RĂDĂCINILOR",
       "initial": "INSTRUMENTELE METODEI CLAR"
     },
     {
@@ -231,9 +231,9 @@
     },
     {
       "id": "link-3",
-      "text": "Metoda CLAR",
+      "text": "Echilibrarea rădăcinilor",
       "url": "./metoda-clar.html",
-      "initial": "Metoda CLAR"
+      "initial": "Echilibrarea rădăcinilor"
     },
     {
       "id": "link-4",
