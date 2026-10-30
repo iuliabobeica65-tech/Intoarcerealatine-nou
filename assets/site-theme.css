@@ -570,3 +570,15 @@ body{background:#F4EFE6!important}
 #iulia-live #titlu .hero-rose{color:#A15E78!important;-webkit-text-fill-color:#A15E78!important}
 #iulia-live #titlu em{color:#382D2B!important;-webkit-text-fill-color:#382D2B!important}
 @media(max-width:700px){#iulia-live .hero{padding-top:12px!important;padding-bottom:34px!important;gap:22px!important}#iulia-live .hero-copy{padding-top:0!important}#iulia-live #titlu{font-size:clamp(36px,8vw,49px)!important;line-height:1.1!important}#iulia-live .hero-visual{margin-top:0!important}#iulia-live .hero-actions{gap:10px!important}#iulia-live .hero-actions .button{min-height:54px!important}}
+
+
+/* Identitate feminina unitara — revizie 30 octombrie 2026 */
+#iulia-live .page-intro,#iulia-live .editorial-intro{background:linear-gradient(145deg,#fff9f4 0%,#f9e9ee 100%);border:1px solid #efdce1;border-radius:22px;padding:clamp(28px,5vw,64px);margin-top:24px;margin-bottom:30px}
+#iulia-live .clar-card,#iulia-live .clar-offer,#iulia-live .v2-card,#iulia-live .event-card{border-radius:20px;border-color:#e9d1d9;box-shadow:0 10px 30px rgba(91,53,72,.07)}
+#iulia-live .clar-offer{background:linear-gradient(145deg,#fffaf6,#f8e7ee)}
+#iulia-live .clar-offer .clar-promise{font-weight:500;color:#4f3541}
+#iulia-live .clar-benefit-label{display:block;font-size:11px;letter-spacing:.13em;color:#985d75;font-weight:700;margin-bottom:9px}
+#iulia-live .clar-contact,#iulia-live .button.primary{background:#744c60;color:#fff!important;border-radius:9px}
+#iulia-live .clar-contact:hover,#iulia-live .button.primary:hover{background:#5b354b}
+#iulia-live a:focus-visible{outline:3px solid #a36582;outline-offset:3px}
+@media(max-width:700px){#iulia-live .page-intro,#iulia-live .editorial-intro{margin-top:12px;padding:24px 20px;border-radius:16px}}
