@@ -154,8 +154,8 @@ export function renderArticles(output,origin=""){
  for(const a of articles){
   const canonical=origin?origin+"/articole/"+a.slug:"";
   let page=html; // stiluri și navigare identice cu indexul articolelor; secțiunea main este înlocuită mai jos
-  const seoTitle=esc(a.seo_titlu||a.titlu+" | Întoarcerea la tine");
-  const seoDesc=esc(a.seo_descriere||a.descriere);
+  const seoTitle=esc(publicBrand(a.seo_titlu||a.titlu+" | Echilibrarea rădăcinilor"));
+  const seoDesc=esc(publicBrand(a.seo_descriere||a.descriere));
   page=page.replace(/<title>[^<]*<\/title>/,'<title>'+seoTitle+'</title>');
   page=page.replace(/<meta name="description" content="[^"]*"/,'<meta name="description" content="'+seoDesc+'"');
   page=page.replace(/<meta property="og:title" content="[^"]*"/,'<meta property="og:title" content="'+seoTitle+'"');
@@ -163,7 +163,7 @@ export function renderArticles(output,origin=""){
   const kind=groupOf(a);
   const edu=isEducational(a);
   const cta=kind==="constelatii-familiale"?{href:"../constelatii.html",label:"Descoperă cum folosesc constelațiile"}:
-     kind==="legi-universale"?{href:"../metoda-clar.html",label:"Descoperă metoda «Întoarcerea la tine»"}:
+     kind==="legi-universale"?{href:"../metoda-clar.html",label:"Descoperă Echilibrarea rădăcinilor"}:
      {href:"../metoda-clar.html",label:"Vezi cum lucrez"};
   const nextStep='<aside class="blog-next-step" aria-label="Mai multe despre metoda mea"><h2>'+(edu?"Vrei să afli cum lucrez?":"Te-ai regăsit în această situație?")+'</h2><p>'+(edu?"Poți descoperi cum integrez aceste repere în procesul meu.":"Nu trebuie să găsești singură o explicație. Dacă îți este cunoscută această trăire, poți afla cum lucrez.")+'</p><a class="button" href="'+cta.href+'">'+esc(cta.label)+' <span aria-hidden="true">→</span></a></aside>';
   // Articolele de atragere au uneori o invitație scrisă în ultimul paragraf.
@@ -174,7 +174,7 @@ export function renderArticles(output,origin=""){
   if(!edu && chunks.length>1 && last.includes("](https://intoarcerealatine-nou.pages.dev/")
        && invites.some(x=>last.startsWith(x)))chunks.pop();
   const articleText=chunks.join("\n\n")
-    .replaceAll("https://intoarcerealatine-nou.pages.dev/",origin?origin+"/":"https://intoarcerealatine-nou.pages.dev/")
+    .replaceAll("https://intoarcerealatine-nou.pages.dev/",origin?origin+"/":"https://iuliabobeica.ro/")
     .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://spontaneous-quokka-e0bede.netlify.app/");
   const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+nextStep+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
