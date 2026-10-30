@@ -180,7 +180,7 @@ export function renderArticles(output,origin=""){
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
   page=page.replace(/<link rel="canonical" href="[^"]*"\s*\/>|<link rel="canonical" href="[^"]*">/g,"");
   if(canonical){
-    const schema={"@context":"https://schema.org","@type":"BlogPosting","headline":a.titlu,"description":a.seo_descriere||a.descriere,"datePublished":a.data,"author":{"@type":"Person","name":"Iulia Bobeica","url":origin+"/despre-mine"},"publisher":{"@type":"Organization","name":"Întoarcerea la tine"},"mainEntityOfPage":canonical};
+    const schema={"@context":"https://schema.org","@type":"BlogPosting","headline":a.titlu,"description":a.seo_descriere||a.descriere,"datePublished":a.data,"author":{"@type":"Person","name":"Iulia Bobeica","url":origin+"/despre-mine"},"publisher":{"@type":"Organization","name":"Iulia Bobeica – Echilibrarea rădăcinilor"},"mainEntityOfPage":canonical};
     const json=JSON.stringify(schema).replace(/</g,"\\u003c");
     page=page.replace("</head>",'<link rel="canonical" href="'+esc(canonical)+'"><script type="application/ld+json">'+json+'</script></head>');
   }
