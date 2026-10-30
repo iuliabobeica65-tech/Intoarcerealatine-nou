@@ -1,0 +1,36 @@
+/* Design unitar: reper Lucrează cu mine. Încărcat ultimul pe fiecare pagină. */
+:root{--brand-plum:#71465b;--brand-rose:#91657a;--brand-cream:#f5ebdd;--brand-ink:#4b4143;--brand-line:#e5cfd8}
+body{background:var(--brand-cream)!important;color:var(--brand-ink)!important;font-family:Arial,Helvetica,sans-serif!important}
+#iulia-live{background:var(--brand-cream)!important;color:var(--brand-ink)!important}
+#iulia-live .site-header{background:transparent!important;border-bottom:1px solid #ddcfc8!important}
+#iulia-live .site-header .brand{color:var(--brand-plum)!important}
+#iulia-live .site-header nav a,#iulia-live .mobile-navigation nav a{font-family:Arial,Helvetica,sans-serif!important}
+#iulia-live main :is(h1,h2,h3,h4),#iulia-live main .quick-catalog-list strong{font-family:Georgia,'Times New Roman',serif!important;font-style:normal!important;font-weight:400!important;color:var(--brand-plum)!important;letter-spacing:-.025em!important;text-transform:none!important;text-wrap:balance}
+#iulia-live main h1{font-size:clamp(36px,4.5vw,58px)!important;line-height:1.16!important}
+#iulia-live main h2{font-size:clamp(29px,3.15vw,42px)!important;line-height:1.23!important}
+#iulia-live main h3,#iulia-live main .quick-catalog-list strong{font-size:clamp(24px,2.5vw,33px)!important;line-height:1.28!important}
+#iulia-live main h4{font-size:clamp(21px,2vw,26px)!important;line-height:1.35!important}
+#iulia-live main .eyebrow,#iulia-live main .blog-type{font:700 12px/1.5 Arial,Helvetica,sans-serif!important;letter-spacing:.16em!important;color:var(--brand-rose)!important;text-transform:uppercase!important}
+#iulia-live main p:not(.eyebrow),#iulia-live main li{font-family:Arial,Helvetica,sans-serif!important;font-size:clamp(16px,1.35vw,18px)!important;line-height:1.8!important;color:var(--brand-ink)!important}
+#iulia-live main p:not(.eyebrow){max-width:70ch;margin-bottom:1.35em!important}
+#iulia-live main p+p{margin-top:.9em!important}
+#iulia-live main :is(h1,h2,h3,h4){margin-bottom:clamp(14px,2vw,25px)!important}
+#iulia-live main .section{padding-top:clamp(46px,6vw,82px)!important;padding-bottom:clamp(46px,6vw,82px)!important}
+#iulia-live main :is(.clar-card,.offer-card,.service-card,.article-card,.clar-offer,.method-depth,.blog-next-step),#iulia-live main .quick-catalog-list li{background:linear-gradient(145deg,#fffaf8 0%,#f9e9ef 100%)!important;border:1px solid var(--brand-line)!important;border-radius:24px!important;box-shadow:0 9px 25px rgba(105,65,80,.055)!important;padding:clamp(24px,3vw,38px)!important}
+#iulia-live main .clar-grid,#iulia-live main .quick-catalog-list{gap:clamp(18px,2.5vw,28px)!important}
+#iulia-live main :is(.cta,.btn-primary,.button-primary,.button),#iulia-live main .quick-catalog-list li>a{background:#784f62!important;color:white!important;border-radius:999px!important}
+#iulia-live main .blog-content{max-width:760px;margin-inline:auto}
+#iulia-live main .blog-content p{max-width:67ch;margin-bottom:1.5em!important}
+#iulia-live main .blog-content :is(h2,h3){margin-top:clamp(36px,5vw,60px)!important}
+#iulia-live main .blog-content blockquote{margin:28px 0!important;padding:22px 30px!important;background:#fff9f7!important;border-left:3px solid #a9798e!important;border-radius:0 18px 18px 0!important}
+#iulia-live main :is(.page-intro,.editorial-intro,.method-reference-intro){background:transparent!important;box-shadow:none!important;border:0!important;text-align:left!important}
+@media(max-width:700px){#iulia-live main h1{font-size:clamp(35px,9vw,46px)!important}#iulia-live main h2{font-size:clamp(28px,7.2vw,35px)!important}#iulia-live main h3,#iulia-live main .quick-catalog-list strong{font-size:clamp(24px,6.4vw,30px)!important}#iulia-live main p:not(.eyebrow),#iulia-live main li{font-size:16px!important;line-height:1.78!important}#iulia-live main .section{padding-block:40px!important}#iulia-live main :is(.clar-card,.offer-card,.service-card,.article-card,.clar-offer,.method-depth,.blog-next-step),#iulia-live main .quick-catalog-list li{padding:23px!important}}
+/* Paginile juridice au structură HTML separată: aceleași culori, fonturi și ritm. */
+body:has(header.brand-unified){background:var(--brand-cream)!important;color:var(--brand-ink)!important}
+body:has(header.brand-unified) :is(h1,h2,h3){font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;color:var(--brand-plum)!important;letter-spacing:-.025em!important}
+body:has(header.brand-unified) h1{font-size:clamp(36px,4.5vw,58px)!important;line-height:1.16!important}
+body:has(header.brand-unified) h2{font-size:clamp(29px,3.15vw,42px)!important;line-height:1.23!important}
+body:has(header.brand-unified) main p,body:has(header.brand-unified) main li{font:400 clamp(16px,1.35vw,18px)/1.8 Arial,sans-serif!important;color:var(--brand-ink)!important;max-width:70ch;margin-bottom:1.3em!important}
+body:has(header.brand-unified) .eyebrow{color:var(--brand-rose)!important}
+body:has(header.brand-unified) .box{background:linear-gradient(145deg,#fffaf8,#f9e9ef)!important;border:1px solid var(--brand-line)!important;border-radius:24px!important;padding:clamp(24px,3vw,38px)!important}
+body:has(header.brand-unified) header.brand-unified{border-bottom:1px solid #ddcfc8!important}
