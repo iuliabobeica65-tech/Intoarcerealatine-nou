@@ -561,3 +561,7 @@ body{background:#F4EFE6!important}
 #iulia-live header.site-header.wrap>details.mobile-navigation>summary::before{content:none!important;display:none!important}
 #iulia-live header.site-header.wrap>details.mobile-navigation>summary::after{content:""!important;display:block!important;position:static!important;flex:0 0 19px!important;width:19px!important;height:15px!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;transform:none!important;background:linear-gradient(to bottom,#51483f 0 2px,transparent 2px 6px,#51483f 6px 8px,transparent 8px 13px,#51483f 13px 15px)!important}
 }
+
+/* Brand hero: pink on opening phrase; dark ending for readable, feminine contrast. */
+#iulia-live .hero h1#titlu .hero-rose{color:#A15E78!important;-webkit-text-fill-color:#A15E78!important;font-style:normal!important}
+#iulia-live .hero h1#titlu em{color:#382D2B!important;-webkit-text-fill-color:#382D2B!important;font-style:normal!important}
