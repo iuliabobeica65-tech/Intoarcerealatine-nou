@@ -541,3 +541,11 @@ body{background:#F4EFE6!important}
 #iulia-live .hero.wrap{padding-top:12px!important}
 #iulia-live .page-intro{padding-top:20px!important}
 }
+
+/* Mobile menu icon: single clean hamburger, no overlapping pseudo-elements. */
+@media(max-width:850px){
+#iulia-live header.site-header.wrap details.mobile-navigation>summary{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:11px!important;white-space:nowrap!important;padding:10px 13px!important;min-width:100px!important;box-sizing:border-box!important;font:600 13px/1.2 Arial,sans-serif!important}
+#iulia-live header.site-header.wrap details.mobile-navigation>summary::after{content:""!important;display:block!important;flex:0 0 18px!important;width:18px!important;height:14px!important;margin:0!important;background:linear-gradient(to bottom,#51483f 0 2px,transparent 2px 6px,#51483f 6px 8px,transparent 8px 12px,#51483f 12px 14px)!important;border:0!important;box-shadow:none!important;transform:none!important;position:static!important}
+#iulia-live header.site-header.wrap details.mobile-navigation>summary::before{content:none!important;display:none!important}
+#iulia-live header.site-header.wrap details.mobile-navigation>summary::-webkit-details-marker{display:none!important}
+}
