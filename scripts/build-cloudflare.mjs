@@ -43,8 +43,8 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  if(origin){
   text=text.replaceAll(legacy,origin).replaceAll(previousPages,origin);
   // Bust CSS cache after visual updates; same canonical URLs, no stale mobile header.
-  if(file.endsWith(".html"))text=text.replace(/(href=["\'](?:\.\/)?assets\/site-theme\.css)(?:\?[^"\']*)?(["\'])/g,"$1?v=20261030-premium-final$2");
-  if(file.endsWith(".html"))text=text.replace(/(src=["\'](?:\.\/)?assets\/content-editor\.js)(?:\?[^"\']*)?(["\'])/g,"$1?v=20261030-menu-stabil$2");
+  if(file.endsWith(".html"))text=text.replace(/(href=["\'](?:\.\/)?assets\/site-theme\.css)(?:\?[^"\']*)?(["\'])/g,"$1?v=20261030-unitar-v3$2");
+  if(file.endsWith(".html"))text=text.replace(/(src=["\'](?:\.\/)?assets\/content-editor\.js)(?:\?[^"\']*)?(["\'])/g,"$1?v=20261030-menu-v3$2");
   if(file==="politica-confidentialitate.html"){
    text=text.replaceAll("https://www.netlify.com/privacy/","https://www.cloudflare.com/privacypolicy/");
    text=text.replaceAll("Netlify","Cloudflare");
@@ -74,7 +74,17 @@ for(const dir of ["assets","content","Intoarcerea_la_tine_files"]){
  const src=resolve(root,dir);if(!existsSync(src))throw Error("Director necesar absent: "+dir);
  cpSync(src,resolve(out,dir),{recursive:true});
 }
-const headers=`/content/*.json
+const headers=`/*.html
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/acasa
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/assets/site-theme.css
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/assets/site-base.css
+  Cache-Control: no-cache, max-age=0, must-revalidate
+/content/*.json
   Cache-Control: public, max-age=0, must-revalidate
 /*
   X-Content-Type-Options: nosniff
