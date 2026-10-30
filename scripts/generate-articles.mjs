@@ -32,8 +32,25 @@ export function renderArticles(output,origin=""){
    articles.push({...data,slug});
  }
  // Public presentation layer only: retain original editorial source files unchanged.
- const publicBrand=s=>String(s??"").replace(/Întoarcerea la tine/gi,"Echilibrarea rădăcinilor").replace(/Metoda CLAR/gi,"Echilibrarea rădăcinilor").replace(/Claritate prin echilibrarea percepțiilor/gi,"claritate prin echilibrarea percepțiilor");
+ const publicBrand=s=>String(s??"").replace(/Întoarcerea la tine|Întoarce-te la tine|Metoda CLAR/gi,"Echilibrarea rădăcinilor");
  articles=articles.map(a=>({...a,titlu:publicBrand(a.titlu),descriere:publicBrand(a.descriere),continut:publicBrand(a.continut)}));
+ // Audit editorial non-destructiv: nu rescriem automat vocea autoarei și nu publicăm texte noi fără revizie.
+ const editorialWarnings=[];
+ const endings=new Map();
+ for(const a of articles){
+   const words=a.continut.trim().split(/\s+/).length;
+   const sections=(a.continut.match(/^## /gm)||[]).length;
+   const repeated=(a.continut.match(/Pornim de la (?:ceea ce trăiești|situația concretă)|Nu promitem rezultate garantate|Nu presupunem dinainte o cauză/gi)||[]).length;
+   const last=a.continut.split(/\n\s*\n/).at(-1)?.trim()||"";
+   const flags=[];
+   if(words<350)flags.push("prea_scurt_pentru_articol_substantial");
+   if(sections>=5 && words<450)flags.push("schematic_preponderent");
+   if(repeated>=2)flags.push("formule_standard_repetate");
+   if(/^(Avort|Sinucidere|Crimă|Traumă|Abuz)/i.test(a.titlu)&&words<600)flags.push("tema_sensibila_necesita_revizie");
+   if(last){const key=last.toLocaleLowerCase("ro");if(endings.has(key))flags.push("final_identic_cu_"+endings.get(key));else endings.set(key,a.slug);}
+   if(flags.length)editorialWarnings.push({slug:a.slug,titlu:a.titlu,cuvinte:words,semnale:flags});
+ }
+ if(editorialWarnings.length)console.warn("[AUDIT EDITORIAL] "+editorialWarnings.length+" articole necesită revizie de conținut; textele-sursă rămân intacte.\n"+editorialWarnings.map(x=>x.slug+": "+x.sem nale).join("\n").replaceAll("sem nale","semnale"));
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
   {id:"frici-si-perceptii",label:"Frici și percepții polarizate",desc:"Frica de respingere, abandon, eșec sau judecată, explorată prin situații concrete, fără cauze atribuite dinainte."},
@@ -115,7 +132,7 @@ export function renderArticles(output,origin=""){
 #iulia-live .blog-card h3{font-size:clamp(23px,2.3vw,32px);line-height:1.24;margin:0 0 12px}
 </style>`);
  html=html.replace("</style>",`
-/* Revizie feminină 24.10: navigația de categorii apare după articole. */
+/* Stil editorial pentru catalogul cu navigație deasupra articolelor. */
 #iulia-live .editorial-intro{position:relative;max-width:1030px;padding:clamp(32px,5vw,64px) clamp(22px,5.5vw,76px)!important;margin:26px auto 12px!important;border-radius:26px;background:radial-gradient(circle at 90% 20%,#f1d5dc 0,transparent 42%),linear-gradient(145deg,#fff8f3,#f7e8e4);border:1px solid #efd9d9;box-shadow:0 18px 46px rgba(97,56,69,.045)}
 #iulia-live .editorial-intro .editorial-mark{font:italic 40px Georgia,serif;color:#be8899;line-height:1}
 #iulia-live .editorial-intro .eyebrow{font-size:11px!important;letter-spacing:.16em!important;color:#996475;margin:12px 0 16px!important}
