@@ -35,7 +35,7 @@ if(process.env.CF_PAGES&&!origin)throw Error("Lipseste URL-ul Cloudflare; build 
 rmSync(out,{recursive:true,force:true});mkdirSync(out,{recursive:true});
 const files=[
  "index.html","acasa.html","metoda-clar.html","constelatii.html","lucram-impreuna.html",
- "despre-mine.html","resurse.html","live.html","articole.html","legi-universale.html","program-nivelul-de-merit.html","program-alegeri-fara-vinovatie.html","politica-confidentialitate.html",
+ "despre-mine.html","resurse.html","live.html","articole.html","legi-universale.html","program-nivelul-de-merit.html","program-alegeri-fara-vinovatie.html","sedinte-individuale.html","program-individual-patru-luni.html","politica-confidentialitate.html",
  "politica-cookies.html","termeni-utilizare.html","robots.txt","sitemap.xml"
 ];
 for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw Error("Fișier public absent: "+file);
@@ -57,7 +57,7 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  // Cloudflare Pages face redirect de la /pagina.html la /pagina (URL canonic fara extensie).
  // Metadatele SEO si sitemap-ul trebuie sa indice direct adresa finala, fara 301.
  if(origin){
-  const pages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+  const pages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"];
   for(const page of pages)text=text.replaceAll(origin+"/"+page+".html",origin+"/"+page);
   if(file==="index.html"){
    text=text.replace('href="./acasa.html"','href="'+origin+'/acasa"');
@@ -98,7 +98,7 @@ renderArticles(out,origin);
 // SEO: sitemap-ul trebuie să includă toate paginile publicate, inclusiv articolele generate.
 if(origin){
  const {readdirSync}=await import("node:fs");
- const publicPages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+ const publicPages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"];
  const articlePages=readdirSync(resolve(out,"articole"),{withFileTypes:true}).filter(e=>e.isFile()&&e.name.endsWith(".html")).map(e=>"articole/"+e.name.slice(0,-5));
  const urls=[...publicPages,...articlePages].map(p=>"  <url><loc>"+origin+"/"+p+"</loc></url>").join("\n");
  writeFileSync(resolve(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls+'\n</urlset>\n',"utf8");
