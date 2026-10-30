@@ -449,3 +449,49 @@ body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid > * {min
  body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro .clar-grid,
  body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid {grid-template-columns:minmax(0,1fr)!important}
 }
+
+/* mobile-editorial-compact-2026-10-30: pagina Echilibrarea rădăcinilor */
+@media(max-width:750px){
+ body[data-cms-extra="metoda-clar"] #iulia-live .site-header{
+   display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+   justify-content:space-between!important;align-items:center!important;
+   gap:12px!important;padding-block:14px 16px!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .site-header .brand{
+   font-size:clamp(19px,5.4vw,25px)!important;line-height:1.12!important;
+   max-width:60%;overflow-wrap:normal;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .site-header .brand span{
+   margin-top:5px!important;font-size:9px!important;letter-spacing:.16em!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .site-header > nav{display:none!important}
+ body[data-cms-extra="metoda-clar"] #iulia-live .site-header .mobile-navigation{
+   margin:0!important;flex:0 0 auto!important;align-self:center!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .site-header .mobile-navigation summary{
+   padding:11px 14px!important;font-size:15px!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro.editorial-intro{
+   margin-top:14px!important;margin-bottom:0!important;
+   padding:22px 20px 24px!important;border-radius:22px!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro .editorial-mark{
+   font-size:20px!important;margin-bottom:6px!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro .eyebrow{
+   margin-bottom:10px!important;font-size:10px!important;letter-spacing:.12em!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro h1{
+   font-size:clamp(25px,6.6vw,32px)!important;line-height:1.17!important;
+   margin-bottom:14px!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .page-intro p:not(.eyebrow){
+   font-size:15px!important;line-height:1.62!important;margin-bottom:0!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro.section{
+   padding-top:32px!important;padding-bottom:38px!important;
+ }
+ body[data-cms-extra="metoda-clar"] #iulia-live .clar-intro h2{
+   font-size:clamp(23px,6vw,29px)!important;
+ }
+}
