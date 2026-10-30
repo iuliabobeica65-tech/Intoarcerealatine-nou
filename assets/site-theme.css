@@ -528,3 +528,16 @@ body{background:#F4EFE6!important}
 #iulia-live .hero h1{font-size:clamp(31px,8vw,40px)!important;line-height:1.12!important}
 #iulia-live .hero .hero-visual,#iulia-live .hero .hero-image{margin-top:0!important}
 }
+
+/* FINAL compact mobile header: force same-row logo + menu; eliminate large blank band. */
+@media(max-width:850px){
+#iulia-live header.site-header.wrap{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;column-gap:8px!important;row-gap:0!important;padding:7px 0 8px!important;margin:0 auto!important;min-height:0!important;height:auto!important;max-height:none!important}
+#iulia-live header.site-header.wrap>a.brand{display:block!important;grid-column:1!important;grid-row:1!important;align-self:center!important;font-family:Georgia,serif!important;font-size:19px!important;font-weight:400!important;line-height:1.03!important;letter-spacing:-.05em!important;text-transform:lowercase!important;max-width:205px!important;margin:0!important;padding:0!important}
+#iulia-live header.site-header.wrap>a.brand span{display:block!important;font-size:8px!important;line-height:1.1!important;letter-spacing:.11em!important;margin-top:4px!important;text-transform:uppercase!important}
+#iulia-live header.site-header.wrap>nav{display:none!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation{display:block!important;grid-column:2!important;grid-row:1!important;position:relative!important;align-self:center!important;justify-self:end!important;flex:none!important;width:auto!important;margin:0!important;padding:0!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation>summary{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;font-size:12px!important;line-height:1!important;padding:9px 10px!important;min-height:38px!important;min-width:84px!important;border-radius:9px!important;margin:0!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation[open]>nav{position:absolute!important;z-index:100!important;right:0!important;top:calc(100% + 8px)!important;width:min(82vw,290px)!important;margin:0!important;padding:12px!important;box-shadow:0 12px 30px rgba(40,35,31,.15)!important;background:#FBF8F2!important;border:1px solid #D7CABB!important;border-radius:12px!important}
+#iulia-live .hero.wrap{padding-top:12px!important}
+#iulia-live .page-intro{padding-top:20px!important}
+}
