@@ -95,6 +95,18 @@ if(origin){
  if(!homepage.includes(canonical))throw Error("Canonical neschimbat; oprește publicarea.");
 }
 renderArticles(out,origin);
+// Identitate în rezultatele căutării: iconul poate fi ales de Google; nu este garantată afișarea fotografiei.
+// Păstrăm portretul existent fără a modifica imaginea originală.
+const portraitIcon="/Intoarcerea_la_tine_files/6ad1278ba01de7.05166081_9d2529da-d079-4183-89d4-6b674ef83217.jpg";
+const {readdirSync:readIconPages}=await import("node:fs");
+const iconPages=[...files.filter(f=>f.endsWith(".html")),...readIconPages(resolve(out,"articole")).filter(f=>f.endsWith(".html")).map(f=>"articole/"+f)];
+for(const file of iconPages){
+ const filePath=resolve(out,file);
+ let page=readFileSync(filePath,"utf8");
+ if(!/<link\\s+rel=["']icon["']/i.test(page))page=page.replace("</head>",'<link rel="icon" type="image/jpeg" href="'+portraitIcon+'"></head>');
+ writeFileSync(filePath,page,"utf8");
+}
+
 // SEO: sitemap-ul trebuie să includă toate paginile publicate, inclusiv articolele generate.
 if(origin){
  const {readdirSync}=await import("node:fs");
