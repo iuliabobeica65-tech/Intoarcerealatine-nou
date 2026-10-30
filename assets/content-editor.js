@@ -50,7 +50,7 @@ fetch("./content/setari-site.json",{cache:"no-cache"})
     for(const item of c.meniu){
      if(!item||!known.has(item.pagina)||typeof item.eticheta!=="string"||!item.eticheta.trim())continue;
      document.querySelectorAll(".site-header nav a").forEach(a=>{
-      if(a.getAttribute("href")==="./"+item.pagina&&a.textContent.trim()!==item.eticheta.trim())a.textContent=item.eticheta;
+      if(a.getAttribute("href")?.split("#")[0]==="./"+item.pagina&&a.textContent.trim()!==item.eticheta.trim())a.textContent=item.eticheta;
      });
     }
    }

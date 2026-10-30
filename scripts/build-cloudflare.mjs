@@ -44,6 +44,7 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
   text=text.replaceAll(legacy,origin).replaceAll(previousPages,origin);
   // Bust CSS cache after visual updates; same canonical URLs, no stale mobile header.
   if(file.endsWith(".html"))text=text.replace(/(href=["\'](?:\.\/)?assets\/site-theme\.css)(?:\?[^"\']*)?(["\'])/g,"$1?v=20261030-premium-final$2");
+  if(file.endsWith(".html"))text=text.replace(/(src=["\'](?:\.\/)?assets\/content-editor\.js)(?:\?[^"\']*)?(["\'])/g,"$1?v=20261030-menu-stabil$2");
   if(file==="politica-confidentialitate.html"){
    text=text.replaceAll("https://www.netlify.com/privacy/","https://www.cloudflare.com/privacypolicy/");
    text=text.replaceAll("Netlify","Cloudflare");
