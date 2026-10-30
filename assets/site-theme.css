@@ -682,3 +682,15 @@ body{background:#F4EFE6!important}
  #iulia-live main h2{margin-top:26px!important;margin-bottom:16px!important}
  #iulia-live main h3{margin-top:20px!important}
 }
+
+/* Sistem tipografic final, identic cu pagina Lucrează cu mine. */
+#iulia-live{--unified-title:#71465b;--unified-label:#91657a;--unified-text:#4b4143;--unified-background:#f5ebdd;--unified-card:#fff9f7;background:var(--unified-background)!important;color:var(--unified-text)!important}
+#iulia-live main :is(h1,h2,h3,h4),#iulia-live main :is(h1,h2,h3,h4) :is(span,strong,em){font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;font-style:normal!important;color:var(--unified-title)!important;letter-spacing:-.025em!important;text-transform:none!important}
+#iulia-live main h1,#iulia-live main .quick-catalog h1,#iulia-live main .method-reference-intro h1{font-size:clamp(36px,4.5vw,58px)!important;line-height:1.16!important}
+#iulia-live main h2,#iulia-live main .clar-intro h2,#iulia-live main .clar-section h2,#iulia-live main .method-depth h2{font-size:clamp(29px,3.15vw,42px)!important;line-height:1.23!important}
+#iulia-live main h3,#iulia-live main .clar-card h3,#iulia-live main .quick-catalog-list strong{font-size:clamp(24px,2.5vw,33px)!important;line-height:1.28!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;color:var(--unified-title)!important}
+#iulia-live main h4{font-size:clamp(21px,2vw,26px)!important;line-height:1.35!important}
+#iulia-live main .eyebrow,#iulia-live main .method-reference-intro .eyebrow{font:700 12px/1.5 Arial,Helvetica,sans-serif!important;letter-spacing:.16em!important;color:var(--unified-label)!important;text-transform:uppercase!important}
+#iulia-live main p:not(.eyebrow),#iulia-live main li{color:var(--unified-text)!important}
+#iulia-live main .quick-catalog-list li,#iulia-live main .clar-card,#iulia-live main .offer-card,#iulia-live main .service-card,#iulia-live main .article-card{border-color:#e5cfd8!important}
+@media(max-width:700px){#iulia-live main h1,#iulia-live main .quick-catalog h1,#iulia-live main .method-reference-intro h1{font-size:clamp(35px,9vw,46px)!important}#iulia-live main h2{font-size:clamp(28px,7.2vw,35px)!important}#iulia-live main h3,#iulia-live main .clar-card h3,#iulia-live main .quick-catalog-list strong{font-size:clamp(24px,6.4vw,30px)!important}}
