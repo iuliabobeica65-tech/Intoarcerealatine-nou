@@ -3,7 +3,7 @@
   "subtitlu": "Poate că ceea ce cunoști acum despre tine nu este tot ceea ce poți fi.",
   "titlu_recunoastere": "Poate te recunoști într-una dintre aceste situații.",
   "text_recunoastere": "Fiecare situație are povestea ei. Citește-o pe cea care îți este cunoscută.",
-  "buton_principal": "Descoperă Metoda CLAR",
+  "buton_principal": "Descoperă Echilibrarea rădăcinilor",
   "link_principal": "./metoda-clar.html#metoda-clar",
   "buton_secundar": "Vezi programele",
   "link_secundar": "./lucram-impreuna.html",
@@ -28,9 +28,9 @@
   ],
   "oferte": [
     {
-      "titlu": "Metoda CLAR",
+      "titlu": "Echilibrarea rădăcinilor",
       "text": "Claritate prin echilibrarea percepțiilor. Dacă te-ai recunoscut într-o situație, aici afli cum lucrăm cu ea.",
-      "buton": "Descoperă Metoda CLAR →",
+      "buton": "Descoperă Echilibrarea rădăcinilor →",
       "link": "./metoda-clar.html"
     },
     {
@@ -41,7 +41,7 @@
     },
     {
       "titlu": "Programul de 4 luni",
-      "text": "„Întoarcerea la tine”: patru luni în care lucrăm prin Metoda CLAR, pornind de la ceea ce trăiești tu.",
+      "text": "„Echilibrarea rădăcinilor”: patru luni în care lucrăm prin Echilibrarea rădăcinilor, pornind de la ceea ce trăiești tu.",
       "buton": "Descoperă programul de 4 luni →",
       "link": "./lucram-impreuna.html"
     }
@@ -50,7 +50,7 @@
   "exemplu_paragrafe": [
     "După o săptămână de serviciu, te gândeai la câteva ore de odihnă. Acasă, vasele sunt tot acolo, coșul de rufe este plin și mâncarea trebuie pregătită.",
     "Ai mai cerut ajutor. Ai spus că ești obosită. Totuși, weekendul începe cu aceleași treburi și cu senzația că nu mai ai putere.",
-    "«De câte ori să mai spun? Eu când mă odihnesc?» Dacă te recunoști, poți descoperi cum lucrez în «Întoarcerea la tine»."
+    "«De câte ori să mai spun? Eu când mă odihnesc?» Dacă te recunoști, poți descoperi cum lucrez în «Echilibrarea rădăcinilor»."
   ],
   "despre_titlu": "Sunt Iulia. Îmi place să văd dincolo de ceea ce pare evident.",
   "despre_text": "Întotdeauna m-a interesat să privesc lucrurile din mai multe perspective, nu să mă opresc la prima explicație. Îmi place să lucrez în profunzime, dar să rămânem aproape de viața reală și de ceea ce devine posibil pentru tine.",
@@ -81,7 +81,7 @@
     },
     {
       "titlu": "Te-ai regăsit?",
-      "descriere": "Descoperă cum lucrez în «Întoarcerea la tine»."
+      "descriere": "Descoperă cum lucrez în «Echilibrarea rădăcinilor»."
     }
   ],
   "text_hero_continuare": "",
