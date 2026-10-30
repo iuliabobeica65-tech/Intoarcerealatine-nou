@@ -549,3 +549,15 @@ body{background:#F4EFE6!important}
 #iulia-live header.site-header.wrap details.mobile-navigation>summary::before{content:none!important;display:none!important}
 #iulia-live header.site-header.wrap details.mobile-navigation>summary::-webkit-details-marker{display:none!important}
 }
+
+/* PREMIUM BRAND V5 — intentional hierarchy, no CSS-generated icon overlap. */
+#iulia-live .site-header .brand{font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif!important;font-weight:400!important;letter-spacing:-.025em!important;text-transform:none!important;color:#352E29!important}
+#iulia-live .site-header .brand span{font-family:Arial,sans-serif!important;font-size:9px!important;letter-spacing:.16em!important;font-weight:600!important}
+@media(max-width:850px){
+#iulia-live header.site-header.wrap{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;padding:11px 0!important}
+#iulia-live header.site-header.wrap>a.brand{display:block!important;flex:1 1 auto!important;min-width:0!important;max-width:230px!important;font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif!important;font-size:clamp(19px,4.5vw,24px)!important;line-height:1.08!important;text-transform:none!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation{flex:0 0 auto!important;display:block!important;position:relative!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation>summary{display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;white-space:nowrap!important;padding:10px 13px!important;font:600 13px/1.1 Arial,sans-serif!important;min-width:104px!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation>summary::before{content:none!important;display:none!important}
+#iulia-live header.site-header.wrap>details.mobile-navigation>summary::after{content:""!important;display:block!important;position:static!important;flex:0 0 19px!important;width:19px!important;height:15px!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;transform:none!important;background:linear-gradient(to bottom,#51483f 0 2px,transparent 2px 6px,#51483f 6px 8px,transparent 8px 13px,#51483f 13px 15px)!important}
+}
