@@ -31,6 +31,9 @@ export function renderArticles(output,origin=""){
      throw Error("Articol publicat incomplet: "+slug);
    articles.push({...data,slug});
  }
+ // Public presentation layer only: retain original editorial source files unchanged.
+ const publicBrand=s=>String(s??"").replace(/Întoarcerea la tine/gi,"Echilibrarea rădăcinilor").replace(/Metoda CLAR/gi,"Echilibrarea rădăcinilor").replace(/Claritate prin echilibrarea percepțiilor/gi,"claritate prin echilibrarea percepțiilor");
+ articles=articles.map(a=>({...a,titlu:publicBrand(a.titlu),descriere:publicBrand(a.descriere),continut:publicBrand(a.continut)}));
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
   {id:"frici-si-perceptii",label:"Frici și percepții polarizate",desc:"Frica de respingere, abandon, eșec sau judecată, explorată prin situații concrete, fără cauze atribuite dinainte."},
