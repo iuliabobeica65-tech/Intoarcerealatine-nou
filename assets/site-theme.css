@@ -694,3 +694,13 @@ body{background:#F4EFE6!important}
 #iulia-live main p:not(.eyebrow),#iulia-live main li{color:var(--unified-text)!important}
 #iulia-live main .quick-catalog-list li,#iulia-live main .clar-card,#iulia-live main .offer-card,#iulia-live main .service-card,#iulia-live main .article-card{border-color:#e5cfd8!important}
 @media(max-width:700px){#iulia-live main h1,#iulia-live main .quick-catalog h1,#iulia-live main .method-reference-intro h1{font-size:clamp(35px,9vw,46px)!important}#iulia-live main h2{font-size:clamp(28px,7.2vw,35px)!important}#iulia-live main h3,#iulia-live main .clar-card h3,#iulia-live main .quick-catalog-list strong{font-size:clamp(24px,6.4vw,30px)!important}}
+
+/* SISTEM FINAL UNITAR LUCREAZA CU MINE */
+#iulia-live main :is(h1,h2,h3,h4),#iulia-live main .quick-catalog-list strong{font-family:Georgia,serif!important;font-weight:400!important;color:#71465b!important;letter-spacing:-.025em!important;text-transform:none!important}
+#iulia-live main h1{font-size:clamp(36px,4.5vw,58px)!important;line-height:1.16!important}#iulia-live main h2{font-size:clamp(29px,3.15vw,42px)!important;line-height:1.23!important}#iulia-live main h3,#iulia-live main .quick-catalog-list strong{font-size:clamp(24px,2.5vw,33px)!important;line-height:1.28!important}
+#iulia-live main .eyebrow,#iulia-live main .blog-type{color:#91657a!important;letter-spacing:.16em!important}
+#iulia-live main p:not(.eyebrow),#iulia-live main li{font-size:clamp(16px,1.35vw,18px)!important;line-height:1.8!important;color:#4b4143!important}
+#iulia-live main .section{padding-top:clamp(46px,6vw,82px)!important;padding-bottom:clamp(46px,6vw,82px)!important}
+#iulia-live main :is(.clar-card,.offer-card,.service-card,.article-card,.blog-next-step),#iulia-live main .quick-catalog-list li{background:linear-gradient(145deg,#fffaf8,#f9e9ef)!important;border:1px solid #e5cfd8!important;border-radius:24px!important;padding:clamp(24px,3vw,38px)!important}
+#iulia-live main .blog-content{max-width:760px;margin-inline:auto}#iulia-live main .blog-content p{max-width:67ch;margin-bottom:1.5em!important}#iulia-live main .blog-content :is(h2,h3){margin-top:clamp(36px,5vw,60px)!important}
+@media(max-width:700px){#iulia-live main h1{font-size:clamp(35px,9vw,46px)!important}#iulia-live main h2{font-size:clamp(28px,7.2vw,35px)!important}#iulia-live main h3{font-size:clamp(24px,6.4vw,30px)!important}#iulia-live main p:not(.eyebrow),#iulia-live main li{font-size:16px!important}#iulia-live main .section{padding-block:40px!important}}
