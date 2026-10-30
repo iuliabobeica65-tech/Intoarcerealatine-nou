@@ -495,3 +495,21 @@ body[data-cms-extra="metoda-clar"] #iulia-live .clar-section .clar-grid > * {min
    font-size:clamp(23px,6vw,29px)!important;
  }
 }
+
+/* Identitate editoriala: profunzime calma, feminin fara dominanta roz (30.10.2026). */
+#iulia-live{--cream:#F4EFE6;--paper:#FBF8F2;--pink:#D8C5B7;--gold:#AE8550;--ink:#302B28;--muted:#665E57;--line:#D7CABB;background:#F4EFE6!important;color:#302B28}
+body{background:#F4EFE6!important}
+#iulia-live .site-header{background:#F4EFE6!important;border-color:#D7CABB!important}
+#iulia-live .site-header .brand{font-family:Georgia,'Times New Roman',serif!important;font-style:normal!important;font-weight:400!important;font-size:clamp(21px,2vw,29px)!important;letter-spacing:-.055em!important;text-transform:lowercase!important;color:#453A35!important;line-height:1.13!important;max-width:340px}
+#iulia-live .site-header .brand span{font-family:Arial,sans-serif!important;font-style:normal!important;text-transform:uppercase!important;letter-spacing:.18em!important;font-size:9px!important;color:#77685B!important}
+#iulia-live .page-intro.editorial-intro,#iulia-live .blog-article-head{background:linear-gradient(140deg,#F5F0E7,#EDE6DA)!important;border-color:#DED1BF!important}
+#iulia-live .blog-card{background:linear-gradient(145deg,#FFFCF7,#F2EBE0)!important;border-color:#DED1BF!important;box-shadow:0 8px 24px rgba(55,45,35,.045)!important}
+#iulia-live .blog-category-nav a,#iulia-live .blog-related{background:#F9F4EA!important;border-color:#D7CABB!important}
+#iulia-live .blog-article .blog-next-step,#iulia-live .blog-article .blog-content blockquote{background:#F0E9DF!important;border-color:#C6A67D!important}
+#iulia-live .blog-card .blog-card-link,#iulia-live .blog-article .blog-content a{color:#70553C!important}
+#iulia-live .ict-gallery{background:linear-gradient(145deg,#F4EFE6 0%,#ECE3D6 60%,#E2D8C9 100%)!important}
+#iulia-live .ict-arrow{background:#FBF8F2!important;border-color:#C9B8A1!important;color:#453A35!important}
+#iulia-live .ict-dot[aria-current='true']{background:#98734E!important}
+#iulia-live h1,#iulia-live h2{color:#332D2A}
+#iulia-live .button,#iulia-live .blog-article .blog-next-step .button{background:#56483D!important;color:#FFF9EF!important}
+@media(max-width:700px){#iulia-live .site-header .brand{font-size:clamp(21px,5.7vw,27px)!important;max-width:260px}}
