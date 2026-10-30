@@ -63,9 +63,10 @@ export function renderArticles(output,origin=""){
  const categorySections=activeGroups.map(g=>'<section class="blog-category-group" id="'+g.id+'" aria-labelledby="head-'+g.id+'"><h2 id="head-'+g.id+'">'+esc(g.label)+'</h2><p class="blog-group-desc">'+esc(g.desc)+'</p><div class="blog-list">'+cardsFor(g.items)+'</div></section>').join("\n");
  let html=template;
  const empty='<p>Articolele sunt în pregătire. Vezi <a href="./resurse.html">Resurse</a>.</p>';
- html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?categorySections+'<aside class="blog-categories-end"><p class="eyebrow">MAI DEPARTE, ALEGE TEMA TA</p><h2>Explorează și alte teme</h2>'+categoryNav+'</aside>':empty);
+ html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?'<div class="blog-catalog-guide"><p class="eyebrow">GĂSEȘTE TEMA CARE TE PREOCUPĂ</p><p>Explorează cele '+articles.length+' de articole publicate, grupate după situații de viață.</p>'+categoryNav+'</div>'+categorySections+'<aside class="blog-categories-end"><p class="eyebrow">MAI DEPARTE, ALEGE TEMA TA</p><h2>Explorează și alte teme</h2>'+categoryNav+'</aside>':empty);
  if(html.includes("<!-- LISTA_ARTICOLE -->"))throw Error("Nu s-a putut organiza lista articolelor.");
  html=html.replace("</style>",`
+#iulia-live .blog-catalog-guide{padding:22px 24px 10px;margin:0 0 22px;border-radius:18px;background:#fff9f6;border:1px solid #ead4d9}#iulia-live .blog-catalog-guide>p{margin:0 0 12px}#iulia-live .blog-catalog-guide .blog-category-nav{margin:12px 0 16px}#iulia-live .blog-category-nav a:focus-visible,#iulia-live .blog-card a:focus-visible{outline:3px solid #8b536a;outline-offset:4px}#iulia-live .blog-card{overflow-wrap:anywhere}#iulia-live .blog-category-group{scroll-margin-top:95px}
 /* Editorial 24.10 – articole lizibile, feminine și centrate pe o singură experiență. */
 #iulia-live .blog-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px}
 #iulia-live .blog-card{position:relative;display:flex;flex-direction:column;min-height:265px;padding:30px 29px 27px;border:1px solid #e8ccca;border-radius:18px;background:linear-gradient(155deg,#fff9f5,#ffeff1);box-shadow:0 10px 28px rgba(67,35,40,.045);transition:transform .2s,box-shadow .2s}
