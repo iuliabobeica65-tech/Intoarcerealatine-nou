@@ -50,7 +50,7 @@ export function renderArticles(output,origin=""){
    if(last){const key=last.toLocaleLowerCase("ro");if(endings.has(key))flags.push("final_identic_cu_"+endings.get(key));else endings.set(key,a.slug);}
    if(flags.length)editorialWarnings.push({slug:a.slug,titlu:a.titlu,cuvinte:words,semnale:flags});
  }
- if(editorialWarnings.length)console.warn("[AUDIT EDITORIAL] "+editorialWarnings.length+" articole necesită revizie de conținut; textele-sursă rămân intacte.\n"+editorialWarnings.map(x=>x.slug+": "+x.sem nale).join("\n").replaceAll("sem nale","semnale"));
+ if(editorialWarnings.length)console.warn("[AUDIT EDITORIAL] "+editorialWarnings.length+" articole necesită revizie de conținut; textele-sursă rămân intacte.\n"+editorialWarnings.map(x=>x.slug+": "+x.semnale).join("\n").replaceAll("sem nale","semnale"));
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
   {id:"frici-si-perceptii",label:"Frici și percepții polarizate",desc:"Frica de respingere, abandon, eșec sau judecată, explorată prin situații concrete, fără cauze atribuite dinainte."},
