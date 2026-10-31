@@ -127,3 +127,26 @@ if(origin){
  writeFileSync(resolve(out,"robots.txt"),"User-agent: *\nAllow: /\nSitemap: "+origin+"/sitemap.xml\n","utf8");
 }
 console.log("Cloudflare Pages: build static pregătit în dist; origin:",origin||"(local, sursa Netlify)"); 
+
+
+// Canonical internal navigation: point to existing clean URLs instead of HTML redirects.
+// Only href values are normalized; visible text, styles and editorial sources are preserved.
+if(origin){
+ const allPages=[...files.filter(f=>f.endsWith(".html")),...readIconPages(resolve(out,"articole")).filter(f=>f.endsWith(".html")).map(f=>"articole/"+f)];
+ const knownPages=new Set(allPages.map(f=>"/"+f.slice(0,-5)));
+ knownPages.add("/");
+ for(const file of allPages){
+  const path=resolve(out,file);
+  let html=readFileSync(path,"utf8");
+  html=html.replace(/href=(["'])([^"']+)\1/g,(match,quote,value)=>{
+   if(value.startsWith("#"))return match;
+   let url;try{url=new URL(value,origin+"/"+file);}catch{return match;}
+   if(![origin,legacy,previousPages].includes(url.origin))return match;
+   const clean=url.pathname.replace(/\.html$/,"");
+   if(!knownPages.has(clean))return match;
+   const target=clean==="/"||clean==="/index"?"/acasa":clean;
+   return "href="+quote+origin+target+url.search+url.hash+quote;
+  });
+  writeFileSync(path,html,"utf8");
+ }
+}

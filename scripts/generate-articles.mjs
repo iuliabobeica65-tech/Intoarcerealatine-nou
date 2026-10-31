@@ -173,6 +173,7 @@ export function renderArticles(output,origin=""){
   let page=html; // stiluri și navigare identice cu indexul articolelor; secțiunea main este înlocuită mai jos
   const seoTitle=esc(publicBrand(a.seo_titlu||a.titlu+" | Echilibrarea rădăcinilor"));
   const seoDesc=esc(publicBrand(a.seo_descriere||a.descriere));
+  page=page.replace(/<meta property="og:type" content="[^"]*"/,'<meta property="og:type" content="article"');
   page=page.replace(/<title>[^<]*<\/title>/,'<title>'+seoTitle+'</title>');
   page=page.replace(/<meta name="description" content="[^"]*"/,'<meta name="description" content="'+seoDesc+'"');
   page=page.replace(/<meta property="og:title" content="[^"]*"/,'<meta property="og:title" content="'+seoTitle+'"');
@@ -209,3 +210,4 @@ export function renderArticles(output,origin=""){
  if(origin)writeFileSync(join(output,"sitemap.xml"),sitemap,"utf8");
  console.log("Articole publicate:",articles.length,"(ciornele nu au fost copiate)");
 }
+
