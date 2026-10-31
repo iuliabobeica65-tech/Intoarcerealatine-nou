@@ -98,12 +98,12 @@
     {
       "id": "rich-3",
       "continut": "În «Întoarcerea la tine», întrebările pentru clarificare află faptele; întrebările de echilibrare sunt doar cele din legile universale. Echilibrarea privește acțiunea vizibilă, apoi verificăm interpretarea.",
-      "initial": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Metoda CLAR — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat."
+      "initial": "Din acest fel de a privi lucrurile și din interesul meu pentru legile universale, echilibrarea percepțiilor și tiparele relaționale s-a conturat Echilibrarea rădăcinilor — Creație prin echilibrarea percepțiilor . Pornim de la ceea ce trăiești acum, căutăm rădăcinile relevante, explorăm și opusul percepției formate atunci și revenim să verificăm ce s-a schimbat."
     },
     {
       "id": "rich-4",
       "continut": "Constelațiile sistemice fac parte din ceea ce folosesc în funcție de context, pentru a explora mai ușor polarizarea din rădăcină. În timpul echilibrării facem și creație conștientă.",
-      "initial": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a Metodei CLAR. În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor."
+      "initial": "Lucrez și cu constelații sistemice , în întâlniri de grup organizate periodic, online și față în față. Pentru persoanele atrase de acest mod de explorare, constelațiile sunt o posibilitate de lucru de sine stătătoare; nu sunt o etapă obligatorie a metodei «Echilibrarea rădăcinilor». În aceste întâlniri putem integra și întrebări pentru echilibrarea percepțiilor."
     },
     {
       "id": "rich-5",
@@ -140,9 +140,9 @@
     },
     {
       "id": "link-2",
-      "text": "Metoda CLAR",
-      "url": "./metoda-clar.html",
-      "initial": "Metoda CLAR"
+      "text": "Echilibrarea rădăcinilor",
+      "url": "./echilibrarea-radacinilor.html",
+      "initial": "Echilibrarea rădăcinilor"
     },
     {
       "id": "link-3",
@@ -176,3 +176,4 @@
     }
   ]
 }
+

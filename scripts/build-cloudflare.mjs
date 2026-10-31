@@ -150,3 +150,19 @@ if(origin){
   writeFileSync(path,html,"utf8");
  }
 }
+
+// Method name and canonical URL: retain old inbound links through permanent redirects.
+if(origin){
+ const pages=[...files.filter(f=>f.endsWith(".html")),...readIconPages(resolve(out,"articole")).filter(f=>f.endsWith(".html")).map(f=>"articole/"+f)];
+ for(const file of pages){
+  const path=resolve(out,file);
+  let html=readFileSync(path,"utf8").replaceAll("/metoda-clar","/echilibrarea-radacinilor").replaceAll("/echilibrarea-radacinilor.html","/echilibrarea-radacinilor");
+  writeFileSync(path,html,"utf8");
+ }
+ const oldPath=resolve(out,"metoda-clar.html");
+ copyFileSync(oldPath,resolve(out,"echilibrarea-radacinilor.html"));
+ rmSync(oldPath);
+ const sitemapPath=resolve(out,"sitemap.xml");
+ writeFileSync(sitemapPath,readFileSync(sitemapPath,"utf8").replaceAll("/metoda-clar","/echilibrarea-radacinilor"),"utf8");
+ writeFileSync(resolve(out,"_redirects"),"/ /acasa 301\n/metoda-clar /echilibrarea-radacinilor 301\n/metoda-clar.html /echilibrarea-radacinilor 301\n","utf8");
+}
