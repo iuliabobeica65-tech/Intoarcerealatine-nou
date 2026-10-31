@@ -2,7 +2,7 @@
   "texte": [
     {
       "id": "text-1",
-      "continut": "PROGRAM INDIVIDUAL DE 4 LUNI · METODA CLAR",
+      "continut": "PROGRAM INDIVIDUAL DE 4 LUNI · Echilibrarea rădăcinilor",
       "initial": "PROGRAM INDIVIDUAL"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "id": "text-3",
-      "continut": "În întâlnirile individuale folosesc Metoda CLAR – Claritate prin echilibrarea percepțiilor. Ascult ceea ce trăiești și aprofundez detaliile; întrebările de echilibrare sunt exclusiv cele din legile universale.",
+      "continut": "În întâlnirile individuale folosesc Echilibrarea rădăcinilor – Claritate prin echilibrarea percepțiilor. Ascult ceea ce trăiești și aprofundez detaliile; întrebările de echilibrare sunt exclusiv cele din legile universale.",
       "initial": "În întâlnirile individuale, pornim de la situația ta și de la ceea ce dorești să explorezi. Lucrăm cu percepțiile, tiparele și valorile tale și revenim la schimbările observate în comportamente și alegeri."
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "id": "text-6",
-      "continut": "Întoarcerea la tine · 4 luni cu Metoda CLAR",
+      "continut": "Întoarcerea la tine · 4 luni cu Echilibrarea rădăcinilor",
       "initial": "Întoarcerea la tine: patru luni în care lucrăm cu ceea ce contează pentru tine."
     },
     {
       "id": "text-7",
-      "continut": "Programul individual durează patru luni. Folosesc Metoda CLAR – Claritate prin echilibrarea percepțiilor. Ritmul, prioritățile și profunzimea explorării sunt adaptate fiecărei persoane; nu promit rezultate identice pentru toate femeile.",
+      "continut": "Programul individual durează patru luni. Folosesc Echilibrarea rădăcinilor – Claritate prin echilibrarea percepțiilor. Ritmul, prioritățile și profunzimea explorării sunt adaptate fiecărei persoane; nu promit rezultate identice pentru toate femeile.",
       "initial": "Programul individual „Întoarcerea la tine” durează patru luni. Nu îți promit că în acest interval dispar toate tiparele. Îți propun un spațiu în care să lucrăm în profunzime cu situațiile și obiectivele prioritare, în ritmul și în limita timpului disponibil."
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "id": "text-11",
-      "continut": "În Metoda CLAR caut polarizarea din rădăcină pornind de la situația relatată de tine. Folosesc numai întrebările de echilibrare din legile universale, aplicate acțiunii vizibile. În funcție de context, constelațiile ajută explorarea rădăcinii. Creația conștientă este prezentă în același proces.",
+      "continut": "În Echilibrarea rădăcinilor caut polarizarea din rădăcină pornind de la situația relatată de tine. Folosesc numai întrebările de echilibrare din legile universale, aplicate acțiunii vizibile. În funcție de context, constelațiile ajută explorarea rădăcinii. Creația conștientă este prezentă în același proces.",
       "initial": "Explorăm situațiile concrete și concluziile formate, folosim întrebări pentru echilibrarea percepțiilor și revenim la situațiile-rădăcină pentru verificare. Constelațiile sistemice sunt oferite separat și pot fi alese, dacă sunt potrivite pentru tema ta; nu reprezintă o etapă obligatorie a programului."
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "id": "text-13",
-      "continut": "Prin Metoda CLAR verificăm interpretarea după echilibrarea percepțiilor. Creația conștientă se desfășoară în timpul acestui proces.",
+      "continut": "Prin Echilibrarea rădăcinilor verificăm interpretarea după echilibrarea percepțiilor. Creația conștientă se desfășoară în timpul acestui proces.",
       "initial": "Pleci cu obiectivele tale prioritare mai clar definite, cu tiparele explorate și percepțiile verificate în situațiile-rădăcină, precum și cu pași de acțiune aleși în acord cu valorile tale. Urmărim schimbările concrete din reacțiile și deciziile tale, fără să promitem eliminarea tuturor blocajelor."
     },
     {
@@ -85,9 +85,9 @@
     },
     {
       "id": "link-2",
-      "text": "Metoda CLAR",
-      "url": "./metoda-clar.html",
-      "initial": "Metoda CLAR"
+      "text": "Echilibrarea rădăcinilor",
+      "url": "./echilibrarea-radacinilor.html",
+      "initial": "Echilibrarea rădăcinilor"
     },
     {
       "id": "link-3",
@@ -115,3 +115,4 @@
     }
   ]
 }
+

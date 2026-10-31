@@ -32,7 +32,7 @@ export function renderArticles(output,origin=""){
    articles.push({...data,slug});
  }
  // Public presentation layer only: retain original editorial source files unchanged.
- const publicBrand=s=>String(s??"").replace(/Întoarcerea la tine|Întoarce-te la tine|Metoda CLAR/gi,"Echilibrarea rădăcinilor");
+ const publicBrand=s=>String(s??"").replace(/Întoarcerea la tine|Întoarce-te la tine/gi,"Echilibrarea rădăcinilor");
  articles=articles.map(a=>({...a,titlu:publicBrand(a.titlu),descriere:publicBrand(a.descriere),continut:publicBrand(a.continut)}));
  // Audit editorial non-destructiv: nu rescriem automat vocea autoarei și nu publicăm texte noi fără revizie.
  const editorialWarnings=[];

@@ -128,7 +128,7 @@
     {
       "id": "text-26",
       "continut": "Cum se integrează constelațiile în modul meu de lucru?",
-      "initial": "Constelațiile fac parte obligatoriu din Metoda CLAR?"
+      "initial": "Constelațiile fac parte obligatoriu din Echilibrarea rădăcinilor?"
     },
     {
       "id": "text-27",
@@ -142,7 +142,7 @@
     },
     {
       "id": "text-29",
-      "continut": "Este un program individual de patru luni, în care folosesc Metoda CLAR – Claritate prin echilibrarea percepțiilor. Pornim de la situațiile și obiectivele tale; ritmul și profunzimea se adaptează persoanei. Nu promit rezultate garantate.",
+      "continut": "Este un program individual de patru luni, în care folosesc Echilibrarea rădăcinilor – Claritate prin echilibrarea percepțiilor. Pornim de la situațiile și obiectivele tale; ritmul și profunzimea se adaptează persoanei. Nu promit rezultate garantate.",
       "initial": "Este un program individual de patru luni, adaptat obiectivelor tale prioritare. Pornim de la ceea ce trăiești în prezent, explorăm percepțiile și situațiile relevante, verificăm schimbările și clarificăm acțiunile pe care dorești să le faci. Nu promitem eliminarea tuturor tiparelor într-un termen fix."
     },
     {
@@ -202,9 +202,9 @@
     },
     {
       "id": "link-4",
-      "text": "Metoda CLAR",
-      "url": "./metoda-clar.html",
-      "initial": "Metoda CLAR"
+      "text": "Echilibrarea rădăcinilor",
+      "url": "./echilibrarea-radacinilor.html",
+      "initial": "Echilibrarea rădăcinilor"
     },
     {
       "id": "link-5",
@@ -232,3 +232,4 @@
     }
   ]
 }
+

@@ -58,7 +58,7 @@
     {
       "id": "text-12",
       "continut": "LEGILE UNIVERSALE ÎN ECHILIBRAREA RĂDĂCINILOR",
-      "initial": "INSTRUMENTELE METODEI CLAR"
+      "initial": "INSTRUMENTELE metodei «Echilibrarea rădăcinilor»"
     },
     {
       "id": "text-13",
@@ -213,7 +213,7 @@
     {
       "id": "rich-1",
       "continut": "Constelațiile sistemice pot fi folosite, în funcție de context, pentru explorarea rădăcinii.",
-      "initial": "Explorăm apoi și perspectivele pe care nu le-a luat în calcul, prin întrebări și legile universale, fără să negăm experiența ei. O constelație sistemică poate uneori să facă vizibile relații, poziționări sau interpretări care merită explorate mai departe, dar nu este o etapă obligatorie a Metodei CLAR și nu stabilește automat adevărul despre trecut."
+      "initial": "Explorăm apoi și perspectivele pe care nu le-a luat în calcul, prin întrebări și legile universale, fără să negăm experiența ei. O constelație sistemică poate uneori să facă vizibile relații, poziționări sau interpretări care merită explorate mai departe, dar nu este o etapă obligatorie a metodei «Echilibrarea rădăcinilor» și nu stabilește automat adevărul despre trecut."
     }
   ],
   "linkuri": [
@@ -226,13 +226,13 @@
     {
       "id": "link-2",
       "text": "Vezi cum folosesc cele șapte legi universale →",
-      "url": "./metoda-clar.html#cele-sapte-legi",
+      "url": "./echilibrarea-radacinilor.html#cele-sapte-legi",
       "initial": "Vezi cum folosesc cele șapte legi universale →"
     },
     {
       "id": "link-3",
       "text": "Echilibrarea rădăcinilor",
-      "url": "./metoda-clar.html",
+      "url": "./echilibrarea-radacinilor.html",
       "initial": "Echilibrarea rădăcinilor"
     },
     {
@@ -261,3 +261,4 @@
     }
   ]
 }
+

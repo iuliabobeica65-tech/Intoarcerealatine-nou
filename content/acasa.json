@@ -4,7 +4,7 @@
   "titlu_recunoastere": "Poate te recunoști într-una dintre aceste situații.",
   "text_recunoastere": "Fiecare situație are povestea ei. Citește-o pe cea care îți este cunoscută.",
   "buton_principal": "Descoperă Echilibrarea rădăcinilor",
-  "link_principal": "./metoda-clar.html",
+  "link_principal": "./echilibrarea-radacinilor.html",
   "buton_secundar": "Cum lucrăm",
   "link_secundar": "./lucram-impreuna.html",
   "fotografie": "./Intoarcerea_la_tine_files/6ad1278ba01de7.05166081_9d2529da-d079-4183-89d4-6b674ef83217.jpg",
@@ -31,7 +31,7 @@
       "titlu": "Echilibrarea rădăcinilor",
       "text": "Claritate prin echilibrarea percepțiilor. Dacă te-ai recunoscut într-o situație, aici afli cum lucrăm cu ea.",
       "buton": "Descoperă Echilibrarea rădăcinilor →",
-      "link": "./metoda-clar.html"
+      "link": "./echilibrarea-radacinilor.html"
     },
     {
       "titlu": "Constelații sistemice",
@@ -90,3 +90,4 @@
   "contact_buton": "Scrie-mi pe WhatsApp",
   "contact_link": "https://wa.me/40758321125"
 }
+

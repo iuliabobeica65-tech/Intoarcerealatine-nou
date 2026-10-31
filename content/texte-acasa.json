@@ -102,8 +102,8 @@
     },
     {
       "id": "rich-2",
-      "continut": "Metoda CLAR Claritate prin echilibrarea percepțiilor.",
-      "initial": "Metoda CLAR Explorăm tiparele, rădăcinile și percepțiile care îți influențează alegerile."
+      "continut": "Echilibrarea rădăcinilor Claritate prin echilibrarea percepțiilor.",
+      "initial": "Echilibrarea rădăcinilor Explorăm tiparele, rădăcinile și percepțiile care îți influențează alegerile."
     },
     {
       "id": "rich-3",
@@ -120,14 +120,14 @@
     {
       "id": "link-1",
       "text": "Află cum pornim de la o situație concretă →",
-      "url": "./metoda-clar.html",
+      "url": "./echilibrarea-radacinilor.html",
       "initial": "Află cum pornim de la o situație concretă →"
     },
     {
       "id": "link-2",
-      "text": "Descoperă Metoda CLAR →",
-      "url": "./metoda-clar.html",
-      "initial": "Descoperă Metoda CLAR →"
+      "text": "Descoperă Echilibrarea rădăcinilor →",
+      "url": "./echilibrarea-radacinilor.html",
+      "initial": "Descoperă Echilibrarea rădăcinilor →"
     },
     {
       "id": "link-3",
@@ -149,3 +149,4 @@
     }
   ]
 }
+

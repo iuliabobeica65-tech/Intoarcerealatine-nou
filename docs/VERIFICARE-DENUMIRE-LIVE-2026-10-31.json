@@ -1,0 +1,922 @@
+{
+  "commit": "5b9ee34c842382e69d7d005408fbf51967ce687e",
+  "site": "https://iuliabobeica.ro/",
+  "checked": 98,
+  "pages": [
+    {
+      "path": "/despre-mine",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/despre-mine",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/politica-confidentialitate",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/politica-confidentialitate",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/constelatii",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/constelatii",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/program-nivelul-de-merit",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/program-nivelul-de-merit",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/sedinte-individuale",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/sedinte-individuale",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/acasa",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/acasa",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/echilibrarea-radacinilor",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/echilibrarea-radacinilor",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/legi-universale",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/legi-universale",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/termeni-utilizare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/termeni-utilizare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/program-individual-patru-luni",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/program-individual-patru-luni",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/lucram-impreuna",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/lucram-impreuna",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/program-alegeri-fara-vinovatie",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/program-alegeri-fara-vinovatie",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/live",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/live",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/politica-cookies",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/politica-cookies",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/resurse",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/resurse",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/ce-mi-au-spus-parintii-si-inca-ma-doare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/ce-mi-au-spus-parintii-si-inca-ma-doare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/legea-reflexiei-de-ce-ma-doare-judecata-celorlalti",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/legea-reflexiei-de-ce-ma-doare-judecata-celorlalti",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/rana-de-nedreptate",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/rana-de-nedreptate",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-copilul-creste-si-nu-mai-are-nevoie-la-fel",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-copilul-creste-si-nu-mai-are-nevoie-la-fel",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-repeti-aceeasi-cearta",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-repeti-aceeasi-cearta",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-simti-responsabila-pentru-toti",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-simti-responsabila-pentru-toti",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-respingere-si-limite",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-respingere-si-limite",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/doliu-cand-viata-merge-inainte",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/doliu-cand-viata-merge-inainte",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/escalarea-eristica-cand-imi-doresc-ceva-cu-disperare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/escalarea-eristica-cand-imi-doresc-ceva-cu-disperare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-ceri-aprobare-inainte-sa-decizi",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-ceri-aprobare-inainte-sa-decizi",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-ma-simt-vinovata-cand-ma-aleg-pe-mine",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-ma-simt-vinovata-cand-ma-aleg-pe-mine",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/feminitate-dupa-40-de-ani",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/feminitate-dupa-40-de-ani",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/incredere-in-sine-si-teama-de-judecata",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/incredere-in-sine-si-teama-de-judecata",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-ma-simt-blocata-desi-stiu-ce-vreau-sa-schimb",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-ma-simt-blocata-desi-stiu-ce-vreau-sa-schimb",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-refuzi-ajutorul-dar-te-doare-ca-nu-l-primesti",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-refuzi-ajutorul-dar-te-doare-ca-nu-l-primesti",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/constelatii-roluri-in-familie-si-tipare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/constelatii-roluri-in-familie-si-tipare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-critica-si-expunere",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-critica-si-expunere",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-ceri-aprobare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-ceri-aprobare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-succes-si-vizibilitate",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-succes-si-vizibilitate",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-munca-ta-nu-este-vazuta",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-munca-ta-nu-este-vazuta",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-abandon-in-relatii",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-abandon-in-relatii",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/dupa-infidelitate-ce-ai-inteles-despre-tine",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/dupa-infidelitate-ce-ai-inteles-despre-tine",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-si-polarizarea-perceptiilor",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-si-polarizarea-perceptiilor",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-esec-cand-nu-mai-incerci",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-esec-cand-nu-mai-incerci",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-intorci-la-rolul-de-copil-langa-parinti",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-intorci-la-rolul-de-copil-langa-parinti",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-abandon-cand-celalalt-se-indeparteaza",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-abandon-cand-celalalt-se-indeparteaza",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-nu-te-poti-bucura-de-ce-ai",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-nu-te-poti-bucura-de-ce-ai",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-minimalizezi-un-compliment",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-minimalizezi-un-compliment",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-porti-grijile-familiei",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-porti-grijile-familiei",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-esec-si-munca",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-esec-si-munca",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/joe-dispenza-creatie-constienta-parcurs-iulia-bobeica",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/joe-dispenza-creatie-constienta-parcurs-iulia-bobeica",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-simti-singura-in-cuplu",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-simti-singura-in-cuplu",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-nu-poti-spune-nu",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-nu-poti-spune-nu",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/traume-transgenerationale-loialitati-ascunse-arbore-genealogic",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/traume-transgenerationale-loialitati-ascunse-arbore-genealogic",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/in-familie-eu-fac-mereu-pace",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/in-familie-eu-fac-mereu-pace",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-frica-de-schimbare-te-tine-pe-loc",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-frica-de-schimbare-te-tine-pe-loc",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/constelatii-sistemice-ce-sunt-si-cum-se-desfasoara",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/constelatii-sistemice-ce-sunt-si-cum-se-desfasoara",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/creatie-constienta-si-echilibrarea-perceptiilor",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/creatie-constienta-si-echilibrarea-perceptiilor",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-pui-mereu-pe-ultimul-loc",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-pui-mereu-pe-ultimul-loc",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/legea-fractalilor-de-ce-se-repeta-aceleasi-tipare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/legea-fractalilor-de-ce-se-repeta-aceleasi-tipare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/am-un-vis-dar-nu-indraznesc-sa-incep",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/am-un-vis-dar-nu-indraznesc-sa-incep",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-imi-este-greu-sa-cer-si-sa-primesc",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-imi-este-greu-sa-cer-si-sa-primesc",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-nu-mai-ai-incredere-dupa-o-minciuna",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-nu-mai-ai-incredere-dupa-o-minciuna",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-respingere-cand-nu-spui-ce-vrei",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-respingere-cand-nu-spui-ce-vrei",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-simti-o-mama-insuficienta",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-simti-o-mama-insuficienta",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-refuzi-ajutorul",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-refuzi-ajutorul",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/legea-sincronicitatii-provocare-si-sprijin",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/legea-sincronicitatii-provocare-si-sprijin",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/ma-doare-cand-sunt-criticata",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/ma-doare-cand-sunt-criticata",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-imi-este-greu-sa-spun-nu",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-imi-este-greu-sa-spun-nu",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-inteleg-dar-continui-sa-fac-la-fel",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-inteleg-dar-continui-sa-fac-la-fel",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-nu-poti-sa-te-odihnesti",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-nu-poti-sa-te-odihnesti",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-judecata-si-vizibilitate",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-judecata-si-vizibilitate",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/legea-dualitatii-de-ce-imi-este-frica-sa-spun-nu",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/legea-dualitatii-de-ce-imi-este-frica-sa-spun-nu",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/rana-de-umilinta",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/rana-de-umilinta",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-temi-sa-fii-parasita",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-temi-sa-fii-parasita",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-simti-neputincioasa",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-simti-neputincioasa",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-nu-te-poti-desprinde-de-o-relatie",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-nu-te-poti-desprinde-de-o-relatie",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-imi-este-frica-sa-iau-o-decizie",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-imi-este-frica-sa-iau-o-decizie",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/rusinea-de-a-fi-vazuta-asa-cum-esti",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/rusinea-de-a-fi-vazuta-asa-cum-esti",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-copiii-cresc-cine-sunt-eu",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-copiii-cresc-cine-sunt-eu",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/perfectionismul-care-te-opreste",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/perfectionismul-care-te-opreste",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/imi-este-frica-sa-cer-bani-pentru-munca-mea",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/imi-este-frica-sa-cer-bani-pentru-munca-mea",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-repet-aceleasi-tipare-in-relatii",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-repet-aceleasi-tipare-in-relatii",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-compari-cu-alte-femei",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-compari-cu-alte-femei",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-simti-blocata-dupa-multe-incercari",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-simti-blocata-dupa-multe-incercari",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/legea-transformarii-cand-simt-ca-am-pierdut-totul",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/legea-transformarii-cand-simt-ca-am-pierdut-totul",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-a-fi-puternica-devine-o-responsabilitate",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-a-fi-puternica-devine-o-responsabilitate",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-repeta-familia-aceleasi-conflicte",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-repeta-familia-aceleasi-conflicte",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-banii-pentru-tine-par-o-risipa",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-banii-pentru-tine-par-o-risipa",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-a-dezamagi-cand-alegi-pentru-tine",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-a-dezamagi-cand-alegi-pentru-tine",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/ma-simt-invizibila-in-relatia-mea",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/ma-simt-invizibila-in-relatia-mea",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/constelatii-familiale-divort-infidelitate-copii-separare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/constelatii-familiale-divort-infidelitate-copii-separare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/am-grija-de-toti-dar-eu-ce-vreau",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/am-grija-de-toti-dar-eu-ce-vreau",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cele-cinci-rani-emotionale-abandon-tradare-respingere-umilinta-nedreptate",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cele-cinci-rani-emotionale-abandon-tradare-respingere-umilinta-nedreptate",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/rana-de-respingere",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/rana-de-respingere",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/rana-de-tradare",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/rana-de-tradare",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/rana-de-abandon",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/rana-de-abandon",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/frica-de-conflict-cand-taci-ca-sa-nu-superi",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/frica-de-conflict-cand-taci-ca-sa-nu-superi",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/de-ce-ma-compar-cu-alte-femei",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/de-ce-ma-compar-cu-alte-femei",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-ti-e-rusine-sa-ceri-bani-pentru-munca",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-ti-e-rusine-sa-ceri-bani-pentru-munca",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/cand-te-pui-pe-ultimul-loc",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/cand-te-pui-pe-ultimul-loc",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    },
+    {
+      "path": "/articole/legea-ordinii-prioritati-si-valorile-mele",
+      "status": 200,
+      "final": "https://iuliabobeica.ro/articole/legea-ordinii-prioritati-si-valorile-mele",
+      "title_ok": true,
+      "description_ok": true,
+      "canonical_ok": true,
+      "old_name_absent": true
+    }
+  ],
+  "routes": [
+    {
+      "url": "https://iuliabobeica.ro/metoda-clar",
+      "status": "200\thttps://iuliabobeica.ro/echilibrarea-radacinilor",
+      "old_url_absent_from_body": true,
+      "method_name_present": true,
+      "new_url_present": true
+    },
+    {
+      "url": "https://iuliabobeica.ro/echilibrarea-radacinilor",
+      "status": "200\thttps://iuliabobeica.ro/echilibrarea-radacinilor",
+      "old_url_absent_from_body": true,
+      "method_name_present": true,
+      "new_url_present": true
+    },
+    {
+      "url": "https://iuliabobeica.ro/sitemap.xml",
+      "status": "200\thttps://iuliabobeica.ro/sitemap.xml",
+      "old_url_absent_from_body": true,
+      "method_name_present": false,
+      "new_url_present": true
+    }
+  ],
+  "legacy_redirect_status": 301,
+  "legacy_redirect_target": "https://iuliabobeica.ro/echilibrarea-radacinilor",
+  "local": {
+    "old_method_names": [],
+    "styles_changed": [
+      "previzualizare-metoda-clar.html"
+    ],
+    "pages": 98,
+    "articles": 82
+  }
+}
