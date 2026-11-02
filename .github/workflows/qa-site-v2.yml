@@ -1,5 +1,8 @@
 name: QA site V2 (fara publicare)
 on:
+  push:
+    branches:
+      - "pregatire-cloudflare-2026-10-20"
   pull_request:
     paths:
       - "*.html"
