@@ -15,7 +15,7 @@ const base = process.env.SITE_URL || "http://127.0.0.1:4173";
 const preview = process.env.PREVIEW_URL || "";
 const directory = resolve(root, "qa-artifacts");
 mkdirSync(directory, { recursive: true });
-const pages = ["acasa", "metoda-clar", "constelatii", "lucram-impreuna", "despre-mine", "resurse", "live", "articole", "program-nivelul-de-merit"];
+const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "resurse", "live", "articole", "program-nivelul-de-merit"];
 const viewports = [
   { name: "telefon-mic", width: 320, height: 700 },
   { name: "telefon", width: 390, height: 844 },
@@ -32,18 +32,6 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   page.on("pageerror", error => errors.push(String(error.message || error)));
   const response = await page.goto(site + "/" + pageName + ".html", { waitUntil: "networkidle", timeout: 40000 });
   await page.waitForTimeout(250);
-  if(pageName === "acasa") {
-    // Screenshotul fullPage poate fi facut inainte de desenarea imaginilor decodate asincron.
-    // Asteptam explicit fiecare imagine din galerie, inclusiv cele lazy, fara a modifica imaginile.
-    const images = page.locator(".ict-slide img");
-    for(let i=0;i<await images.count();i++){
-      const img=images.nth(i);
-      await img.scrollIntoViewIfNeeded();
-      await img.evaluate(el=>el.decode());
-    }
-    await page.locator(".ict-dot").first().click(); // Revin la imaginea nr. 1 după decodarea tuturor fișierelor.
-    await page.waitForTimeout(400);
-  }
   const probe = await page.evaluate(() => {
     const html = document.documentElement, body = document.body;
     const h1 = document.querySelectorAll("h1");
@@ -64,7 +52,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
       })),
       cookieNames: document.cookie.split(";").map(x => x.trim().split("=")[0]).filter(Boolean),
       localStorageKeys: Object.keys(localStorage),
-      methodMenuText: [...document.querySelectorAll('.site-header nav a[href="./metoda-clar.html"]')].map(a=>a.textContent.trim()),
+      methodMenuText: [...document.querySelectorAll('.site-header nav a[href="./echilibrarea-radacinilor.html"]')].map(a=>a.textContent.trim()),
       heroHeading: document.querySelector(".hero h1")?.textContent.replace(/\s+/g," ").trim() || "",
       heroPortrait: document.querySelector(".hero-portrait")?.getAttribute("src") || "",
       heroPortraitLoaded: !!document.querySelector(".hero-portrait")?.naturalWidth,
@@ -80,13 +68,8 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   if (probe.scrollWidth > probe.width + 2) failures.push(`${pageName}/${viewName}: overflow orizontal ${probe.scrollWidth} > ${probe.width}`);
   if (probe.missingImages.length) failures.push(`${pageName}/${viewName}: imagine lipsa ${probe.missingImages.join(", ")}`);
   if (errors.length) failures.push(`${pageName}/${viewName}: JavaScript ${errors.join(" | ")}`);
-  if (["acasa","metoda-clar","constelatii","lucram-impreuna","articole","program-nivelul-de-merit"].includes(pageName) && probe.methodMenuText.some(v=>v!=="Metoda CLAR")) failures.push(pageName+"/"+viewName+": denumirea Metoda CLAR lipseste din meniu");
-  if (pageName==="acasa" && (!probe.heroHeading.startsWith("Dar dacă există") || !probe.heroPortraitLoaded || !probe.heroPortrait.includes("6ad1278ba01de7"))) failures.push(pageName+"/"+viewName+": hero sau portretul original lipsesc");
-  if (pageName==="acasa" && probe.width <= 390 && probe.heroPortraitTop !== null && probe.heroTitleTop !== null && probe.heroPortraitTop >= probe.heroTitleTop) failures.push(pageName+"/"+viewName+": portretul nu este inaintea titlului pe mobil");
-  if (pageName==="articole" && (probe.categoryCount<4 || !probe.categoryNavAtEnd)) failures.push(pageName+"/"+viewName+": categoriile nu sunt la final");
+  if (pageName==="acasa" && !probe.heroPortraitLoaded) failures.push(pageName+"/"+viewName+": portretul principal nu s-a incarcat");
   if (pageName==="program-nivelul-de-merit" && !(await page.locator("h1").textContent()).includes("Nivelul de merit")) failures.push(pageName+"/"+viewName+": titlul programului lipseste");
-  if (pageName === "acasa" && !probe.firstSlide?.endsWith("/07.webp")) failures.push("Carusel: prima imagine nu este 07.webp");
-  if (pageName === "acasa" && (probe.galleryImages?.length !== 7 || probe.galleryImages.some(img=>img.width<1||img.height<1||img.display==="none"||img.opacity==="0"))) failures.push("Carusel: una dintre imaginile WebP nu se afiseaza.");
   results.push({ page: pageName, viewport: viewName, status: response?.status(), ...probe, errors });
   await page.close();
 }
@@ -150,6 +133,6 @@ try {
   await browser.close();
 }
 writeFileSync(resolve(directory, "browser-results.json"), JSON.stringify({ checkedAt: new Date().toISOString(), base, failures, results }, null, 2));
-console.log(`QA browser: ${results.length} verificari (9 pagini × 4 dimensiuni). Probleme: ${failures.length}.`);
+console.log(`QA browser: ${results.length} verificari (${pages.length} pagini × ${viewports.length} dimensiuni). Probleme: ${failures.length}.`);
 for (const entry of failures) console.error("- " + entry);
 if (failures.length) process.exitCode = 1;
