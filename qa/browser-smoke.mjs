@@ -69,7 +69,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
   if (probe.missingImages.length) failures.push(`${pageName}/${viewName}: imagine lipsa ${probe.missingImages.join(", ")}`);
   if (errors.length) failures.push(`${pageName}/${viewName}: JavaScript ${errors.join(" | ")}`);
   if (pageName==="acasa" && !probe.heroPortraitLoaded) failures.push(pageName+"/"+viewName+": portretul principal nu s-a incarcat");
-  if (pageName==="program-nivelul-de-merit" && !(/Nivelul\\s+(?:tău\\s+de\\s+)?merit/i.test((await page.locator("h1").innerText()).replace(/\\s+/g," ")))) failures.push(pageName+"/"+viewName+": titlul programului lipseste");
+  if (pageName==="program-nivelul-de-merit" && !(/Nivelul\s+(?:tău\s+de\s+)?merit/i.test((await page.locator("h1").innerText()).replace(/\s+/g," ")))) failures.push(pageName+"/"+viewName+": titlul programului lipseste");
   results.push({ page: pageName, viewport: viewName, status: response?.status(), ...probe, errors });
   await page.close();
 }
