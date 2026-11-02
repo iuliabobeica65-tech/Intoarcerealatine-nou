@@ -94,8 +94,8 @@ export function renderArticles(output,origin=""){
   {id:"blocaje-si-decizii",label:"Blocaje, tipare și alegeri",desc:"Situații dureroase care se repetă, reacții pe care vrei să le înțelegi și alegeri pe care ți-ai dori să le faci diferit."},
   {id:"relatii-si-familie",label:"Relații, familie și pierderi",desc:"Conflicte, distanță în cuplu, separare și alte experiențe de familie care pot aduce întrebări și durere."},
   {id:"imagine-de-sine",label:"Imagine de sine, merit și bani",desc:"Vinovăție, rușine, felul în care te privești, ce îți permiți să ceri și alegerile financiare care te preocupă."},
-  {id:"constelatii-familiale",label:"Constelații familiale și sistemice",desc:"Articole educative despre constelații, folosite în metoda mea în funcție de context."},
-  {id:"legi-universale",label:"Cele șapte legi universale",desc:"Articole educative despre reperele din metoda mea. Fără exerciții sau întrebări inventate."}
+  {id:"constelatii-familiale",label:"Constelații familiale și sistemice",desc:"Articole educative despre constelații familiale și sistemice, o modalitate distinctă de lucru, folosită în funcție de context."},
+  {id:"legi-universale",label:"Legi universale și echilibrarea percepțiilor",desc:"Articole educative despre legi universale și echilibrarea percepțiilor. Nu toate legile prezentate în surse sunt componente validate ale metodei."}
  ];
  const groupOf=a=>{
   const cat=(a.categorie||"").toLowerCase(),slug=a.slug;
