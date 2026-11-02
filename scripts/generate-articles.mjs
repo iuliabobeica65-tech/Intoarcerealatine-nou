@@ -56,6 +56,31 @@ export function renderArticles(output,origin=""){
   return {...a,continut:content};
  });
  console.info("[CURATARE EDITORIALA IN SERIE] "+JSON.stringify({articole:articles.length,modificari:editorialCounts}));
+ // Triere editorială în serie: semnalează unde lipsește profunzimea, fără a inventa istorii familiale.
+ const depthReview=articles.map(a=>{
+   const body=a.continut;
+   const words=body.trim().split(/\s+/).length;
+   const sections=(body.match(/^## /gm)||[]).length;
+   const hasScene=/(poate|când|ai încercat|te-ai|îți|spui|într-o zi|la serviciu|acasă|familie|cuplu)/i.test(body.slice(0,1100));
+   const hasPresent=/(te doare|te temi|te simți|vinov|rușin|obosit|epuiz|îngrijor|nelinișt|singur|supăra|furie|teamă|frică)/i.test(body);
+   const hasAttempt=/(ai încercat|ai cerut|ai spus|ai vorbit|te-ai străduit|ai sperat|ai făcut|încerci|tot revine|se repetă)/i.test(body);
+   const hasExploration=/(ce ai înțeles despre tine|ce s-a întâmplat concret|când ai mai|ce ai simțit|ce înseamnă pentru tine|ce ai înțeles|ce ai trăit)/i.test(body);
+   const defensive=(body.match(/nu (?:presupun|îți dau|îți spun|este o explicație|este un diagnostic|promit|voi spune|înseamnă automat)/gi)||[]).length;
+   const risk=/(avort|sinucider|suicid|crimă|abuz|violenț|internare psihiatric|pierderea unui copil)/i.test(a.titlu+" "+body);
+   const signals=[];
+   if(!hasScene)signals.push("situatie_concreta_de_verificat");
+   if(!hasPresent)signals.push("manifestari_prezen­te_de_clarificat");
+   if(!hasAttempt)signals.push("ce_a_incercat_femeia_lipseste");
+   if(!hasExploration)signals.push("intrebari_despre_experienta_de_adaugat");
+   if(defensive)signals.push("formule_defensive_ramase_"+defensive);
+   if(words<230)signals.push("articol_scurt_de_verificat");
+   if(sections>5&&words<350)signals.push("prea_fragmentat");
+   if(risk)signals.push("tema_sensibila_verificare_context");
+   return {slug:a.slug,titlu:a.titlu,cuvinte:words,prioritate:signals.length>=4?"ridicata":signals.length>=2?"medie":"redusa",semnale:signals};
+ });
+ const depthOrder={ridicata:0,medie:1,redusa:2};
+ depthReview.sort((a,b)=>depthOrder[a.prioritate]-depthOrder[b.prioritate]||a.cuvinte-b.cuvinte||a.slug.localeCompare(b.slug));
+ console.info("[REVIZIE PROFUNZIME - LOTURI] "+JSON.stringify({total:depthReview.length,ridicata:depthReview.filter(x=>x.prioritate==="ridicata").length,medie:depthReview.filter(x=>x.prioritate==="medie").length,redusa:depthReview.filter(x=>x.prioritate==="redusa").length,articole:depthReview}));
  // Audit editorial non-destructiv: nu rescriem automat vocea autoarei și nu publicăm texte noi fără revizie.
  const editorialWarnings=[];
  const endings=new Map();
