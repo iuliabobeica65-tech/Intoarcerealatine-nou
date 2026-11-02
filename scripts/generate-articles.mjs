@@ -100,8 +100,17 @@ export function renderArticles(output,origin=""){
  const categorySections=activeGroups.map(g=>'<section class="blog-category-group" id="'+g.id+'" aria-labelledby="head-'+g.id+'"><h2 id="head-'+g.id+'">'+esc(g.label)+'</h2><p class="blog-group-desc">'+esc(g.desc)+'</p><div class="blog-list">'+cardsFor(g.items)+'</div></section>').join("\n");
  let html=template;
  const empty='<p>Articolele sunt în pregătire. Vezi <a href="./resurse.html">Resurse</a>.</p>';
- html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?'<div class="blog-catalog-guide"><p class="eyebrow">GĂSEȘTE TEMA CARE TE PREOCUPĂ</p><p>Alege tema care se apropie de experiența ta și explorează articolele disponibile.</p>'+categoryNav+'</div>'+categorySections+'':empty);
+ html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?'<div class="blog-catalog-guide">'+categoryNav+'</div>'+categorySections+'':empty);
  if(html.includes("<!-- LISTA_ARTICOLE -->"))throw Error("Nu s-a putut organiza lista articolelor.");
+ html=html.replace("</style>",`
+/* Catalog editorial: introducere aerisită, categorii direct accesibile. */
+#iulia-live .editorial-intro{max-width:1050px!important;padding:clamp(28px,4vw,50px) 0 20px!important;margin:18px auto 12px!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+#iulia-live .editorial-intro .eyebrow{margin:0 0 15px!important}
+#iulia-live .editorial-intro h1{font-size:clamp(36px,4.6vw,58px)!important;margin:0 0 12px!important}
+#iulia-live .editorial-intro>p:not(.eyebrow){max-width:720px!important;font-size:17px!important;line-height:1.6!important}
+#iulia-live .blog-catalog-guide{padding:0!important;margin:10px 0 20px!important;background:transparent!important;border:0!important;border-radius:0!important}
+#iulia-live .blog-catalog-guide .blog-category-nav{margin:0!important}
+</style>`);
  html=html.replace("</style>",`
 #iulia-live .blog-catalog-guide{padding:22px 24px 10px;margin:0 0 22px;border-radius:18px;background:#fff9f6;border:1px solid #ead4d9}#iulia-live .blog-catalog-guide>p{margin:0 0 12px}#iulia-live .blog-catalog-guide .blog-category-nav{margin:12px 0 16px}#iulia-live .blog-category-nav a:focus-visible,#iulia-live .blog-card a:focus-visible{outline:3px solid #8b536a;outline-offset:4px}#iulia-live .blog-card{overflow-wrap:anywhere}#iulia-live .blog-category-group{scroll-margin-top:95px}
 /* Editorial 24.10 – articole lizibile, feminine și centrate pe o singură experiență. */
