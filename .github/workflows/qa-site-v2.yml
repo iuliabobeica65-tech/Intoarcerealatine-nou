@@ -48,7 +48,7 @@ jobs:
           ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
           doc = ET.parse(root/"sitemap.xml").getroot()
           urls = [n.text for n in doc.findall("s:url/s:loc", ns)]
-          pages = ["acasa","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
+          pages = ["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
           articles = sorted(p.stem for p in (root/"articole").glob("*.html"))
           expected = {"https://iuliabobeica.ro/"+p for p in pages}
           expected.update("https://iuliabobeica.ro/articole/"+p for p in articles)
