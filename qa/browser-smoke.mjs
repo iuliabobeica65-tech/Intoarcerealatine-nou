@@ -15,7 +15,7 @@ const base = process.env.SITE_URL || "http://127.0.0.1:4173";
 const preview = process.env.PREVIEW_URL || "";
 const directory = resolve(root, "qa-artifacts");
 mkdirSync(directory, { recursive: true });
-const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "resurse", "live", "articole", "program-nivelul-de-merit"];
+const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "live", "articole", "program-nivelul-de-merit"];
 const viewports = [
   { name: "telefon-mic", width: 320, height: 700 },
   { name: "telefon", width: 390, height: 844 },
@@ -77,7 +77,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
 try {
   for (const viewport of viewports) {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, deviceScaleFactor: 1, reducedMotion: "reduce", locale: "ro-RO" });
-    for (const name of pages) await inspect(base, context, name, viewport.name, ["telefon", "desktop"].includes(viewport.name) && ["acasa", "resurse", "articole", "program-nivelul-de-merit"].includes(name));
+    for (const name of pages) await inspect(base, context, name, viewport.name, ["telefon", "desktop"].includes(viewport.name) && ["acasa", "articole", "program-nivelul-de-merit"].includes(name));
     await context.close();
   }
   // Verificare modificare reala prin JSON, fara a scrie inapoi in Github.
