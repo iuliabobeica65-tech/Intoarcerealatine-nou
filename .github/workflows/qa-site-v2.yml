@@ -53,6 +53,11 @@ jobs:
           urls = [n.text for n in doc.findall("s:url/s:loc", ns)]
           pages = ["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
           articles = sorted(p.stem for p in (root/"articole").glob("*.html"))
+          if len(articles) != 82:
+              raise SystemExit(f"ARTICOLE INCOMPLETE: {len(articles)}/82 generate")
+          required_wounds = {"rana-de-abandon","rana-de-respingere","rana-de-tradare","rana-de-umilinta","rana-de-nedreptate"}
+          if not required_wounds.issubset(articles):
+              raise SystemExit("LIPSESC ARTICOLELE DISTINCTE: "+str(sorted(required_wounds-set(articles))))
           expected = {"https://iuliabobeica.ro/"+p for p in pages}
           expected.update("https://iuliabobeica.ro/articole/"+p for p in articles)
           if set(urls)!=expected or len(urls)!=len(expected):
