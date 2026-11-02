@@ -70,6 +70,24 @@ export function renderArticles(output,origin=""){
    return {pozitie:i+1,tema,stare:matches.length?"de_verificat_in_continut":"fara_potrivire_in_metadate",articole:matches};
  });
  console.info("[AUDIT 57 TEME] "+JSON.stringify(thematicMatches));
+ // SEO: fiecare dintre cele cinci răni are intenție de căutare distinctă.
+ // Raportăm numai existența unei pagini candidate, fără a crea pagini SEO duplicate.
+ const wounds=["abandon","respingere","trădare","umilință","nedreptate"];
+ const woundAudit=wounds.map(w=>{
+   const normalize=t=>String(t??"").toLocaleLowerCase("ro").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");
+   const term=normalize(w);
+   const candidates=articles.filter(a=>normalize(a.slug+" "+a.titlu).includes(term));
+   const exact=candidates.filter(a=>normalize(a.slug+" "+a.titlu).includes("rana de "+term)||normalize(a.slug).includes("rana-"+term));
+   return {rana:w,pagini_candidate:candidates.map(a=>a.slug),pagina_dedicata_probabila:exact.map(a=>a.slug),necesita_verificare:exact.length!==1};
+ });
+ const missingMetadata=thematicMatches.filter(x=>x.stare==="fara_potrivire_in_metadate");
+ console.info("[AUDIT TEMATIC - SINTEZA] "+JSON.stringify({
+   teme_in_registru:thematicMatches.length,
+   teme_fara_potrivire_in_metadate:missingMetadata.length,
+   pozitii_de_verificat:missingMetadata.map(x=>({pozitie:x.pozitie,tema:x.tema})),
+   rani_emotionale:woundAudit
+ }));
+
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
   {id:"frici-si-perceptii",label:"Frici, răni emoționale și percepții",desc:"Frica de respingere, abandon sau judecată și rănile emoționale explorate prin situații concrete, cu atenție la experiența fiecărei femei."},
