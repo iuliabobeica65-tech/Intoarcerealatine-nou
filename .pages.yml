@@ -453,7 +453,7 @@ content:
             type: object
             list:
               min: 25
-              max: 25
+              max: 26
               collapsible:
                 collapsed: true
                 summary: "{continut}"
@@ -467,7 +467,7 @@ content:
             type: object
             list:
               min: 6
-              max: 6
+              max: 7
               collapsible:
                 collapsed: true
                 summary: "{text}"
