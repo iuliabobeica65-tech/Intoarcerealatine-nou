@@ -43,8 +43,8 @@ export function renderArticles(output,origin=""){
    const repeated=(a.continut.match(/Pornim de la (?:ceea ce trăiești|situația concretă)|Nu promitem rezultate garantate|Nu presupunem dinainte o cauză/gi)||[]).length;
    const last=a.continut.split(/\n\s*\n/).at(-1)?.trim()||"";
    const flags=[];
-   if(words<350)flags.push("prea_scurt_pentru_articol_substantial");
-   if(sections>=5 && words<450)flags.push("schematic_preponderent");
+   // Articolele scurte cu situații și manifestări sunt intenționate; lungimea nu este un defect SEO.
+   if(sections>=5 && words<250)flags.push("verifica_fragmentarea_excesiva");
    if(repeated>=2)flags.push("formule_standard_repetate");
    // Semnale pentru revizie umană; nu rescriem automat textul autoarei.
    const defensive=(a.continut.match(/(?:nu îți dau eu răspunsuri|nu îți spun eu ce să|nu presupun(?:em)? cauza|nu promit(?:em)? rezultate garantate)/gi)||[]).length;
@@ -54,7 +54,12 @@ export function renderArticles(output,origin=""){
    const sensitive=/(avort|sinucider|suicid|crim[aă]|traum[aă]|abuz|doliu|deces|pierder|infertilitat|infidelitat|r[aă]zboi)/i.test(a.titlu+" "+(a.categorie||""));
    if(sensitive && /(?:cu siguranță|întotdeauna|obligatoriu|cauza este|se transmite inevitabil)/i.test(a.continut))
      flags.push("afirmatie_categorica_pe_tema_sensibila");
-   if(/^(Avort|Sinucidere|Crimă|Traumă|Abuz)/i.test(a.titlu)&&words<600)flags.push("tema_sensibila_necesita_revizie");
+   if(/^(Avort|Sinucidere|Crimă|Traumă|Abuz)/i.test(a.titlu)&&words<120)flags.push("tema_sensibila_necesita_revizie");
+   if(!String(a.seo_titlu||"").trim())flags.push("seo_titlu_lipsa");
+   if(!String(a.seo_descriere||"").trim())flags.push("seo_descriere_lipsa");
+   if(String(a.seo_titlu||"").length>70)flags.push("seo_titlu_lung_de_revizuit");
+   if(String(a.seo_descriere||"").length>165)flags.push("seo_descriere_lunga_de_revizuit");
+   if(/(?:un reper de dezvoltare personală|fără concluzii automate|ce desemnează această expresie|explorăm sensul acestei denumiri)/i.test(String(a.seo_descriere||"")))flags.push("seo_descriere_abstracta");
    if(last){const key=last.toLocaleLowerCase("ro");if(endings.has(key))flags.push("final_identic_cu_"+endings.get(key));else endings.set(key,a.slug);}
    if(flags.length)editorialWarnings.push({slug:a.slug,titlu:a.titlu,cuvinte:words,semnale:flags});
  }
