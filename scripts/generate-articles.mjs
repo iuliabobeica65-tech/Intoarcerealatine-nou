@@ -187,17 +187,14 @@ export function renderArticles(output,origin=""){
      aboutMerit?{href:"../program-nivelul-de-merit.html",label:"Explorează programul Nivelul tău de merit"}:
      {href:"../sedinte-individuale.html",label:"Descoperă ședințele individuale"};
   const nextStep='<aside class="blog-next-step" aria-label="Mai multe despre metoda mea"><h2>'+(edu?"Vrei să afli cum lucrez?":"Te-ai regăsit în această situație?")+'</h2><p>'+(edu?"Descoperă cum poți explora această temă în cadrul întâlnirilor mele.":"Dacă te regăsești în această experiență, poți explora o modalitate de lucru pornind de la ceea ce trăiești și de la schimbarea pe care ți-o dorești.")+'</p><a class="button" href="'+cta.href+'">'+esc(cta.label)+' <span aria-hidden="true">→</span></a></aside>';
-  // Articolele de atragere au uneori o invitație scrisă în ultimul paragraf.
-  // Nu afișăm și acea invitație, și cardul CTA de la final.
-  const chunks=String(a.continut).trim().split("\n\n");
-  const last=chunks.at(-1)?.trim()||"";
-  const invites=["Dacă","Poți","Despre","Mai multe","Citește","Te invit"];
-  if(!edu && chunks.length>1 && last.includes("](https://intoarcerealatine-nou.pages.dev/")
-       && invites.some(x=>last.startsWith(x)))chunks.pop();
-  const articleText=chunks.join("\n\n")
+  // Păstrăm integral textul editorial, inclusiv invitația scrisă de autoare.
+  // Dacă articolul are deja un CTA către site, nu dublăm cardul automat.
+  const articleText=String(a.continut).trim()
     .replaceAll("https://intoarcerealatine-nou.pages.dev/",origin?origin+"/":"https://iuliabobeica.ro/")
-    .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://spontaneous-quokka-e0bede.netlify.app/");
-  const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+nextStep+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
+    .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://iuliabobeica.ro/");
+  const lastParagraph=articleText.split("\\n\\n").at(-1)||"";
+  const hasEditorialCta=/\\]\\((?:https:\\/\\/iuliabobeica\\.ro\\/|\\.\\.\\/|\\.\\/)/i.test(lastParagraph);
+  const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+(hasEditorialCta?'':nextStep)+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
   page=page.replace(/<link rel="canonical" href="[^"]*"\s*\/>|<link rel="canonical" href="[^"]*">/g,"");
