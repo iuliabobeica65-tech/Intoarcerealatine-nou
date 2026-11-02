@@ -92,8 +92,8 @@ export function renderArticles(output,origin=""){
  };
  const isEducational=a=>groupOf(a)==="legi-universale"||groupOf(a)==="constelatii-familiale";
  const cardsFor=list=>list.map(a=>{
-   const kind=isEducational(a)?"Articol educativ":"O situație în care te poți recunoaște";
-   return '<article class="blog-card"><p class="blog-type">'+esc(kind)+'</p><h3><a href="./articole/'+a.slug+'.html">'+esc(a.titlu)+'</a></h3><p class="blog-card-desc">'+esc(a.descriere)+'</p><a class="blog-card-link" href="./articole/'+a.slug+'.html">'+(isEducational(a)?"Citește articolul educativ":"Citește povestea")+' <span aria-hidden="true">→</span></a></article>';
+   const kind=isEducational(a)?"Articol educativ":"Articol";
+   return '<article class="blog-card"><p class="blog-type">'+esc(kind)+'</p><h3><a href="./articole/'+a.slug+'.html">'+esc(a.titlu)+'</a></h3><p class="blog-card-desc">'+esc(a.descriere)+'</p><a class="blog-card-link" href="./articole/'+a.slug+'.html">'+"Citește articolul"+' <span aria-hidden="true">→</span></a></article>';
  }).join("\n");
  const activeGroups=categoryGroups.map(g=>({...g,items:articles.filter(a=>groupOf(a)===g.id)})).filter(g=>g.items.length);
  const categoryNav='<nav class="blog-category-nav" aria-label="Categorii articole">'+activeGroups.map(g=>'<a href="#'+g.id+'">'+esc(g.label)+' <span>('+g.items.length+')</span></a>').join("")+'</nav>';
@@ -103,6 +103,27 @@ export function renderArticles(output,origin=""){
  html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?'<div class="blog-catalog-guide">'+categoryNav+'</div>'+categorySections+'':empty);
  if(html.includes("<!-- LISTA_ARTICOLE -->"))throw Error("Nu s-a putut organiza lista articolelor.");
  html=html.replace("</style>",`
+/* Optimizare mobil și lizibilitate: fără schimbarea textelor editoriale. */
+#iulia-live .editorial-catalog .blog-category-nav{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 30px}
+#iulia-live .editorial-catalog .blog-category-nav a{display:inline-flex;align-items:center;min-height:42px;padding:10px 15px;font:600 13px/1.35 Arial,sans-serif;text-decoration:none;white-space:normal;border-radius:999px}
+#iulia-live .editorial-catalog .blog-category-nav a:focus-visible{outline:3px solid #7b4b62;outline-offset:3px}
+#iulia-live .editorial-catalog .blog-card{display:flex;flex-direction:column;height:100%}
+#iulia-live .editorial-catalog .blog-card h3{overflow-wrap:break-word}
+#iulia-live .editorial-catalog .blog-card .blog-card-link{margin-top:auto;min-height:42px;align-items:center}
+@media(max-width:680px){
+ #iulia-live .editorial-intro{padding:24px 0 14px!important;margin:8px auto 4px!important}
+ #iulia-live .editorial-intro h1{font-size:clamp(33px,9vw,43px)!important}
+ #iulia-live .editorial-intro>p:not(.eyebrow){font-size:15px!important;line-height:1.55!important}
+ #iulia-live .editorial-catalog .blog-category-nav{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;overscroll-behavior-inline:contain;padding:3px 3px 13px;margin:0 0 22px;scrollbar-width:thin}
+ #iulia-live .editorial-catalog .blog-category-nav a{flex:0 0 auto;max-width:82vw;scroll-snap-align:start}
+ #iulia-live .editorial-catalog .blog-category-group{margin:8px 0 34px!important;padding-top:18px!important}
+ #iulia-live .editorial-catalog .blog-category-group>h2{font-size:clamp(25px,7vw,32px)!important}
+ #iulia-live .editorial-catalog .blog-group-desc{font-size:14px;line-height:1.6}
+ #iulia-live .editorial-catalog .blog-list{grid-template-columns:minmax(0,1fr)!important;gap:14px}
+ #iulia-live .editorial-catalog .blog-card{min-height:0!important;padding:22px 21px!important;border-radius:17px!important}
+ #iulia-live .editorial-catalog .blog-card h3{font-size:clamp(23px,6vw,28px)!important}
+ #iulia-live .editorial-catalog .blog-card p.blog-card-desc{font-size:14px!important;line-height:1.65!important}
+}
 /* Catalog editorial: introducere aerisită, categorii direct accesibile. */
 #iulia-live .editorial-intro{max-width:1050px!important;padding:clamp(28px,4vw,50px) 0 20px!important;margin:18px auto 12px!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 #iulia-live .editorial-intro .eyebrow{margin:0 0 15px!important}
