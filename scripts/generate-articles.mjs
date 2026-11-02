@@ -66,6 +66,7 @@ export function renderArticles(output,origin=""){
   if(cat.includes("legile universale"))return "legi-universale";
   if(cat.includes("constelații")||cat.includes("constelatii"))return "constelatii-familiale";
   if(cat.includes("imagine")||cat.includes("merit")||cat.includes("vinov")||cat.includes("critică")||cat.includes("limite")||cat.includes("bani"))return "imagine-de-sine";
+  if(/infidelitat|divort|divorț|separar|doliu|deces|pierder|adop|infertil|conflict|părin|parint/i.test(cat+" "+slug))return "relatii-si-familie";
   if(cat.includes("famil")||cat.includes("relații")||cat.includes("relați")||cat.includes("cuplu")||cat.includes("maternitat"))return "relatii-si-familie";
   if(slug.includes("parintii")||slug.includes("familie"))return "relatii-si-familie";
   return "blocaje-si-decizii";
@@ -180,8 +181,10 @@ export function renderArticles(output,origin=""){
   page=page.replace(/<meta property="og:description" content="[^"]*"/,'<meta property="og:description" content="'+seoDesc+'"');
   const kind=groupOf(a);
   const edu=isEducational(a);
+  const aboutMerit=/vinov|rușin|rusin|merit|imagine.de.sine|stima.de.sine/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
   const cta=kind==="constelatii-familiale"?{href:"../constelatii.html",label:"Descoperă cum folosesc constelațiile"}:
      kind==="legi-universale"?{href:"../metoda-clar.html",label:"Descoperă Echilibrarea rădăcinilor"}:
+     aboutMerit?{href:"../program-nivelul-de-merit.html",label:"Explorează programul Nivelul tău de merit"}:
      {href:"../sedinte-individuale.html",label:"Descoperă ședințele individuale"};
   const nextStep='<aside class="blog-next-step" aria-label="Mai multe despre metoda mea"><h2>'+(edu?"Vrei să afli cum lucrez?":"Te-ai regăsit în această situație?")+'</h2><p>'+(edu?"Descoperă cum poți explora această temă în cadrul întâlnirilor mele.":"Dacă te regăsești în această experiență, poți explora o modalitate de lucru pornind de la ceea ce trăiești și de la schimbarea pe care ți-o dorești.")+'</p><a class="button" href="'+cta.href+'">'+esc(cta.label)+' <span aria-hidden="true">→</span></a></aside>';
   // Articolele de atragere au uneori o invitație scrisă în ultimul paragraf.
