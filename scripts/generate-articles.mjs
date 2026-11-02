@@ -213,7 +213,17 @@ export function renderArticles(output,origin=""){
     .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://iuliabobeica.ro/");
   const lastParagraph=articleText.split("\\n\\n").at(-1)||"";
   const hasEditorialCta=/\\]\\((?:https:\\/\\/iuliabobeica\\.ro\\/|\\.\\.\\/|\\.\\/)/i.test(lastParagraph);
-  const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+(hasEditorialCta?'':nextStep)+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
+  // Legături interne contextualizate: numai articole deja aprobate și publicate.
+  // Nu adăugăm text în sursa editorială și nu inventăm articole noi.
+  const currentGroup=groupOf(a);
+  const relatedItems=articles.filter(other=>other.slug!==a.slug&&groupOf(other)===currentGroup)
+    .map(other=>{
+      const source=new Set((a.titlu+" "+a.descriere).toLocaleLowerCase("ro").split(/[^a-zăâîșț0-9]+/u).filter(w=>w.length>=5));
+      const common=(other.titlu+" "+other.descriere).toLocaleLowerCase("ro").split(/[^a-zăâîșț0-9]+/u).filter(w=>source.has(w)).length;
+      return {article:other,score:common};
+    }).sort((x,y)=>y.score-x.score||x.article.titlu.localeCompare(y.article.titlu,"ro")).slice(0,3);
+  const relatedBlock=relatedItems.length?'<aside class="blog-related" aria-label="Alte articole pe teme apropiate"><h2>Poate vrei să explorezi și</h2><ul>'+relatedItems.map(x=>'<li><a href="../articole/'+esc(x.article.slug)+'.html">'+esc(x.article.titlu)+'</a></li>').join("")+'</ul></aside>':'';
+  const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+relatedBlock+(hasEditorialCta?'':nextStep)+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
   page=page.replace(/<link rel="canonical" href="[^"]*"\s*\/>|<link rel="canonical" href="[^"]*">/g,"");
