@@ -34,6 +34,28 @@ export function renderArticles(output,origin=""){
  // Public presentation layer only: retain original editorial source files unchanged.
  const publicBrand=s=>String(s??"").replace(/Întoarcerea la tine|Întoarce-te la tine/gi,"Echilibrarea rădăcinilor");
  articles=articles.map(a=>({...a,titlu:publicBrand(a.titlu),descriere:publicBrand(a.descriere),continut:publicBrand(a.continut)}));
+ // Corecturi editoriale de prezentare; fișierele-sursă rămân intacte.
+ const editorialReplacements=[
+  ["Nu este o explicație impusă: verifică dacă această idee se potrivește cu experiența ta sau dacă pentru tine a însemnat altceva.","Ce semnificație a avut pentru tine această experiență?"],
+  ["Nu este o explicație obligatorie: verifică dacă o recunoști.","Observă dacă această idee apare în experiența ta."],
+  ["Nu presupunem dinainte o cauză și nu promitem rezultate garantate.","Urmărim ce descoperi despre experiența și alegerile tale."],
+  ["Nu presupunem dinainte o cauză.","Explorăm situația și experiențele relevante pentru tine."],
+  ["Nu îți dau eu răspunsul și nu decid ce este potrivit pentru tine.","Întrebările te ajută să clarifici ce contează pentru tine."],
+  ["Nu înseamnă automat că este responsabilitatea ta să îi împaci. Nu voi spune cine a provocat conflictul sau ce rol ai tu într-o asemenea familie.","După un conflict între oameni dragi, poți ajunge să simți că depinde de tine să readuci liniștea."],
+  ["Nu este nevoie să îți atribui rolul de salvatoare și nici să îți spun eu că trebuie să te retragi. Mai întâi contează să înțelegem ce trăiești și ce ai încercat până acum.","Poate te-ai obișnuit să intervii între cei dragi. Ce se întâmplă când încerci să faci pace și tensiunea revine?"],
+  ["Nu este nevoie să ajungi imediat la o explicație sau la o soluție.","Uneori, întrebările potrivite aduc claritate."],
+  ["Nu îți spun eu ce alegere să faci.","Explorăm ce este important pentru tine în această alegere."]
+ ];
+ const editorialCounts=[];
+ articles=articles.map(a=>{
+  let content=a.continut;
+  for(const [before,after] of editorialReplacements){
+   const count=content.split(before).length-1;
+   if(count){editorialCounts.push({slug:a.slug,formula:before.slice(0,55),aparitii:count});content=content.replaceAll(before,after);}
+  }
+  return {...a,continut:content};
+ });
+ console.info("[CURATARE EDITORIALA IN SERIE] "+JSON.stringify({articole:articles.length,modificari:editorialCounts}));
  // Audit editorial non-destructiv: nu rescriem automat vocea autoarei și nu publicăm texte noi fără revizie.
  const editorialWarnings=[];
  const endings=new Map();
