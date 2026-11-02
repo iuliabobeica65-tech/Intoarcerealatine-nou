@@ -46,6 +46,14 @@ export function renderArticles(output,origin=""){
    if(words<350)flags.push("prea_scurt_pentru_articol_substantial");
    if(sections>=5 && words<450)flags.push("schematic_preponderent");
    if(repeated>=2)flags.push("formule_standard_repetate");
+   // Semnale pentru revizie umană; nu rescriem automat textul autoarei.
+   const defensive=(a.continut.match(/(?:nu îți dau eu răspunsuri|nu îți spun eu ce să|nu presupun(?:em)? cauza|nu promit(?:em)? rezultate garantate)/gi)||[]).length;
+   if(defensive>=2)flags.push("formule_defensive_repetate");
+   if(/(?:ești de vină|este vina ta|tu ai atras|ți-ai provocat|trebuia să treci prin)/i.test(a.continut))
+     flags.push("formulare_potential_culpabilizanta");
+   const sensitive=/(avort|sinucider|suicid|crim[aă]|traum[aă]|abuz|doliu|deces|pierder|infertilitat|infidelitat|r[aă]zboi)/i.test(a.titlu+" "+(a.categorie||""));
+   if(sensitive && /(?:cu siguranță|întotdeauna|obligatoriu|cauza este|se transmite inevitabil)/i.test(a.continut))
+     flags.push("afirmatie_categorica_pe_tema_sensibila");
    if(/^(Avort|Sinucidere|Crimă|Traumă|Abuz)/i.test(a.titlu)&&words<600)flags.push("tema_sensibila_necesita_revizie");
    if(last){const key=last.toLocaleLowerCase("ro");if(endings.has(key))flags.push("final_identic_cu_"+endings.get(key));else endings.set(key,a.slug);}
    if(flags.length)editorialWarnings.push({slug:a.slug,titlu:a.titlu,cuvinte:words,semnale:flags});
