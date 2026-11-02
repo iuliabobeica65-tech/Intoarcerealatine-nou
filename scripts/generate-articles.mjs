@@ -93,6 +93,26 @@ export function renderArticles(output,origin=""){
    rani_emotionale:woundAudit
  }));
 
+ // Raport SEO lizibil în GitHub Actions: identifică articolele care au nevoie de revizie,
+ // fără să schimbe conținutul, datele sau metadatele deja validate.
+ const seoReview=articles.map(a=>{
+   const issues=[];
+   const title=String(a.seo_titlu||"").trim();
+   const description=String(a.seo_descriere||"").trim();
+   if(!title)issues.push("titlu_lipsa");
+   else if(title.length>70)issues.push("titlu_peste_70_caractere");
+   if(!description)issues.push("descriere_lipsa");
+   else if(description.length>165)issues.push("descriere_peste_165_caractere");
+   if(/(?:un reper de dezvoltare personală|fără concluzii automate|ce desemnează această expresie|explorăm sensul acestei denumiri)/i.test(description))
+     issues.push("descriere_generica");
+   return {slug:a.slug,probleme:issues};
+ }).filter(x=>x.probleme.length);
+ console.info("[SEO REVIZIE - SUMAR] "+JSON.stringify({
+   articole_publicate:articles.length,
+   articole_de_revizuit:seoReview.length,
+   articole_fara_semnale:articles.length-seoReview.length,
+   lista:seoReview
+ }));
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
   {id:"frici-si-perceptii",label:"Frici, răni emoționale și percepții",desc:"Frica de respingere, abandon sau judecată și rănile emoționale explorate prin situații concrete, cu atenție la experiența fiecărei femei."},
