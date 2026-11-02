@@ -53,16 +53,16 @@ export function renderArticles(output,origin=""){
  if(editorialWarnings.length)console.warn("[AUDIT EDITORIAL] "+editorialWarnings.length+" articole necesită revizie de conținut; textele-sursă rămân intacte.\n"+editorialWarnings.map(x=>x.slug+": "+x.semnale).join("\n").replaceAll("sem nale","semnale"));
  articles.sort((a,b)=>b.data.localeCompare(a.data)||a.slug.localeCompare(b.slug));
  const categoryGroups=[
-  {id:"frici-si-perceptii",label:"Frici și percepții polarizate",desc:"Frica de respingere, abandon, eșec sau judecată, explorată prin situații concrete, fără cauze atribuite dinainte."},
-  {id:"blocaje-si-decizii",label:"Blocaje și situații de zi cu zi",desc:"Situații de viață în care poate te recunoști, fără explicații prestabilite."},
-  {id:"relatii-si-familie",label:"Relații și familie",desc:"Momente din viața de familie în care apropierea, sprijinul sau liniștea par departe."},
-  {id:"imagine-de-sine",label:"Imagine de sine și bani",desc:"Când te doare felul în care te privești sau te preocupă banii și lucrurile rămase pe mai târziu."},
+  {id:"frici-si-perceptii",label:"Frici, răni emoționale și percepții",desc:"Frica de respingere, abandon sau judecată și rănile emoționale explorate prin situații concrete, cu atenție la experiența fiecărei femei."},
+  {id:"blocaje-si-decizii",label:"Blocaje, tipare și alegeri",desc:"Situații dureroase care se repetă, reacții pe care vrei să le înțelegi și alegeri pe care ți-ai dori să le faci diferit."},
+  {id:"relatii-si-familie",label:"Relații, familie și pierderi",desc:"Conflicte, distanță în cuplu, separare și alte experiențe de familie care pot aduce întrebări și durere."},
+  {id:"imagine-de-sine",label:"Imagine de sine, merit și bani",desc:"Vinovăție, rușine, felul în care te privești, ce îți permiți să ceri și alegerile financiare care te preocupă."},
   {id:"constelatii-familiale",label:"Constelații familiale și sistemice",desc:"Articole educative despre constelații, folosite în metoda mea în funcție de context."},
   {id:"legi-universale",label:"Cele șapte legi universale",desc:"Articole educative despre reperele din metoda mea. Fără exerciții sau întrebări inventate."}
  ];
  const groupOf=a=>{
   const cat=(a.categorie||"").toLowerCase(),slug=a.slug;
-  if(cat.includes("frică")||cat.includes("frica")||slug.startsWith("frica-"))return "frici-si-perceptii";
+  if(cat.includes("frică")||cat.includes("frica")||cat.includes("rană")||cat.includes("rana")||slug.startsWith("frica-")||slug.startsWith("rana-"))return "frici-si-perceptii";
   if(cat.includes("legile universale"))return "legi-universale";
   if(cat.includes("constelații")||cat.includes("constelatii"))return "constelatii-familiale";
   if(cat.includes("imagine")||cat.includes("merit")||cat.includes("vinov")||cat.includes("critică")||cat.includes("limite")||cat.includes("bani"))return "imagine-de-sine";
@@ -80,7 +80,7 @@ export function renderArticles(output,origin=""){
  const categorySections=activeGroups.map(g=>'<section class="blog-category-group" id="'+g.id+'" aria-labelledby="head-'+g.id+'"><h2 id="head-'+g.id+'">'+esc(g.label)+'</h2><p class="blog-group-desc">'+esc(g.desc)+'</p><div class="blog-list">'+cardsFor(g.items)+'</div></section>').join("\n");
  let html=template;
  const empty='<p>Articolele sunt în pregătire. Vezi <a href="./resurse.html">Resurse</a>.</p>';
- html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?'<div class="blog-catalog-guide"><p class="eyebrow">GĂSEȘTE TEMA CARE TE PREOCUPĂ</p><p>Explorează cele '+articles.length+' de articole publicate, grupate după situații de viață.</p>'+categoryNav+'</div>'+categorySections+'':empty);
+ html=html.replace(/<div class="blog-list">\s*<!-- LISTA_ARTICOLE -->\s*<\/div>/,articles.length?'<div class="blog-catalog-guide"><p class="eyebrow">GĂSEȘTE TEMA CARE TE PREOCUPĂ</p><p>Alege tema care se apropie de experiența ta și explorează articolele disponibile.</p>'+categoryNav+'</div>'+categorySections+'':empty);
  if(html.includes("<!-- LISTA_ARTICOLE -->"))throw Error("Nu s-a putut organiza lista articolelor.");
  html=html.replace("</style>",`
 #iulia-live .blog-catalog-guide{padding:22px 24px 10px;margin:0 0 22px;border-radius:18px;background:#fff9f6;border:1px solid #ead4d9}#iulia-live .blog-catalog-guide>p{margin:0 0 12px}#iulia-live .blog-catalog-guide .blog-category-nav{margin:12px 0 16px}#iulia-live .blog-category-nav a:focus-visible,#iulia-live .blog-card a:focus-visible{outline:3px solid #8b536a;outline-offset:4px}#iulia-live .blog-card{overflow-wrap:anywhere}#iulia-live .blog-category-group{scroll-margin-top:95px}
