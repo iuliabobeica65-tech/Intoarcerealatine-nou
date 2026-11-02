@@ -76,11 +76,11 @@ export function renderArticles(output,origin=""){
    if(words<230)signals.push("articol_scurt_de_verificat");
    if(sections>5&&words<350)signals.push("prea_fragmentat");
    if(risk)signals.push("tema_sensibila_verificare_context");
-   return {slug:a.slug,titlu:a.titlu,cuvinte:words,prioritate:signals.length>=4?"ridicata":signals.length>=2?"medie":"redusa",semnale:signals};
+   return {slug:a.slug,titlu:a.titlu,cuvinte:words,revizie_profunzime:"obligatorie",prioritate:signals.length>=4?"lot_1":signals.length>=2?"lot_2":"lot_3",semnale:signals};
  });
- const depthOrder={ridicata:0,medie:1,redusa:2};
+ const depthOrder={lot_1:0,lot_2:1,lot_3:2};
  depthReview.sort((a,b)=>depthOrder[a.prioritate]-depthOrder[b.prioritate]||a.cuvinte-b.cuvinte||a.slug.localeCompare(b.slug));
- console.info("[REVIZIE PROFUNZIME - LOTURI] "+JSON.stringify({total:depthReview.length,ridicata:depthReview.filter(x=>x.prioritate==="ridicata").length,medie:depthReview.filter(x=>x.prioritate==="medie").length,redusa:depthReview.filter(x=>x.prioritate==="redusa").length,articole:depthReview}));
+ console.info("[REVIZIE PROFUNZIME - LOTURI] "+JSON.stringify({total:depthReview.length,toate_necesita_aprofundare:true,lot_1:depthReview.filter(x=>x.prioritate==="lot_1").length,lot_2:depthReview.filter(x=>x.prioritate==="lot_2").length,lot_3:depthReview.filter(x=>x.prioritate==="lot_3").length,articole:depthReview}));
  // Audit editorial non-destructiv: nu rescriem automat vocea autoarei și nu publicăm texte noi fără revizie.
  const editorialWarnings=[];
  const endings=new Map();
