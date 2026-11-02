@@ -321,10 +321,10 @@ export function renderArticles(output,origin=""){
   const kind=groupOf(a);
   const edu=isEducational(a);
   const aboutMerit=/vinov|rușin|rusin|merit|imagine.de.sine|stima.de.sine/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
-  const cta=kind==="constelatii-familiale"?{href:"../constelatii.html",label:"Descoperă cum folosesc constelațiile"}:
-     kind==="legi-universale"?{href:"../echilibrarea-radacinilor.html",label:"Citește despre Echilibrarea rădăcinilor"}:
-     aboutMerit?{href:"../program-nivelul-de-merit.html",label:"Explorează programul Nivelul tău de merit"}:
-     {href:"../sedinte-individuale.html",label:"Descoperă ședințele individuale"};
+  const cta=kind==="constelatii-familiale"?{href:"https://iuliabobeica.ro/constelatii",label:"Descoperă cum folosesc constelațiile"}:
+     kind==="legi-universale"?{href:"https://iuliabobeica.ro/echilibrarea-radacinilor",label:"Citește despre Echilibrarea rădăcinilor"}:
+     aboutMerit?{href:"https://iuliabobeica.ro/program-nivelul-de-merit",label:"Explorează programul Nivelul tău de merit"}:
+     {href:"https://iuliabobeica.ro/sedinte-individuale",label:"Descoperă ședințele individuale"};
   const nextStep='<aside class="blog-next-step" aria-label="Descoperă cum putem lucra"><h2>Povestea ta nu trebuie să rămână la fel</h2><p>Poate că până acum te-ai privit pe tine, pe ceilalți sau viața printr-o poveste care te doare. Nu trebuie să o schimbi cu forța și nici să găsești singură toate răspunsurile. Există posibilitatea să descoperi și alte perspective, în ritmul tău. Prin Echilibrarea rădăcinilor și, în funcție de context, prin constelații familiale sau sistemice, putem explora împreună ceea ce trăiești.</p><p>Dacă vrei să vezi cum lucrăm, îmi poți scrie pentru o consultație inițială gratuită de 30 de minute. Îți pot spune și despre workshopuri și programele mele, ca să alegi ce ți se potrivește.</p><a class="button" href="https://wa.me/40758321125?text=Buna%2C%20Iulia!%20As%20dori%20o%20consultatie%20initiala%20gratuita%20de%2030%20de%20minute.">Scrie-mi pentru consultația gratuită de 30 de minute <span aria-hidden="true">→</span></a></aside>';
   // Legătură spre oferta relevantă temei, fără modificarea textului editorial.
   const contextualOffer='<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
