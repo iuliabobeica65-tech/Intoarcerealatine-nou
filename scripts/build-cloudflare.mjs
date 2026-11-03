@@ -153,7 +153,7 @@ if(origin){
 
 // Method name and canonical URL: retain old inbound links through permanent redirects.
 if(origin){
- const pages=[...files.filter(f=>f.endsWith(".html")),...readIconPages(resolve(out,"articole")).filter(f=>f.endsWith(".html")).map(f=>"articole/"+f)];
+ const pages=[...files.filter(f=>f.endsWith(".html") && existsSync(resolve(out,f))),...readIconPages(resolve(out,"articole")).filter(f=>f.endsWith(".html")).map(f=>"articole/"+f)];
  for(const file of pages){
   const path=resolve(out,file);
   let html=readFileSync(path,"utf8").replaceAll("/metoda-clar","/echilibrarea-radacinilor").replaceAll("/echilibrarea-radacinilor.html","/echilibrarea-radacinilor");
@@ -171,7 +171,7 @@ if(origin){
 // Optional GA4: attach consent manager to every generated HTML page, including articles.
 // The Google tag itself is never loaded by this script; visitors must opt in.
 const { readdirSync: consentReadDir } = await import("node:fs");
-const consentPages = [...files.filter(f => f.endsWith(".html")), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
+const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
 for (const file of consentPages) {
  const filePath = resolve(out, file);
  let html = readFileSync(filePath, "utf8");
