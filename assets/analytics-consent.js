@@ -7,6 +7,7 @@
   function enable() {
     if (started) return;
     started = true;
+    window["ga-disable-" + ID] = false;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     gtag("consent", "default", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
@@ -20,6 +21,8 @@
   }
   function revoke() {
     if (window.gtag) gtag("consent", "update", { analytics_storage: "denied" });
+    // Block GA collection for this browser after withdrawal, including reloads.
+    window["ga-disable-" + ID] = true;
     document.cookie.split(";").forEach(item => {
       const name = item.split("=")[0].trim();
       if (/^_ga($|_)/.test(name)) {
@@ -57,7 +60,7 @@
     });
     opener.addEventListener("click", show);
     if (choice() === "allow") { hide(); enable(); }
-    else if (choice() === "deny") hide();
+    else if (choice() === "deny") { window["ga-disable-" + ID] = true; hide(); }
     else show();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
