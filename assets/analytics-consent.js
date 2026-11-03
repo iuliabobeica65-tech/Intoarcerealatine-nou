@@ -3,6 +3,8 @@
   const ID = "G-DCLDSBZ2S8";
   const choice = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
   const save = value => { try { localStorage.setItem(KEY, value); } catch {} };
+  // Default to no GA collection until the saved preference is checked.
+  window["ga-disable-" + ID] = true;
   let started = false;
   function enable() {
     if (started) return;
