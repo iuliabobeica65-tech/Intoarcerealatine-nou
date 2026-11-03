@@ -61,8 +61,13 @@
         return;
       }
       setChoice(choice);
-      if (choice === 'allow') startAnalytics();
-      else revokeAnalytics();
+      if (choice === 'allow') {
+        if (loaded) window.gtag('consent', 'update', { analytics_storage: 'granted' });
+        else startAnalytics();
+      } else {
+        revokeAnalytics();
+        if (loaded) { window.location.reload(); return; }
+      }
       hide();
     });
     open.addEventListener('click', show);
