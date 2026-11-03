@@ -166,3 +166,17 @@ if(origin){
  writeFileSync(sitemapPath,readFileSync(sitemapPath,"utf8").replaceAll("/metoda-clar","/echilibrarea-radacinilor"),"utf8");
  writeFileSync(resolve(out,"_redirects"),"/ /acasa 301\n/metoda-clar /echilibrarea-radacinilor 301\n/metoda-clar.html /echilibrarea-radacinilor 301\n","utf8");
 }
+
+
+// Optional GA4: attach consent manager to every generated HTML page, including articles.
+// The Google tag itself is never loaded by this script; visitors must opt in.
+const { readdirSync: consentReadDir } = await import("node:fs");
+const consentPages = [...files.filter(f => f.endsWith(".html")), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
+for (const file of consentPages) {
+ const filePath = resolve(out, file);
+ let html = readFileSync(filePath, "utf8");
+ if (!html.includes("/assets/analytics-consent.js")) {
+  html = html.replace("</body>", '<script defer src="/assets/analytics-consent.js"></script></body>');
+  writeFileSync(filePath, html, "utf8");
+ }
+}
