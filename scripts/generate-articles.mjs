@@ -96,6 +96,10 @@ export function renderArticles(output,origin=""){
    // Semnale pentru revizie umană; nu rescriem automat textul autoarei.
    const defensive=(a.continut.match(/(?:nu îți dau eu răspunsuri|nu îți spun eu ce să|nu presupun(?:em)? cauza|nu promit(?:em)? rezultate garantate)/gi)||[]).length;
    if(defensive>=2)flags.push("formule_defensive_repetate");
+   // Semnale suplimentare pentru revizia vocii: păstrăm intacte citatele și textul-sursă.
+   const opening=String(a.continut).slice(0,1200);
+   if(/(?:nu (?:trebuie|ai nevoie|este nevoie|începem|este doar)|poate (?:te|ai|că)|poți (?:afla|explora|descoperi|începe))/i.test(opening))flags.push("deschidere_negativa_sau_ezitanta_de_revizuit");
+   if((a.continut.match(/(?:poți (?:afla|explora|descoperi)|un cadru de explorare|alte posibilități)/gi)||[]).length>=2)flags.push("formulari_vagi_repetate");
    if(/(?:ești de vină|este vina ta|tu ai atras|ți-ai provocat|trebuia să treci prin)/i.test(a.continut))
      flags.push("formulare_potential_culpabilizanta");
    const sensitive=/(avort|sinucider|suicid|crim[aă]|traum[aă]|abuz|doliu|deces|pierder|infertilitat|infidelitat|r[aă]zboi)/i.test(a.titlu+" "+(a.categorie||""));
@@ -321,10 +325,10 @@ export function renderArticles(output,origin=""){
   const kind=groupOf(a);
   const edu=isEducational(a);
   const aboutMerit=/vinov|rușin|rusin|merit|imagine.de.sine|stima.de.sine/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
-  const cta=kind==="constelatii-familiale"?{href:"https://iuliabobeica.ro/constelatii",label:"Descoperă cum folosesc constelațiile"}:
-     kind==="legi-universale"?{href:"https://iuliabobeica.ro/echilibrarea-radacinilor",label:"Citește despre Echilibrarea rădăcinilor"}:
-     aboutMerit?{href:"https://iuliabobeica.ro/program-nivelul-de-merit",label:"Explorează programul Nivelul tău de merit"}:
-     {href:"https://iuliabobeica.ro/sedinte-individuale",label:"Descoperă ședințele individuale"};
+  const cta=kind==="constelatii-familiale"?{href:"https://iuliabobeica.ro/constelatii",label:"Vezi cum lucrăm cu constelațiile"}:
+     kind==="legi-universale"?{href:"https://iuliabobeica.ro/echilibrarea-radacinilor",label:"Cum lucrăm prin Echilibrarea rădăcinilor"}:
+     aboutMerit?{href:"https://iuliabobeica.ro/program-nivelul-de-merit",label:"Vezi programul Nivelul tău de merit"}:
+     {href:"https://iuliabobeica.ro/sedinte-individuale",label:"Vezi cum lucrăm individual"};
   const nextStep='<aside class="blog-next-step" aria-label="Descoperă cum putem lucra"><h2>Ce te doare astăzi merită privit în profunzime</h2><p>Ai încercat să schimbi ceva, dar ajungi din nou în aceeași situație? Pornim de la ce trăiești acum, căutăm rădăcina tiparului și lucrăm cu percepțiile care îți influențează alegerile. Prin Echilibrarea rădăcinilor și, atunci când este potrivit, prin constelații familiale sau sistemice, aducem în atenție și experiențele dureroase care contează în povestea ta.</p><p>Îmi spui ce te preocupă într-o conversație inițială gratuită de 30 de minute. Discutăm ce vrei să schimbi și ce modalitate de lucru ți se potrivește.</p><a class="button" href="https://wa.me/40758321125?text=Buna%2C%20Iulia!%20As%20dori%20o%20consultatie%20initiala%20gratuita%20de%2030%20de%20minute.">Scrie-mi pentru conversația gratuită de 30 de minute <span aria-hidden="true">→</span></a></aside>';
   // Legătură spre oferta relevantă temei, fără modificarea textului editorial.
   const contextualOffer='<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
