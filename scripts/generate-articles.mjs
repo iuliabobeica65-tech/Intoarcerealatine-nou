@@ -333,7 +333,9 @@ export function renderArticles(output,origin=""){
   // Evităm să atribuim tuturor situațiilor un tipar repetitiv sau o cauză familială.
   const nextStep='<aside class="blog-next-step" aria-label="Cum lucrăm împreună"><h2>Vrei să vorbim despre ceea ce trăiești?</h2><p>Fiecare poveste are propriul ei context. Începem cu situația care te preocupă, ascultăm ce contează pentru tine și alegem împreună direcția de lucru.</p><p>Scrie-mi pentru o conversație inițială gratuită de 30 de minute.</p><a class="button" href="https://wa.me/40758321125?text=Buna%2C%20Iulia!%20As%20dori%20o%20consultatie%20initiala%20gratuita%20de%2030%20de%20minute.">Scrie-mi pe WhatsApp <span aria-hidden="true">→</span></a></aside>';
   // Legătură spre oferta relevantă temei, fără modificarea textului editorial.
-  const contextualOffer='<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
+  // Pe teme sensibile, oferta se alege numai după revizie editorială în context.
+  const sensitiveArticle=/(?:avort|sarcin[ăa]|infertilitat|sinucider|suicid|crim[ăa]|deces|doliu|pierder|moarte|r[ăa]zboi|abuz|violen[țt]|deten[țt]|[îi]nchisoare|prostitu[țt]|psihiatri)/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
+  const contextualOffer=sensitiveArticle?"":'<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
   const nextStepWithOffer=nextStep.replace('</aside>',contextualOffer+'</aside>');
   // Păstrăm integral textul editorial, inclusiv invitația scrisă de autoare.
   // Dacă articolul are deja un CTA către site, nu dublăm cardul automat.
