@@ -96,6 +96,10 @@ export function renderArticles(output,origin=""){
    // Semnale pentru revizie umană; nu rescriem automat textul autoarei.
    const defensive=(a.continut.match(/(?:nu îți dau eu răspunsuri|nu îți spun eu ce să|nu presupun(?:em)? cauza|nu promit(?:em)? rezultate garantate)/gi)||[]).length;
    if(defensive>=2)flags.push("formule_defensive_repetate");
+   // Semnale suplimentare pentru revizia vocii: păstrăm intacte citatele și textul-sursă.
+   const opening=String(a.continut).slice(0,1200);
+   if(/(?:nu (?:trebuie|ai nevoie|este nevoie|începem|este doar)|poate (?:te|ai|că)|poți (?:afla|explora|descoperi|începe))/i.test(opening))flags.push("deschidere_negativa_sau_ezitanta_de_revizuit");
+   if((a.continut.match(/(?:poți (?:afla|explora|descoperi)|un cadru de explorare|alte posibilități)/gi)||[]).length>=2)flags.push("formulari_vagi_repetate");
    if(/(?:ești de vină|este vina ta|tu ai atras|ți-ai provocat|trebuia să treci prin)/i.test(a.continut))
      flags.push("formulare_potential_culpabilizanta");
    const sensitive=/(avort|sinucider|suicid|crim[aă]|traum[aă]|abuz|doliu|deces|pierder|infertilitat|infidelitat|r[aă]zboi)/i.test(a.titlu+" "+(a.categorie||""));
@@ -321,13 +325,17 @@ export function renderArticles(output,origin=""){
   const kind=groupOf(a);
   const edu=isEducational(a);
   const aboutMerit=/vinov|rușin|rusin|merit|imagine.de.sine|stima.de.sine/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
-  const cta=kind==="constelatii-familiale"?{href:"https://iuliabobeica.ro/constelatii",label:"Descoperă cum folosesc constelațiile"}:
-     kind==="legi-universale"?{href:"https://iuliabobeica.ro/echilibrarea-radacinilor",label:"Citește despre Echilibrarea rădăcinilor"}:
-     aboutMerit?{href:"https://iuliabobeica.ro/program-nivelul-de-merit",label:"Explorează programul Nivelul tău de merit"}:
-     {href:"https://iuliabobeica.ro/sedinte-individuale",label:"Descoperă ședințele individuale"};
-  const nextStep='<aside class="blog-next-step" aria-label="Descoperă cum putem lucra"><h2>Povestea ta nu trebuie să rămână la fel</h2><p>Poate că până acum te-ai privit pe tine, pe ceilalți sau viața printr-o poveste care te doare. Nu trebuie să o schimbi cu forța și nici să găsești singură toate răspunsurile. Există posibilitatea să descoperi și alte perspective, în ritmul tău. Prin Echilibrarea rădăcinilor și, în funcție de context, prin constelații familiale sau sistemice, putem explora împreună ceea ce trăiești.</p><p>Dacă vrei să vezi cum lucrăm, îmi poți scrie pentru o consultație inițială gratuită de 30 de minute. Îți pot spune și despre workshopuri și programele mele, ca să alegi ce ți se potrivește.</p><a class="button" href="https://wa.me/40758321125?text=Buna%2C%20Iulia!%20As%20dori%20o%20consultatie%20initiala%20gratuita%20de%2030%20de%20minute.">Scrie-mi pentru consultația gratuită de 30 de minute <span aria-hidden="true">→</span></a></aside>';
+  const cta=kind==="constelatii-familiale"?{href:"https://iuliabobeica.ro/constelatii",label:"Vezi cum lucrăm cu constelațiile"}:
+     kind==="legi-universale"?{href:"https://iuliabobeica.ro/echilibrarea-radacinilor",label:"Cum lucrăm prin Echilibrarea rădăcinilor"}:
+     aboutMerit?{href:"https://iuliabobeica.ro/program-nivelul-de-merit",label:"Vezi programul Nivelul tău de merit"}:
+     {href:"https://iuliabobeica.ro/sedinte-individuale",label:"Vezi cum lucrăm individual"};
+  // Un CTA neutru, potrivit și articolelor despre doliu, pierdere sau alte experiențe sensibile.
+  // Evităm să atribuim tuturor situațiilor un tipar repetitiv sau o cauză familială.
+  const nextStep='<aside class="blog-next-step" aria-label="Cum lucrăm împreună"><h2>Vrei să vorbim despre ceea ce trăiești?</h2><p>Fiecare poveste are propriul ei context. Începem cu situația care te preocupă, ascultăm ce contează pentru tine și alegem împreună direcția de lucru.</p><p>Scrie-mi pentru o conversație inițială gratuită de 30 de minute.</p><a class="button" href="https://wa.me/40758321125?text=Buna%2C%20Iulia!%20As%20dori%20o%20consultatie%20initiala%20gratuita%20de%2030%20de%20minute.">Scrie-mi pe WhatsApp <span aria-hidden="true">→</span></a></aside>';
   // Legătură spre oferta relevantă temei, fără modificarea textului editorial.
-  const contextualOffer='<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
+  // Pe teme sensibile, oferta se alege numai după revizie editorială în context.
+  const sensitiveArticle=/(?:avort|sarcin[ăa]|infertilitat|sinucider|suicid|crim[ăa]|deces|doliu|pierder|moarte|r[ăa]zboi|abuz|violen[țt]|deten[țt]|[îi]nchisoare|prostitu[țt]|psihiatri)/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
+  const contextualOffer=sensitiveArticle?"":'<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
   const nextStepWithOffer=nextStep.replace('</aside>',contextualOffer+'</aside>');
   // Păstrăm integral textul editorial, inclusiv invitația scrisă de autoare.
   // Dacă articolul are deja un CTA către site, nu dublăm cardul automat.
@@ -335,7 +343,7 @@ export function renderArticles(output,origin=""){
     .replaceAll("https://intoarcerealatine-nou.pages.dev/",origin?origin+"/":"https://iuliabobeica.ro/")
     .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://iuliabobeica.ro/");
   const lastParagraph=articleText.split(/\n\s*\n/).at(-1)||"";
-  const hasEditorialCta=lastParagraph.includes("](https://iuliabobeica.ro/") || lastParagraph.includes("](../") || lastParagraph.includes("](./");
+  const hasEditorialCta=lastParagraph.includes("](https://iuliabobeica.ro/") || lastParagraph.includes("](../") || lastParagraph.includes("](./") || lastParagraph.includes("](https://wa.me/");
   // Legături interne contextualizate: numai articole deja aprobate și publicate.
   // Nu adăugăm text în sursa editorială și nu inventăm articole noi.
   const currentGroup=groupOf(a);
@@ -346,7 +354,7 @@ export function renderArticles(output,origin=""){
       return {article:other,score:common};
     }).sort((x,y)=>y.score-x.score||x.article.titlu.localeCompare(y.article.titlu,"ro")).slice(0,3);
   const relatedBlock=''; // Editorial preference: no automated cross-article suggestions.
-  const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație în care poate te recunoști")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+nextStepWithOffer+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
+  const body='<main id="continut"><article class="section wrap blog-article"><header class="blog-article-head"><span class="blog-type">'+(edu?"Articol educativ":"O situație din viața de zi cu zi")+'</span><h1>'+esc(a.titlu)+'</h1><p class="blog-meta"><time datetime="'+a.data+'">'+a.data+'</time> · Iulia Bobeica</p></header>'+(safeUrl(a.imagine)?'<img class="blog-hero-img" src="'+esc(safeUrl(a.imagine))+'" alt="">':"")+'<div class="blog-content">'+markdownToHtml(articleText)+'</div>'+(hasEditorialCta?'':nextStepWithOffer)+'<p class="blog-back"><a class="text-link" href="../articole.html#'+groupOf(a)+'">← Înapoi la articole</a></p></article></main>';
   page=page.replace(/<main id="continut">[\s\S]*?<\/main>/,body);
   page=page.replaceAll('href="./','href="../').replaceAll('src="./','src="../');
   page=page.replace(/<link rel="canonical" href="[^"]*"\s*\/>|<link rel="canonical" href="[^"]*">/g,"");
