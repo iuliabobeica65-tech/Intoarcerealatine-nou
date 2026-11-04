@@ -341,7 +341,7 @@ export function renderArticles(output,origin=""){
     .replaceAll("https://intoarcerealatine-nou.pages.dev/",origin?origin+"/":"https://iuliabobeica.ro/")
     .replaceAll("https://spontaneous-quokka-e0bede.netlify.app/",origin?origin+"/":"https://iuliabobeica.ro/");
   const lastParagraph=articleText.split(/\n\s*\n/).at(-1)||"";
-  const hasEditorialCta=/\\]\((?:https:\/\/iuliabobeica\\.ro\/|\\.\\.\/|\\.\/|https:\/\/wa\\.me\/)/i.test(lastParagraph);
+  const hasEditorialCta=lastParagraph.includes("](https://iuliabobeica.ro/") || lastParagraph.includes("](../") || lastParagraph.includes("](./") || lastParagraph.includes("](https://wa.me/");
   // Legături interne contextualizate: numai articole deja aprobate și publicate.
   // Nu adăugăm text în sursa editorială și nu inventăm articole noi.
   const currentGroup=groupOf(a);
