@@ -43,7 +43,23 @@
     const host = url.hostname.toLowerCase();
     const whatsapp = host === "wa.me" || host === "api.whatsapp.com" || host === "web.whatsapp.com";
     const messenger = host === "m.me" || (host === "www.facebook.com" && url.pathname.startsWith("/messages"));
-    if (!whatsapp && !messenger) return;
+    // Internal offer navigation: count only known public offer paths, never URLs with queries.
+    if (!whatsapp && !messenger) {
+      if (url.origin !== location.origin) return;
+      const target = url.pathname.replace(/\\.html$/, "").replace(/\\/$/, "");
+      const offers = new Set([
+        "/sedinte-individuale", "/constelatii", "/program-nivelul-de-merit",
+        "/program-individual-patru-luni", "/program-alegeri-fara-vinovatie",
+        "/lucram-impreuna"
+      ]);
+      if (!offers.has(target) || target === location.pathname.replace(/\\.html$/, "").replace(/\\/$/, "")) return;
+      window.gtag("event", "offer_link_click", {
+        source_page: location.pathname,
+        offer_path: target,
+        transport_type: "beacon"
+      });
+      return;
+    }
     const page = location.pathname;
     const consultation = /consulta[țt]i|30 de minute|30 min/i.test(link.textContent || "");
     window.gtag("event", "contact_click", {
