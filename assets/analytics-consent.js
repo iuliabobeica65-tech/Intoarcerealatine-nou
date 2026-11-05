@@ -34,6 +34,21 @@
     });
     if (started) location.reload();
   }
+  // Measure outbound contact intent only after analytics consent. No message text or personal data.
+  document.addEventListener("click", event => {
+    const link = event.target.closest("a[href]");
+    if (!link || choice() !== "allow" || !window.gtag || !started) return;
+    let url;
+    try { url = new URL(link.href, location.href); } catch { return; }
+    const host = url.hostname.toLowerCase();
+    const channel = (host === "wa.me" || host === "api.whatsapp.com") ? "whatsapp" :
+      (host === "m.me" || (host === "www.facebook.com" && url.pathname.startsWith("/messages"))) ? "messenger" : "";
+    if (!channel) return;
+    const path = location.pathname;
+    const pageGroup = path.startsWith("/articole/") ? "articol" :
+      /(?:program|sedinte|constelatii|lucram-impreuna)/.test(path) ? "oferta" : "alta_pagina";
+    gtag("event", "contact_click", { contact_channel: channel, page_group: pageGroup });
+  });
   function init() {
     const style = document.createElement("style");
     style.textContent = "#ib-consent{position:fixed;z-index:2147483646;bottom:15px;left:15px;right:15px;max-width:620px;margin:auto;padding:20px;background:#fff9ef;color:#28231f;border:1px solid #b88a42;border-radius:12px;box-shadow:0 10px 36px #0003;font:15px/1.5 Arial,sans-serif}#ib-consent h2{font:24px Georgia,serif;margin:0 0 8px}#ib-consent p{margin:0 0 12px}#ib-consent button,#ib-preferences{padding:10px 14px;margin:3px;border:1px solid #8b6333;border-radius:5px;background:#fff9ef;color:#28231f;cursor:pointer}#ib-consent button.accept{background:#28231f;color:white}#ib-preferences{position:fixed;z-index:2147483645;bottom:8px;left:8px;font-size:12px}#ib-consent a{color:#66451f}";
