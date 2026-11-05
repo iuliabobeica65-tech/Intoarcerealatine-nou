@@ -336,7 +336,8 @@ export function renderArticles(output,origin=""){
   // Pe teme sensibile, oferta se alege numai după revizie editorială în context.
   const sensitiveArticle=/(?:avort|sarcin[ăa]|infertilitat|sinucider|suicid|crim[ăa]|deces|doliu|pierder|moarte|r[ăa]zboi|abuz|violen[țt]|deten[țt]|[îi]nchisoare|prostitu[țt]|psihiatri)/i.test(a.titlu+" "+(a.categorie||"")+" "+a.slug);
   const contextualOffer=sensitiveArticle?"":'<p class="blog-contextual-offer"><a href="'+cta.href+'">'+cta.label+' →</a></p>';
-  const nextStepWithOffer=nextStep.replace('</aside>',contextualOffer+'</aside>');
+  const outcomeStep=sensitiveArticle?nextStep:nextStep.replace("Vrei să vorbim despre ceea ce trăiești?","Ce ai vrea să schimbi în viața ta?").replace("Fiecare poveste are propriul ei context. Începem cu situația care te preocupă, ascultăm ce contează pentru tine și alegem împreună direcția de lucru.","Pornim de la problema care te doare astăzi, lucrăm cu percepțiile care îți influențează alegerile și urmărim schimbarea pe care ți-o dorești.");
+  const nextStepWithOffer=outcomeStep.replace('</aside>',contextualOffer+'</aside>');
   // Păstrăm integral textul editorial, inclusiv invitația scrisă de autoare.
   // Dacă articolul are deja un CTA către site, nu dublăm cardul automat.
   const articleText=String(a.continut).trim()
