@@ -46,13 +46,13 @@
     // Internal offer navigation: count only known public offer paths, never URLs with queries.
     if (!whatsapp && !messenger) {
       if (url.origin !== location.origin) return;
-      const target = url.pathname.replace(/\\.html$/, "").replace(/\\/$/, "");
+      const target = url.pathname.replace(/\.html$/, "").replace(/\/$/, "");
       const offers = new Set([
         "/sedinte-individuale", "/constelatii", "/program-nivelul-de-merit",
         "/program-individual-patru-luni", "/program-alegeri-fara-vinovatie",
         "/lucram-impreuna"
       ]);
-      if (!offers.has(target) || target === location.pathname.replace(/\\.html$/, "").replace(/\\/$/, "")) return;
+      if (!offers.has(target) || target === location.pathname.replace(/\.html$/, "").replace(/\/$/, "")) return;
       window.gtag("event", "offer_link_click", {
         source_page: location.pathname,
         offer_path: target,
