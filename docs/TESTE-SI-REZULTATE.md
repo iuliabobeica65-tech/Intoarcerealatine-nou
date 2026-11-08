@@ -2,6 +2,8 @@
 
 ## Verdict
 
+Continuare Brevo, aceeași zi: cele patru atribute Text au fost create/verificate în UI; lista #3, planul, expeditorul și domeniul au fost citite în cont. Scriptul `node scripts/prepare-brevo-emails.mjs` a generat și validat cinci drafturi HTML locale: variabilele exacte, linkurile HTTPS/mailto, lista #3, lipsa scripturilor/formularelor/pixelilor și starea OFF. **Nu este test de livrare și nu dovedește salvarea șabloanelor în Brevo.** Browserul a devenit instabil înaintea salvării lor. Nu s-au rulat din nou testele generale pentru această schimbare numai de documentație/pregătire e-mail; rezultatele anterioare rămân cele de mai jos.
+
 Actualizare documentară ulterioară în aceeași zi: s-au verificat worktree-ul, headurile remote, check-urile Cloudflare și issues #81/#82. Nu s-au schimbat codul, paginile sau testele; rezultatele de implementare de mai jos sunt păstrate, fără a pretinde o nouă rulare a testelor externe. Verificarea/restaurarea backupului este consemnată separat în `SALVARE-SIGURA-FARA-DEPLOY.md` și în manifestul local.
 
 Pregătire locală funcțională în scenariile testate, **neactivată în servicii externe**. Producția nu a fost modificată. Nu s-au trimis e-mailuri, încasat bani sau emis documente fiscale.

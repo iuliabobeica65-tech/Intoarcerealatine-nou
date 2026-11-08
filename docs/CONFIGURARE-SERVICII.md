@@ -1,6 +1,6 @@
 # Configurare servicii — fără secrete
 
-Toate componentele sunt OFF implicit. Nu au fost modificate conturile Brevo, Stripe, SmartBill sau Cloudflare. Fișierul `.env.example` este doar inventar; nu se încarcă automat în Cloudflare.
+Toate componentele runtime sunt OFF implicit. Fișierul `.env.example` este doar inventar; nu se încarcă automat în Cloudflare. Actualizare 8 noiembrie 2026: în Brevo au fost create doar patru atribute Text (PRENUME, CONSENT_VERSION, CONSENT_REQUESTED_AT, CONSENT_SOURCE), fără contacte, trimiteri sau activări. Stripe, SmartBill și Cloudflare nu au fost modificate.
 
 ## Cloudflare Pages și D1
 
@@ -52,7 +52,11 @@ URL-ul se centralizează în `WHATSAPP_COMMUNITY_URL`. Pagina comunității are 
 
 Necesare: URL-ul creat de Iulia, confirmarea setărilor de disponibilitate și a funcțiilor planului. Nu s-a creat și nu s-a modificat nicio programare sau configurare Google Calendar. Existența cerinței în issue nu înseamnă că integrarea funcționează deja.
 
-Nu există conector Brevo în sesiune: planul, limitele și setările contului nu au fost inspectate. Documentația publică susține DOI API; nu demonstrează configurarea contului.
+Actualizare de audit în cont: nu există conector Brevo, dar sesiunea Chrome autentificată a permis verificarea UI. Plan Free, 300 e-mailuri disponibile în ziua afișată. Expeditorul contact@iuliabobeica.ro este Verified; domeniul este Authenticated, cu DMARC configured. Lista #3 are 0 contacte. Automations afișează literal `0 contacts can enter Automations`; accesul efectiv trebuie clarificat înainte de activare. Niciun upgrade nu a fost făcut.
+
+Cele patru atribute necesare au fost create și verificate, fără popularea datelor contactelor. Există un formular implicit de actualizare a profilului, netestat end-to-end. La audit nu existau șabloane Email salvate, formulare native de abonare/dezabonare personalizate sau automatizări configurate. Campania de test existentă a fost păstrată. Ulterior conexiunea browserului a devenit instabilă; editorul deschis nu reprezintă un șablon salvat.
+
+[Pachetul de pregătire Brevo](brevo-pregatire/README.md) conține cinci drafturi HTML și manifestul de configurare. DOI API și DOI pentru formularul nativ folosesc șabloane distincte. Niciun ID de șablon nu este inventat; toate rămân neaprobate și neactivate. Configurarea în cont și livrarea reală sunt încă de verificat.
 
 1. Confirmă lista 3 și expeditorul `Iulia Bobeica – Echilibrarea Rădăcinilor <contact@iuliabobeica.ro>`, autentificarea domeniului, aprobarea tranzacționalelor și limitele planului real.
 2. Creează atribute text `PRENUME`, `CONSENT_VERSION`, `CONSENT_REQUESTED_AT`, `CONSENT_SOURCE`. Nu include date despre ședințe sau experiențe personale.

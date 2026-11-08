@@ -4,6 +4,12 @@ Repository: `iuliabobeica65-tech/Intoarcerealatine-nou`.
 Ramură locală: `pregatire-infrastructura-email-plati`.
 Ramura de producție confirmată de Iulia: `pregatire-cloudflare-2026-10-20`.
 
+## Continuare prioritară Brevo
+
+În cont sunt create și verificate patru atribute Text, fără contacte sau trimiteri; expeditorul și domeniul sunt confirmate, lista #3 este goală. Limita de automatizare afișată este `0 contacts can enter Automations`, deci fluxurile nu sunt activate și planul trebuie clarificat. Conexiunea Chrome nu a mai finalizat editorul; niciun șablon nou nu este declarat salvat în cont.
+
+Pregătire locală suplimentară: `docs/brevo-pregatire/` (configurație publică, cinci drafturi HTML, manifest și instrucțiuni), `scripts/prepare-brevo-emails.mjs`. Se actualizează numai documentația MASTER/configurare/teste/raport. Nicio pagină, stil global, rută sau configurare de producție nu a fost schimbată. Analytics este amânat conform priorității Iuliei; auditul și modelul săptămânal sunt păstrate separat în `.local/brevo-2026-11-08/`. Propunerea de backup off-site nu a fost executată.
+
 ## Actualizare ulterioară: păstrare fără publicare
 
 S-au reverificat headurile GitHub și lipsa modificărilor locale concurente. Issues [#81](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/81) și [#82](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/82) sunt integrate în documentație: link WhatsApp oficial, bun venit după DOI și Google Calendar Appointment Schedules pentru programări individuale, fără confirmări duplicate în Brevo. URL-ul Google și configurarea rămân de furnizat; nu s-au schimbat funcționalități sau pagini.

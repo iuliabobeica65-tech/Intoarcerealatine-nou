@@ -5,6 +5,16 @@ Proprietar: Iulia Bobeica
 Domeniu: https://iuliabobeica.ro/
 Expeditor Brevo testat: contact@iuliabobeica.ro
 
+## Continuarea infrastructurii Brevo — actualizare în aceeași zi
+
+Prioritate confirmată de Iulia: se termină mai întâi infrastructura din cererea inițială; analytics/conversii este etapa următoare. După primirea instrucțiunii de oprire s-a făcut auditul de protecție; mesajul ulterior a cerut reluarea infrastructurii în această ordine. Proiectul vechi Cloudflare este exclus din lucru, fără presupunerea că deconectarea GitHub raportată a fost finalizată.
+
+Munca și backupurile sunt intacte: ramura este aceeași, HEAD anterior `dafeb82aca68fdde836e8531b00bd18ba87d9fe6`, toate cele trei arhive corespund SHA-256 din manifest. În Brevo sunt confirmate lista #3 (0 contacte), expeditorul verificat și domeniul autentificat. Au fost create PRENUME, CONSENT_VERSION, CONSENT_REQUESTED_AT și CONSENT_SOURCE ca Text, fără popularea contactelor. Free afișează 300 e-mailuri și în Automations `0 contacts can enter Automations`; automatizarea nu se declară disponibilă înainte de clarificare.
+
+Auditul a găsit o campanie de test draft, păstrată, un formular implicit de profil (netestat), fără șabloane Email salvate și fără workflowuri configurate. Au fost pregătite local cinci drafturi HTML: DOI API, alternativa DOI pentru formular nativ, bun venit cu WhatsApp, preferințe și confirmare de dezabonare (preferabil mesaj în pagină). Niciunul nu este considerat salvat/activ în Brevo până la verificarea în cont. Vezi [brevo-pregatire/README.md](brevo-pregatire/README.md).
+
+Conexiunea Chrome a început să expire la deschiderea editorului. Nu s-au creat chei API, nu s-au trimis teste sau campanii și nu s-au activat automatizări. Un ID de șablon real, testarea DOI, linkurile personale și integrarea externă sunt încă necesare. Nu s-a făcut push/deploy și nu s-au schimbat paginile, SEO, meniurile sau designul. Auditul analytics și modelul săptămânal sunt păstrate în `.local/brevo-2026-11-08/` pentru etapa următoare, fără tracking nou.
+
 ## Actualizare de coordonare și salvare — 8 noiembrie 2026
 
 Verificare inițială: worktree curat, commit local `b25d0e2ec9227b6f5d219aa41ebed4c4693e5582`. Ramura remote de lucru rămâne la `91b84a094bfe93982f30609aa1e214775dce4fd9`, iar producția cunoscută la `b64af72153794881e9ee5c5b434da62c3f97656f`. Nu există schimbări remote noi de integrat; issue-urile #81 și #82 declară explicit că nu au editat concurent fișierele. În această etapă se actualizează numai documentația.

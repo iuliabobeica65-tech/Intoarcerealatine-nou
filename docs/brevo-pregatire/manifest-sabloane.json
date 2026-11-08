@@ -1,0 +1,94 @@
+[
+  {
+    "id": "COM-01-API",
+    "file": "COM-01-confirmare-API.html",
+    "name": "ER | COM-01 | Confirmare DOI API | DRAFT",
+    "subject": "Confirmă abonarea la e-mailurile comunității",
+    "preheader": "Abonarea se activează numai după confirmarea ta.",
+    "variables": [
+      "params.DOIurl"
+    ],
+    "tag": "optin",
+    "purpose": "API contacts/doubleOptinConfirmation, niciodată campanie obișnuită",
+    "stop": "lipsă șablon activ aprobat, lipsă solicitare explicită, lipsă DOIurl real",
+    "senderName": "Iulia Bobeica – Echilibrarea Rădăcinilor",
+    "senderEmail": "contact@iuliabobeica.ro",
+    "approved": false,
+    "active": false,
+    "brevoTemplateId": null,
+    "savedInBrevo": false
+  },
+  {
+    "id": "COM-01-FORM",
+    "file": "COM-01-confirmare-formular-Brevo.html",
+    "name": "ER | COM-01 | Confirmare formular Brevo | DRAFT",
+    "subject": "Confirmă abonarea la e-mailurile comunității",
+    "preheader": "Confirmă adresa pentru a finaliza abonarea.",
+    "variables": [
+      "doubleoptin"
+    ],
+    "tag": "optin",
+    "purpose": "numai formular nativ Brevo configurat cu double opt-in",
+    "stop": "nu se folosește pentru integrarea API; lipsă formular DOI aprobat",
+    "senderName": "Iulia Bobeica – Echilibrarea Rădăcinilor",
+    "senderEmail": "contact@iuliabobeica.ro",
+    "approved": false,
+    "active": false,
+    "brevoTemplateId": null,
+    "savedInBrevo": false
+  },
+  {
+    "id": "COM-02",
+    "file": "COM-02-bun-venit.html",
+    "name": "ER | COM-02 | Bun venit după DOI | DRAFT",
+    "subject": "Bun venit în comunitatea Echilibrarea Rădăcinilor",
+    "preheader": "E-mailurile comunității și WhatsApp sunt opțiuni separate.",
+    "variables": [
+      "update_profile",
+      "unsubscribe"
+    ],
+    "purpose": "o singură trimitere după confirmarea DOI verificată",
+    "stop": "fără DOI demonstrat, dezabonare, bounce/suprimare, bun venit deja trimis, lipsă aprobare",
+    "senderName": "Iulia Bobeica – Echilibrarea Rădăcinilor",
+    "senderEmail": "contact@iuliabobeica.ro",
+    "approved": false,
+    "active": false,
+    "brevoTemplateId": null,
+    "savedInBrevo": false
+  },
+  {
+    "id": "COM-04",
+    "file": "COM-04-preferinte.html",
+    "name": "ER | COM-04 | Gestionare preferințe | DRAFT",
+    "subject": "Preferințele tale pentru e-mailurile comunității",
+    "preheader": "Alege ce dorești să primești sau retrage-ți acordul.",
+    "variables": [
+      "update_profile",
+      "unsubscribe"
+    ],
+    "purpose": "la solicitarea persoanei; nu campanie automată de reabonare",
+    "stop": "destinatar neeligibil, linkuri personale neverificate, lipsă aprobare",
+    "senderName": "Iulia Bobeica – Echilibrarea Rădăcinilor",
+    "senderEmail": "contact@iuliabobeica.ro",
+    "approved": false,
+    "active": false,
+    "brevoTemplateId": null,
+    "savedInBrevo": false
+  },
+  {
+    "id": "COM-05",
+    "file": "COM-05-confirmare-dezabonare.html",
+    "name": "ER | COM-05 | Confirmare dezabonare | DRAFT",
+    "subject": "Dezabonarea de la e-mailurile comunității",
+    "preheader": "Mesajele de marketing au fost oprite.",
+    "variables": [],
+    "purpose": "numai după confirmarea efectivă a dezabonării; preferabil mesaj în pagina Brevo",
+    "stop": "stare de dezabonare neverificată, mesaj nesolicitat sau redundant; nu trimite printr-un canal blocat",
+    "senderName": "Iulia Bobeica – Echilibrarea Rădăcinilor",
+    "senderEmail": "contact@iuliabobeica.ro",
+    "approved": false,
+    "active": false,
+    "brevoTemplateId": null,
+    "savedInBrevo": false
+  }
+]
