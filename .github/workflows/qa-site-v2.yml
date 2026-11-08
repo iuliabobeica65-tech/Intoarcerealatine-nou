@@ -13,6 +13,9 @@ on:
       - ".github/workflows/qa-site-v2.yml"
       - "scripts/**"
       - "editorial/**"
+      - "infrastructure/**"
+      - "functions/**"
+      - "package.json"
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,6 +33,8 @@ jobs:
         run: |
           python3 -m pip install --quiet PyYAML==6.0.2
           python3 qa/check-cms.py
+      - name: Verifica infrastructura izolata cu servicii simulate
+        run: node --test qa/infrastructure.test.mjs
       - name: Instaleaza Chromium pentru QA
         run: |
           npm install --no-save playwright@1.56.1
@@ -41,6 +46,7 @@ jobs:
           test ! -e dist/previzualizare-metoda-clar.html
           test ! -e dist/.pages.yml
           test ! -e dist/README.md
+          node qa/verify-infrastructure.mjs
       - name: Validează sitemap.xml local înainte de publicare
         run: |
           python3 - <<'PY'
@@ -51,7 +57,7 @@ jobs:
           ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
           doc = ET.parse(root/"sitemap.xml").getroot()
           urls = [n.text for n in doc.findall("s:url/s:loc", ns)]
-          pages = ["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
+          pages = ["comunitate","evenimente","acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
           articles = sorted(p.stem for p in (root/"articole").glob("*.html"))
           if len(articles) != 82:
               raise SystemExit(f"ARTICOLE INCOMPLETE: {len(articles)}/82 generate")

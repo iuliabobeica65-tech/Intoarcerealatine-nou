@@ -1,0 +1,11 @@
+{
+  "name": "echilibrarea-radacinilor-infrastructura",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-cloudflare.mjs",
+    "test": "node --test qa/infrastructure.test.mjs",
+    "verify": "node qa/verify-infrastructure.mjs"
+  },
+  "engines": { "node": ">=22.13" }
+}

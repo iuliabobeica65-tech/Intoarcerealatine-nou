@@ -1,9 +1,57 @@
 # MASTER — Infrastructura digitala Echilibrarea Radacinilor
-Versiune: V1 — plan de implementare, NU validare comerciala sau metodologica.
+Versiune: V2 — pregătire implementată local, extensie SmartBill; NU validare comercială, fiscală sau metodologică.
 Data: 2026-11-08
 Proprietar: Iulia Bobeica
 Domeniu: https://iuliabobeica.ro/
 Expeditor Brevo testat: contact@iuliabobeica.ro
+
+## Actualizare de implementare — 8 noiembrie 2026
+
+Iulia a confirmat în sesiune ramura Cloudflare de producție. Auditul GitHub a identificat head `b64af72153794881e9ee5c5b434da62c3f97656f`, inclus integral în ramura de lucru. Head inițial de lucru: `91b84a0` (documentație). Nu a fost necesară integrarea altor modificări. Paginile-sursă existente, fotografiile, conținutul CMS și articolele nu au fost editate.
+
+Cererea integrală și extensia sunt păstrate în [CERERE-INITIALA.txt](CERERE-INITIALA.txt) și [CERINTE-SI-EXTINDERE-SMARTBILL.md](CERINTE-SI-EXTINDERE-SMARTBILL.md).
+
+### Arhitectură pregătită
+
+- Site static păstrat; pagini noi `comunitate.html` și `evenimente.html`, CSS/JS proprii. Designul și navigația sunt preluate din site. Paginile vechi nu primesc modificări globale sau linkuri noi. Descoperirea noilor pagini se face prin URL direct și sitemap până la aprobarea amplasării în meniu.
+- Build Cloudflare extins explicit cu cele două pagini; canonical, sitemap și testul CI sunt actualizate. Fișierele private rămân excluse din dist.
+- Pages Function catch-all `/api/*`, module server în `infrastructure/`, D1 cu patru migrații. Bindingurile nu sunt create și nu există deploy.
+- Comunitate: DOI Brevo nativ către lista 3, atribute explicite, dovada solicitării pseudonimizată, Turnstile și rate limiting persistent; marketingul nu este activat înainte de DOI. Confirmarea efectivă, bun venit, preferințe și dezabonare se configurează/verifică în Brevo. Parametrul de redirecționare nu reprezintă dovadă de confirmare.
+- Evenimente și programe: catalog privat configurabil, înscriere administrativă distinctă de marketing, capacitate protejată în SQL, token de acces privat, revizii pentru reprogramări/anulări/finalizări și outbox cu unicități. Nu există portal administrativ/autentificare clientă/calendar extern sau recuperare automată a tokenului.
+- Automatizări administrative: outbox verifică destinatarul, revizia, statutul și aprobarea șablonului. Livrarea incertă merge în review. Reminderele necesită apel programat server-side al endpointului admin; nu este instalat cron. Nu există campanii sau workflowuri create în Brevo.
+- Stripe Checkout exclusiv test: gate explicit, chei live respinse, preț/sumă/monedă verificate pe server, comandă unică/înscriere, idempotency key Stripe, webhook semnat și stare canonică reinterogată, rambursările suspendă accesul. Nu se deduce plata din succesul din browser.
+- SmartBill: simulator fără rețea, mapare payload V1 condiționată de date fiscale, client fiscal separat, factură unică/comandă, credit unic/refund legat de original, review la rambursare și registru unic de notificare. Transportul real, sincronizarea nativă și expedierea facturilor sunt neactivate/neimplementate intenționat până la clarificarea mediului și datelor firmei.
+- Catalog: 52 șabloane draft, metadate complete, variabile validate; niciun text aprobat implicit. Mesajele marketing conțin un draft editorial de completat, fără promisiuni metodologice inventate.
+
+### Stare și dependențe
+
+| Componentă | Stare reală |
+|---|---|
+| Build, sitemap, păstrarea site-ului | implementate și verificate local; vezi raportul de teste |
+| Comunitate/DOI | cod și simulări locale; configurare Brevo/Turnstile/D1 necesară |
+| Evenimente/programe/ședințe | cod și SQLite local; oferte/date/acces lipsă; scheduler neinstalat |
+| E-mailuri administrative | cod de outbox și expediere; OFF; teste reale de livrare lipsă |
+| Marketing, bun venit, preferințe/dezabonare | catalog și pași; necesită configurarea reală Brevo |
+| Stripe test | cod și simulări locale; nu există tranzacție în cont sandbox în această sesiune |
+| Stripe live | blocat intenționat în cod și de date juridice/comerciale |
+| SmartBill | simulator și adaptor de pregătire testate local; fără emitere/sincronizare reală |
+| GDPR și fiscal | pregătire pentru revizuire; fără certificare sau validare automată |
+
+### Decizii explicite
+
+Se alege un singur emitent fiscal — integrarea nativă SmartBill–Stripe **sau** API — și un singur expeditor al facturii — Brevo **sau** SmartBill. Nu se activează două mecanisme care dublează documentele. API-ul SmartBill este documentat pentru Facturare Platinum; planul contului și eventualul mediu de test se confirmă la furnizor. Nu s-a găsit dovadă suficientă de sandbox fiscal izolat; nu se emit documente de probă în contul real.
+
+Rezervările nu expiră automat; eliberarea și rambursarea sunt gestionate manual pentru a evita accesul fără loc. Tranșele/abonamentele nu sunt implementate. Datele fiscale nu se colectează din formularul public și nu merg în marketing. Retenția, exportul/ștergerea și procedurile de acces necesită decizie juridică înainte de activare.
+
+### Documente de predare și reluare
+
+[ACTIVARE-DUPA-INFIINTAREA-FIRMEI.md](ACTIVARE-DUPA-INFIINTAREA-FIRMEI.md), [CONFIGURARE-SERVICII.md](CONFIGURARE-SERVICII.md), [CATALOG-SABLOANE-EMAIL.md](CATALOG-SABLOANE-EMAIL.md), [CATALOG-SABLOANE-EMAIL.json](CATALOG-SABLOANE-EMAIL.json), [TESTE-SI-REZULTATE.md](TESTE-SI-REZULTATE.md), [RAPORT-MODIFICARI.md](RAPORT-MODIFICARI.md).
+
+La reluare: verifică mai întâi producția actuală și diferențele față de acest snapshot; citește limitările și pașii de activare, apoi rulează build/test/verify. Nu face merge și nu publica fără aprobarea explicită a Iuliei.
+
+---
+
+Mai jos este planul V1 păstrat pentru trasabilitate. Formulările „de redactat” reprezintă starea inițială; starea curentă este tabelul de mai sus.
 
 ## Reguli de protectie — obligatorii
 - Productie Cloudflare: ramura `pregatire-cloudflare-2026-10-20`; NU se modifica direct.

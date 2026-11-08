@@ -1,0 +1,1324 @@
+[
+  {
+    "id": "COM-01",
+    "trigger": "com-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Confirmă adresa de e-mail",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Ai solicitat abonarea la e-mailurile comunității Echilibrarea Rădăcinilor. Confirmă adresa folosind linkul de mai jos. Dacă nu ai solicitat abonarea, ignoră mesajul.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "COM-02",
+    "trigger": "com-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Bun venit în comunitate",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Bun venit în comunitatea Echilibrarea Rădăcinilor. Vei primi e-mailurile pentru care ți-ai dat acordul. Poți modifica preferințele sau te poți dezabona oricând.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "COM-03",
+    "trigger": "com-03",
+    "recipients": "abonați confirmați eligibili",
+    "basis": "consimțământ marketing confirmat, verificat înainte de trimitere",
+    "subject": "Invitație WhatsApp",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Dacă dorești, poți intra separat în comunitatea WhatsApp. Participarea este opțională. Membrii își pot vedea numerele de telefon.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": true,
+    "stop": "dezabonare, lipsă DOI, bounce, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "COM-04",
+    "trigger": "com-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Preferințe",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Poți actualiza preferințele pentru e-mailurile comunității folosind linkul personal de mai jos.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "COM-05",
+    "trigger": "com-05",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Dezabonare",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Dezabonarea oprește mesajele de marketing. Mesajele administrative privind rezervările existente sunt gestionate separat.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "LIVE-01",
+    "trigger": "live-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Confirmarea înscrierii",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nConfirmarea înscrierii: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "LIVE-02",
+    "trigger": "live-02",
+    "recipients": "abonați confirmați eligibili",
+    "basis": "consimțământ marketing confirmat, verificat înainte de trimitere",
+    "subject": "Invitație LIVE",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Mesaj editorial de completat și aprobat de Iulia înainte de orice activare.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": true,
+    "stop": "dezabonare, lipsă DOI, bounce, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "LIVE-03",
+    "trigger": "live-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Reminder LIVE",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nReminder LIVE: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "LIVE-04",
+    "trigger": "live-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "După LIVE",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDupă LIVE: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "LIVE-05",
+    "trigger": "live-05",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Modificarea întâlnirii",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nModificarea întâlnirii: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "LIVE-06",
+    "trigger": "live-06",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Anulare LIVE",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAnulare LIVE: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WEB-01",
+    "trigger": "web-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Confirmarea înscrierii",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nConfirmarea înscrierii: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WEB-02",
+    "trigger": "web-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Reminder webinar",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nReminder webinar: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WEB-03",
+    "trigger": "web-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Modificare webinar",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nModificare webinar: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WEB-04",
+    "trigger": "web-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "După webinar",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDupă webinar: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WEB-05",
+    "trigger": "web-05",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Anulare webinar",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAnulare webinar: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-01",
+    "trigger": "wrk-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Rezervarea înregistrată",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nRezervarea înregistrată: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-02",
+    "trigger": "wrk-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Detalii despre plată",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDetalii despre plată: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-03",
+    "trigger": "wrk-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Acces la întâlnire",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAcces la întâlnire: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-04",
+    "trigger": "wrk-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Reminder workshop",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nReminder workshop: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-05",
+    "trigger": "wrk-05",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Anulare workshop",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAnulare workshop: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-06",
+    "trigger": "wrk-06",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "După workshop",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDupă workshop: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "WRK-07",
+    "trigger": "wrk-07",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Modificare workshop",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nModificare workshop: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-01",
+    "trigger": "prg-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Înscriere în program",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nÎnscriere în program: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-02",
+    "trigger": "prg-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Detalii despre plată",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDetalii despre plată: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-03",
+    "trigger": "prg-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Acces la program",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAcces la program: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-04",
+    "trigger": "prg-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Calendarul programului",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nCalendarul programului: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-05",
+    "trigger": "prg-05",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Informații despre tranșe",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nInformații despre tranșe: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-06",
+    "trigger": "prg-06",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Finalizarea programului",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nFinalizarea programului: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-07",
+    "trigger": "prg-07",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Modificare program",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nModificare program: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PRG-08",
+    "trigger": "prg-08",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Anulare program",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAnulare program: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "SES-01",
+    "trigger": "ses-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Programarea ședinței",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nProgramarea ședinței: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "SES-02",
+    "trigger": "ses-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Reminder ședință",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nReminder ședință: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "SES-03",
+    "trigger": "ses-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Reprogramarea ședinței",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nReprogramarea ședinței: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "SES-04",
+    "trigger": "ses-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Anularea ședinței",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nAnularea ședinței: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PAY-01",
+    "trigger": "pay-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Confirmarea plății",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nConfirmarea plății: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PAY-02",
+    "trigger": "pay-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Plată nereușită",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nPlată nereușită: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PAY-03",
+    "trigger": "pay-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Plată în așteptare",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nPlată în așteptare: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PAY-04",
+    "trigger": "pay-04",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Rambursare",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nRambursare: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PAY-05",
+    "trigger": "pay-05",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Informații despre tranșe",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nInformații despre tranșe: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "PAY-06",
+    "trigger": "pay-06",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Verificarea plății",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nVerificarea plății: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "FIN-01",
+    "trigger": "fin-01",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Factura",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nFactura: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "FIN-02",
+    "trigger": "fin-02",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Corecția facturii",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nCorecția facturii: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "FIN-03",
+    "trigger": "fin-03",
+    "recipients": "persoana vizată de operațiune",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Problemă la facturare",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nProblemă la facturare: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "MKT-01",
+    "trigger": "mkt-01",
+    "recipients": "abonați confirmați eligibili",
+    "basis": "consimțământ marketing confirmat, verificat înainte de trimitere",
+    "subject": "Newsletter",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Mesaj editorial de completat și aprobat de Iulia înainte de orice activare.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": true,
+    "stop": "dezabonare, lipsă DOI, bounce, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "MKT-02",
+    "trigger": "mkt-02",
+    "recipients": "abonați confirmați eligibili",
+    "basis": "consimțământ marketing confirmat, verificat înainte de trimitere",
+    "subject": "Lansare",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Mesaj editorial de completat și aprobat de Iulia înainte de orice activare.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": true,
+    "stop": "dezabonare, lipsă DOI, bounce, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "MKT-03",
+    "trigger": "mkt-03",
+    "recipients": "abonați confirmați eligibili",
+    "basis": "consimțământ marketing confirmat, verificat înainte de trimitere",
+    "subject": "Invitație",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Mesaj editorial de completat și aprobat de Iulia înainte de orice activare.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": true,
+    "stop": "dezabonare, lipsă DOI, bounce, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "MKT-04",
+    "trigger": "mkt-04",
+    "recipients": "abonați confirmați eligibili",
+    "basis": "consimțământ marketing confirmat, verificat înainte de trimitere",
+    "subject": "Noutăți",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "Mesaj editorial de completat și aprobat de Iulia înainte de orice activare.",
+    "variables": [
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": true,
+    "stop": "dezabonare, lipsă DOI, bounce, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "OPS-01",
+    "trigger": "ops-01",
+    "recipients": "operator autorizat",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Livrare eșuată",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nLivrare eșuată: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "OPS-02",
+    "trigger": "ops-02",
+    "recipients": "operator autorizat",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Dezabonare înregistrată",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDezabonare înregistrată: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "OPS-03",
+    "trigger": "ops-03",
+    "recipients": "operator autorizat",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Duplicat detectat",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nDuplicat detectat: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  },
+  {
+    "id": "OPS-04",
+    "trigger": "ops-04",
+    "recipients": "operator autorizat",
+    "basis": "temei administrativ de revizuit juridic pentru operațiune; fără înscriere marketing",
+    "subject": "Eroare operațională",
+    "preheader": "Iulia Bobeica · Echilibrarea Rădăcinilor",
+    "body": "{{name}},\n\nEroare operațională: {{title}}.\n{{details}}\n\nIulia Bobeica · Echilibrarea Rădăcinilor",
+    "variables": [
+      "name",
+      "title",
+      "details",
+      "cta_url"
+    ],
+    "cta": "Deschide detaliile",
+    "marketing": false,
+    "stop": "destinatar nepotrivit, revizie veche, anulare incompatibilă cu mesajul, livrare incertă, lipsă aprobare",
+    "tests": [
+      "variabile lipsă respinse",
+      "URL HTTPS",
+      "destinatar eligibil",
+      "dublură oprită",
+      "revizie verificată"
+    ],
+    "approved": false
+  }
+]

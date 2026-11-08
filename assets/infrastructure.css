@@ -1,0 +1,16 @@
+#iulia-live .infrastructure-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,6vw,80px)}
+#iulia-live form{max-width:640px;margin-top:24px}
+#iulia-live form label{display:block;margin-bottom:8px}
+#iulia-live form input:not([type=checkbox]),#iulia-live form select{display:block;width:100%;padding:13px;border:1px solid #8b7864;border-radius:4px;background:#fff9ef;color:#28231f;font:inherit}
+#iulia-live form input:focus-visible,#iulia-live form select:focus-visible{outline:3px solid #8b6333;outline-offset:3px}
+#iulia-live form .check{display:flex;gap:12px;align-items:flex-start}
+#iulia-live input[type=checkbox]{width:20px;height:20px;flex-shrink:0;margin-top:4px}
+#iulia-live .trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+#iulia-live [hidden]{display:none!important}
+#iulia-live #form-status{margin-top:16px}
+#iulia-live .infrastructure-grid a:not(.button),#iulia-live form a{text-decoration:underline}
+#iulia-live #registration .button{margin:8px 8px 8px 0}
+#iulia-live .infrastructure-footer{border-top:1px solid #d9c7ac;padding-block:32px 48px;color:#28231f}
+#iulia-live .infrastructure-footer nav{display:flex;flex-wrap:wrap;gap:12px 24px}
+#iulia-live .infrastructure-footer a{text-decoration:underline}
+@media(max-width:760px){#iulia-live .infrastructure-grid{grid-template-columns:1fr}#iulia-live .infrastructure-grid aside{padding-top:24px;border-top:1px solid #d9c7ac}}

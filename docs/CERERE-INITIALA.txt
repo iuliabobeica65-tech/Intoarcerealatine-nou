@@ -1,0 +1,121 @@
+EȘTI CODEX. LUCREZI CA ARHITECT SOFTWARE ȘI DEZVOLTATOR FULL-STACK PENTRU IULIA BOBEICA.
+
+PROIECT: ECHILIBRAREA RĂDĂCINILOR
+SITE: https://iuliabobeica.ro/
+REPOSITORY: iuliabobeica65-tech/Intoarcerealatine-nou
+RAMURA DE PRODUCȚIE CLOUDFLARE CUNOSCUTĂ: pregatire-cloudflare-2026-10-20
+RAMURA DE LUCRU DEJA CREATĂ: pregatire-infrastructura-email-plati
+DOCUMENT EXISTENT: docs/infrastructura-email-comunitate-plati-MASTER-V1.md
+
+OBIECTIV
+Pregătește complet infrastructura tehnică de comunitate, e-mail marketing, LIVE-uri, webinarii, workshopuri, programe, rezervări, plăți și facturare. Prima etapă trebuie să fie pregătită pentru lansare fără încasări online; a doua trebuie să fie implementată și testată în sandbox, pentru activare după înființarea firmei/PFA-ului.
+
+REGULĂ CRITICĂ: PROTEJEAZĂ SITE-UL ACTUAL
+1. Nu modifica niciodată direct ramura de producție sau main.
+2. Lucrează exclusiv pe pregatire-infrastructura-email-plati. Verifică mai întâi că ramura există și citește MASTER V1.
+3. Înainte de lucru, identifică ramura care alimentează efectiv Cloudflare Pages. Nu presupune că main este producția.
+4. Fă auditul repository-ului, al scriptului scripts/build-cloudflare.mjs, al rutelor, al paginilor, al asseturilor și al sitemapului.
+5. Păstrează integral designul existent, fotografiile originale, textele, articolele, programele, SEO-ul, canonical, sitemap, redirects, politica de confidențialitate și funcționalitățile existente.
+6. Nu reintroduce denumirile comerciale vechi. Brandul actual este Iulia Bobeica; metoda și comunitatea se numesc Echilibrarea Rădăcinilor. Numele istorice din căile tehnice nu justifică schimbări destructive.
+7. Nu publica, nu face merge, nu modifica DNS, Cloudflare production settings sau branch settings fără aprobarea explicită a proprietarei.
+8. Dacă producția a avansat față de ramura de lucru, compară și integrează cu atenție schimbările recente în ramura de lucru. Nu suprascrie niciodată munca existentă.
+9. Rulează build și teste. Orice pagină nouă trebuie inclusă corect în build-ul Cloudflare și în sitemap.
+10. Nu salva chei API, parole, tokenuri sau date ale clientelor în repository.
+
+CONFIGURAȚIE CUNOSCUTĂ
+- Brevo este furnizorul pentru contacte, campanii și automatizări.
+- Lista principală Brevo: Comunitatea Echilibrarea Rădăcinilor, ID 3.
+- Expeditor: Iulia Bobeica – Echilibrarea Rădăcinilor <contact@iuliabobeica.ro>.
+- Domeniu: https://iuliabobeica.ro/.
+- Comunitatea WhatsApp va avea linkul introdus ulterior de proprietară.
+- LIVE-uri gratuite, webinarii, constelații online/offline, workshopuri, ședințe individuale, programe de grup și programe individuale.
+- Nu inventa prețuri, date, durate, promisiuni, testimoniale sau componente ale metodei.
+- Verifică limitările reale ale planului Brevo și API-urilor înainte să alegi mecanismul de automatizare.
+
+ETAPA A — COMUNITATE
+A1. Creează o pagină dedicată comunității, în stilul actual al site-ului, fără modificări globale inutile.
+A2. Formular cu e-mail obligatoriu, prenume opțional, consimțământ clar pentru marketing, informații despre prelucrarea datelor și link la politica de confidențialitate.
+A3. Configurează integrarea securizată Brevo către lista ID 3. Nu expune cheia API în browser.
+A4. Implementează double opt-in printr-un flux susținut de Brevo sau un flux securizat echivalent, fără a activa marketingul înainte de confirmare.
+A5. Previno abonările duplicate, spamul și erorile necontrolate; păstrează dovada consimțământului conform cerințelor legale.
+A6. Pregătește mesajele de confirmare, bun venit, dezabonare și preferințe.
+A7. Pregătește butonul WhatsApp cu link configurabil, fără să inventezi URL-ul și fără să condiționezi abonarea e-mail de intrarea în WhatsApp.
+A8. Nu colecta date sensibile despre experiențele personale sau ședințe în sistemul de marketing.
+
+ETAPA B — EVENIMENTE
+B1. Creează o structură reutilizabilă de evenimente: LIVE gratuit, webinar, workshop, constelații.
+B2. Datele, orele, capacitatea, locația, linkul de acces și statusul trebuie să fie configurabile.
+B3. Înscriere, confirmare, remindere, schimbare de dată, anulare, mesaj post-eveniment.
+B4. Evită duplicatele și trimiterile către persoane care nu sunt înscrise la eveniment.
+B5. Separă e-mailurile administrative de marketing. Participarea la un eveniment nu implică automat acord pentru newsletter.
+B6. Păstrează accesul la LIVE-uri gratuite posibil și fără abonare comercială.
+
+ETAPA C — PROGRAME ȘI ȘEDINȚE
+C1. Modele configurabile pentru programe individuale, de grup, workshopuri și ședințe.
+C2. Evidența înscrierilor, rezervărilor, statusurilor, locurilor și accesului.
+C3. Confirmări, remindere, reprogramări, anulări, finalizare.
+C4. Pregătește șabloane de e-mail cu variabile validate și conținut comercial supus aprobării.
+C5. Nu implementa un sistem care confirmă automat locuri indisponibile.
+
+ETAPA D — PLĂȚI, STRICT SANDBOX
+D1. Integrează Stripe Checkout exclusiv în modul test.
+D2. Folosește variabile de mediu și un comutator implicit OFF pentru plățile reale.
+D3. Creează o evidență operațională securizată pentru comenzi, înscrieri, tranzacții și evenimente.
+D4. Validează webhookurile Stripe prin semnătură; implementează idempotentă și tratarea evenimentelor întârziate/repetate.
+D5. Nu considera pagina de succes drept dovadă de plată.
+D6. Testează plata reușită, eșuată, în așteptare, rambursarea și accesul după plată.
+D7. Pregătește punctul de integrare cu un furnizor de facturare ce va fi ales ulterior. Nu inventa date fiscale și nu genera facturi reale.
+D8. Nu activa încasări reale, produse live, abonamente sau plăți în rate fără confirmarea regulilor comerciale și a eligibilității.
+
+ETAPA E — E-MAILURI ȘI AUTOMATIZĂRI
+Construiește un catalog de șabloane pentru:
+- abonare, confirmare, bun venit, preferințe, dezabonare;
+- LIVE-uri și webinarii: invitație, înscriere, reminder, modificare, post-eveniment;
+- workshopuri și constelații: rezervare, plată, acces, reminder, anulare;
+- programe: înscriere, acces, calendar, tranșe, finalizare;
+- ședințe: programare, reminder, reprogramare;
+- plăți: confirmare, eșec, așteptare, rambursare;
+- facturare: factură, corecție, eroare;
+- marketing: newsletter, invitații și lansări numai cu consimțământ adecvat;
+- operațional: erori, duplicate, livrare eșuată.
+
+Pentru fiecare șablon documentează: identificator, trigger, destinatari, temei/consimțământ, subiect, preheader, corp, variabile, CTA, condiții de oprire și teste.
+Nu inventa conținut metodologic. Texte comerciale și promisiuni trebuie aprobate de Iulia înainte de activare.
+Dacă Brevo nu permite o automatizare prin API sau planul actual, implementează partea posibilă și documentează clar pasul manual necesar. Nu pretinde că automatizarea funcționează dacă nu este configurată în cont.
+
+ETAPA F — CALITATE, GDPR ȘI SECURITATE
+F1. Separă datele administrative de cele de marketing.
+F2. Respectă dezabonarea, minimizarea datelor, accesul limitat și păstrarea dovezilor consimțământului.
+F3. Pregătește revizuirea politicii de confidențialitate și a termenilor comerciali; nu pretinde validare juridică automată.
+F4. Asigură protecția secretelor, validarea inputului, anti-spam, loguri fără date sensibile și tratarea erorilor.
+F5. Testează build, linkuri, mobil, SEO, sitemap, canonical, redirecturi și regresii vizuale.
+F6. Dacă este posibil, creează un preview izolat, fără să publici în producție.
+
+LIVRABILE OBLIGATORII
+1. Cod complet în ramura izolată, pentru tot ce se poate implementa fără datele firmei și fără credențiale.
+2. Șabloane și automatizări pregătite; marchează exact ce este funcțional, ce este doar în cod și ce necesită configurare în Brevo.
+3. Document MASTER actualizat cu arhitectura, dependențele și deciziile rămase.
+4. Fișier ACTIVARE-DUPA-INFIINTAREA-FIRMEI.md: date juridice, Stripe live, facturare, produse/prețuri, politici, webhookuri, verificări și teste finale, în ordinea corectă.
+5. Fișier CONFIGURARE-SERVICII.md: variabile de mediu și pași de configurare Brevo, WhatsApp, Stripe și Cloudflare; fără valori secrete.
+6. Fișier TESTE-SI-REZULTATE.md cu teste efectuate și rezultate reale; nu declara teste inexistente.
+7. Raport cu toate fișierele modificate, adăugate și orice risc de regresie.
+8. Raport clar cu ce mai trebuie să furnizeze proprietara.
+
+PREDARE — OBLIGATORIU
+La final afișează:
+- repository;
+- numele exact al ramurii;
+- SHA complet al ultimului commit;
+- link direct către ramură;
+- link către documentația de activare după înființarea firmei;
+- eventualul PR (draft, fără merge);
+- stadiul real pentru fiecare componentă: implementat/testat, pregătit dar neconfigurat, blocat de acces, blocat de date comerciale;
+- confirmarea că producția nu a fost modificată;
+- instrucțiuni de reluare a lucrului peste câteva luni.
+
+NU FACE MERGE ȘI NU PUBLICA FĂRĂ APROBAREA EXPLICITĂ A IULIEI.
+
+Începe cu auditul repository-ului și documentația MASTER V1. Apoi implementează etapizat, fără întrebări inutile. Cere ajutor doar când lipsesc accesul, datele comerciale ori o decizie care nu poate fi dedusă în siguranță.
+
+Iulia Bobeica | Echilibrarea rădăcinilor – Claritate prin echilibrarea percepțiilor
+Iulia Bobeica | Metoda Echilibrarea rădăcinilor. Workshopuri de constelații

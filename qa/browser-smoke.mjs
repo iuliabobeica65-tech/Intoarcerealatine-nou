@@ -15,7 +15,7 @@ const base = process.env.SITE_URL || "http://127.0.0.1:4173";
 const preview = process.env.PREVIEW_URL || "";
 const directory = resolve(root, "qa-artifacts");
 mkdirSync(directory, { recursive: true });
-const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "live", "articole", "program-nivelul-de-merit"];
+const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "live", "articole", "program-nivelul-de-merit", "comunitate", "evenimente"];
 const viewports = [
   { name: "telefon-mic", width: 320, height: 700 },
   { name: "telefon", width: 390, height: 844 },
@@ -24,7 +24,7 @@ const viewports = [
 ];
 const failures = [];
 const results = [];
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH}:{}) });
 
 async function inspect(site, context, pageName, viewName, screen = false) {
   const page = await context.newPage();
@@ -62,7 +62,7 @@ async function inspect(site, context, pageName, viewName, screen = false) {
       categoryNavAtEnd: (() => {const nav=document.querySelector(".blog-categories-end .blog-category-nav"), last=[...document.querySelectorAll(".blog-category-group")].at(-1);return !!(nav&&last&&(last.compareDocumentPosition(nav)&Node.DOCUMENT_POSITION_FOLLOWING))})()
     };
   });
-  if (screen) await page.screenshot({ path: `${directory}/${pageName}-${viewName}.png`, fullPage: true });
+  if (screen || (["comunitate","evenimente"].includes(pageName)&&["telefon","desktop"].includes(viewName))) await page.screenshot({ path: `${directory}/${pageName}-${viewName}.png`, fullPage: true });
   if (!response?.ok()) failures.push(`${pageName}/${viewName}: HTTP ${response?.status() || "no response"}`);
   if (probe.h1 !== 1 || !probe.main) failures.push(`${pageName}/${viewName}: lipseste H1 unic sau main`);
   if (probe.scrollWidth > probe.width + 2) failures.push(`${pageName}/${viewName}: overflow orizontal ${probe.scrollWidth} > ${probe.width}`);
