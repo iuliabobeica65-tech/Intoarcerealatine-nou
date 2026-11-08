@@ -18,7 +18,7 @@ Variabile normale:
 | EMAIL_SEND_ENABLED | false; true numai după aprobări și teste de livrare |
 | BREVO_DOI_TEMPLATE_ID | ID real al șablonului DOI |
 | TURNSTILE_SITE_KEY | cheie publică, hostname exact al previewului |
-| WHATSAPP_COMMUNITY_URL | gol; link confirmat de Iulia, https://chat.whatsapp.com/... |
+| WHATSAPP_COMMUNITY_URL | neconfigurat în runtime; valoarea oficială este consemnată mai jos din issue #81 |
 | APPROVED_TEMPLATE_IDS | array JSON de ID-uri aprobate; implicit [] |
 | PAYMENTS_TEST_ENABLED | false; true numai pentru Stripe test |
 | LIVE_PAYMENTS_ENABLED | false obligatoriu pentru orice operațiune Stripe |
@@ -31,6 +31,26 @@ Secrete server: `BREVO_API_KEY`, `TURNSTILE_SECRET`, `DATA_HMAC_KEY` (minimum 32
 Turnstile verifică hostname și action `registration`; honeypot, limită persistentă de 10 solicitări/10 minute/IP pseudonimizat, limită corp și validare de input. Nu adăuga excepții care ocolesc provocarea pe medii publice. Datele nu sunt scrise în loguri de aplicație. Revizuiește separat loggingul furnizorilor.
 
 ## Brevo
+
+### Decizii confirmate prin issues #81 și #82
+
+[Issue #81 — WhatsApp](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/81) furnizează linkul oficial, de păstrat exact în configurația serverului la activarea aprobată:
+
+```text
+https://chat.whatsapp.com/FCzRrYkltcT2AMg4wLCdcy?s=cl&p=a&iam=2
+```
+
+URL-ul se centralizează în `WHATSAPP_COMMUNITY_URL`. Pagina comunității are deja buton configurabil, dar această actualizare este doar documentară: nu setează variabila, nu afișează linkul într-un deploy și nu îl distribuie în alte locuri. La configurarea fluxului, mesajul de bun venit **după confirmarea DOI** trebuie să includă și invitația WhatsApp, fără condiționarea abonării și fără deducerea consimțământului marketing din aderarea la grup. Testul anterior a verificat butonul ascuns în lipsa configurației, nu navigarea linkului oficial. Linkul nu a fost accesat și nu s-a intrat în grup.
+
+[Issue #82 — Google Calendar Appointment Schedules](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/82) stabilește soluția pentru programări individuale. Această decizie prevalează asupra pregătirii unui motor personalizat pentru ședințe:
+
+- Iulia creează pagina nativă de rezervări și configurează disponibilitatea, durata, bufferul și regulile, în funcție de planul contului Google.
+- Se așteaptă URL-ul oficial. Nu se inventează link, durată, disponibilitate sau tarif.
+- După furnizare și aprobare, site-ul va afișa „Programează o ședință”, păstrând WhatsApp ca alternativă. Embedul se evaluează separat, cu păstrarea designului și analiza datelor/cookies.
+- Confirmările și actualizările sunt responsabilitatea Google Calendar, conform configurației reale. Brevo nu trimite confirmări/remindere duplicate; rezervarea nu implică abonare marketing.
+- Nu activa încasarea la rezervare. Nu configura oferte publice de tip `session` în motorul D1 pentru a înlocui Google Appointment Schedules. Modelul tehnic local existent rămâne neactivat pentru această utilizare; nicio rescriere a codului nu s-a făcut în această etapă documentară.
+
+Necesare: URL-ul creat de Iulia, confirmarea setărilor de disponibilitate și a funcțiilor planului. Nu s-a creat și nu s-a modificat nicio programare sau configurare Google Calendar. Existența cerinței în issue nu înseamnă că integrarea funcționează deja.
 
 Nu există conector Brevo în sesiune: planul, limitele și setările contului nu au fost inspectate. Documentația publică susține DOI API; nu demonstrează configurarea contului.
 

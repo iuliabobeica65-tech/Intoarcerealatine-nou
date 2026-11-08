@@ -1,9 +1,17 @@
 # MASTER — Infrastructura digitala Echilibrarea Radacinilor
-Versiune: V2 — pregătire implementată local, extensie SmartBill; NU validare comercială, fiscală sau metodologică.
+Versiune: V2.1 — pregătire locală, SmartBill, decizii issues #81/#82 și salvare fără deploy; NU validare comercială, fiscală sau metodologică.
 Data: 2026-11-08
 Proprietar: Iulia Bobeica
 Domeniu: https://iuliabobeica.ro/
 Expeditor Brevo testat: contact@iuliabobeica.ro
+
+## Actualizare de coordonare și salvare — 8 noiembrie 2026
+
+Verificare inițială: worktree curat, commit local `b25d0e2ec9227b6f5d219aa41ebed4c4693e5582`. Ramura remote de lucru rămâne la `91b84a094bfe93982f30609aa1e214775dce4fd9`, iar producția cunoscută la `b64af72153794881e9ee5c5b434da62c3f97656f`. Nu există schimbări remote noi de integrat; issue-urile #81 și #82 declară explicit că nu au editat concurent fișierele. În această etapă se actualizează numai documentația.
+
+Deciziile proprietarei din [issue #81](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/81) și [issue #82](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/82) sunt detaliate în CONFIGURARE-SERVICII. Linkul WhatsApp este acum furnizat, dar nu este activat de această actualizare. Pentru rezervările individuale se va folosi Google Calendar Appointment Schedules, nu modelul personalizat local de rezervări; acesta rămâne neactivat pentru ședințe individuale. Evenimentele/programele pot păstra evidența separată. Nu dubla confirmările Google prin Brevo.
+
+**Nu se face push:** ultimul commit remote de lucru are un preview Cloudflare reușit în proiectul `intoarcerealatine-nou` și un build eșuat în proiectul `intoarcerea-la-tine-campanii`. Lipsesc verificarea configurațiilor curente și excluderea acestei ramuri din toate integrările de deploy. Nu au fost modificate setări. Alternativa este un bundle Git complet și un ZIP de surse, verificate local; vezi [SALVARE-SIGURA-FARA-DEPLOY.md](SALVARE-SIGURA-FARA-DEPLOY.md). Documentele MASTER, activare și teste se păstrează integral.
 
 ## Actualizare de implementare — 8 noiembrie 2026
 

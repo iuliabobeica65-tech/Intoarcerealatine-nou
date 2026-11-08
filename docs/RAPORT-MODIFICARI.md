@@ -4,6 +4,14 @@ Repository: `iuliabobeica65-tech/Intoarcerealatine-nou`.
 Ramură locală: `pregatire-infrastructura-email-plati`.
 Ramura de producție confirmată de Iulia: `pregatire-cloudflare-2026-10-20`.
 
+## Actualizare ulterioară: păstrare fără publicare
+
+S-au reverificat headurile GitHub și lipsa modificărilor locale concurente. Issues [#81](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/81) și [#82](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/82) sunt integrate în documentație: link WhatsApp oficial, bun venit după DOI și Google Calendar Appointment Schedules pentru programări individuale, fără confirmări duplicate în Brevo. URL-ul Google și configurarea rămân de furnizat; nu s-au schimbat funcționalități sau pagini.
+
+Push-ul este oprit: check-urile ultimului commit remote dovedesc un preview reușit și un al doilea build Cloudflare. Pregătirea nu este salvată pe GitHub; se păstrează commit local, bundle Git restaurabil și ZIP de surse. Dovezi, excluderea de branch necesară și restaurare: [SALVARE-SIGURA-FARA-DEPLOY.md](SALVARE-SIGURA-FARA-DEPLOY.md). SHA-ul final și hashurile arhivelor se află în manifestul backupului local. Fără PR, merge, deploy sau schimbări de setări.
+
+Fișierele acestei actualizări: acest raport, MASTER V2.1, CONFIGURARE-SERVICII, ACTIVARE-DUPA-INFIINTAREA-FIRMEI, TESTE-SI-REZULTATE și noul SALVARE-SIGURA-FARA-DEPLOY. Inventarul implementării inițiale de mai jos rămâne păstrat.
+
 ## Pentru Iulia
 
 Sunt pregătite două pagini noi, abonarea cu double opt-in, înscrieri/rezervări cu limită de locuri, e-mailuri administrative, Stripe exclusiv test și pregătirea SmartBill cu protecție împotriva duplicatelor. Sunt 52 șabloane draft. Site-ul existent nu a fost rescris.

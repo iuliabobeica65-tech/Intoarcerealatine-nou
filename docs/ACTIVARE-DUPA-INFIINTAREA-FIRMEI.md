@@ -20,6 +20,10 @@ Stare la 8 noiembrie 2026: pregătire în ramura `pregatire-infrastructura-email
 
 ## 3. Brevo și lansarea fără încasări
 
+Actualizare de coordonare: [issue #81](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/81) furnizează linkul WhatsApp exact, păstrat în CONFIGURARE-SERVICII. Configurează-l centralizat la activarea aprobată; include-l în bun venit numai după confirmarea DOI. Intrarea în grup rămâne voluntară. Nu distribui linkul suplimentar fără motiv.
+
+Pentru ședințele individuale, [issue #82](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/issues/82) stabilește Google Calendar Appointment Schedules. Iulia configurează pagina, durata, disponibilitatea, bufferul și regulile și furnizează URL-ul oficial. Apoi se pregătește butonul „Programează o ședință”, cu WhatsApp alternativ. Verifică planul Google; evită confirmări și remindere duplicate în Brevo. Nu activa încasarea și nu folosi motorul local personalizat ca înlocuitor. Aceste configurări sunt încă de făcut, fără modificarea actuală a site-ului.
+
 Verifică planul real în cont, lista 3, expeditorul și autentificarea domeniului. Orice modificare DNS necesită acordul Iuliei. Configurează șablonul DOI oficial și atributele din CONFIGURARE-SERVICII. Nu folosi creare simplă de contact în loc de DOI.
 
 Configurează în cont bun venit, preferințe, dezabonare și suprimări. Confirmarea nu se deduce din parametrul URL al paginii. Păstrează istoricul DOI în Brevo și verifică retragerile înainte de orice campanie. Exportul și retenția dovezilor necesită o procedură aprobată; baza locală păstrează doar solicitarea cu hash HMAC, versiune și oră, nu dovada confirmării.
