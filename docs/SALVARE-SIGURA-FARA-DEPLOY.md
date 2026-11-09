@@ -1,5 +1,9 @@
 # Salvare sigură fără deploy — 8 noiembrie 2026
 
+## Actualizare: salvare GitHub și Preview autorizate
+
+Cele 9 commituri până la c2f41b5 sunt acum salvate pe GitHub în ramura de test; Cloudflare a creat Preview-ul, cu operațiunile externe oprite. Vezi PUBLICARE-RAMURA-TEST-2026-11-09.md pentru dovezi și limitări. Formulările anterioare despre lipsa push-ului rămân istoric. Producția nu a fost ținta operațiilor.
+
 ## Decizie
 
 **NU se face push. Modificările noi nu sunt salvate pe GitHub.** Se salvează un commit local, un bundle Git complet și un ZIP cu sursele comise, în `.local/backups/2026-11-08/`. Aceste copii sunt pe același calculator; nu reprezintă backup off-site. Transferul lor către o locație externă se face ulterior, cu autorizare, fără conectare la publicarea site-ului.

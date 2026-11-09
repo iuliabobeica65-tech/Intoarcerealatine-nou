@@ -1,5 +1,9 @@
 # MASTER — Infrastructura digitala Echilibrarea Radacinilor
 
+## Actualizare: salvare GitHub și Preview autorizate
+
+Cele 9 commituri până la c2f41b5 sunt acum salvate pe GitHub în ramura de test; Cloudflare a creat Preview-ul, cu operațiunile externe oprite. Vezi PUBLICARE-RAMURA-TEST-2026-11-09.md pentru dovezi și limitări. Formulările anterioare despre lipsa push-ului rămân istoric. Producția nu a fost ținta operațiilor.
+
 ## Continuare locală sigură — 9 noiembrie 2026
 
 Instrucțiunea suplimentară este păstrată în CERERE-CONTINUARE-2026-11-09.txt. Raportul actual este RAPORT-CONTINUARE-2026-11-09.md; stările mai vechi de mai jos rămân istoric.
