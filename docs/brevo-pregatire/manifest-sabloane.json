@@ -15,8 +15,11 @@
     "senderEmail": "contact@iuliabobeica.ro",
     "approved": false,
     "active": false,
-    "brevoTemplateId": null,
-    "savedInBrevo": false
+    "brevoTemplateId": 2,
+    "savedInBrevo": true,
+    "verifiedOn": "2026-11-09",
+    "brevoPreviewText": "Confirmă adresa pentru abonare.",
+    "contentPreviewVerified": true
   },
   {
     "id": "COM-01-FORM",
@@ -34,8 +37,11 @@
     "senderEmail": "contact@iuliabobeica.ro",
     "approved": false,
     "active": false,
-    "brevoTemplateId": null,
-    "savedInBrevo": false
+    "brevoTemplateId": 6,
+    "savedInBrevo": true,
+    "verifiedOn": "2026-11-09",
+    "brevoPreviewText": "Confirmă adresa pentru abonare.",
+    "contentPreviewVerified": true
   },
   {
     "id": "COM-02",
@@ -53,8 +59,11 @@
     "senderEmail": "contact@iuliabobeica.ro",
     "approved": false,
     "active": false,
-    "brevoTemplateId": null,
-    "savedInBrevo": false
+    "brevoTemplateId": 3,
+    "savedInBrevo": true,
+    "verifiedOn": "2026-11-09",
+    "brevoPreviewText": "E-mail și WhatsApp, separat.",
+    "contentPreviewVerified": true
   },
   {
     "id": "COM-04",
@@ -72,8 +81,11 @@
     "senderEmail": "contact@iuliabobeica.ro",
     "approved": false,
     "active": false,
-    "brevoTemplateId": null,
-    "savedInBrevo": false
+    "brevoTemplateId": 4,
+    "savedInBrevo": true,
+    "verifiedOn": "2026-11-09",
+    "brevoPreviewText": "Actualizează preferințele.",
+    "contentPreviewVerified": true
   },
   {
     "id": "COM-05",
@@ -88,7 +100,10 @@
     "senderEmail": "contact@iuliabobeica.ro",
     "approved": false,
     "active": false,
-    "brevoTemplateId": null,
-    "savedInBrevo": false
+    "brevoTemplateId": 5,
+    "savedInBrevo": true,
+    "verifiedOn": "2026-11-09",
+    "brevoPreviewText": "Confirmarea opțiunii tale.",
+    "contentPreviewVerified": true
   }
 ]

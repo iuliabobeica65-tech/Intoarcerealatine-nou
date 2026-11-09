@@ -1,9 +1,24 @@
 # MASTER — Infrastructura digitala Echilibrarea Radacinilor
+
+## Test editorial Brevo — 9 noiembrie 2026
+
+După autorizarea adresei proprii de către Iulia, a fost inițiată o singură trimitere prin Preview & test → Send Test pentru COM-02, ID 3. Destinatar unic selectat; cealaltă adresă din lista de test a rămas nebifată. Butonul a devenit temporar indisponibil și apoi disponibil, fără confirmare explicită capturată. Acceptarea furnizorului și primirea în Inbox rămân neconfirmate; nu se retrimite automat. Afirmațiile istorice „0 e-mailuri” de mai jos descriu etapa anterioară.
+
+Acesta este un test editorial; nu dovedește DOI, preferințe sau dezabonare funcționale. Nu s-a activat niciun șablon sau workflow și nu s-a schimbat abonarea unui contact. Celelalte teste de trimitere așteaptă rezultatul primului. Producția, Stripe live și facturarea rămân neactivate.
+
 Versiune: V2.1 — pregătire locală, SmartBill, decizii issues #81/#82 și salvare fără deploy; NU validare comercială, fiscală sau metodologică.
 Data: 2026-11-08
 Proprietar: Iulia Bobeica
 Domeniu: https://iuliabobeica.ro/
 Expeditor Brevo testat: contact@iuliabobeica.ro
+
+## Actualizare 9 noiembrie 2026 — șabloane salvate în Brevo
+
+Sunt salvate și verificate în lista contului cinci drafturi **Inactive**: DOI API #2, bun venit #3, preferințe #4, confirmare dezabonare #5, DOI formular nativ #6. Expeditor: contact@iuliabobeica.ro. Conținutul a fost previzualizat; ID 4 are formularul implicit de profil asociat și salvat. Linkurile personale nu au fost testate prin livrare reală. Niciun șablon sau workflow nu a fost activat, niciun e-mail trimis, nicio cheie creată și nicio schimbare de runtime/Cloudflare efectuată.
+
+Starea exactă și ID-urile sunt în [brevo-pregatire/stare-cont.json](brevo-pregatire/stare-cont.json) și README-ul pachetului. Mesajele anterioare despre lipsa șabloanelor/blocajul conexiunii sunt istoric. Pentru codul site-ului, ID-ul DOI va fi **2**, numai după aprobarea activării și testării; nu se folosește ID 6 în locul lui. Variabila de mediu nu a fost schimbată.
+
+Înainte de activare: aprobare de conținut, adresă proprie autorizată pentru test, configurare privată a accesului API sau formularului nativ ales, dovadă DOI și suprimări, test preferințe/dezabonare, verificarea limitei `0 contacts can enter Automations` afișate anterior. Analytics rămâne etapa ulterioară conform priorității Iuliei. Site-ul oficial, ramura de producție și proiectul vechi sunt nemodificate.
 
 ## Continuarea infrastructurii Brevo — actualizare în aceeași zi
 

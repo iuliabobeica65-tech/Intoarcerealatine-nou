@@ -1,0 +1,59 @@
+{
+  "verifiedOn": "2026-11-09",
+  "verificationMethod": "Brevo UI: conținut previzualizat, salvare și lista finală cu cinci șabloane Inactive",
+  "templates": {
+    "COM-01-API": {
+      "brevoTemplateId": 2,
+      "active": false,
+      "savedInBrevo": true,
+      "brevoPreviewText": "Confirmă adresa pentru abonare.",
+      "contentPreviewVerified": true
+    },
+    "COM-01-FORM": {
+      "brevoTemplateId": 6,
+      "active": false,
+      "savedInBrevo": true,
+      "brevoPreviewText": "Confirmă adresa pentru abonare.",
+      "contentPreviewVerified": true
+    },
+    "COM-02": {
+      "brevoTemplateId": 3,
+      "active": false,
+      "savedInBrevo": true,
+      "brevoPreviewText": "E-mail și WhatsApp, separat.",
+      "contentPreviewVerified": true,
+      "profileFormSelected": "Default update profile form"
+    },
+    "COM-04": {
+      "brevoTemplateId": 4,
+      "active": false,
+      "savedInBrevo": true,
+      "brevoPreviewText": "Actualizează preferințele.",
+      "contentPreviewVerified": true,
+      "profileFormSelected": "Default update profile form",
+      "profileFormPersistenceVerified": true
+    },
+    "COM-05": {
+      "brevoTemplateId": 5,
+      "active": false,
+      "savedInBrevo": true,
+      "brevoPreviewText": "Confirmarea opțiunii tale.",
+      "contentPreviewVerified": true
+    }
+  },
+  "automationsActivatedByThisWork": 0,
+  "apiKeysCreatedByThisWork": 0,
+  "endToEndDoiTested": false,
+  "deliveryTested": false,
+  "unsubscribeTested": false,
+  "runtimeEnvironmentChanged": false,
+  "notes": "Stare observată la data indicată; nu garanție pentru modificări ulterioare. Nu există încă flux activ, API configurat sau formular public nou.",
+  "editorialTest": {
+    "templateId": 3,
+    "sendActionsInitiated": 1,
+    "recipient": "adresa proprie autorizata; omisa din repository",
+    "providerAcceptanceConfirmed": false,
+    "inboxReceiptConfirmed": false,
+    "result": "Send Test actionat o singura data; temporar disabled, apoi disponibil. Fara confirmare explicita capturata. Nu se retrimite automat."
+  }
+}

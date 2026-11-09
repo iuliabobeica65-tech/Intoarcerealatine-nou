@@ -1,6 +1,33 @@
 # Pachet Brevo — infrastructura inițială, prioritară
 
-Aceste fișiere sunt drafturi locale, nu dovada instalării în cont. Niciun destinatar nu este inclus și nu se trimit mesaje. Regenerare: `node scripts/prepare-brevo-emails.mjs`. Linkul WhatsApp oficial din issue #81 este centralizat în `configuratie-publica.json`; la schimbare se regenerează HTML-ul și se revizuiesc șabloanele din cont.
+## Test editorial Brevo — 9 noiembrie 2026
+
+După autorizarea adresei proprii de către Iulia, a fost inițiată o singură trimitere prin Preview & test → Send Test pentru COM-02, ID 3. Destinatar unic selectat; cealaltă adresă din lista de test a rămas nebifată. Butonul a devenit temporar indisponibil și apoi disponibil, fără confirmare explicită capturată. Acceptarea furnizorului și primirea în Inbox rămân neconfirmate; nu se retrimite automat. Afirmațiile istorice „0 e-mailuri” de mai jos descriu etapa anterioară.
+
+Acesta este un test editorial; nu dovedește DOI, preferințe sau dezabonare funcționale. Nu s-a activat niciun șablon sau workflow și nu s-a schimbat abonarea unui contact. Celelalte teste de trimitere așteaptă rezultatul primului. Producția, Stripe live și facturarea rămân neactivate.
+
+
+Aceste fișiere sunt sursele locale ale drafturilor. Niciun destinatar nu este inclus și nu se trimit mesaje. Regenerare: `node scripts/prepare-brevo-emails.mjs`. Linkul WhatsApp oficial din issue #81 este centralizat în `configuratie-publica.json`; la schimbare se regenerează HTML-ul și se revizuiesc șabloanele din cont. Starea observată a contului este păstrată separat în `stare-cont.json`, astfel încât regenerarea să nu piardă ID-urile verificate. Regenerarea nu sincronizează automat conținutul cu Brevo.
+
+## Actualizare verificată — 9 noiembrie 2026
+
+Conexiunea a fost recuperată. Sunt **cinci șabloane salvate în cont**, toate cu status **Inactive**, verificate în lista finală:
+
+| Șablon | ID real | Utilizare |
+|---|---|---|
+| COM-01-API | [2](https://app.brevo.com/templates/email/edit/2) | DOI prin API, params.DOIurl |
+| COM-02 | [3](https://app.brevo.com/templates/email/edit/3) | bun venit după DOI, WhatsApp opțional |
+| COM-04 | [4](https://app.brevo.com/templates/email/edit/4) | preferințe și dezabonare |
+| COM-05 | [5](https://app.brevo.com/templates/email/edit/5) | confirmare numai după dezabonare reală; preferabil mesaj în pagină |
+| COM-01-FORM | [6](https://app.brevo.com/templates/email/edit/6) | alternativă pentru formularul nativ, doubleoptin |
+
+Toate folosesc expeditorul contact@iuliabobeica.ro și identitatea Iuliei. Conținutul a fost verificat în previzualizarea editorului; nu au fost accesate linkurile DOI/pref/unsubscribe ca și cum ar reprezenta un test real. Parametrii speciali sunt nereali în previzualizare și necesită generarea lor în fluxul corect. Nu s-a intrat în WhatsApp.
+
+Formularul implicit de profil a fost selectat pentru bun venit; pentru ID 4 asocierea `Default update profile form` a fost reverificată și salvată explicit. Trackingul UTM nu a fost activat. Nu s-au trimis e-mailuri, configurat credențiale, activat șabloane/workflowuri, creat formular public sau schimbat runtime-ul site-ului.
+
+În timpul configurării, o navigare încă nefinalizată a făcut ca metadatele viitorului draft să fie aplicate temporar ID-ului 4. Eroarea a fost detectată la verificarea ID-ului: numele, subiectul și preheaderul ID 4 au fost restabilite, conținutul de preferințe a rămas intact, formularul de profil a fost reasociat și salvat; confirmarea de dezabonare a fost apoi creată separat ca ID 5. Lista finală confirmă denumirile distincte și starea inactivă. Niciun mesaj nu a fost trimis în acest proces.
+
+Starea de la 8 noiembrie de mai jos este păstrată pentru trasabilitate; absența șabloanelor descrie inventarul anterior, nu starea curentă.
 
 ## Stare verificată în cont la 8 noiembrie 2026
 

@@ -1,4 +1,4 @@
-import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const folder='docs/brevo-pregatire';
 const config=JSON.parse(readFileSync(`${folder}/configuratie-publica.json`,'utf8'));
@@ -27,6 +27,12 @@ for(const item of items){
  for(const href of html.matchAll(/href="([^"]+)"/g))assert(/^(https:\/\/|mailto:|\{\{ )/.test(href[1]));
  writeFileSync(`${folder}/${item.file}`,html);
 }
-const manifest=items.map(({content,...item})=>({...item,senderName:config.brand,senderEmail:config.senderEmail,approved:false,active:false,brevoTemplateId:null,savedInBrevo:false}));
+// Preserve verified account IDs when regenerating local HTML; generation does not write to Brevo.
+const accountState=existsSync(`${folder}/stare-cont.json`)?JSON.parse(readFileSync(`${folder}/stare-cont.json`,'utf8')):null;
+const manifest=items.map(({content,...item})=>{
+ const observed=accountState?.templates?.[item.id];
+ if(observed){assert(Number.isSafeInteger(observed.brevoTemplateId)&&observed.brevoTemplateId>0);assert.equal(typeof observed.active,'boolean');assert.equal(observed.savedInBrevo,true);}
+ return {...item,senderName:config.brand,senderEmail:config.senderEmail,approved:false,active:observed?.active??false,brevoTemplateId:observed?.brevoTemplateId??null,savedInBrevo:observed?.savedInBrevo??false,...(observed?{verifiedOn:accountState.verifiedOn,brevoPreviewText:observed.brevoPreviewText,contentPreviewVerified:observed.contentPreviewVerified}: {})};
+});
 writeFileSync(`${folder}/manifest-sabloane.json`,JSON.stringify(manifest,null,2)+'\n');
 console.log(`${items.length} drafturi HTML pregătite și validate local; 0 trimiteri, 0 activări Brevo.`);

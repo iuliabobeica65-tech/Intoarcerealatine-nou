@@ -1,6 +1,15 @@
 # Teste și rezultate reale — 8 noiembrie 2026
 
+## Test editorial Brevo — 9 noiembrie 2026
+
+După autorizarea adresei proprii de către Iulia, a fost inițiată o singură trimitere prin Preview & test → Send Test pentru COM-02, ID 3. Destinatar unic selectat; cealaltă adresă din lista de test a rămas nebifată. Butonul a devenit temporar indisponibil și apoi disponibil, fără confirmare explicită capturată. Acceptarea furnizorului și primirea în Inbox rămân neconfirmate; nu se retrimite automat. Afirmațiile istorice „0 e-mailuri” de mai jos descriu etapa anterioară.
+
+Acesta este un test editorial; nu dovedește DOI, preferințe sau dezabonare funcționale. Nu s-a activat niciun șablon sau workflow și nu s-a schimbat abonarea unui contact. Celelalte teste de trimitere așteaptă rezultatul primului. Producția, Stripe live și facturarea rămân neactivate.
+
+
 ## Verdict
+
+Actualizare 9 noiembrie 2026: salvare reală în Brevo a cinci șabloane, ID 2–6, verificate în lista finală ca Inactive; conținutul și expeditorul au fost inspectate în editor. Asocierea formularului implicit de profil la ID 4 a fost verificată și salvată. Este validare de configurare/previzualizare, **nu** livrare, DOI, preferințe sau dezabonare end-to-end. Nu s-au trimis e-mailuri și nu s-au activat workflowuri. Incidentul reversibil de metadate la ID 4 și corectarea lui sunt documentate în pachetul Brevo. Dovezi locale: `.local/brevo-2026-11-09/cinci-sabloane-inactive-final.png`.
 
 Continuare Brevo, aceeași zi: cele patru atribute Text au fost create/verificate în UI; lista #3, planul, expeditorul și domeniul au fost citite în cont. Scriptul `node scripts/prepare-brevo-emails.mjs` a generat și validat cinci drafturi HTML locale: variabilele exacte, linkurile HTTPS/mailto, lista #3, lipsa scripturilor/formularelor/pixelilor și starea OFF. **Nu este test de livrare și nu dovedește salvarea șabloanelor în Brevo.** Browserul a devenit instabil înaintea salvării lor. Nu s-au rulat din nou testele generale pentru această schimbare numai de documentație/pregătire e-mail; rezultatele anterioare rămân cele de mai jos.
 

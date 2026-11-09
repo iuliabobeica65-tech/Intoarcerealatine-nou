@@ -1,5 +1,12 @@
 # Configurare servicii — fără secrete
 
+## Test editorial Brevo — 9 noiembrie 2026
+
+După autorizarea adresei proprii de către Iulia, a fost inițiată o singură trimitere prin Preview & test → Send Test pentru COM-02, ID 3. Destinatar unic selectat; cealaltă adresă din lista de test a rămas nebifată. Butonul a devenit temporar indisponibil și apoi disponibil, fără confirmare explicită capturată. Acceptarea furnizorului și primirea în Inbox rămân neconfirmate; nu se retrimite automat. Afirmațiile istorice „0 e-mailuri” de mai jos descriu etapa anterioară.
+
+Acesta este un test editorial; nu dovedește DOI, preferințe sau dezabonare funcționale. Nu s-a activat niciun șablon sau workflow și nu s-a schimbat abonarea unui contact. Celelalte teste de trimitere așteaptă rezultatul primului. Producția, Stripe live și facturarea rămân neactivate.
+
+
 Toate componentele runtime sunt OFF implicit. Fișierul `.env.example` este doar inventar; nu se încarcă automat în Cloudflare. Actualizare 8 noiembrie 2026: în Brevo au fost create doar patru atribute Text (PRENUME, CONSENT_VERSION, CONSENT_REQUESTED_AT, CONSENT_SOURCE), fără contacte, trimiteri sau activări. Stripe, SmartBill și Cloudflare nu au fost modificate.
 
 ## Cloudflare Pages și D1
@@ -31,6 +38,8 @@ Secrete server: `BREVO_API_KEY`, `TURNSTILE_SECRET`, `DATA_HMAC_KEY` (minimum 32
 Turnstile verifică hostname și action `registration`; honeypot, limită persistentă de 10 solicitări/10 minute/IP pseudonimizat, limită corp și validare de input. Nu adăuga excepții care ocolesc provocarea pe medii publice. Datele nu sunt scrise în loguri de aplicație. Revizuiește separat loggingul furnizorilor.
 
 ## Brevo
+
+Actualizare 9 noiembrie: șabloanele au fost salvate în cont, toate **Inactive**: DOI API #2, bun venit #3, preferințe #4, dezabonare #5, DOI formular nativ #6. Vezi [registrul verificat](brevo-pregatire/stare-cont.json). După aprobarea testului, `BREVO_DOI_TEMPLATE_ID` pentru integrarea API va indica 2; nu a fost setată variabila și nu există activare. ID 6 este numai alternativa pentru formularul nativ. ID 4 are formularul implicit de profil asociat. Salvarea și previzualizarea nu sunt teste de livrare/confirmare/dezabonare. Constatările de mai jos datate 8 noiembrie sunt istoricul configurării inițiale.
 
 ### Decizii confirmate prin issues #81 și #82
 

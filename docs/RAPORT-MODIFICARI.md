@@ -1,8 +1,21 @@
 # Raport de predare — infrastructură izolată
 
+## Test editorial Brevo — 9 noiembrie 2026
+
+După autorizarea adresei proprii de către Iulia, a fost inițiată o singură trimitere prin Preview & test → Send Test pentru COM-02, ID 3. Destinatar unic selectat; cealaltă adresă din lista de test a rămas nebifată. Butonul a devenit temporar indisponibil și apoi disponibil, fără confirmare explicită capturată. Acceptarea furnizorului și primirea în Inbox rămân neconfirmate; nu se retrimite automat. Afirmațiile istorice „0 e-mailuri” de mai jos descriu etapa anterioară.
+
+Acesta este un test editorial; nu dovedește DOI, preferințe sau dezabonare funcționale. Nu s-a activat niciun șablon sau workflow și nu s-a schimbat abonarea unui contact. Celelalte teste de trimitere așteaptă rezultatul primului. Producția, Stripe live și facturarea rămân neactivate.
+
+
 Repository: `iuliabobeica65-tech/Intoarcerealatine-nou`.
 Ramură locală: `pregatire-infrastructura-email-plati`.
 Ramura de producție confirmată de Iulia: `pregatire-cloudflare-2026-10-20`.
+
+## Actualizare 9 noiembrie — configurare reală Brevo
+
+Cinci șabloane sunt acum salvate în cont și verificate Inactive: #2 DOI API, #3 bun venit, #4 preferințe, #5 confirmare dezabonare, #6 DOI formular nativ. Cele patru atribute create anterior sunt păstrate. Nu s-au trimis e-mailuri, activat fluxuri, schimbat credențiale sau publicat site-ul. Sunt încă necesare testele reale și aprobările din README; salvarea nu înseamnă flux funcțional.
+
+Fișiere actualizate: MASTER, CONFIGURARE-SERVICII, TESTE-SI-REZULTATE, acest raport, README și manifestul pachetului Brevo, scriptul de regenerare; fișier nou `docs/brevo-pregatire/stare-cont.json` pentru păstrarea ID-urilor reale la regenerare. Niciun fișier de pagină, SEO, meniu, design sau runtime nu este schimbat.
 
 ## Continuare prioritară Brevo
 
