@@ -12,7 +12,7 @@
     },
     {
       "id": "text-3",
-      "continut": "Nu trebuie să vii cu explicația pregătită. Pornim de la experiența ta, nu de la presupuneri.",
+      "continut": "O problemă poate avea mai multe rădăcini. Pornim de la ceea ce te doare astăzi, dar nu ne oprim la prima explicație. O întrebare poate deschide o altă întrebare; o percepție poate aduce în atenție alte experiențe, nevoi și concluzii. Explorăm fără să presupunem dinainte unde vom ajunge.",
       "initial": "Nu trebuie să vii cu explicația pregătită. Poate știi ce îți dorești și totuși te simți blocată. Poate aceeași poveste revine, cu alte persoane. Începem de aici, fără să presupunem dinainte de ce se întâmplă. Explorăm percepțiile, căutăm rădăcinile tiparelor și verificăm ce se schimbă în viața reală."
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "id": "text-7",
-      "continut": "Explorăm concluzia despre tine și momentele în care te-ai mai simțit la fel, până descoperim o rădăcină concretă.",
+      "continut": "Explorăm ce ai înțeles despre tine, de unde ai tras concluzia și când te-ai mai simțit astfel. Uneori apar legături între experiențe aparent separate. Nu presupunem că toate au aceeași origine; urmărim ceea ce descoperi tu prin răspunsurile tale.",
       "initial": "Identificarea rădăcinilor și echilibrarea percepțiilor prin întrebări și legile universale. Nu înlocuim forțat „negativul” cu „pozitivul”, ci căutăm o perspectivă mai cuprinzătoare."
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "id": "text-37",
-      "continut": "După echilibrarea acțiunii vizibile cu întrebările legilor, verificăm interpretarea și revenim la situația prezentă. Creația conștientă se desfășoară în același proces.",
+      "continut": "După echilibrarea acțiunii vizibile prin întrebările legilor, verificăm cum privești experiența și revenim la problema prezentă. Urmăresc claritatea pe care o recunoști, reacția ta și ceea ce observi diferit în viața de zi cu zi. Dacă dificultatea reapare, explorăm alte percepții sau rădăcini posibile. Creația conștientă însoțește întregul proces.",
       "initial": "Revenim la momentul și la concluzia de la care am pornit: cum le percepi acum, ce simți când vorbești despre ele și cum reacționezi în situația actuală? Dacă o percepție s-a echilibrat, nu revenim automat asupra ei. Dacă un blocaj continuă, explorăm împreună dacă există o altă percepție sau un alt moment-rădăcină relevant. Nu presupunem că un singur eveniment explică întreaga viață a unei persoane."
     },
     {
@@ -261,4 +261,3 @@
     }
   ]
 }
-
