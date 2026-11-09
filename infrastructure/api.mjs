@@ -2,6 +2,7 @@ import {HttpError,json,now,hash,keyedHash,email,name,origin,body,guard,sandbox,a
 import {requestDoi} from './brevo.mjs';
 import {stripe,verifyStripe,reconcilePayment} from './payments.mjs';
 import {enqueue,lifecycleTemplate,scheduleReminders} from './operations.mjs';
+import {isolatedRecipient} from './test-isolation.mjs';
 export const CONSENT_VERSION='community-2026-11-08-v1';
 export const CONSENT_TEXT='Sunt de acord să primesc prin e-mail noutăți, invitații și oferte de la Iulia Bobeica – Echilibrarea Rădăcinilor. Îmi pot retrage acordul oricând prin linkul de dezabonare.';
 function enabled(env,flag){if(env[flag]!=='true')throw new HttpError(503,'not_configured');if(!env.DB)throw new HttpError(503,'not_configured');}
@@ -19,6 +20,7 @@ export async function route(request,env) {
  if(path==='/api/community'){
   enabled(env,'COMMUNITY_ENABLED');const input=await body(request,env);
   const address=email(input.email),firstName=name(input.name);
+  isolatedRecipient(env,address);
   if(input.consent!==true||input.consentVersion!==CONSENT_VERSION)throw new HttpError(400,'consent_required');
   await guard(request,env,input);
   const emailHash=await keyedHash(env.DATA_HMAC_KEY,address),time=now(),id=crypto.randomUUID();
@@ -39,8 +41,10 @@ export async function route(request,env) {
   return json({events:result.results});
  }
  if(path==='/api/register'){
-  enabled(env,'REGISTRATIONS_ENABLED');const input=await body(request,env);await guard(request,env,input);
+  enabled(env,'REGISTRATIONS_ENABLED');const input=await body(request,env);
   const address=email(input.email),firstName=name(input.name);
+  isolatedRecipient(env,address);
+  await guard(request,env,input);
   if(typeof input.offeringId!=='string'||input.offeringId.length>100||input.administrative!==true)throw new HttpError(400,'invalid_registration');
   const offering=await env.DB.prepare("SELECT * FROM offerings WHERE id=? AND status='open' AND starts_at>?").bind(input.offeringId,now()).first();
   if(!offering)throw new HttpError(409,'unavailable');

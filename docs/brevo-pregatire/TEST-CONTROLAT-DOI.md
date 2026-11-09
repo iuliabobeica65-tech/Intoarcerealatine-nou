@@ -47,3 +47,7 @@ Oprește la destinatar greșit, dubluri, stare ambiguă, lipsă dovadă DOI, exp
 ## Audit ulterior: activarea amânată
 
 Vezi AUDIT-IZOLARE-INAINTE-DE-ACTIVARE.md. Mediul izolat nu este validat, codul nu restricționează destinatarul la proprietară, iar inventarul actual al contului nu a putut fi citit. Nu activa #2 până la rezolvarea acestor condiții. Dezactivarea șablonului nu anulează mesajele deja trimise și nu garantează invalidarea linkurilor DOI.
+
+## Profil local disponibil după audit
+
+Înaintea configurării externe aprobate, folosește TEST_MODE=true și adresa proprie privată în TEST_RECIPIENT_EMAIL. Codul și verificatorul sunt locale, netransferate în Cloudflare. Modelul este în ../cloudflare-test/. Nu considera această remediere drept validare de cont sau aprobare. Mai întâi aprobare pentru resurse/configurare; apoi verificare reală a mediului; abia după aceea aprobare distinctă pentru activare și trimitere.

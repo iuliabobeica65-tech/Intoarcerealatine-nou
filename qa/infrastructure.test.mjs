@@ -7,12 +7,95 @@ import {verifyStripe,reconcilePayment} from '../infrastructure/payments.mjs';
 import {prepareInvoice,prepareCredit,claimInvoiceNotification,smartbillPayload,billingMode} from '../infrastructure/invoicing.mjs';
 import {templates,renderTemplate} from '../infrastructure/templates.mjs';
 import {scheduleReminders,dispatch} from '../infrastructure/operations.mjs';
+import {brevo} from '../infrastructure/brevo.mjs';
+import {checkIsolatedConfig} from '../scripts/check-isolated-config.mjs';
 const origin='https://preview.example.invalid';
 const secret='whsec_'+ 'a'.repeat(40);
 function env(){return {DB:database(),APP_ORIGIN:origin,DATA_HMAC_KEY:'h'.repeat(40),COMMUNITY_ENABLED:'true',REGISTRATIONS_ENABLED:'true',TURNSTILE_SECRET:'test',BREVO_API_KEY:'fixture-not-a-key',BREVO_DOI_TEMPLATE_ID:'1',STRIPE_SECRET_KEY:'sk_test_fixture',STRIPE_WEBHOOK_SECRET:secret,PAYMENTS_TEST_ENABLED:'true',LIVE_PAYMENTS_ENABLED:'false',ADMIN_TOKEN:'a'.repeat(40)};}
 function req(path,data,headers={}){return new Request(origin+'/api/'+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',...headers},body:JSON.stringify(data)});}
 function mock(fn){const old=globalThis.fetch;globalThis.fetch=fn;return ()=>{globalThis.fetch=old;};}
 const response=data=>new Response(JSON.stringify(data),{headers:{'Content-Type':'application/json'}});
+
+test('isolated recipient rejects other addresses before database writes or network',async()=>{
+ const e={...env(),TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};
+ let calls=0;const restore=mock(async()=>{calls++;throw Error('unexpected_network');});
+ try{
+  for(const path of ['community','register']){
+   const r=await handle(req(path,{email:'other@example.invalid',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'}),e);
+   assert.equal(r.status,403);assert(!JSON.stringify(await r.json()).includes('owner@'));
+  }
+  for(const table of ['consent_requests','rate_limits','registrations'])assert.equal((await e.DB.prepare(`SELECT count(*) AS n FROM ${table}`).first()).n,0);
+  assert.equal(calls,0);
+ }finally{restore();e.DB.close();}
+});
+
+test('isolated DOI accepts only configured normalized recipient and is not leaked in public config',async()=>{
+ const e={...env(),TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};
+ let sends=0;const restore=mock(async(url,options)=>{
+  if(url.includes('turnstile'))return response({success:true,hostname:'preview.example.invalid',action:'registration'});
+  assert.equal(JSON.parse(options.body).email,'owner@example.invalid');sends++;return response({});
+ });
+ try{
+  const input={email:' OWNER@example.invalid ',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'};
+  assert.equal((await handle(req('community',input),e)).status,202);
+  assert.equal((await handle(req('community',input),e)).status,202);assert.equal(sends,1);
+  const config=await handle(new Request(origin+'/api/config'),e);assert(!(await config.text()).includes('owner@'));
+ }finally{restore();e.DB.close();}
+});
+
+test('isolated mode fails closed on missing recipient, invalid mode and production origin',async()=>{
+ const e=env();let calls=0;const restore=mock(async()=>{calls++;throw Error('unexpected_network');});
+ try{
+  for(const extra of [{TEST_MODE:'true'},{TEST_MODE:'tru',TEST_RECIPIENT_EMAIL:'owner@example.invalid'},{TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://iuliabobeica.ro'},{TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://www.iuliabobeica.ro'},{TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://iuliabobeica.ro.'}]){
+   const r=await handle(new Request((extra.APP_ORIGIN||origin)+'/api/community',{method:'POST',headers:{Origin:extra.APP_ORIGIN||origin,'Content-Type':'application/json'},body:JSON.stringify({email:'owner@example.invalid',consent:true,consentVersion:CONSENT_VERSION})}),{...e,...extra});
+   assert.equal(r.status,503);
+  }
+  assert.equal(calls,0);
+ }finally{restore();e.DB.close();}
+});
+
+test('last Brevo boundary rejects bulk, cc, bcc and alternate operations in isolated mode',async()=>{
+ const e={TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:origin,BREVO_API_KEY:'fixture-not-a-key'};
+ let calls=0;const restore=mock(async()=>{calls++;return response({messageId:'fixture'});});
+ try{
+  for(const payload of [{to:[{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'},{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'}],cc:[{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'}],bcc:[{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'}],messageVersions:[]}])await assert.rejects(brevo(e,'smtp/email',payload));
+  await assert.rejects(brevo(e,'contacts',{email:'owner@example.invalid'}));assert.equal(calls,0);
+  await brevo(e,'smtp/email',{to:[{email:'owner@example.invalid'}]});assert.equal(calls,1);
+ }finally{restore();}
+});
+
+test('offline preflight reports status only, distinguishes config from deployed verification',()=>{
+ const e={TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://isolated.example.com',BREVO_DOI_TEMPLATE_ID:'2',BILLING_PROVIDER:'mock',INVOICE_EMAIL_SENDER:'none',APPROVED_TEMPLATE_IDS:'[]',BREVO_API_KEY:'secret-fixture-brevo',TURNSTILE_SECRET:'secret-fixture-turnstile',TURNSTILE_SITE_KEY:'public-fixture',DATA_HMAC_KEY:'h'.repeat(40),ADMIN_TOKEN:'a'.repeat(40)};
+ for(const flag of ['COMMUNITY_ENABLED','REGISTRATIONS_ENABLED','EMAIL_SEND_ENABLED','PAYMENTS_TEST_ENABLED','LIVE_PAYMENTS_ENABLED','INVOICING_ENABLED'])e[flag]='false';
+ const r=checkIsolatedConfig(e);assert.equal(r.configurationPass,true);assert.equal(r.externalEnvironmentVerified,false);assert.equal(r.activationAuthorized,false);
+ const output=JSON.stringify(r);for(const value of ['owner@','secret-fixture','isolated.example.com','h'.repeat(40)])assert(!output.includes(value));
+ assert.equal(checkIsolatedConfig({...e,APP_ORIGIN:origin}).configurationPass,false);
+ assert.equal(checkIsolatedConfig({...e,COMMUNITY_ENABLED:'true'}).configurationPass,false);
+ assert.equal(checkIsolatedConfig({}).configurationPass,false);
+});
+
+test('concurrent registrations for last seat give one confirmation and no duplicate outbox',async()=>{
+ const e=env();await offering(e);const restore=mock(async()=>response({success:true,hostname:'preview.example.invalid',action:'registration'}));
+ try{
+  const results=await Promise.all(['one','two'].map(who=>handle(req('register',{email:who+'@example.invalid',offeringId:'event',administrative:true,turnstile:'fixture'}),e)));
+  assert.deepEqual(results.map(r=>r.status).sort(),[201,409]);
+  assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM registrations').first()).n,1);
+  assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM outbox').first()).n,1);
+ }finally{restore();e.DB.close();}
+});
+
+test('DOI provider timeout is not blindly retried and never marks confirmation',async()=>{
+ const e=env();let sends=0;const restore=mock(async url=>{
+  if(url.includes('turnstile'))return response({success:true,hostname:'preview.example.invalid',action:'registration'});
+  sends++;throw Error('simulated ambiguous delivery');
+ });
+ try{
+  const input={email:'owner@example.invalid',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'};
+  assert.equal((await handle(req('community',input),e)).status,503);
+  assert.equal((await handle(req('community',input),e)).status,202);assert.equal(sends,1);
+  assert.equal((await e.DB.prepare('SELECT status FROM consent_requests').first()).status,'failed');
+ }finally{restore();e.DB.close();}
+});
 async function offering(e,{id='event',capacity=1,paid=false,kind='live'}={}){
  await e.DB.prepare("INSERT INTO offerings(id,kind,title,status,starts_at,ends_at,capacity,location,access_url,price_test_id,amount,currency) VALUES(?,?,?,'open',?,?,?,?,?,?,?,?)").bind(id,kind,'Fixture fără ofertă comercială',now()+7200,now()+10800,capacity,'Online','https://meet.example.invalid/private',paid?'price_testFixture':null,paid?100:null,paid?'ron':null).run();
 }
@@ -124,5 +207,54 @@ test('SmartBill mock invoice linkage, dedup, credit review, no fiscal requests a
  await e.DB.prepare("UPDATE orders SET status='refunded'").run();await prepareCredit(e,{orderId:'order',refundId:'re_fixture',originalDocumentId:result.id});await prepareCredit(e,{orderId:'order',refundId:'re_fixture',originalDocumentId:result.id});assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM billing_documents').first()).n,2);
  await e.DB.prepare("UPDATE billing_documents SET status='external_recorded',series='EXTERNAL',number='fixture' WHERE id=?").bind(result.id).run();e.INVOICE_EMAIL_SENDER='brevo';assert.equal((await claimInvoiceNotification(e,result.id)).send,true);assert.equal((await claimInvoiceNotification(e,result.id)).send,false);
  assert.throws(()=>billingMode({INVOICING_ENABLED:'true'}));assert.throws(()=>smartbillPayload({},client,{amount:100,currency:'ron'}));
+ }finally{restore();e.DB.close();}
+});
+
+
+test('event outbox never sends welcome, invoices or Google booking messages',async()=>{
+ const e={...env(),EMAIL_SEND_ENABLED:'true',APPROVED_TEMPLATE_IDS:JSON.stringify(['COM-02','FIN-01','SES-01'])};await offering(e);await participant(e);
+ for(const id of ['COM-02','FIN-01','SES-01'])await e.DB.prepare('INSERT INTO outbox(id,registration_id,template_id,revision,due_at) VALUES(?,?,?,?,?)').bind(id,'r1',id,1,now()).run();
+ let sends=0;const restore=mock(async()=>{sends++;return response({messageId:'fixture'});});
+ try{assert.deepEqual(await dispatch(e),{sent:0,review:3});assert.equal(sends,0);assert.deepEqual(await dispatch(e),{sent:0,review:0});}finally{restore();e.DB.close();}
+});
+
+test('Turnstile wrong action and provider rejection never create a DOI request',async()=>{
+ const e=env();let calls=0;let action='unexpected';let ok=true;const restore=mock(async url=>{calls++;assert(url.includes('turnstile'));return response({success:ok,hostname:'preview.example.invalid',action});});
+ try{const input={email:'test@example.invalid',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'};
+ assert.equal((await handle(req('community',input),e)).status,400);ok=false;action='registration';assert.equal((await handle(req('community',input),e)).status,400);
+ assert.equal(calls,2);assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM consent_requests').first()).n,0);
+ }finally{restore();e.DB.close();}
+});
+
+
+test('bounded reminder batches drain queue without duplicates within Free D1 query budget',async()=>{
+ const e={...env(),EMAIL_SEND_ENABLED:'true',APPROVED_TEMPLATE_IDS:'["LIVE-03"]'};await offering(e,{capacity:20});
+ for(let i=0;i<16;i++)await participant(e,{id:'batch'+i,address:'fixture'+i+'@example.invalid'});
+ const db=e.DB;let queries=0;const wrap=s=>({bind:(...a)=>wrap(s.bind(...a)),first:()=>{queries++;return s.first();},all:()=>{queries++;return s.all();},run:()=>{queries++;return s.run();}});
+ e.DB={...db,prepare:sql=>wrap(db.prepare(sql))};let sends=0;const restore=mock(async()=>{sends++;return response({messageId:'fixture-'+sends});});
+ try{
+  assert.deepEqual(await scheduleReminders(e),{sent:10,review:0});assert(queries<=50);queries=0;
+  assert.deepEqual(await scheduleReminders(e),{sent:6,review:0});assert(queries<=50);queries=0;
+  assert.deepEqual(await scheduleReminders(e),{sent:0,review:0});assert(queries<=50);assert.equal(sends,16);
+  assert.equal((await db.prepare('SELECT count(*) AS n FROM outbox').first()).n,16);
+ }finally{restore();db.close();}
+});
+
+
+test('simultaneous DOI requests claim one send and one consent record',async()=>{
+ const e=env();let sends=0;const restore=mock(async url=>{if(url.includes('turnstile'))return response({success:true,hostname:'preview.example.invalid',action:'registration'});sends++;return response({});});
+ try{const input={email:'fixture@example.invalid',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'};
+ const results=await Promise.all([handle(req('community',input),e),handle(req('community',input),e)]);assert.deepEqual(results.map(r=>r.status),[202,202]);assert.equal(sends,1);assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM consent_requests').first()).n,1);
+ }finally{restore();e.DB.close();}
+});
+
+test('repeated registration and cancellation preserve one record and deduplicated jobs',async()=>{
+ const e=env();await offering(e);const restore=mock(async()=>response({success:true,hostname:'preview.example.invalid',action:'registration'}));
+ try{const input={email:'fixture@example.invalid',offeringId:'event',administrative:true,turnstile:'fixture'};
+ const first=await handle(req('register',input),e);assert.equal(first.status,201);const {token}=await first.json();
+ const repeated=await handle(req('register',input),e);assert.equal(repeated.status,202);assert.equal((await repeated.json()).token,undefined);
+ for(let i=0;i<2;i++)assert.equal((await handle(req('cancel',{token}),e)).status,200);
+ assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM registrations').first()).n,1);assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM outbox').first()).n,2);
+ assert.equal((await e.DB.prepare('SELECT status FROM registrations').first()).status,'cancelled');
  }finally{restore();e.DB.close();}
 });

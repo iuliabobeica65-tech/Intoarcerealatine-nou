@@ -1,5 +1,15 @@
 # Teste și rezultate reale — 8 noiembrie 2026
 
+## Continuare locală sigură — 9 noiembrie 2026
+
+Instrucțiunea suplimentară este păstrată în CERERE-CONTINUARE-2026-11-09.txt. Raportul actual este RAPORT-CONTINUARE-2026-11-09.md; stările mai vechi de mai jos rămân istoric.
+
+Implementat numai local: TEST_MODE=true cu destinatar unic privat TEST_RECIPIENT_EMAIL, verificat înainte de scrieri și la frontiera Brevo; verificator offline scripts/check-isolated-config.mjs; model Cloudflare nefuncțional în cloudflare-test/. Restricția nu se aplică profilului normal când TEST_MODE lipsește/este false; verificatorul cere explicit true. Originea cunoscută a producției este respinsă în test, dar identitatea tuturor aliasurilor trebuie verificată extern.
+
+Outboxul evenimentelor respinge COM/FIN/OPS/SES și marketing; confirmarea DOI, facturile și programările Google nu se trimit pe această cale. Loturile sunt limitate la 10 pentru bugetul D1 Free; reminderele continuă în loturi fără duplicate. Nu există scheduler instalat.
+
+Nu există încă mediu extern izolat validat. Nu s-a activat #2 sau alt șablon și nu s-au trimis mesaje reale în această continuare. Testul anterior COM-02 primit în Inbox rămâne singura livrare externă confirmată. Preferințe/dezabonare/DOI real și welcome automat rămân nevalidate.
+
 Confirmare ulterioară, 9 noiembrie 2026: Iulia a confirmat „A sosit în Inbox” pentru testul COM-02, ID 3. Livrarea acestui singur mesaj de test este validată prin confirmarea destinatarei. Nu validează întregul flux DOI, preferințele, dezabonarea sau livrarea către alte adrese. Șabloanele și automatizările rămân inactive.
 
 ## Test editorial Brevo — 9 noiembrie 2026
@@ -80,3 +90,5 @@ Comparația cu buildul inițial folosește snapshotul local ignorat `.local/base
 ## Retestare 9 noiembrie 2026
 
 13/13 teste locale PASS; build PASS; verificator PASS: 18 pagini, 82 articole, 100 URL-uri, 3.781 referințe, 0 lipsă, 147 fișiere de bază identice. Nu s-au reluat teste vizuale sau externe. Starea consolidată și pașii rămași: STARE-VALIDARE-2026-11-09.md.
+
+Rezultate finale ale continuării: 25/25 teste locale, 40 verificări browser generale fără probleme (câmpul CMS absent omis explicit), 9 verificări infrastructură și 4 consimțământ. Vezi raportul de continuare pentru limite și erorile inițiale de mediu.

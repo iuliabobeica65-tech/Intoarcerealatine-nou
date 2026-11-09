@@ -56,5 +56,12 @@
     "inboxReceiptConfirmed": true,
     "result": "Un singur test COM-02 primit in Inbox, confirmat de Iulia. Validare limitata la aceasta trimitere; DOI, preferinte si dezabonare netestate.",
     "confirmationSource": "Iulia: A sosit in Inbox, 2026-11-09"
+  },
+  "localIsolationPreparation": {
+    "implemented": true,
+    "deployed": false,
+    "externalEnvironmentVerified": false,
+    "testModeRequired": true,
+    "recipientValueInRepository": false
   }
 }

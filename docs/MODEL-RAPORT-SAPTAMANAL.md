@@ -22,3 +22,5 @@ Diferență = curent − anterior; % = (curent − anterior)/anterior × 100 num
 Observație: unde există interes și unde se pierde continuitatea; trei acțiuni propuse, fără concluzii ferme din eșantion mic. Nu calcula rata click→programare fără aceeași perioadă, definiții și atribuire verificată. Diferența dintre două agregate nu dovedește punctul exact unde o persoană a abandonat.
 
 Acesta este un model, nu un raport cu rezultate săptămânale noi și nu o automatizare programată. Datele rolling observate în audit nu se substituie săptămânilor complete cerute aici.
+
+Actualizare: separă contact_click și pentru Messenger; include testimonial_click ca interes distinct, conform ANALYTICS-SCHEMA-PROPUSA.md. Nu transforma aceste clickuri în solicitări sau programări. Nu există două săptămâni complete verificate în această continuare; raportul operațional cu cifre rămâne de completat din surse autorizate.

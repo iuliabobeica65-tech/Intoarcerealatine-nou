@@ -1,0 +1,28 @@
+// Model incomplet, neincarcat de proiect. Nu executa deploy.
+{
+  "name": "er-test-neconfigurat",
+  "compatibility_date": "2026-11-09",
+  "pages_build_output_dir": "../../dist",
+  "vars": {
+    "TEST_MODE": "true",
+    "APP_ORIGIN": "https://preview.example.invalid",
+    "COMMUNITY_ENABLED": "false",
+    "REGISTRATIONS_ENABLED": "false",
+    "EMAIL_SEND_ENABLED": "false",
+    "PAYMENTS_TEST_ENABLED": "false",
+    "LIVE_PAYMENTS_ENABLED": "false",
+    "BREVO_DOI_TEMPLATE_ID": "2",
+    "APPROVED_TEMPLATE_IDS": "[]",
+    "BILLING_PROVIDER": "mock",
+    "INVOICING_ENABLED": "false",
+    "INVOICE_EMAIL_SENDER": "none"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "er-test-neconfigurat",
+      "database_id": "NECONFIGURAT-NU-DEPLOYA",
+      "migrations_dir": "../../infrastructure/migrations"
+    }
+  ]
+}

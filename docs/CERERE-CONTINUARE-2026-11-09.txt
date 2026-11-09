@@ -1,0 +1,369 @@
+
+Ai trimis
+CONTINUĂ INFRASTRUCTURA DIGITALĂ — IULIA BOBEICA
+ECHILIBRAREA RĂDĂCINILOR
+
+OBIECTIV
+
+Continuă lucrările existente până la pregătirea completă pentru lansare, fără să reconstruiești ce este deja realizat și fără să modifici producția.
+
+Nu te opri după fiecare verificare minoră. Execută autonom toate activitățile locale, reversibile și sigure. Solicită aprobarea Iuliei doar pentru acțiunile externe, activările, trimiterile reale, modificările ireversibile sau publicarea.
+
+IMPORTANT: Ți-am transmis deja instrucțiunea despre verificarea mediului izolat pentru Brevo. Continuă acea verificare și integrează rezultatele în planul general. Nu interpreta această instrucțiune ca aprobare pentru activare.
+
+1. WORKSPACE ȘI PROTECȚIA PROIECTULUI
+
+Workspace:
+C:\Users\iulia\Documents\ChatGPT\Echilibrarea radacinilor infrastructura digitala
+
+Repository:
+iuliabobeica65-tech/Intoarcerealatine-nou
+
+Ramura exclusivă de lucru:
+pregatire-infrastructura-email-plati
+
+Ramura de producție, care trebuie protejată:
+pregatire-cloudflare-2026-10-20
+
+Ultimul commit local raportat:
+82615e6b6033fec23896673151f5acd3835319f1
+
+Verifică starea reală înainte de orice modificare.
+
+INTERDICȚII FĂRĂ APROBARE EXPLICITĂ:
+- Fără push.
+- Fără merge.
+- Fără pull request.
+- Fără deploy sau preview declanșat intenționat.
+- Fără modificarea ramurii de producție.
+- Fără activarea serviciilor.
+- Fără trimiterea de e-mailuri reale.
+- Fără importarea contactelor.
+- Fără plăți sau facturi reale.
+- Fără modificări neaprobate de SEO, design, meniuri sau conținut public.
+
+Nu presupune că un push este sigur: poate declanșa Cloudflare.
+
+Nu solicita parole, chei API sau alte secrete în chat.
+
+Păstrează toate documentele MASTER, istoricul, backupurile și testele.
+
+2. VERIFICAREA DOCUMENTAȚIEI EXISTENTE
+
+Citește documentele actualizate din docs/, în special:
+
+- STARE-VALIDARE-2026-11-09.md
+- infrastructura-email-comunitate-plati-MASTER-V1.md
+- CONFIGURARE-SERVICII.md
+- ACTIVARE-DUPA-INFIINTAREA-FIRMEI.md
+- TESTE-SI-REZULTATE.md
+- RAPORT-MODIFICARI.md
+- MODEL-RAPORT-SAPTAMANAL.md
+- brevo-pregatire/README.md
+- brevo-pregatire/stare-cont.json
+
+Identifică și documentele create în ultima etapă.
+
+Folosește cele mai recente verificări, fără să pierzi istoricul.
+
+Pentru fiecare componentă stabilește:
+- Ce este implementat.
+- Ce este testat local.
+- Ce este verificat extern.
+- Ce lipsește.
+- Ce necesită aprobarea Iuliei.
+- Ce este blocat de condiții juridice, fiscale sau tehnice.
+
+3. BREVO — FINALIZAREA FLUXULUI DE COMUNITATE
+
+Continuă verificarea mediului izolat solicitată anterior.
+
+Date existente:
+- Expeditor verificat: contact@iuliabobeica.ro
+- Lista comunității: ID 3
+- Șabloane: ID 2–6, raportate inactive
+- Test editorial de bun venit primit pe adresa proprie autorizată
+
+Verifică fluxul complet:
+
+A. Solicitarea abonării.
+B. Consimțământul explicit.
+C. Protecția Turnstile.
+D. Limitarea solicitărilor și deduplicarea.
+E. Trimiterea e-mailului DOI.
+F. Confirmarea abonării.
+G. Adăugarea corectă în lista 3.
+H. Un singur mesaj de bun venit.
+I. Gestionarea preferințelor.
+J. Dezabonarea.
+K. Excluderea din trimiterile ulterioare.
+L. Gestionarea erorilor și a solicitărilor repetate.
+
+Verifică dacă implementarea funcționează pe planul Brevo Free, fără a presupune acces la Automations.
+
+Distinge fluxul DOI API, cu șablonul #2, de alternativa DOI prin formularul nativ, cu șablonul #6.
+
+Nu combina cele două fluxuri fără justificare și aprobare.
+
+Verifică dacă există riscul trimiterii duplicate a mesajului de bun venit.
+
+Pregătește teste simulate pentru toate cazurile posibile.
+
+Înainte de orice test real, prezintă:
+- Mediul izolat utilizat.
+- Adresa autorizată de test.
+- Acțiunile exacte din cont.
+- Posibilele efecte.
+- Criteriile de oprire.
+- Procedura de revenire la starea inițială.
+
+Nu activa șablonul #2 sau alte funcții fără aprobarea explicită a Iuliei.
+
+4. CLOUDFLARE — D1, TURNSTILE ȘI SECRETE SERVER
+
+Verifică implementarea Cloudflare Pages Functions.
+
+Verifică toate cele patru migrări D1, în ordinea corectă.
+
+Pregătește:
+- Configurația pentru mediul izolat.
+- Schema și migrările bazei de date.
+- Validarea Turnstile pe server.
+- Gestionarea erorilor.
+- Protecția împotriva solicitărilor repetate.
+- Separarea mediilor test și producție.
+- Configurarea sigură a secretelor.
+- Excluderea secretelor din Git, loguri și build.
+
+Nu crea sau modifica resurse externe fără aprobare.
+
+Nu afișa valori secrete în rapoarte.
+
+Verifică și documentează dacă infrastructura pregătită este compatibilă cu planul Cloudflare utilizat.
+
+5. EVENIMENTE, WORKSHOPURI ȘI PROGRAME
+
+Verifică funcționalitățile deja construite:
+
+- Catalogul evenimentelor.
+- Capacitatea maximă.
+- Înscrierile.
+- Prevenirea înscrierilor duplicate.
+- Locurile disponibile.
+- Anulările.
+- Gestionarea erorilor.
+- Mesajele administrative.
+- Outbox-ul.
+- Evidența comenzilor.
+
+Verifică situațiile-limită:
+- Ultimul loc disponibil.
+- Două înscrieri simultane.
+- Eveniment complet.
+- Înscriere repetată.
+- Anulare.
+- Eroare de trimitere a confirmării.
+- Reluarea unei operațiuni întrerupte.
+
+Nu publica evenimente și nu inventa date, prețuri sau disponibilități.
+
+Identifică exact ce informații trebuie confirmate de Iulia înainte de lansarea fiecărui eveniment.
+
+6. GOOGLE CALENDAR — PROGRAMĂRI INDIVIDUALE
+
+Respectă decizia din issue #82.
+
+Folosim Google Calendar Appointment Schedules.
+
+Nu construim un motor propriu de programări.
+
+Pregătește integrarea linkului oficial, care urmează să fie confirmat de Iulia.
+
+Verifică:
+- Traseul din site către programare.
+- Compatibilitatea cu mobilul.
+- Evitarea rezervărilor duplicate.
+- Evitarea mesajelor duplicate între Google Calendar și Brevo.
+- Posibilitatea de măsurare a clicurilor fără colectarea datelor personale.
+
+Nu inventa linkul oficial și nu modifica setările Calendar fără aprobare.
+
+7. STRIPE — TESTARE SANDBOX
+
+Continuă numai cu mediul de test.
+
+Verifică:
+- Crearea sesiunilor Checkout.
+- Confirmarea plăților.
+- Webhook-ul semnat.
+- Evenimentele duplicate.
+- Reconcilierea.
+- Plățile eșuate.
+- Anulările.
+- Rambursările.
+- Legătura comandă–plată.
+- Gestionarea erorilor.
+
+Folosește simulări locale până la aprobarea accesului extern.
+
+Nu activa Stripe live.
+Nu încasa bani reali.
+Nu modifica produse sau prețuri comerciale fără aprobare.
+
+8. SMARTBILL — PREGĂTIREA FACTURĂRII
+
+Păstrează simulatorul existent.
+
+Verifică:
+- Legătura comandă–plată–clientă–factură.
+- Prevenirea facturilor duplicate.
+- Rambursările și storno.
+- Gestionarea erorilor.
+- Separarea testului de emiterea reală.
+
+Documentează ce lipsește pentru transportul real SmartBill.
+
+Nu implementa emiterea fiscală reală înainte de clarificarea:
+- Datelor firmei.
+- Regimului fiscal.
+- Planului SmartBill.
+- Seriilor de facturare.
+- Emitentului unic.
+- Obligațiilor e-Factura.
+- Validării cu contabilul.
+
+9. MESAJELOR AUTOMATE ȘI COMUNICAREA
+
+Există un catalog local de 52 de mesaje draft.
+
+Nu le recrea și nu le considera active.
+
+Verifică:
+- Scopul fiecărui mesaj.
+- Evenimentul care ar trebui să îl declanșeze.
+- Destinatarul.
+- Consimțământul necesar.
+- Riscul de duplicate.
+- Condițiile de oprire.
+- Necesitatea unui scheduler.
+- Compatibilitatea cu Brevo Free.
+
+Separă:
+- Mesajele administrative.
+- Mesajele de confirmare.
+- Mesajele de comunitate.
+- Mesajele comerciale.
+
+Nu instala un scheduler și nu activa trimiteri fără aprobare.
+
+10. CONFIDENȚIALITATE ȘI CONFORMITATE
+
+Verifică:
+- Consimțământul separat pentru e-mail.
+- Participarea voluntară la WhatsApp.
+- Politica de confidențialitate.
+- Politica de cookies.
+- Retenția datelor.
+- Ștergerea și dezabonarea.
+- Accesul la date.
+- Minimizarea datelor colectate.
+- Protejarea informațiilor personale.
+- Condițiile juridice și fiscale pentru lansare.
+
+Marchează aspectele care necesită revizuire juridică.
+
+Nu considera documentele tehnice drept validare juridică.
+
+11. ANALYTICS — DUPĂ INFRASTRUCTURĂ
+
+Nu instala tracking suplimentar și nu activa colectări noi fără aprobare.
+
+Auditează implementarea GA4 existentă.
+
+Pregătește o schemă consecventă de evenimente pentru:
+- Vizualizări de pagini.
+- Clicuri WhatsApp.
+- Clicuri Messenger.
+- Clicuri către programări.
+- Clicuri către testimoniale.
+- Solicitări de abonare.
+- Abonări confirmate.
+- Înscrieri la evenimente.
+- Consultații programate.
+- Conversii comerciale confirmate.
+
+Nu confunda clicurile cu programările sau vânzările.
+
+Nu colecta:
+- Conținutul mesajelor WhatsApp.
+- Adrese de e-mail.
+- Nume.
+- Tokenuri.
+- Query strings cu date personale.
+- Date de plată sensibile.
+
+Verifică posibila contaminare a statisticilor cu trafic de preview.
+
+Pregătește raportul săptămânal cu indicatori reali și sursa dovezilor.
+
+12. TESTARE ȘI VALIDARE FINALĂ
+
+Reexecută testele locale existente.
+
+Verifică:
+- Testele automatizate.
+- Build-ul.
+- Sitemap-ul.
+- Linkurile interne.
+- Excluderea fișierelor private.
+- Redirecturile.
+- Integritatea paginilor existente.
+- Comportamentul pe mobil, dacă mediul permite.
+- Separarea mediilor.
+- Lipsa secretelor în fișiere publice.
+
+Nu schimba SEO, designul, meniurile sau conținutul doar pentru că rulezi verificări.
+
+Orice problemă descoperită trebuie documentată și corectată mai întâi local, fără afectarea producției.
+
+13. BACKUP ȘI DOCUMENTAȚIE
+
+Păstrează toate versiunile existente.
+
+Actualizează local documentele relevante.
+
+Nu suprascrie MASTER-ul fără păstrarea versiunii precedente.
+
+Creează backup local verificabil după modificările importante.
+
+Nu trimite nimic pe GitHub fără aprobare.
+
+14. RAPORT FINAL OBLIGATORIU
+
+La final, prezintă un raport clar, în limba română, cu următoarele secțiuni:
+
+A. Ce era deja implementat.
+B. Ce ai realizat în această continuare.
+C. Ce ai testat și rezultatele exacte.
+D. Ce este încă nefuncțional.
+E. Ce depinde de servicii externe.
+F. Ce necesită aprobarea Iuliei.
+G. Ce depinde de firmă și contabil.
+H. Ce fișiere ai modificat local.
+I. Starea Git, ramura și ultimul commit.
+J. Starea backupurilor.
+K. Ce este pregătit pentru lansare.
+L. Ce NU este încă pregătit pentru lansare.
+M. Următorul pas concret, în ordinea priorității.
+
+REGULĂ FINALĂ
+
+Continuă autonom toate activitățile locale sigure și utile.
+
+Nu cere aprobare pentru fiecare verificare locală.
+
+Oprește-te numai când următorul pas presupune o activare externă, o trimitere reală, o modificare de producție, un risc de publicare sau o decizie care aparține Iuliei.
+
+Nu interpreta această instrucțiune drept autorizare pentru astfel de acțiuni.
+
+Obiectivul este finalizarea unei infrastructuri stabile, verificabile și pregătite pentru activare controlată, fără pierderea lucrărilor existente.

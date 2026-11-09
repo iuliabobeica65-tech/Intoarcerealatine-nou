@@ -36,3 +36,7 @@ O listă separată de test ar îmbunătăți izolarea datelor, dar ar cere crear
 Activarea este amânată. Cererea anterioară de aprobare pentru #2 a fost prematură deoarece mediul și izolarea destinatarului nu erau validate.
 
 Sursă tehnică reverificată: [Brevo DOI API](https://developers.brevo.com/reference/create-doi-contact), 9 noiembrie 2026. Specifică email, lista, templateId, redirect și atribute; nu reprezintă dovadă despre configurația contului Iuliei.
+
+## Corecție implementată ulterior, numai local
+
+Restricția server-side menționată ca lipsă a fost implementată și simulată: TEST_MODE=true și TEST_RECIPIENT_EMAIL privat; respingerea altor destinatari înainte de scrieri/rețea și la apelul Brevo. Nu este deployată și nu dovedește izolarea contului real. Verdictul privind mediul extern rămâne NU VALIDAT. Vezi ../cloudflare-test/README.md și ../RAPORT-CONTINUARE-2026-11-09.md.
