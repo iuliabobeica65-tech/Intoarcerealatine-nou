@@ -43,3 +43,7 @@ Oprește la destinatar greșit, dubluri, stare ambiguă, lipsă dovadă DOI, exp
 ## Sursă oficială reverificată
 
 [Brevo DOI API](https://developers.brevo.com/reference/create-doi-contact), consultată la 9 noiembrie 2026: endpoint contacts/doubleOptinConfirmation, includeListIds, templateId, redirectionUrl, atribute existente și params.DOIurl. Parametrul contactPixelTrackingConsent=false este deja transmis de cod; efectul depinde de funcția activă în cont și nu garantează dezactivarea universală a trackingului. Verifică setările reale înainte de test.
+
+## Audit ulterior: activarea amânată
+
+Vezi AUDIT-IZOLARE-INAINTE-DE-ACTIVARE.md. Mediul izolat nu este validat, codul nu restricționează destinatarul la proprietară, iar inventarul actual al contului nu a putut fi citit. Nu activa #2 până la rezolvarea acestor condiții. Dezactivarea șablonului nu anulează mesajele deja trimise și nu garantează invalidarea linkurilor DOI.
