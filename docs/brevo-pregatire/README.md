@@ -62,3 +62,7 @@ Adresă de test autorizată; șablon DOI aprobat/activat controlat; API configur
 Linkul WhatsApp este inclus în draftul de bun venit conform issue #81; nu a fost accesat și nu s-a solicitat intrarea în grup. Ședințele individuale rămân pentru Google Calendar Appointment Schedules conform issue #82; nu se configurează confirmări duplicate în Brevo.
 
 Surse oficiale consultate: [DOI API](https://developers.brevo.com/reference/create-doi-contact), [DOI pentru formularul nativ](https://help.brevo.com/hc/en-us/articles/360019540880-Create-a-custom-double-opt-in-DOI-email-template-for-a-sign-up-form-created-in-Brevo), [limbaj și linkuri personale](https://help.brevo.com/hc/en-us/articles/4402386448530--Manual-Personalize-your-messages-with-dynamic-content-Brevo-Template-Language).
+
+## Următoarea execuție controlată
+
+Vezi [planul DOI](TEST-CONTROLAT-DOI.md): limite exacte, precondiții, scenarii, dovezi și oprire. Planul este pregătit, nu executat; nicio activare nouă.
