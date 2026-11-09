@@ -76,3 +76,7 @@ node scripts/export-email-catalogue.mjs
 Browser: `npm install --no-save --package-lock=false playwright@1.56.1`, apoi instalează Chromium sau setează `PLAYWRIGHT_EXECUTABLE_PATH` către browserul local. Rulează `node qa/run-local-browser.mjs`; pentru verificările noilor formulare, `node qa/run-local-browser.mjs infrastructure`. Sunt verificări locale, fără deploy. Raportul general: `qa-artifacts/browser-results.json`; imaginile și logurile nu se urcă în repository.
 
 Comparația cu buildul inițial folosește snapshotul local ignorat `.local/baseline.json`. În CI sau într-o clonă nouă, verificarea sitemap/linkuri rulează, dar comparația istorică necesită regenerarea baselineului din commitul inițial separat. Nu interpreta `baselineUnchanged: 0` ca verificare de regresie istorică.
+
+## Retestare 9 noiembrie 2026
+
+13/13 teste locale PASS; build PASS; verificator PASS: 18 pagini, 82 articole, 100 URL-uri, 3.781 referințe, 0 lipsă, 147 fișiere de bază identice. Nu s-au reluat teste vizuale sau externe. Starea consolidată și pașii rămași: STARE-VALIDARE-2026-11-09.md.
