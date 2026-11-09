@@ -44,7 +44,7 @@
   "automationsActivatedByThisWork": 0,
   "apiKeysCreatedByThisWork": 0,
   "endToEndDoiTested": false,
-  "deliveryTested": false,
+  "deliveryTested": true,
   "unsubscribeTested": false,
   "runtimeEnvironmentChanged": false,
   "notes": "Stare observată la data indicată; nu garanție pentru modificări ulterioare. Nu există încă flux activ, API configurat sau formular public nou.",
@@ -52,8 +52,9 @@
     "templateId": 3,
     "sendActionsInitiated": 1,
     "recipient": "adresa proprie autorizata; omisa din repository",
-    "providerAcceptanceConfirmed": false,
-    "inboxReceiptConfirmed": false,
-    "result": "Send Test actionat o singura data; temporar disabled, apoi disponibil. Fara confirmare explicita capturata. Nu se retrimite automat."
+    "providerAcceptanceConfirmed": true,
+    "inboxReceiptConfirmed": true,
+    "result": "Un singur test COM-02 primit in Inbox, confirmat de Iulia. Validare limitata la aceasta trimitere; DOI, preferinte si dezabonare netestate.",
+    "confirmationSource": "Iulia: A sosit in Inbox, 2026-11-09"
   }
 }
