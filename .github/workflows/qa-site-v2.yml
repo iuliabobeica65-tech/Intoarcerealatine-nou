@@ -19,7 +19,7 @@ permissions:
 jobs:
   browser:
     name: Verificare 7 pagini si editor
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 14
     steps:
       - uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
           ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
           doc = ET.parse(root/"sitemap.xml").getroot()
           urls = [n.text for n in doc.findall("s:url/s:loc", ns)]
-          pages = ["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
+          pages = ["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","program-vinovatie-inconstienta","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"]
           articles = sorted(p.stem for p in (root/"articole").glob("*.html"))
           if len(articles) != 82:
               raise SystemExit(f"ARTICOLE INCOMPLETE: {len(articles)}/82 generate")
