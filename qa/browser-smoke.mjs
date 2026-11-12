@@ -15,7 +15,7 @@ const base = process.env.SITE_URL || "http://127.0.0.1:4173";
 const preview = process.env.PREVIEW_URL || "";
 const directory = resolve(root, "qa-artifacts");
 mkdirSync(directory, { recursive: true });
-const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "live", "articole", "program-nivelul-de-merit"];
+const pages = ["acasa", "echilibrarea-radacinilor", "constelatii", "lucram-impreuna", "despre-mine", "live", "articole", "program-nivelul-de-merit", "program-vinovatie-inconstienta"];
 const viewports = [
   { name: "telefon-mic", width: 320, height: 700 },
   { name: "telefon", width: 390, height: 844 },
