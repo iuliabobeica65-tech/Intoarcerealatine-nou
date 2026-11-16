@@ -1,0 +1,60 @@
+{
+  "decisionDate": "2026-11-13",
+  "mode": "brevo_api_double_opt_in",
+  "deploymentAllowed": false,
+  "liveChangesAllowed": false,
+  "cloudflareOff": true,
+  "providerEvidence": {
+    "ticket": 5670720,
+    "representative": "Tanishka Gupta",
+    "date": "2026-11-13",
+    "source": "reply_transmitted_by_Iulia",
+    "independentlyReopened": false,
+    "listMembershipAfterConfirmation": true,
+    "doubleOptInAttributeAfterConfirmation": "Yes",
+    "realAccountTestCompleted": false,
+    "singleHostedFormSuspendSupported": false
+  },
+  "test": {
+    "listId": 4,
+    "recipientFromPrivateVariable": "TEST_RECIPIENT_EMAIL",
+    "apiTemplateCandidateId": 2,
+    "templateCurrentStateRecheckRequired": true,
+    "automationId": 1,
+    "automationLastKnownActive": false,
+    "welcomeMessageId": 7,
+    "welcomeSourceTemplateId": 3,
+    "reentry": false,
+    "filters": [
+      "authorized_recipient",
+      "DOUBLE_OPT-IN=Yes",
+      "Email campaigns subscriptions=Subscribed"
+    ],
+    "extraFinalConfirmation": false
+  },
+  "legacy": {
+    "normalCommunityListId": 3,
+    "nativeTemplateId": 6,
+    "hostedDefaultTemplateId": 8,
+    "nativeFormRetained": true,
+    "nativeFormPublicRiskUnresolved": true,
+    "nativeFormUrlDistributed": false
+  },
+  "local": {
+    "newTestsPassed": 5,
+    "targetedRegressionsPassed": 3,
+    "offlineApiBuildPassed": true,
+    "newMigrationRequired": false,
+    "claimRollingWindowHours": 24,
+    "ambiguousDeliveryStatus": "pending",
+    "providerActionsExecuted": 0
+  },
+  "unverified": [
+    "real_DOI_attribute_list_trigger_order",
+    "welcome_exactly_once",
+    "preferences_persistence",
+    "unsubscribe_and_suppression",
+    "authenticated_cloud_admin_end_to_end"
+  ],
+  "report": "DOI-API-CONTINUARE-2026-11-13.md"
+}

@@ -1,0 +1,26 @@
+TEXT APROBAT — pregătit în copia separată DOI #15, inactivă; originalul #2 păstrat
+Expeditor și Reply-To propuse: contact@iuliabobeica.ro
+Nume expeditor: Iulia Bobeica – Echilibrarea rădăcinilor
+Subiect: Confirmă abonarea
+Text de previzualizare: Confirmă adresa pentru abonare.
+
+Iulia Bobeica – Echilibrarea rădăcinilor
+
+Confirmă adresa de e-mail
+
+Ai solicitat abonarea pentru comunicări viitoare. În această etapă primești numai mesajul necesar confirmării; nu trimitem mesaje de bun-venit sau de promovare.
+
+Sunt de acord să primesc pe viitor e-mailuri de la Iulia Bobeica – Echilibrarea rădăcinilor despre noutăți, evenimente și programe. În prezent, voi primi doar mesajul necesar confirmării abonării. Îmi pot retrage acordul oricând.
+
+Pentru a confirma că adresa îți aparține și că dorești abonarea:
+
+[Buton: Confirm abonarea]
+[Destinație tehnică în șablon: {{ params.DOIurl }}; în Preview butonul este inactiv.]
+
+Dacă nu ai solicitat abonarea, ignoră acest mesaj. Nu activăm abonarea prin această solicitare fără confirmare.
+
+Pentru retragerea acordului sau ștergere poți scrie oricând la contact@iuliabobeica.ro.
+
+Operator: Bobeica Iulia-Alexandra, persoană fizică
+Confidențialitate: https://iuliabobeica.ro/politica-confidentialitate#newsletter
+Versiunea acordului: community-collection-only-v1

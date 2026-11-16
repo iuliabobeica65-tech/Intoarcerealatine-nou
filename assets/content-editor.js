@@ -57,7 +57,7 @@ fetch("./content/setari-site.json",{cache:"no-cache"})
    if(typeof c.mesaj_subsol==="string"&&c.mesaj_subsol.trim())setText(".footer-status",c.mesaj_subsol);
    if(typeof c.email_contact==="string"&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email_contact)){
     document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{
-     if(a.getAttribute("href")==="mailto:Iuliabobeica65@gmail.com"||a.getAttribute("href")==="mailto:"+c.email_contact){
+     if(a.getAttribute("href")==="mailto:contact@iuliabobeica.ro"||a.getAttribute("href")==="mailto:"+c.email_contact){
       a.href="mailto:"+c.email_contact;if(a.textContent.includes("@"))a.textContent=c.email_contact;
      }
     });

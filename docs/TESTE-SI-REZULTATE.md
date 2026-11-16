@@ -1,5 +1,19 @@
 # Teste și rezultate reale — 8 noiembrie 2026
 
+## Ultima continuare — panou local, concurență și recuperare
+
+23 teste noi PASS: qa/load-recovery.test.mjs (11), qa/local-admin-runtime.test.mjs (5), qa/protected-reader.test.mjs (7). 30 regresii selectate PASS: events-admin (14), infrastructură (10 nume relevante pentru batch/înscrieri/plăți/outbox), admin-view (6). Total 53 cazuri distincte; fără reluarea integrală a suitei vechi de 28 ori a verificărilor Cloudflare. Compilare offline Worker PASS; nicio migrare sau publicare externă.
+
+Browser local: creare/deschidere ciornă, refuz capacitate sub ocupate, schimbare validă, anulare participantă, backup, restaurare cu păstrarea stării anterioare, pregătire remindere fără expediere. Captură .local/implementation-2026-11-12/admin-local-working.png. Rezultatele detaliate și limitele testului de 200 cereri sunt în [raport](PANOU-LOCAL-SARCINA-RECUPERARE-2026-11-12.md). Nu sunt teste D1/Stripe/Brevo reale sau benchmark de producție.
+
+## Continuare locală 12.11.2026 — evenimente/admin/facturare
+
+17 teste noi trecute: 14 în qa/events-admin.test.mjs (inclusiv migrare peste schema existentă și anulare cu citire veche) și 3 în qa/billing-preparation.test.mjs. 9 regresii selectate din qa/infrastructure.test.mjs au trecut (checkout, payment pending/refund, lifecycle, outbox, SmartBill mock, separarea Google/marketing/facturi, loturi D1 și două scenarii de anulare). Total 26 cazuri distincte, fără a număra repetările după corecții drept cazuri noi. Suita veche de 28 NU a fost reluată integral.
+
+Build static local PASS, Pages Functions compile offline PASS cu Wrangler 4.160.0 și loguri în .local/implementation-2026-11-12/wrangler-config. JSON/JS verificate și git diff --check fără erori de whitespace; avertismentele CRLF sunt ale mediului. Nu s-au repetat verificările 9/9 POST, 24/24 Access sau noindex. Testele noi sunt SQLite în memorie și fetch interzis/simulat, nu integrare D1/Brevo/Stripe/SmartBill reală. Niciun e-mail/participant/document fiscal real.
+
+Comenzi pentru testele noi: npm run test:events și npm run test:billing. Raport detaliat, limite și procentajele de pregătire: [CONTINUARE-INFRASTRUCTURA-2026-11-12.md](CONTINUARE-INFRASTRUCTURA-2026-11-12.md).
+
 ## Continuare locală sigură — 9 noiembrie 2026
 
 Instrucțiunea suplimentară este păstrată în CERERE-CONTINUARE-2026-11-09.txt. Raportul actual este RAPORT-CONTINUARE-2026-11-09.md; stările mai vechi de mai jos rămân istoric.
@@ -92,3 +106,60 @@ Comparația cu buildul inițial folosește snapshotul local ignorat `.local/base
 13/13 teste locale PASS; build PASS; verificator PASS: 18 pagini, 82 articole, 100 URL-uri, 3.781 referințe, 0 lipsă, 147 fișiere de bază identice. Nu s-au reluat teste vizuale sau externe. Starea consolidată și pașii rămași: STARE-VALIDARE-2026-11-09.md.
 
 Rezultate finale ale continuării: 25/25 teste locale, 40 verificări browser generale fără probleme (câmpul CMS absent omis explicit), 9 verificări infrastructură și 4 consimțământ. Vezi raportul de continuare pentru limite și erorile inițiale de mediu.
+
+## Retestare Brevo — 11 noiembrie 2026
+
+28/28 teste locale PASS, inclusiv restricția destinatarului, lista separată obligatorie și refuzul listelor multiple/excluderilor înainte de apeluri externe. Build Cloudflare PASS. Verificator: 18 pagini, 82 articole, 100 URL-uri sitemap, 3.781 referințe, 0 lipsă, 147 fișiere identice cu baselineul local; redirects nemodificate, fișiere private excluse. Baselineul nu este o comparație cu producția actuală.
+
+Preflight offline: configurationPass=false, externalEnvironmentVerified=false, activationAuthorized=false, deoarece variabilele private nu sunt injectate în proces. Nu s-au citit fișiere de secrete și nu s-a demonstrat configurația contului prin acest test. Fără trimitere reală, activare, push sau deploy. Acțiunea welcome este salvată inactiv în Brevo; detalii în brevo-pregatire/CONTINUARE-2026-11-10.md. DOI API → atribut confirmat → welcome unic → preferințe → dezabonare rămâne netestat în cont.
+
+## Confirmare Iulia din Chrome — 12 noiembrie 2026
+
+Pe deploymentul izolat aprobat: 9/9 POST autentificate pass:true; înscrieri 503/not_configured, Stripe webhook 503/payments_disabled, administrare 403/forbidden. Pentru paginile testate: X-Robots-Tag: noindex, nofollow, noarchive. Rezultate confirmate prin capturile Chrome conform declarației Iuliei în chat; capturile nu au fost atașate și inspectate independent de agent. Nu se declară că toate răspunsurile API au headerul. Rezultatele anterioare 24/24 Access fără autentificare rămân valabile și nu au fost repetate. Nu s-au activat servicii sau executat alte deploymenturi. Raport consolidat: cloudflare-test/REZULTAT-PRIMUL-DEPLOYMENT.md, cu lipsurile Brevo și pasul propus, neexecutat.
+
+## Pregătire formular nativ — 12 noiembrie 2026
+
+28/28 teste locale PASS, build PASS și verificator PASS (18 pagini, 82 articole, 100 sitemap, 3.781 referințe, 0 lipsă, 147 baseline local identice). Opt verificări statice ale specificației native trecute; artefactul aprobat anterior cu 154 fișiere este neschimbat. Numai documentație și inventar actualizate. Formular Brevo necreat, integrare neaplicată, automatizare inactivă, zero mesaje și contacte modificate în această etapă. Compatibilitate structurală #6 verificată în citire; selectabilitatea și izolarea server-side a destinatarului rămân netestate. Plan curent: brevo-pregatire/FORMULAR-NATIV-DOI-2026-11-12.md. Scenariile API istorice nu mai sunt instrucțiunea pentru această abonare; codul se păstrează.
+
+### 12.11.2026 — configurare nativă Brevo autorizată, fără test real
+
+Formular `6af5c20e8646ba0a458ab642`: lista #4 unică, DOI implicit temporar, Final confirmation OFF; design și mesaje în română, consimțământ obligatoriu nebifat și link de confidențialitate. Settings și Messages recitite după salvare. Originalul #6 inspectat în editor HTML, păstrat nemodificat; cauza absenței din selector nu este demonstrată. Automatizarea #1 neactivată.
+
+8/8 verificări statice ale inventarelor JSON PASS; git diff --check PASS (avertismente de conversie CRLF, fără erori). Nu s-au repetat testele Cloudflare sau build-ul, deoarece nu s-a modificat codul aplicației în această etapă. Nu sunt teste de livrare sau de validare a unui submit.
+
+STOP înainte de Done: Brevo a generat URL la Share; o stare explicită Inactive și blocarea publică nu au fost confirmate. 0 Submits / 0 New contacts în inventarul UI. Fără e-mailuri, contacte, push, merge sau deployment. Mai lipsesc izolarea server-side, verificarea e-mailului implicit, politica pentru newsletter și aprobarea separată a testului real. Detalii și dovezi în docs/brevo-pregatire/FORMULAR-NATIV-DOI-2026-11-12.md.
+
+### 12.11.2026 — citire publică, fără submit
+
+Confirmat în browser separat fără login Brevo: formularul existent se afișează înainte de Done, form POST și submit enabled. Acceptarea înscrierilor rămâne netestată. Șablon implicit #8 Active/en/expeditor personal; #9–#11 observate Active. #1 Inactive, 0 porniri. Nicio înscriere, trimitere sau dezactivare efectuată. Planul complet și cererea de suspendare sunt păstrate în docs/brevo-pregatire. Corectează interpretarea anterioară: Done neapăsat nu reprezintă izolare.
+
+### Continuare — interfață de administrare demonstrativă
+
+6/6 teste noi qa/admin-view.test.mjs PASS. Primul apel HTTP pe loopback a eșuat EACCES în sandbox; reluarea autorizată local a trecut. Verificări browser pentru cele patru secțiuni, paginare, anulări și mesaj cu revizie veche PASS. Date exclusiv sintetice, fără API/provider real, fără scrieri. Serverul demonstrativ a fost oprit. Niciun test anterior Cloudflare sau din cele 26 de cazuri anterioare nu a fost reluat în această subetapă.
+
+
+### Actualizare 13.11.2026 — pregatire validare cloud, fara executie
+
+Planul consolidat este in `docs/cloud-validation/PLAN-CONSOLIDAT-2026-11-13.md`. Pachet administrativ privat separat (11 fisiere), Worker compilat offline, D1 nou doar proiectat, sase migratii existente pastrate. 9 teste locale noi trecute; 11/11 verificari ale sablonului de configurare. Scenariile externe si rollback sunt pregatite, nu executate. ID D1/AUD/preflight/cote raman de verificat dupa aprobarea consolidata. Brevo, productia, GitHub si Cloudflare nu au fost modificate. Testele cloud istorice nu au fost repetate. Nu reprezinta lansare sau plati functionale.
+
+
+### Executie izolata 13.11.2026 — stare finala OFF verificata
+
+Raport curent: `docs/cloud-validation/REZULTATE-CLOUD-2026-11-13.md`. OAuth cu cele 5 permisiuni confirmat. O baza D1 noua, sase migratii trecute, 8/8 scenarii D1 remote si 2/2 teste locale noi ale exporturilor reale. Time Travel verificat. Un deployment privat de validare si republicarea necesara a artefactului OFF original, exclusiv Preview. Variabilele initiale restaurate exact, bindingul D1 si secretele administrative noi eliminate din cloud; vechiul deployment de test blocat prin rotirea marcajului bazei. Panoul/API-ul autentificat in browser NU sunt confirmate (control browser blocat). Nicio productie, GitHub, Brevo, plata sau expediere reala modificata. Nu este lansare publica si nu este benchmark end-to-end.
+
+
+### Continuare newsletter API — 13.11.2026
+
+Decizia curenta revine la un singur flux DOI API, fara stergerea variantei native. Raport: `docs/brevo-pregatire/DOI-API-CONTINUARE-2026-11-13.md`; inventar: `decision-api-2026-11-13.json`. Raspunsul oficial Brevo #5670720 transmis de Iulia confirma lista dupa click si DOUBLE_OPT-IN=Yes, dar nu inlocuieste testul real. ID-uri: lista test #4, DOI API candidat #2, automatizare #1 INACTIVA, mesaj welcome #7 (sursa #3); #6/#8 raman ale fluxului nativ istoric. Nu s-au schimbat ID-uri/configurari live.
+
+Corectie numai locala: claim atomic rolling 24h, erori ambigue pastrate pending, fara fabricarea confirmarii sau reabonare automata. 5 teste noi + 3 regresii relevante trecute, build API offline reusit, indexul existent reutilizat; fara migratii noi. Preferinte, unsubscribe/suprimare, welcome unic si panou cloud autentificat raman netestate end-to-end. Formularul gazduit are risc public rezidual; nu se distribuie linkul. Cloudflare ramane OFF, fara operatiuni externe, push, deployment sau mesaje.
+
+
+### Profil HTTP/Turnstile pregatit local — 13.11.2026
+
+Raport: `docs/cloud-validation/HTTP-TURNSTILE-LOCAL-2026-11-13.md`. Pachet nou de 13 fisiere, build offline, reutilizare D1 existent si zero migratii noi. 7 teste noi + 3 regresii relevante trecute; browser local: 8 verificari, Access/Turnstile simulate, zero cereri externe. Profilul pastreaza JWT Access + Bearer + Origin + marcaj D1, adrese sintetice/evenimente gratuite si expirare maximum o ora. Brevo ramane separat: maximum un DOI/un welcome numai cu aprobare ulterioara. Pachetele vechi si documentele sunt pastrate. Niciun deployment/mesaj/activare in aceasta etapa; Cloudflare ramane OFF.
+
+
+### Execution HTTP privee terminee et OFF verifie — 13.11.2026
+
+Raport curent: `docs/cloud-validation/REZULTAT-HTTP-ACCESS-2026-11-13.md`. OAuth cu sase scope-uri confirmat; un widget Turnstile gratuit creat numai pentru aliasul privat, fara Spin. Deploymentul HTTP a refuzat accesul intern cu access_required; fluxul cloud nu este validat functional. Zero inscrieri HTTP, zero DOI/welcome, automatizarea Brevo neactivata si dezabonarea neexecutata. Revenire OFF verificata in maximum 10 minute: variabile restaurate, binding/secrete temporare eliminate, D1 restaurat (doua inscrieri sintetice/un eveniment/sase migratii), marcaj blocat, artefact OFF republicat in Preview. Productia/GitHub/site-ul oficial nemodificate. Diagnostic local separat pregatit, 3 teste noi + 2 regresii crypto trecute; necesita aprobare noua pentru deployment, maximum 15 minute, fara D1/Turnstile/Brevo.

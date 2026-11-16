@@ -1,17 +1,20 @@
 import {pathToFileURL} from 'node:url';
-import {isolatedRecipient} from '../infrastructure/test-isolation.mjs';
+import {isolatedRecipient,doiList} from '../infrastructure/test-isolation.mjs';
 
 // Offline only: reads process environment; prints check names, never values.
-export function checkIsolatedConfig(env) {
+export function checkIsolatedConfig(env,{expectedListId='4',expectedDoiTemplateId='2'}={}) {
  const checks=[];
  const add=(name,pass)=>checks.push({name,pass:Boolean(pass)});
  add('TEST_MODE',env.TEST_MODE==='true');
  let valid=false;try{isolatedRecipient(env,env.TEST_RECIPIENT_EMAIL);valid=env.TEST_MODE==='true';}catch{}
  add('private_recipient_and_separate_origin',valid);
+ let validList=false;try{validList=env.TEST_MODE==='true'&&doiList(env)===Number(expectedListId)&&Number(expectedListId)!==3&&/^\d+$/.test(String(expectedListId));}catch{}
+ add('separate_test_list',validList);
  let realOrigin=false;try{const h=new URL(env.APP_ORIGIN).hostname;realOrigin=h.includes('.')&&!h.endsWith('.invalid')&&!['localhost','127.0.0.1'].includes(h);}catch{}
  add('non_placeholder_origin',realOrigin);
  for(const key of ['COMMUNITY_ENABLED','REGISTRATIONS_ENABLED','EMAIL_SEND_ENABLED','PAYMENTS_TEST_ENABLED','LIVE_PAYMENTS_ENABLED','INVOICING_ENABLED'])add(key,env[key]==='false');
- add('BREVO_DOI_TEMPLATE_ID',env.BREVO_DOI_TEMPLATE_ID==='2');
+ add('BREVO_DOI_TEMPLATE_ID',/^\d+$/.test(String(expectedDoiTemplateId))&&Number.isSafeInteger(Number(expectedDoiTemplateId))&&Number(expectedDoiTemplateId)>0&&env.BREVO_DOI_TEMPLATE_ID===String(expectedDoiTemplateId));
+ if(env.TEST_DOI_REDIRECTION_URL!==undefined)add('public_test_redirect',env.TEST_DOI_REDIRECTION_URL==='https://iuliabobeica.ro/live');
  add('BILLING_PROVIDER',env.BILLING_PROVIDER==='mock');
  add('INVOICE_EMAIL_SENDER',env.INVOICE_EMAIL_SENDER==='none');
  add('APPROVED_TEMPLATE_IDS',env.APPROVED_TEMPLATE_IDS==='[]');
@@ -20,6 +23,6 @@ export function checkIsolatedConfig(env) {
  return {configurationPass:checks.every(c=>c.pass),checks,externalEnvironmentVerified:false,activationAuthorized:false};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
- const result=checkIsolatedConfig(process.env);console.log(JSON.stringify(result,null,2));
+ const result=checkIsolatedConfig(process.env,{expectedListId:'7',expectedDoiTemplateId:'12'});console.log(JSON.stringify(result,null,2));
  if(!result.configurationPass)process.exitCode=1;
 }

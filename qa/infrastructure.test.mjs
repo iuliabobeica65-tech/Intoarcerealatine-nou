@@ -7,7 +7,7 @@ import {verifyStripe,reconcilePayment} from '../infrastructure/payments.mjs';
 import {prepareInvoice,prepareCredit,claimInvoiceNotification,smartbillPayload,billingMode} from '../infrastructure/invoicing.mjs';
 import {templates,renderTemplate} from '../infrastructure/templates.mjs';
 import {scheduleReminders,dispatch} from '../infrastructure/operations.mjs';
-import {brevo} from '../infrastructure/brevo.mjs';
+import {brevo,requestDoi} from '../infrastructure/brevo.mjs';
 import {checkIsolatedConfig} from '../scripts/check-isolated-config.mjs';
 const origin='https://preview.example.invalid';
 const secret='whsec_'+ 'a'.repeat(40);
@@ -17,7 +17,7 @@ function mock(fn){const old=globalThis.fetch;globalThis.fetch=fn;return ()=>{glo
 const response=data=>new Response(JSON.stringify(data),{headers:{'Content-Type':'application/json'}});
 
 test('isolated recipient rejects other addresses before database writes or network',async()=>{
- const e={...env(),TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};
+ const e={...env(),TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};
  let calls=0;const restore=mock(async()=>{calls++;throw Error('unexpected_network');});
  try{
   for(const path of ['community','register']){
@@ -30,10 +30,10 @@ test('isolated recipient rejects other addresses before database writes or netwo
 });
 
 test('isolated DOI accepts only configured normalized recipient and is not leaked in public config',async()=>{
- const e={...env(),TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};
+ const e={...env(),TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};
  let sends=0;const restore=mock(async(url,options)=>{
   if(url.includes('turnstile'))return response({success:true,hostname:'preview.example.invalid',action:'registration'});
-  assert.equal(JSON.parse(options.body).email,'owner@example.invalid');sends++;return response({});
+  const payload=JSON.parse(options.body);assert.equal(payload.email,'owner@example.invalid');assert.deepEqual(payload.includeListIds,[4]);assert.equal(payload.excludeListIds,undefined);assert.equal(payload.attributes,undefined);sends++;return response({});
  });
  try{
   const input={email:' OWNER@example.invalid ',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'};
@@ -46,7 +46,7 @@ test('isolated DOI accepts only configured normalized recipient and is not leake
 test('isolated mode fails closed on missing recipient, invalid mode and production origin',async()=>{
  const e=env();let calls=0;const restore=mock(async()=>{calls++;throw Error('unexpected_network');});
  try{
-  for(const extra of [{TEST_MODE:'true'},{TEST_MODE:'tru',TEST_RECIPIENT_EMAIL:'owner@example.invalid'},{TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://iuliabobeica.ro'},{TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://www.iuliabobeica.ro'},{TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://iuliabobeica.ro.'}]){
+  for(const extra of [{TEST_MODE:'true'},{TEST_MODE:'tru',TEST_RECIPIENT_EMAIL:'owner@example.invalid'},{TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://iuliabobeica.ro'},{TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://www.iuliabobeica.ro'},{TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://iuliabobeica.ro.'}]){
    const r=await handle(new Request((extra.APP_ORIGIN||origin)+'/api/community',{method:'POST',headers:{Origin:extra.APP_ORIGIN||origin,'Content-Type':'application/json'},body:JSON.stringify({email:'owner@example.invalid',consent:true,consentVersion:CONSENT_VERSION})}),{...e,...extra});
    assert.equal(r.status,503);
   }
@@ -55,7 +55,7 @@ test('isolated mode fails closed on missing recipient, invalid mode and producti
 });
 
 test('last Brevo boundary rejects bulk, cc, bcc and alternate operations in isolated mode',async()=>{
- const e={TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:origin,BREVO_API_KEY:'fixture-not-a-key'};
+ const e={TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:origin,BREVO_API_KEY:'fixture-not-a-key'};
  let calls=0;const restore=mock(async()=>{calls++;return response({messageId:'fixture'});});
  try{
   for(const payload of [{to:[{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'},{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'}],cc:[{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'}],bcc:[{email:'other@example.invalid'}]},{to:[{email:'owner@example.invalid'}],messageVersions:[]}])await assert.rejects(brevo(e,'smtp/email',payload));
@@ -65,7 +65,7 @@ test('last Brevo boundary rejects bulk, cc, bcc and alternate operations in isol
 });
 
 test('offline preflight reports status only, distinguishes config from deployed verification',()=>{
- const e={TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://isolated.example.com',BREVO_DOI_TEMPLATE_ID:'2',BILLING_PROVIDER:'mock',INVOICE_EMAIL_SENDER:'none',APPROVED_TEMPLATE_IDS:'[]',BREVO_API_KEY:'secret-fixture-brevo',TURNSTILE_SECRET:'secret-fixture-turnstile',TURNSTILE_SITE_KEY:'public-fixture',DATA_HMAC_KEY:'h'.repeat(40),ADMIN_TOKEN:'a'.repeat(40)};
+ const e={TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:'https://isolated.example.com',BREVO_DOI_TEMPLATE_ID:'2',BILLING_PROVIDER:'mock',INVOICE_EMAIL_SENDER:'none',APPROVED_TEMPLATE_IDS:'[]',BREVO_API_KEY:'secret-fixture-brevo',TURNSTILE_SECRET:'secret-fixture-turnstile',TURNSTILE_SITE_KEY:'public-fixture',DATA_HMAC_KEY:'h'.repeat(40),ADMIN_TOKEN:'a'.repeat(40)};
  for(const flag of ['COMMUNITY_ENABLED','REGISTRATIONS_ENABLED','EMAIL_SEND_ENABLED','PAYMENTS_TEST_ENABLED','LIVE_PAYMENTS_ENABLED','INVOICING_ENABLED'])e[flag]='false';
  const r=checkIsolatedConfig(e);assert.equal(r.configurationPass,true);assert.equal(r.externalEnvironmentVerified,false);assert.equal(r.activationAuthorized,false);
  const output=JSON.stringify(r);for(const value of ['owner@','secret-fixture','isolated.example.com','h'.repeat(40)])assert(!output.includes(value));
@@ -93,7 +93,7 @@ test('DOI provider timeout is not blindly retried and never marks confirmation',
   const input={email:'owner@example.invalid',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'};
   assert.equal((await handle(req('community',input),e)).status,503);
   assert.equal((await handle(req('community',input),e)).status,202);assert.equal(sends,1);
-  assert.equal((await e.DB.prepare('SELECT status FROM consent_requests').first()).status,'failed');
+  assert.equal((await e.DB.prepare('SELECT status FROM consent_requests').first()).status,'pending');
  }finally{restore();e.DB.close();}
 });
 async function offering(e,{id='event',capacity=1,paid=false,kind='live'}={}){
@@ -256,5 +256,28 @@ test('repeated registration and cancellation preserve one record and deduplicate
  for(let i=0;i<2;i++)assert.equal((await handle(req('cancel',{token}),e)).status,200);
  assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM registrations').first()).n,1);assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM outbox').first()).n,2);
  assert.equal((await e.DB.prepare('SELECT status FROM registrations').first()).status,'cancelled');
+ }finally{restore();e.DB.close();}
+});
+
+
+test('isolated DOI refuses missing or community target list before writes and network',async()=>{
+ const e={...env(),TEST_MODE:'true',TEST_RECIPIENT_EMAIL:'owner@example.invalid'};let calls=0;const restore=mock(async()=>{calls++;throw Error('network forbidden');});
+ try{for(const value of [undefined,'','3','0','4,3','-1','4e0']){const r=await handle(req('community',{email:'owner@example.invalid',consent:true,consentVersion:CONSENT_VERSION,turnstile:'fixture'}),{...e,TEST_BREVO_LIST_ID:value});assert.equal(r.status,503);}
+ assert.equal(calls,0);for(const table of ['consent_requests','rate_limits'])assert.equal((await e.DB.prepare('SELECT count(*) AS n FROM '+table).first()).n,0);
+ }finally{restore();e.DB.close();}
+});
+
+test('Brevo boundary rejects mixing test list with community or exclusions',async()=>{
+ const e={TEST_MODE:'true',TEST_BREVO_LIST_ID:'4',TEST_RECIPIENT_EMAIL:'owner@example.invalid',APP_ORIGIN:origin,BREVO_API_KEY:'fixture-not-a-key'};let calls=0;const restore=mock(async()=>{calls++;return response({});});
+ try{for(const payload of [{includeListIds:[3]},{includeListIds:[4,3]},{includeListIds:[2]},{includeListIds:[4],excludeListIds:[3]}])await assert.rejects(brevo(e,'contacts/doubleOptinConfirmation',{email:'owner@example.invalid',...payload}));assert.equal(calls,0);
+ await brevo(e,'contacts/doubleOptinConfirmation',{email:'owner@example.invalid',includeListIds:[4]});assert.equal(calls,1);
+ }finally{restore();}
+});
+
+
+test('normal DOI sends consent metadata without clearing an omitted first name',async()=>{
+ const e=env();let payload;const restore=mock(async(url,options)=>{payload=JSON.parse(options.body);return response({});});
+ try{const requestedAt=now();await requestDoi(e,{email:'fixture@example.invalid',name:'',version:CONSENT_VERSION,requestedAt},origin);
+ assert.equal(payload.attributes.PRENUME,undefined);assert.equal(payload.attributes.CONSENT_VERSION,CONSENT_VERSION);assert.equal(payload.attributes.CONSENT_SOURCE,'community');assert.equal(payload.attributes.CONSENT_REQUESTED_AT,new Date(requestedAt*1000).toISOString());assert.deepEqual(payload.includeListIds,[3]);
  }finally{restore();e.DB.close();}
 });

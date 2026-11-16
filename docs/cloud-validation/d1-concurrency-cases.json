@@ -1,0 +1,35 @@
+{
+  "preparedOnly": true,
+  "concurrency": 6,
+  "setup": [
+    "INSERT INTO offerings(id,kind,title,status,starts_at,ends_at,capacity,location) VALUES('validation-load','live','Fixture cloud','open',unixepoch()+7200,unixepoch()+10800,3,'Sintetic');",
+    "INSERT INTO offerings(id,kind,title,status,starts_at,ends_at,capacity,location) VALUES('validation-duplicate','live','Fixture cloud','open',unixepoch()+7200,unixepoch()+10800,10,'Sintetic');"
+  ],
+  "capacity": [
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-load-0','validation-load','load-0@example.invalid','Fixture','hash-validation-load-0','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-load-1','validation-load','load-1@example.invalid','Fixture','hash-validation-load-1','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-load-2','validation-load','load-2@example.invalid','Fixture','hash-validation-load-2','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-load-3','validation-load','load-3@example.invalid','Fixture','hash-validation-load-3','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-load-4','validation-load','load-4@example.invalid','Fixture','hash-validation-load-4','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-load-5','validation-load','load-5@example.invalid','Fixture','hash-validation-load-5','reserved',unixepoch());"
+  ],
+  "duplicates": [
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-duplicate-0','validation-duplicate','same-address@example.invalid','Fixture','hash-validation-duplicate-0','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-duplicate-1','validation-duplicate','same-address@example.invalid','Fixture','hash-validation-duplicate-1','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-duplicate-2','validation-duplicate','same-address@example.invalid','Fixture','hash-validation-duplicate-2','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-duplicate-3','validation-duplicate','same-address@example.invalid','Fixture','hash-validation-duplicate-3','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-duplicate-4','validation-duplicate','same-address@example.invalid','Fixture','hash-validation-duplicate-4','reserved',unixepoch());",
+    "INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at) VALUES('validation-duplicate-5','validation-duplicate','same-address@example.invalid','Fixture','hash-validation-duplicate-5','reserved',unixepoch());"
+  ],
+  "expected": {
+    "capacitySuccess": 3,
+    "capacityConstraintFailures": 3,
+    "duplicateSuccess": 1,
+    "duplicateConstraintFailures": 5
+  },
+  "checks": [
+    "SELECT offering_id,count(*) occupied FROM registrations WHERE offering_id IN ('validation-load','validation-duplicate') AND status IN ('reserved','confirmed') GROUP BY offering_id;",
+    "PRAGMA foreign_key_check;"
+  ],
+  "execution": "After approval only: verify exact account/new D1 UUID and marker before each batch. Submit each statement as a separate remote D1 request, at most six in parallel. Record constraint failures individually; never retry rejected inserts. No DELETE, no production import. Inspect metrics; stop on unexpected failure or budget limit."
+}

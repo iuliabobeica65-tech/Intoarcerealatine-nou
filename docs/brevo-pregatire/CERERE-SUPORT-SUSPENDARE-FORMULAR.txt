@@ -1,0 +1,9 @@
+Subiect: Suspendare server-side, fără ștergere, a unui singur formular de test
+
+Vă rugăm să suspendați exclusiv endpointul formularului 6af5c20e8646ba0a458ab642, ER TEST | Newsletter DOI nativ | PREGATIT, fără ștergerea lui sau a datelor și fără modificarea altor formulare, contacte, liste ori șabloane.
+
+Formularul este afișat public și are POST/submit activ înainte de apăsarea Done. Nu am trimis formularul și nu dorim înscrieri sau mesaje. Vă rugăm să confirmați dacă poate procesa înscrieri în această stare și ce control server-side îl oprește complet.
+
+Șablonul DOI implicit asociat este #8. Confirmați dacă dezactivarea sa oprește orice expediere pentru acest formular, dacă există fallback și dacă mai pot fi create contacte pending. Avem nevoie de o restricție reală numai la un destinatar autorizat pentru un test ulterior; nu trimiteți e-mailuri de probă și nu activați automatizări.
+
+Nu autorizați reactivare, ștergere, schimbări globale sau modificarea altor servicii. Confirmați soluția înaintea oricărei intervenții cu efect mai larg decât suspendarea acestui formular.

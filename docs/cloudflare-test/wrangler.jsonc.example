@@ -5,6 +5,7 @@
   "pages_build_output_dir": "../../dist",
   "vars": {
     "TEST_MODE": "true",
+    "TEST_BREVO_LIST_ID": "4",
     "APP_ORIGIN": "https://preview.example.invalid",
     "COMMUNITY_ENABLED": "false",
     "REGISTRATIONS_ENABLED": "false",

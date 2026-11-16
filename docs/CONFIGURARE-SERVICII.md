@@ -1,4 +1,25 @@
+> Decizia curentă newsletter: [colectare voluntară, numai DOI, fără welcome sau promovare](NEWSLETTER-COLECTARE-PREVIEW.md). Preview privat, colectare OFF; condițiile pentru activare sunt în raport.
+
+> Starea curentă: [finalizarea tehnică din 15.11.2026](FINALIZARE-TEHNICA-2026-11-15.md). Notele datate de mai jos păstrează istoricul și nu autorizează activări.
+
+## Integrare locală Google pregătită — 15.11.2026
+
+`GOOGLE_APPOINTMENTS_ENABLED=false` și `GOOGLE_APPOINTMENT_URL` gol păstrează butonul ascuns. După aprobarea URL-ului/setărilor, API-ul poate expune numai linkul HTTPS al paginii de programări Google, fără query/fragment. Linkul este pregătit în pagina locală de ședințe; WhatsApp rămâne disponibil. Nu se contactează Google înainte de click, nu se creează programări prin API și nu se dublează notificările în Brevo. Vezi raportul curent și `docs/brevo-pregatire/activation-map.json` pentru maparea publică încă necompletată. Testul privat evenimente/administrare este trecut și OFF restaurat; nu îl relansa.
 # Configurare servicii — fără secrete
+
+## Panou local curent — fără configurări de cont
+
+Comanda `npm run admin:local`, port loopback 4180, pornește API-ul existent pe SQLite sintetic, fără citirea secretelor comerciale din mediu. Pentru detalii, backup și limite citește [raportul panoului](PANOU-LOCAL-SARCINA-RECUPERARE-2026-11-12.md). Versiunea minimă Node este 22.16; verificat cu 24.21. Nu publica acest runtime drept backend: Workers + D1 rămân arhitectura de producție. Schema pregătită este 0001–0006; aplicarea ei în D1 necesită aprobare separată.
+
+Migrarea 0006 optimizează listarea evenimentelor, selectarea participanților și curățarea rate-limiturilor. Planul D1/Workers și cotele trebuie evaluate în mediul izolat înainte de trafic real; un test SQLite local nu certifică debitul cloud. Nu s-au instalat schedulere/replici, făcut upgrade sau schimbat setări externe.
+
+## Actualizare 12.11.2026 — API administrativ local
+
+Vezi [raportul curent](CONTINUARE-INFRASTRUCTURA-2026-11-12.md) pentru rute, paginare și limite. /api/admin/events, participants, outbox, message-preview și payments sunt consultări POST JSON autorizate. prepare-reminders pregătește fără trimitere; cancel-registration anulează fără refund automat. ADMIN_TOKEN rămâne numai server-side; nu îl introduce în URL/HTML sau documente. REGISTRATIONS_ENABLED și D1 sunt necesare inclusiv pentru administrare; configurația actuală externă OFF nu se modifică. Accesul Cloudflare și tokenul aplicației sunt verificări separate.
+
+Migrarea 0005-event-admin.sql este pregătită/testată numai local. Nu aplica migrarea pe producție; un nou pachet și orice bază izolată necesită aprobare separată. Nu există cron/scheduler instalat. Nu activa EMAIL_SEND_ENABLED sau lista de șabloane aprobate pentru simpla examinare a cozii.
+
+Programările individuale sunt Google Calendar Appointment Schedules (issue #82), nu API-ul de evenimente; crearea tipului session prin admin este refuzată, codul vechi fiind păstrat. Nu se dublează confirmările/reminderele Google în Brevo. URL-ul Google și setările 30 min/gratuit/notificări nu sunt confirmate; linkurile WhatsApp/Messenger prezente local nu demonstrează rezervarea sau livrarea mesajelor. contact@iuliabobeica.ro ca expeditor verificat nu demonstrează recepția căsuței poștale.
 
 ## Continuare locală sigură — 9 noiembrie 2026
 
@@ -109,3 +130,20 @@ Facturare: modulele `infrastructure/invoicing.mjs` oferă pregătire invoice/cre
 D1 conține e-mailuri administrative și eventual date fiscale; nu sunt date publice. Limitează accesul contului Cloudflare și folosește MFA. Profilele fiscale sunt într-un tabel distinct, nu în marketing. Nu au fost introduse date reale în teste.
 
 Stabilește cu responsabilul juridic retenția solicitărilor neconfirmate, înscrierilor, comenzilor și documentelor fiscale; implementează apoi exportul/ștergerea verificată, excepțiile legale și rotația/back-upul. Nu activa colectarea până la stabilirea procedurii. Retenția fiscală nu se echivalează cu retenția newsletterului. Nu șterge dovezi sau facturi la dezabonare fără analiza obligațiilor aplicabile.
+
+
+### Actualizare 13.11.2026 — pregatire validare cloud, fara executie
+
+Planul consolidat este in `docs/cloud-validation/PLAN-CONSOLIDAT-2026-11-13.md`. Pachet administrativ privat separat (11 fisiere), Worker compilat offline, D1 nou doar proiectat, sase migratii existente pastrate. 9 teste locale noi trecute; 11/11 verificari ale sablonului de configurare. Scenariile externe si rollback sunt pregatite, nu executate. ID D1/AUD/preflight/cote raman de verificat dupa aprobarea consolidata. Brevo, productia, GitHub si Cloudflare nu au fost modificate. Testele cloud istorice nu au fost repetate. Nu reprezinta lansare sau plati functionale.
+
+
+### Executie izolata 13.11.2026 — stare finala OFF verificata
+
+Raport curent: `docs/cloud-validation/REZULTATE-CLOUD-2026-11-13.md`. OAuth cu cele 5 permisiuni confirmat. O baza D1 noua, sase migratii trecute, 8/8 scenarii D1 remote si 2/2 teste locale noi ale exporturilor reale. Time Travel verificat. Un deployment privat de validare si republicarea necesara a artefactului OFF original, exclusiv Preview. Variabilele initiale restaurate exact, bindingul D1 si secretele administrative noi eliminate din cloud; vechiul deployment de test blocat prin rotirea marcajului bazei. Panoul/API-ul autentificat in browser NU sunt confirmate (control browser blocat). Nicio productie, GitHub, Brevo, plata sau expediere reala modificata. Nu este lansare publica si nu este benchmark end-to-end.
+
+
+### Continuare newsletter API — 13.11.2026
+
+Decizia curenta revine la un singur flux DOI API, fara stergerea variantei native. Raport: `docs/brevo-pregatire/DOI-API-CONTINUARE-2026-11-13.md`; inventar: `decision-api-2026-11-13.json`. Raspunsul oficial Brevo #5670720 transmis de Iulia confirma lista dupa click si DOUBLE_OPT-IN=Yes, dar nu inlocuieste testul real. ID-uri: lista test #4, DOI API candidat #2, automatizare #1 INACTIVA, mesaj welcome #7 (sursa #3); #6/#8 raman ale fluxului nativ istoric. Nu s-au schimbat ID-uri/configurari live.
+
+Corectie numai locala: claim atomic rolling 24h, erori ambigue pastrate pending, fara fabricarea confirmarii sau reabonare automata. 5 teste noi + 3 regresii relevante trecute, build API offline reusit, indexul existent reutilizat; fara migratii noi. Preferinte, unsubscribe/suprimare, welcome unic si panou cloud autentificat raman netestate end-to-end. Formularul gazduit are risc public rezidual; nu se distribuie linkul. Cloudflare ramane OFF, fara operatiuni externe, push, deployment sau mesaje.

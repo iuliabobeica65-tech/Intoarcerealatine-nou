@@ -1,0 +1,22 @@
+Subiect: Suspendare exclusivă a endpointului unui formular găzduit, fără ștergere și fără modificarea șabloanelor
+
+Vă rugăm să suspendați/blocați exclusiv endpointul formularului 6af5c20e8646ba0a458ab642, numit ER TEST | Newsletter DOI nativ | PREGATIT. Păstrați integral formularul, configurația, ID-ul, istoricul și datele existente.
+
+Formularul de test a fost observat accesibil fără autentificare, cu un formular POST și buton de trimitere activ în pagină, înainte de apăsarea Done. Nu l-am trimis și nu am verificat acceptarea server-side a înscrierilor. Nu dorim să primească înscrieri, să creeze/modifice contacte sau să declanșeze mesaje în această etapă.
+
+Limite obligatorii:
+- Nu dezactivați și nu modificați șablonul DOI #8 sau alte șabloane (#9, #10, #11 ori cele personalizate).
+- Nu modificați alte formulare, liste, contacte, automatizări, servicii sau setări globale ale contului.
+- Nu ștergeți formularul și nu îl înlocuiți. Nu eliminați DOI și nu îl treceți pe confirmare simplă/fără confirmare.
+- Nu trimiteți mesaje de test și nu faceți înscrieri pentru verificare.
+- Nu efectuați schimbări la site-uri sau Cloudflare.
+
+Vă rugăm să confirmați:
+1. Există o comandă oficială de suspendare a acestui formular/endpoint fără ștergere? Dacă da, aplicați-o numai dacă este limitată strict la formularul identificat și nu afectează alte resurse. Dacă nu, explicați alternativa înainte de orice intervenție.
+2. După suspendare, atât pagina găzduită, cât și submitul direct (inclusiv codul embed sau URL-uri generate anterior) refuză cererile fără creare/modificare de contacte, mesaje sau evenimente care declanșează automatizări? Explicați efectul asupra eventualelor solicitări DOI deja în așteptare; nu le modificați fără o nouă autorizare.
+3. Ce rol are Done și din ce etapă endpointul poate procesa înscrieri?
+4. În ce formulare/fluxuri este folosit șablonul DOI #8? Este cerută numai verificarea utilizărilor, fără modificare sau export de contacte.
+5. Există un mod oficial de test cu restricție server-side la o singură adresă autorizată? O listă separată, un URL nedistribuit și autentificarea pe un alt site nu sunt suficiente. Nu activați acest mod și nu solicitați credențiale în răspuns.
+6. Cum se reactivează ulterior numai acest formular, păstrând configurația și istoricul? Nu îl reactivați acum.
+
+Dacă suspendarea necesită ștergere, modificări globale, dezactivarea unui șablon partajat sau efecte asupra altor resurse, opriți-vă și prezentați exact operațiunea pentru o aprobare nouă. Vă rugăm să confirmați rezultatul și limitele fără trimiterea de e-mailuri de marketing/tranzacționale sau teste.

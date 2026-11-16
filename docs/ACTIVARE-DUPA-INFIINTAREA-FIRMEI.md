@@ -1,5 +1,15 @@
 # Activare după înființarea firmei/PFA
 
+## Actualizare locală — 12.11.2026
+
+Raport curent: [CONTINUARE-INFRASTRUCTURA-2026-11-12.md](CONTINUARE-INFRASTRUCTURA-2026-11-12.md). Se păstrează cerințele și sursele istorice de mai jos. Nicio activare este autorizată implicit.
+
+În această continuare: ledger administrativ al comenzilor/refund/review, fără export de date fiscale; semnale pentru plată paid după anulare sau failed cu loc încă rezervat. SmartBill payload refuză date fiscale obligatorii lipsă/nevalide, dată de emitere imposibilă și referință PaymentIntent lipsă. Nu există transport de emitere reală, iar sendEmail=false și fiscal_issuance_locked rămân obligatorii. Mockurile și valorile Fixture/LOCAL sunt numai în teste.
+
+Date de completat după înființare: denumire și formă juridică, CUI/CIF/registru, sediu, reprezentant, bancă/IBAN și KYC Stripe, regim TVA validat de contabil, produse/servicii și prețuri aprobate, condiții de anulare/refund și termeni/retentie date, abonament SmartBill confirmat, un singur emitent nativ/API, serii/numere/date și regulile stornării, SPV/certificat/autorizări e-Factura, responsabil pentru validări/respingere/XML/recipise/arhivare și un singur expeditor al facturii. Aceste date nu sunt inventate și nu se cer chei în chat.
+
+Nu este suficientă schimbarea unui flag pentru lansare: sunt necesare transporturile/configurarea live aprobate, teste autorizate Stripe și facturare cu contabilul și reconciliere. Rambursarea nu emite automat storno și anularea unei înscrieri nu inițiază refund. Datele și obligațiile concrete se reverifică la activare, fără a presupune că un termen fiscal istoric se aplică atunci.
+
 ## Continuare locală sigură — 9 noiembrie 2026
 
 Instrucțiunea suplimentară este păstrată în CERERE-CONTINUARE-2026-11-09.txt. Raportul actual este RAPORT-CONTINUARE-2026-11-09.md; stările mai vechi de mai jos rămân istoric.
@@ -86,3 +96,20 @@ Alege `INVOICE_EMAIL_SENDER=brevo|smartbill|none`. Dacă Brevo trimite, dezactiv
 4. Webhookuri live separate, semnături, secrete, baze și acces de producție separate de preview. Nu copia datele clientelor în medii de test.
 5. Teste finale autorizate împreună cu contabilul, reconciliere plată–factură–încasare–recipisă, rambursare/storno și un singur e-mail.
 6. Backup, raport de regresie, PR draft revizuit, aprobarea explicită a Iuliei înainte de merge/publicare. Monitorizare și procedură de oprire după lansare.
+
+
+### Actualizare 13.11.2026 — pregatire validare cloud, fara executie
+
+Planul consolidat este in `docs/cloud-validation/PLAN-CONSOLIDAT-2026-11-13.md`. Pachet administrativ privat separat (11 fisiere), Worker compilat offline, D1 nou doar proiectat, sase migratii existente pastrate. 9 teste locale noi trecute; 11/11 verificari ale sablonului de configurare. Scenariile externe si rollback sunt pregatite, nu executate. ID D1/AUD/preflight/cote raman de verificat dupa aprobarea consolidata. Brevo, productia, GitHub si Cloudflare nu au fost modificate. Testele cloud istorice nu au fost repetate. Nu reprezinta lansare sau plati functionale.
+
+
+### Executie izolata 13.11.2026 — stare finala OFF verificata
+
+Raport curent: `docs/cloud-validation/REZULTATE-CLOUD-2026-11-13.md`. OAuth cu cele 5 permisiuni confirmat. O baza D1 noua, sase migratii trecute, 8/8 scenarii D1 remote si 2/2 teste locale noi ale exporturilor reale. Time Travel verificat. Un deployment privat de validare si republicarea necesara a artefactului OFF original, exclusiv Preview. Variabilele initiale restaurate exact, bindingul D1 si secretele administrative noi eliminate din cloud; vechiul deployment de test blocat prin rotirea marcajului bazei. Panoul/API-ul autentificat in browser NU sunt confirmate (control browser blocat). Nicio productie, GitHub, Brevo, plata sau expediere reala modificata. Nu este lansare publica si nu este benchmark end-to-end.
+
+
+### Continuare newsletter API — 13.11.2026
+
+Decizia curenta revine la un singur flux DOI API, fara stergerea variantei native. Raport: `docs/brevo-pregatire/DOI-API-CONTINUARE-2026-11-13.md`; inventar: `decision-api-2026-11-13.json`. Raspunsul oficial Brevo #5670720 transmis de Iulia confirma lista dupa click si DOUBLE_OPT-IN=Yes, dar nu inlocuieste testul real. ID-uri: lista test #4, DOI API candidat #2, automatizare #1 INACTIVA, mesaj welcome #7 (sursa #3); #6/#8 raman ale fluxului nativ istoric. Nu s-au schimbat ID-uri/configurari live.
+
+Corectie numai locala: claim atomic rolling 24h, erori ambigue pastrate pending, fara fabricarea confirmarii sau reabonare automata. 5 teste noi + 3 regresii relevante trecute, build API offline reusit, indexul existent reutilizat; fara migratii noi. Preferinte, unsubscribe/suprimare, welcome unic si panou cloud autentificat raman netestate end-to-end. Formularul gazduit are risc public rezidual; nu se distribuie linkul. Cloudflare ramane OFF, fara operatiuni externe, push, deployment sau mesaje.

@@ -1,4 +1,30 @@
+> Decizia curentă newsletter: [colectare voluntară, numai DOI, fără welcome sau promovare](NEWSLETTER-COLECTARE-PREVIEW.md). Preview privat, colectare OFF; condițiile pentru activare sunt în raport.
+
+> Starea curentă: [finalizarea tehnică din 15.11.2026](FINALIZARE-TEHNICA-2026-11-15.md). Notele datate de mai jos păstrează istoricul și nu autorizează activări.
+
 # MASTER — Infrastructura digitala Echilibrarea Radacinilor
+
+## Stare curentă — panou local funcțional și teste de concurență
+
+[Raport complet](PANOU-LOCAL-SARCINA-RECUPERARE-2026-11-12.md). Workers + D1 rămân backendul decis; Brevo pentru e-mailuri și Google pentru programări. `npm run admin:local` oferă administrare pe API-ul existent și SQLite local cu date fictive: evenimente, capacitate/stări, înscrieri/anulări, mesaje, plăți și backup/restaurare. Nu este backend Node de producție. Interfața statică anterioară și codul existent sunt păstrate.
+
+23 teste noi + 30 regresii selectate PASS; 200 solicitări/25 locuri fără supravânzare, 80 duplicate cu efect unic, 30 webhookuri semnate repetate cu ledger/notificare unice, refund prioritar față de paid întârziat, dispatch concurent, rollback și recuperare. Migrarea 0006 adaugă indexuri; simulatorul batch este atomic. Performanța/cotele reale D1 nu sunt încă măsurate. Compilare offline Pages Functions PASS, fără publicare.
+
+Runtime local oprit; backupurile sintetice sunt păstrate. Fără push/merge/deploy, schimbări Brevo/site/Cloudflare/Google, plăți sau mesaje reale. Ultima stare cunoscută a ticketului #5670720 și riscul public al formularului nu au fost reverificate/modificate. Istoricul de mai jos rămâne integral.
+
+### Ultima completare locală — interfața administrativă demonstrativă
+
+tools/event-admin oferă acum consultarea vizuală în română a evenimentelor, locurilor, înscrierilor/anulărilor, mesajelor și plăților. Numai date sintetice, fără conexiune la backend real, fără modificări/expedieri și neinclusă în build-ul public. 6/6 teste noi și verificări de navigare în browser trecute; serverul temporar oprit. Integrarea reală rămâne de aprobat/pregătit separat; procentajele operaționale nu au fost crescute. Raportul și inventarul de mai jos au fost completate, păstrând istoricul.
+
+## Continuare locală — 12.11.2026, evenimente/admin/încasări
+
+Starea curentă și limitele sunt în [raportul consolidat](CONTINUARE-INFRASTRUCTURA-2026-11-12.md) și [inventarul local](stare-infrastructura.json). Istoricul de mai jos se păstrează integral; nu înseamnă autorizare de push, merge, deployment sau activare.
+
+Implementat local: consultare administrativă paginată (evenimente, persoane, mesaje și plăți), preview text fără expediere, anulare administrativă, pregătire remindere fără dispatch, capacitate administrată cu trigger D1 și control de revizie, anulări fără efect fals pentru completed și fără cozi la revizie veche, acces privat refuzat pentru eveniment plătibil fără plată, validare completă a datelor obligatorii din payloadul fiscal. Migrarea nouă este 0005-event-admin.sql, neaplicată în cloud. Este un API administrativ, nu un panou vizual sau un calendar nou.
+
+Validări: 17 teste noi + 9 regresii selectate PASS; build static local și compilare offline Pages Functions PASS. Nu au fost reluate integral 28/28, verificările Access/noindex sau POST-urile deploymentului anterior. Nicio modificare la sursele paginilor publice sau la site-ul oficial; niciun serviciu extern activat și niciun push/deploy.
+
+Brevo rămâne neschimbat, cu riscul public documentat și ticket #5670720. Ultima observație Open/fără răspuns este istorică; nu s-a recitit contul în această etapă. Google Appointment Schedules rămâne soluția pentru ședințe; nu există URL confirmat în sursa locală, deci funcționarea rezervării online nu este certificată. Stripe live și emiterea fiscală rămân blocate. Pregătire estimată: newsletter 40%, evenimente 80%, programări 20%, încasări 60%; barème și criterii în raport, nu procente de funcționare în producție.
 
 ## Actualizare: salvare GitHub și Preview autorizate
 
@@ -180,3 +206,40 @@ Stripe: configurare test si verificare la activarea reala.
 - Teste plati reusite/esec/rambursare si webhook idempotent.
 - Verificarea accesului si livrarii e-mailurilor.
 - PR revizuit si aprobat explicit inainte de lansare.
+
+
+### Actualizare 13.11.2026 — pregatire validare cloud, fara executie
+
+Planul consolidat este in `docs/cloud-validation/PLAN-CONSOLIDAT-2026-11-13.md`. Pachet administrativ privat separat (11 fisiere), Worker compilat offline, D1 nou doar proiectat, sase migratii existente pastrate. 9 teste locale noi trecute; 11/11 verificari ale sablonului de configurare. Scenariile externe si rollback sunt pregatite, nu executate. ID D1/AUD/preflight/cote raman de verificat dupa aprobarea consolidata. Brevo, productia, GitHub si Cloudflare nu au fost modificate. Testele cloud istorice nu au fost repetate. Nu reprezinta lansare sau plati functionale.
+
+
+### Preflight Cloudflare 13.11.2026 — aprobare primita, executie oprita
+
+Sesiunea existenta, contul si proiectul izolat confirmate; un singur Preview existent. Lipseste permisiunea d1:write. Nu s-a creat D1 si nu s-a facut deployment. Access/AUD/configuratia Preview si cotele necesita inca verificare curenta. Detalii: docs/cloud-validation/PREFLIGHT-2026-11-13.md.
+
+
+### Executie izolata 13.11.2026 — stare finala OFF verificata
+
+Raport curent: `docs/cloud-validation/REZULTATE-CLOUD-2026-11-13.md`. OAuth cu cele 5 permisiuni confirmat. O baza D1 noua, sase migratii trecute, 8/8 scenarii D1 remote si 2/2 teste locale noi ale exporturilor reale. Time Travel verificat. Un deployment privat de validare si republicarea necesara a artefactului OFF original, exclusiv Preview. Variabilele initiale restaurate exact, bindingul D1 si secretele administrative noi eliminate din cloud; vechiul deployment de test blocat prin rotirea marcajului bazei. Panoul/API-ul autentificat in browser NU sunt confirmate (control browser blocat). Nicio productie, GitHub, Brevo, plata sau expediere reala modificata. Nu este lansare publica si nu este benchmark end-to-end.
+
+
+### Continuare newsletter API — 13.11.2026
+
+Decizia curenta revine la un singur flux DOI API, fara stergerea variantei native. Raport: `docs/brevo-pregatire/DOI-API-CONTINUARE-2026-11-13.md`; inventar: `decision-api-2026-11-13.json`. Raspunsul oficial Brevo #5670720 transmis de Iulia confirma lista dupa click si DOUBLE_OPT-IN=Yes, dar nu inlocuieste testul real. ID-uri: lista test #4, DOI API candidat #2, automatizare #1 INACTIVA, mesaj welcome #7 (sursa #3); #6/#8 raman ale fluxului nativ istoric. Nu s-au schimbat ID-uri/configurari live.
+
+Corectie numai locala: claim atomic rolling 24h, erori ambigue pastrate pending, fara fabricarea confirmarii sau reabonare automata. 5 teste noi + 3 regresii relevante trecute, build API offline reusit, indexul existent reutilizat; fara migratii noi. Preferinte, unsubscribe/suprimare, welcome unic si panou cloud autentificat raman netestate end-to-end. Formularul gazduit are risc public rezidual; nu se distribuie linkul. Cloudflare ramane OFF, fara operatiuni externe, push, deployment sau mesaje.
+
+
+### Pregatire validare finala — 13.11.2026
+
+Raport adaugat: `docs/VALIDARE-FINALA-PREGATIRE-2026-11-13.md`; inventar separat: `docs/VALIDARE-FINALA-STARE-2026-11-13.json`. 6 teste noi ale instrumentelor de test trecute; zero apeluri externe. Backupurile 321/294 reverificate integral: 291 surse + 30 dovezi cloud versus 294 surse, cu trei surse noi si zero lipsa. Toate versiunile sunt pastrate. Cloudflare ramane OFF. Panoul autentificat, Brevo real si performanta HTTP nu sunt declarate validate; actiunile externe sunt consolidate in raport.
+
+
+### Profil HTTP/Turnstile pregatit local — 13.11.2026
+
+Raport: `docs/cloud-validation/HTTP-TURNSTILE-LOCAL-2026-11-13.md`. Pachet nou de 13 fisiere, build offline, reutilizare D1 existent si zero migratii noi. 7 teste noi + 3 regresii relevante trecute; browser local: 8 verificari, Access/Turnstile simulate, zero cereri externe. Profilul pastreaza JWT Access + Bearer + Origin + marcaj D1, adrese sintetice/evenimente gratuite si expirare maximum o ora. Brevo ramane separat: maximum un DOI/un welcome numai cu aprobare ulterioara. Pachetele vechi si documentele sunt pastrate. Niciun deployment/mesaj/activare in aceasta etapa; Cloudflare ramane OFF.
+
+
+### Execution HTTP privee terminee et OFF verifie — 13.11.2026
+
+Raport curent: `docs/cloud-validation/REZULTAT-HTTP-ACCESS-2026-11-13.md`. OAuth cu sase scope-uri confirmat; un widget Turnstile gratuit creat numai pentru aliasul privat, fara Spin. Deploymentul HTTP a refuzat accesul intern cu access_required; fluxul cloud nu este validat functional. Zero inscrieri HTTP, zero DOI/welcome, automatizarea Brevo neactivata si dezabonarea neexecutata. Revenire OFF verificata in maximum 10 minute: variabile restaurate, binding/secrete temporare eliminate, D1 restaurat (doua inscrieri sintetice/un eveniment/sase migratii), marcaj blocat, artefact OFF republicat in Preview. Productia/GitHub/site-ul oficial nemodificate. Diagnostic local separat pregatit, 3 teste noi + 2 regresii crypto trecute; necesita aprobare noua pentru deployment, maximum 15 minute, fara D1/Turnstile/Brevo.

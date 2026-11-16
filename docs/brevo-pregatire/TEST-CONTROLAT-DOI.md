@@ -1,4 +1,8 @@
+> **Decizia curenta 13.11.2026: DOI prin API Brevo, lista izolata #4 pentru test.** Urmeaza `DOI-API-CONTINUARE-2026-11-13.md`; continutul de mai jos pastreaza istoricul si nu autorizeaza activari. Formularul nativ existent nu a fost modificat.
+
 # Test controlat Brevo DOI — pregătit, neexecutat
+
+**Istoric, înlocuit pentru newsletter prin decizia din 12 noiembrie 2026.** Nu executa pașii API #2/lista #3 din acest document pentru noua abonare. Planul curent, încă neexecutat, este [formular nativ #6/lista izolată #4](FORMULAR-NATIV-DOI-2026-11-12.md). Codul și dovezile vechi se păstrează. Această notă nu acordă permisiunea de a activa sau trimite mesaje.
 
 Data: 9 noiembrie 2026. Niciun pas din acest document nu constituie aprobare de activare. Unicul test livrat până acum este previzualizarea editorială COM-02, confirmată în Inbox de Iulia.
 

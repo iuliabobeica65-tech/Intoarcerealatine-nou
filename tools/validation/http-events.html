@@ -1,0 +1,7 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Validare privată — evenimente sintetice</title><link rel="stylesheet" href="/admin.css"><script type="module" src="/http-events.mjs"></script></head>
+<body><header><h1>Validare HTTP privată</h1><p>Numai date example.invalid. Fără e-mailuri, plăți sau evenimente reale.</p></header><main>
+<form id="login"><label>Cod administrativ <input id="admin" type="password" required minlength="32" maxlength="512" autocomplete="off"></label><button>Conectează</button></form>
+<section id="test" hidden><button id="logout" type="button">Închide sesiunea locală</button>
+<form id="registration"><label>Eveniment sintetic <input id="event" value="validation-http" required pattern="validation-[a-zA-Z0-9-]{1,80}"></label><label>E-mail fictiv <input id="email" type="email" value="fixture-1@example.invalid" required></label><label><input id="consent" type="checkbox" required> Folosesc doar date fictive pentru testul aprobat.</label><div id="challenge"></div><button id="submit" disabled>Înscriere de test</button></form>
+<button id="refresh" type="button">Consultă înscrierile</button><table><thead><tr><th>ID</th><th>E-mail fictiv</th><th>Stare</th><th>Acțiune</th></tr></thead><tbody id="rows"></tbody></table></section>
+<p id="status" role="status"></p><p><a href="/">Panoul de consultare</a></p></main></body></html>

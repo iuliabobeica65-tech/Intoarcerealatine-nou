@@ -1,0 +1,49 @@
+{
+  "preparedOnly": true,
+  "publicActivationApproved": false,
+  "singleWelcomeSender": "none during collection-only phase",
+  "consent": {
+    "version": "community-2026-11-08-v1",
+    "localLedger": "request_only_HMAC_version_time",
+    "confirmedSource": "Brevo DOI history and subscribed status",
+    "neverInferFromRedirect": true,
+    "bookingDoesNotSubscribe": true
+  },
+  "isolatedValidated": {
+    "listId": 7,
+    "doiTemplateId": 12,
+    "automationId": 2,
+    "welcomeMessageId": 14,
+    "requiredState": "Inactive",
+    "realTestAlreadyPassed": true,
+    "repeatTestRequired": false,
+    "redirectTestOnly": "https://iuliabobeica.ro/live"
+  },
+  "existingHostedForm": {
+    "listId": 4,
+    "doiTemplateId": 8,
+    "modified": false,
+    "mayTargetList7": false,
+    "retainedAsHistoricalAlternative": true
+  },
+  "publicApiPrepared": {
+    "listId": 3,
+    "doiTemplateId": 15,
+    "automationId": null,
+    "welcomeMessageId": null,
+    "state": "OFF_list3_DOI15_dedicated_text_and_placement_approved_pending_legal_and_key",
+    "sender": "contact@iuliabobeica.ro",
+    "replyTo": "contact@iuliabobeica.ro",
+    "existingAutomation1ActivationApproved": false,
+    "listApproved": true
+  },
+  "activationRequirements": [
+    "new private Brevo key",
+    "activate only dedicated DOI #15 for public list #3 after final approval",
+    "no welcome or commercial automations; EMAIL_SEND_ENABLED=false",
+    "privacy/full identity/DPA/transfers/retention review",
+    "preserve original DOI #2 and native form #4/template #8",
+    "separate final public activation approval"
+  ],
+  "currentCollectionProfile": "newsletter-collection.json"
+}

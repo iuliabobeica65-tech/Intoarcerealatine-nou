@@ -1,0 +1,181 @@
+{
+  "mode": "doi_collection_only",
+  "preparedOnly": true,
+  "publicActivationApproved": false,
+  "operator": {
+    "name": "Bobeica Iulia-Alexandra",
+    "type": "individual",
+    "contact": "contact@iuliabobeica.ro",
+    "postalAddress": null,
+    "companyName": null,
+    "taxId": null,
+    "legalReviewRequired": true,
+    "publicName": "Iulia Bobeica – Echilibrarea rădăcinilor",
+    "identitySource": "explicit owner confirmation in this conversation",
+    "identityConfirmedByOwner": true,
+    "currentStatus": "persoană fizică, fără PFA sau SRL",
+    "personalIdentifiersPublishable": false,
+    "businessEntityExists": false
+  },
+  "futureCompanyTransfer": {
+    "approved": false,
+    "requiresLegalBasisReview": true,
+    "requiresNoticeReview": true,
+    "newConsentRequirementUndetermined": true
+  },
+  "publicListId": 3,
+  "doiTemplateCandidateId": 15,
+  "doiTemplateContentApprovedForThisPhase": true,
+  "isolatedList7Allowed": false,
+  "welcome": {
+    "enabled": false,
+    "automationId": null,
+    "messageId": null
+  },
+  "promotionalCampaignsEnabled": false,
+  "commercialAutomationsEnabled": false,
+  "consentVersion": "community-collection-only-v1",
+  "consentText": "Sunt de acord să primesc pe viitor e-mailuri de la Iulia Bobeica – Echilibrarea rădăcinilor despre noutăți, evenimente și programe. În prezent, voi primi doar mesajul necesar confirmării abonării. Îmi pot retrage acordul oricând.",
+  "mainStore": "Brevo",
+  "D1": {
+    "plaintextEmail": false,
+    "purpose": "existing technical anti-abuse request ledger; not subscriber database",
+    "hmacIsPersonalData": true,
+    "retentionDaysProposed": 7,
+    "retentionAutomated": false
+  },
+  "retentionProposed": {
+    "unconfirmedLogsDays": 30,
+    "collectionPhaseReviewMonths": 12,
+    "suppressionAndEvidence": "minimum justified duration pending legal review",
+    "backupDays": 65,
+    "providerRetentionConfigured": false,
+    "legallyApproved": false,
+    "reviewAtMonths": 6,
+    "collectionHardLimitMonthsFromConfirmation": 12,
+    "onNoLaunchAtHardLimit": "remove from active collection and delete absent separately documented basis; no reactivation email; no automatic extension",
+    "acceptedAsProposalOnly": true,
+    "backupGenerations": 2,
+    "automaticDeletionEnabled": false
+  },
+  "activationGates": [
+    "fresh private Brevo key and concrete public configuration",
+    "public list #3 and dedicated inactive DOI #15 preserved",
+    "welcome and promotional automations OFF",
+    "effective retention, consent-evidence and suppression procedure legally validated",
+    "privacy/DPA/transfers/contact-information review; owner identity already confirmed",
+    "separate final public deployment approval"
+  ],
+  "proposedVars": {
+    "NEWSLETTER_COLLECTION_ONLY": "true",
+    "NEWSLETTER_AUTOMATIONS_REVIEWED": "false",
+    "TEST_MODE": "false",
+    "COMMUNITY_ENABLED": "false",
+    "EMAIL_SEND_ENABLED": "false",
+    "REGISTRATIONS_ENABLED": "false",
+    "PAYMENTS_TEST_ENABLED": "false",
+    "LIVE_PAYMENTS_ENABLED": "false",
+    "INVOICING_ENABLED": "false",
+    "GOOGLE_APPOINTMENTS_ENABLED": "false",
+    "BREVO_DOI_TEMPLATE_ID": "15",
+    "APPROVED_TEMPLATE_IDS": "[]",
+    "NEWSLETTER_PRIVACY_APPROVED": "false"
+  },
+  "preview": {
+    "collectionEnabled": false,
+    "providerCallsAllowed": false,
+    "D1Binding": false,
+    "secretsIncluded": false,
+    "AccessMustRemainActive": true
+  },
+  "currentBrevoUI": {
+    "externalResourcesChanged": true,
+    "legacyNativeTemplatesActive": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "campaign1": "Draft",
+    "publicListName": "Comunitatea Echilibrarea Rădăcinilor",
+    "automationsActive": 0,
+    "automationsInactive": [
+      1,
+      2
+    ],
+    "doi2": "Inactive",
+    "legacyNativeTemplatesExcludedFromNewFlow": true,
+    "publicListContacts": 0,
+    "onlyNewResourceChanged": "dedicated inactive DOI #15",
+    "doi15": "Inactive"
+  },
+  "routeClarification": {
+    "officialHomeFormsObserved": 0,
+    "officialCommunityObserved": "redirects_to_acasa_no_form",
+    "contactMigrationPerformed": false,
+    "doi2LiveText": "legacy news invitations offers; collection-only notice missing",
+    "legacyNativeListId": 4,
+    "legacyNativeFormId": "6af5c20e8646ba0a458ab642",
+    "newPreparedForm": "/api/community -> DOI API includeListIds [3]",
+    "doi2ModifiedExternally": false,
+    "legacyNativeEmbeddedInOfficialSiteVerified": false,
+    "legacySelectedListNameVerifiedNow": "ER | TEST DOI isolat | 2026-11-10",
+    "legacyFormSavePerformed": false
+  },
+  "publicListApproved": true,
+  "preserveList4AndExistingContacts": true,
+  "monthlyBackup": {
+    "categories": [
+      "contacts",
+      "doi",
+      "dezabonari"
+    ],
+    "cadence": "monthly_manual_prepared",
+    "script": "scripts/newsletter-backup.ps1",
+    "realExportsPerformed": 0,
+    "source": "operator_export_from_Brevo",
+    "externalJobCreated": false,
+    "encryption": "AES-256-GCM_PBKDF2-SHA256"
+  },
+  "placement": {
+    "proposedPath": "/newsletter",
+    "approved": true,
+    "proposedEntry": "home_before_footer_and_footer_link",
+    "productionCommunityRedirectUnchanged": true,
+    "apiSourceAndRedirectAlignmentPendingPathApproval": false,
+    "homeInlineForm": true
+  },
+  "doiTextReview": {
+    "fullText": "DOI-15-TEXT-APROBAT.txt",
+    "presentBeforeBrevoModification": true,
+    "approved": true,
+    "modifiedInBrevo": true,
+    "dedicatedTemplateId": 15,
+    "originalTemplate2Unchanged": true
+  },
+  "templateAssociationAudit": {
+    "realEmails": 0,
+    "contactsModified": 0,
+    "legacyNativeFormList": 4,
+    "newDedicatedTemplate": 15,
+    "preservedTemplates": [
+      2,
+      8,
+      12
+    ],
+    "template2ReferencedInExistingControlledApiProfile": true,
+    "legacyNativeTemplate": 8,
+    "newTemplateActive": false
+  },
+  "gdprRemainingInformation": {
+    "identityMissing": false,
+    "exactEvidenceRetentionTerm": null,
+    "exactSuppressionRetentionTerm": null,
+    "providerRetentionVerified": false,
+    "processorAgreementsAndTransfersReviewed": false,
+    "rightsRequestProcedureValidated": false,
+    "contactMailboxMonitoringConfirmed": false,
+    "proposedRetentionLegallyApproved": false,
+    "privacyPublicationApproved": false
+  }
+}

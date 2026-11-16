@@ -1,0 +1,35 @@
+{
+  "preparedOnly": true,
+  "deploymentApproved": false,
+  "project": "er-brevo-test-izolat",
+  "branch": "pregatire-infrastructura-email-plati",
+  "environment": "preview",
+  "vars": {
+    "APP_ORIGIN": "https://pregatire-infrastructura-ema.er-brevo-test-izolat.pages.dev",
+    "TEST_MODE": "true",
+    "TEST_BREVO_LIST_ID": "7",
+    "BREVO_DOI_TEMPLATE_ID": "12",
+    "TEST_DOI_REDIRECTION_URL": "https://iuliabobeica.ro/live",
+    "COMMUNITY_ENABLED": "false",
+    "REGISTRATIONS_ENABLED": "false",
+    "EMAIL_SEND_ENABLED": "false",
+    "PAYMENTS_TEST_ENABLED": "false",
+    "LIVE_PAYMENTS_ENABLED": "false",
+    "INVOICING_ENABLED": "false",
+    "BILLING_PROVIDER": "mock",
+    "INVOICE_EMAIL_SENDER": "none",
+    "APPROVED_TEMPLATE_IDS": "[]",
+    "GOOGLE_APPOINTMENTS_ENABLED": "false",
+    "GOOGLE_APPOINTMENT_URL": ""
+  },
+  "brevoAutomation": {
+    "id": 2,
+    "welcomeMessageId": 14,
+    "requiredState": "Inactive"
+  },
+  "secretsIncluded": false,
+  "newBrevoKeyRequired": true,
+  "d1BindingIncluded": false,
+  "turnstileSecretIncluded": false,
+  "notes": "Current OFF preparation only. No automatic activation, deployment, migration or provider operation. Normal public newsletter list remains #3; activating it requires separate review of the existing Brevo trigger."
+}

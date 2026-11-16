@@ -50,8 +50,11 @@ export async function reconcilePayment(env,event) {
   env.DB.prepare("UPDATE orders SET status=CASE WHEN status='refunded' THEN 'refunded' WHEN status='paid' AND ?!='refunded' THEN 'paid' ELSE ? END,session_id=?,payment_intent=?,updated_at=? WHERE id=?").bind(state,state,sessionId,pi||null,now(),order.id),
   env.DB.prepare("UPDATE registrations SET status=CASE WHEN (SELECT status FROM orders WHERE id=?)='refunded' THEN 'cancelled' WHEN (SELECT status FROM orders WHERE id=?)='paid' AND ? THEN 'confirmed' ELSE status END WHERE id=? AND status NOT IN ('cancelled','completed')").bind(order.id,order.id,validAccess?1:0,order.registration_id)
  ];
- if(state==='paid')statements.push(env.DB.prepare('INSERT OR IGNORE INTO invoice_jobs(order_id) VALUES(?)').bind(order.id));
- statements.push(env.DB.prepare('INSERT OR IGNORE INTO outbox(id,registration_id,template_id,revision,due_at) SELECT ?,r.id,?,o.revision,? FROM registrations r JOIN offerings o ON o.id=r.offering_id WHERE r.id=?').bind(crypto.randomUUID(),state==='paid'?'PAY-01':state==='refunded'?'PAY-04':state==='failed'?'PAY-02':'PAY-03',now(),order.registration_id));
+ if(state==='paid')statements.push(env.DB.prepare("INSERT OR IGNORE INTO invoice_jobs(order_id) SELECT id FROM orders WHERE id=? AND status='paid'").bind(order.id));
+ // Choose from the committed order state: a concurrent refund wins over stale paid work.
+ statements.push(env.DB.prepare(`INSERT OR IGNORE INTO outbox(id,registration_id,template_id,revision,due_at)
+  SELECT ?,r.id,CASE p.status WHEN 'paid' THEN 'PAY-01' WHEN 'refunded' THEN 'PAY-04' WHEN 'failed' THEN 'PAY-02' ELSE 'PAY-03' END,o.revision,?
+  FROM registrations r JOIN offerings o ON o.id=r.offering_id JOIN orders p ON p.registration_id=r.id WHERE r.id=?`).bind(crypto.randomUUID(),now(),order.registration_id));
  await env.DB.batch(statements);
  return {processed:true};
 }

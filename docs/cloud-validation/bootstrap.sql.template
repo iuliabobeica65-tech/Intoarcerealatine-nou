@@ -1,0 +1,13 @@
+-- PREPARATION ONLY: replace marker only after confirming the newly created D1 ID.
+CREATE TABLE _validation_identity(marker TEXT PRIMARY KEY, purpose TEXT NOT NULL);
+INSERT INTO _validation_identity VALUES('NOT_CREATED','er-brevo-test-izolat-events-validation');
+-- No production import and no copy of contacts/orders/backups.
+INSERT INTO offerings(id,kind,title,status,starts_at,ends_at,capacity,location)
+VALUES('validation-capacity','live','Validare sintetica, nu eveniment real','open',unixepoch()+7200,unixepoch()+10800,3,'Localizare sintetica');
+INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at)
+VALUES('validation-reserved','validation-capacity','reserved@example.invalid','Fixture','validation-hash-reserved','reserved',unixepoch());
+INSERT INTO registrations(id,offering_id,email,name,token_hash,status,created_at)
+VALUES('validation-confirmed','validation-capacity','confirmed@example.invalid','Fixture','validation-hash-confirmed','confirmed',unixepoch());
+INSERT INTO orders(id,registration_id,amount,currency,status,updated_at)
+VALUES('validation-order','validation-reserved',100,'ron','paid',unixepoch());
+INSERT INTO invoice_jobs(order_id) VALUES('validation-order');

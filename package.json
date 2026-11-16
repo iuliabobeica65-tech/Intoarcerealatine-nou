@@ -5,7 +5,20 @@
   "scripts": {
     "build": "node scripts/build-cloudflare.mjs",
     "test": "node --test qa/infrastructure.test.mjs",
-    "verify": "node qa/verify-infrastructure.mjs"
+    "test:newsletter-integration": "node --test qa/newsletter-final-integration.test.mjs",
+    "test:final-local": "node --test qa/final-local-completion.test.mjs",
+    "test:events": "node --test qa/events-admin.test.mjs",
+    "test:billing": "node --test qa/billing-preparation.test.mjs",
+    "test:admin-view": "node --test qa/admin-view.test.mjs",
+    "test:admin-connector": "node --test qa/protected-reader.test.mjs",
+    "test:load": "node --test qa/load-recovery.test.mjs",
+    "test:local-admin": "node --test qa/local-admin-runtime.test.mjs",
+    "preview:admin": "node scripts/preview-event-admin.mjs",
+    "admin:local": "node scripts/local-event-admin.mjs",
+    "verify": "node qa/verify-infrastructure.mjs",
+    "test:newsletter-collection": "node --test qa/newsletter-collection.test.mjs"
   },
-  "engines": { "node": ">=22.13" }
+  "engines": {
+    "node": ">=22.16"
+  }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "er-brevo-test-izolat",
+  "account_id": "b954dd025a008e1c784797b561e0d55f",
+  "pages_build_output_dir": "../../.local/cloud-validation/package",
+  "compatibility_date": "2026-11-13",
+  "d1_databases": [],
+  "vars": {"VALIDATION_ACTIVE": "false", "COMMUNITY_ENABLED": "false", "REGISTRATIONS_ENABLED": "false", "EMAIL_SEND_ENABLED": "false", "PAYMENTS_TEST_ENABLED": "false", "LIVE_PAYMENTS_ENABLED": "false", "INVOICING_ENABLED": "false"},
+  "env": {
+    "preview": {
+      "d1_databases": [{"binding": "DB", "database_name": "er-brevo-test-izolat-events-validation", "database_id": "NOT_CREATED", "migrations_dir": "../../infrastructure/migrations"}],
+      "vars": {"TEST_PROJECT": "er-brevo-test-izolat", "VALIDATION_STAGE": "preview", "VALIDATION_ACTIVE": "false", "VALIDATION_DATABASE_MARKER": "NOT_CREATED", "APP_ORIGIN": "https://pregatire-infrastructura-ema.er-brevo-test-izolat.pages.dev", "ACCESS_TEAM_ORIGIN": "https://empty-star-0bba.cloudflareaccess.com", "ACCESS_PREVIEW_AUD": "NOT_VERIFIED", "COMMUNITY_ENABLED": "false", "REGISTRATIONS_ENABLED": "true", "EMAIL_SEND_ENABLED": "false", "PAYMENTS_TEST_ENABLED": "false", "LIVE_PAYMENTS_ENABLED": "false", "INVOICING_ENABLED": "false", "APPROVED_TEMPLATE_IDS": "[]", "BILLING_PROVIDER": "mock", "INVOICE_EMAIL_SENDER": "none"}
+    }
+  }
+}

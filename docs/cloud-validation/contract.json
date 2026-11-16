@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "preparedOn": "2026-11-13",
+  "accountId": "b954dd025a008e1c784797b561e0d55f",
+  "project": "er-brevo-test-izolat",
+  "branch": "pregatire-infrastructura-email-plati",
+  "environment": "preview",
+  "origin": "https://pregatire-infrastructura-ema.er-brevo-test-izolat.pages.dev",
+  "databaseName": "er-brevo-test-izolat-events-validation",
+  "databaseId": "d630add8-e006-4379-b3ee-0b16307afdcb",
+  "databaseCreated": true,
+  "databaseMarker": "970b4416-ae5d-4681-a65a-3bd468979e59",
+  "migrations": [
+    "0001.sql",
+    "0002-smartbill.sql",
+    "0003-lifecycle.sql",
+    "0004-invoice-refund.sql",
+    "0005-event-admin.sql",
+    "0006-load-indexes.sql"
+  ],
+  "accessTeamOrigin": "https://empty-star-0bba.cloudflareaccess.com",
+  "previewAudience": "2159d61912426502d5eba15e4dd5c5a1a8e2b895cf1dfda7d3a0c175bf9e147d",
+  "ownerIdentityStoredInRepository": false,
+  "externalOperationsApproved": true,
+  "cloudResourcesCreated": true,
+  "deploymentExecuted": true,
+  "fixturePrefix": "validation-",
+  "fixtureEmailDomain": "example.invalid",
+  "publicRegistrationEnabled": false,
+  "externalProviderCallsAllowed": false,
+  "maxConcurrentD1Queries": 6,
+  "testBudget": {
+    "maxHttpRequests": 1000,
+    "maxSyntheticRegistrations": 400,
+    "maxNewDatabaseBytes": 10485760,
+    "maxEstimatedRowWrites": 10000
+  },
+  "rollbackArtifact": ".local/brevo-2026-11-11/deployment-off-1794421697090",
+  "rollbackDeploymentReference": "1d970123-ae77-41b5-b667-6bed20bae94c",
+  "previewIsNotNativeRollbackTarget": true,
+  "approvalScope": "isolated_validation_only",
+  "preflightStatus": "completed_isolated_HTTP_validation_OFF_restored",
+  "databaseGuardDisabled": true,
+  "frozenDatabaseMarker": "91169c60-1283-44f2-b0b5-043ee447de6e",
+  "validationDeploymentId": "c0f22a3a-9c3b-4fc5-8abc-a6787c098f60",
+  "validationDeploymentUrl": "https://c0f22a3a.er-brevo-test-izolat.pages.dev",
+  "offDeploymentId": "3fa0d41c-2fa6-4a16-83c7-67a23860fec0",
+  "offDeploymentUrl": "https://3fa0d41c.er-brevo-test-izolat.pages.dev",
+  "previewConfigurationOff": true,
+  "offHistory": [
+    {
+      "id": "5fa02c49-3a0b-441c-841e-ef4fbace632b",
+      "url": "https://5fa02c49.er-brevo-test-izolat.pages.dev"
+    },
+    {
+      "id": "41f0a85f-770a-4cce-a424-f2502684abfb",
+      "url": "https://41f0a85f.er-brevo-test-izolat.pages.dev"
+    },
+    {
+      "id": "aecd7d41-e6ad-42a4-ba69-3297fb442467",
+      "url": "https://aecd7d41.er-brevo-test-izolat.pages.dev"
+    },
+    {
+      "id": "64c23e22-8c28-4e39-a6e0-2f7d0504a1d5",
+      "url": "https://64c23e22.er-brevo-test-izolat.pages.dev"
+    }
+  ],
+  "lastHttpResult": "synthetic_registration_confirmed_admin_cancelled_OFF_restored",
+  "accessDiagnostic20261114": {
+    "completed": true,
+    "deploymentId": "85ded633-0c50-4c94-ad20-3fd4d337b303",
+    "stage": "public_keys",
+    "offRestored": true,
+    "OFFHashesVerified": 154,
+    "elapsedSeconds": 55,
+    "report": "docs/cloud-validation/REZULTAT-DIAGNOSTIC-ACCESS-2026-11-14.md"
+  },
+  "accessCorrectionConfirmation20261114": {
+    "authenticated": true,
+    "deploymentId": "1e104ba4-3681-4521-b775-491ea2a457e4",
+    "offRestored": true,
+    "elapsedSeconds": 61,
+    "backupsVerified": 3845,
+    "report": "docs/cloud-validation/REZULTAT-CONFIRMARE-ACCESS-2026-11-14.md"
+  },
+  "finalPrivateValidation20261115": {
+    "backupsVerified": 3845,
+    "OFFHashesVerified": 154,
+    "report": "docs/FINALIZARE-TEHNICA-2026-11-15.md",
+    "evidence": ".local/final-execution-2026-11-15/browser-result.json",
+    "elapsedSeconds": 155,
+    "participants": 1,
+    "events": 1,
+    "passed": true
+  },
+  "currentPreviewDeploymentId": "3987c5b7-83ee-4ea4-be5f-8e30e5aa46c5",
+  "currentPreviewKind": "static_newsletter_review_OFF",
+  "newsletterPreview": {
+    "report": "docs/NEWSLETTER-COLECTARE-PREVIEW.md",
+    "noCollection": true,
+    "id": "3987c5b7-83ee-4ea4-be5f-8e30e5aa46c5",
+    "originalOFFHashes": 154,
+    "noBindingOrSecrets": true,
+    "deploymentUrl": "https://3987c5b7.er-brevo-test-izolat.pages.dev/comunitate",
+    "url": "https://pregatire-infrastructura-ema.er-brevo-test-izolat.pages.dev/comunitate",
+    "originalOFFArtifactRetained": true,
+    "AccessProtected": true,
+    "proposedPlacementURL": "https://pregatire-infrastructura-ema.er-brevo-test-izolat.pages.dev/amplasare-newsletter",
+    "dedicatedDOITemplate": 15
+  }
+}

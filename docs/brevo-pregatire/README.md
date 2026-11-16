@@ -1,4 +1,18 @@
+> Decizia curentă newsletter: [colectare voluntară, numai DOI, fără welcome sau promovare](../NEWSLETTER-COLECTARE-PREVIEW.md). Preview privat, colectare OFF; condițiile pentru activare sunt în raport.
+
+> Starea curentă: [finalizarea tehnică din 15.11.2026](../FINALIZARE-TEHNICA-2026-11-15.md). Notele datate de mai jos păstrează istoricul și nu autorizează activări.
+
+> **Decizia curenta 13.11.2026: DOI prin API Brevo, lista izolata #4 pentru test.** Urmeaza `DOI-API-CONTINUARE-2026-11-13.md`; continutul de mai jos pastreaza istoricul si nu autorizeaza activari. Formularul nativ existent nu a fost modificat.
+
 # Pachet Brevo — infrastructura inițială, prioritară
+
+> **Ultima stare:** cererea V2 a fost trimisă cu aprobarea Iuliei; [ticket Brevo #5670720](https://help.brevo.com/hc/en-us/requests/5670720), Open. Suspendarea formularului NU este încă confirmată. #8 nemodificat, testul DOI neactivat. Formulările anterioare „netrimisă” rămân istorice.
+
+> **Decizie ulterioară de securizare:** #8 NU se dezactivează. Nu este exclusă folosirea lui în alte integrări. Cererea curentă, încă netrimisă, este [V2 — suspendare exclusivă a formularului](CERERE-SUPORT-SUSPENDARE-FORMULAR-V2.txt). Nu s-a identificat o comandă oficială de suspendare fără ștergere în UI/documentația consultată; se cere confirmarea furnizorului. Formularul nu este încă securizat. Recomandările anterioare de dezactivare #8 și cererea V1 sunt istoric și nu se execută.
+
+> **Ultima verificare în citire, 12.11.2026:** formularul este accesibil într-un browser separat fără login Brevo, înainte de Done; controalele și formularul POST sunt active în HTML. Nicio înscriere nu a fost trimisă, deci acceptarea server-side rămâne netestată. DOI implicit #8 este Active, în engleză, cu expeditor personal; #9–#11 apar de asemenea Active. Automatizarea #1 este Inactive, 0 porniri. Oprire înainte de orice test real: dezactivarea #8 necesită aprobare și nu înlocuiește suspendarea/protecția endpointului prin Brevo. Secțiunile de mai jos sunt istorice; inventarul și ultima secțiune a planului conțin starea actuală.
+
+**Stare curentă — 12 noiembrie 2026:** un singur formular nativ DOI există în cont: `6af5c20e8646ba0a458ab642`, numai lista #4, șablon implicit temporar, Final confirmation OFF, automatizarea #1 neactivată. Designul și mesajele sunt în română. Done nu a fost apăsat, integrarea nu este aplicată, dar Brevo a generat URL-ul la Share: **inactivitatea/accesul public nu sunt demonstrate**. Izolarea destinatarului rămâne blocaj; Access al site-ului nu protejează automat endpointul Brevo. [Plan, dovezi și limite](FORMULAR-NATIV-DOI-2026-11-12.md), [inventar de configurare](formular-nativ-pregatit.json). Instrucțiunile API de mai jos rămân istoric și nu se execută pentru newsletter; codul este păstrat.
 
 Confirmare ulterioară, 9 noiembrie 2026: Iulia a confirmat „A sosit în Inbox” pentru testul COM-02, ID 3. Livrarea acestui singur mesaj de test este validată prin confirmarea destinatarei. Nu validează întregul flux DOI, preferințele, dezabonarea sau livrarea către alte adrese. Șabloanele și automatizările rămân inactive.
 
@@ -66,3 +80,7 @@ Surse oficiale consultate: [DOI API](https://developers.brevo.com/reference/crea
 ## Următoarea execuție controlată
 
 Vezi [planul DOI](TEST-CONTROLAT-DOI.md): limite exacte, precondiții, scenarii, dovezi și oprire. Planul este pregătit, nu executat; nicio activare nouă.
+
+## Continuare 10 noiembrie 2026
+
+Vezi [starea actuală](CONTINUARE-2026-11-10.md): listă de test separată #4, draft gol #1 inactiv și protecție locală TEST_BREVO_LIST_ID. Niciun flux nou nu a fost activat; editorul și mediul izolat necesită continuare.

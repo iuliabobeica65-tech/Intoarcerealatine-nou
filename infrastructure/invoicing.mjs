@@ -15,8 +15,11 @@ export function validateBillingClient(client) {
  return Object.fromEntries(['type','name','country','city','address',...(client.type==='company'?['taxId']:[])].map(k=>[k,client[k].trim()]));
 }
 export function smartbillPayload(config,client,order) {
- if(!config.companyVatCode||!config.series||!config.productName||typeof config.taxName!=='string'||!Number.isFinite(config.taxPercentage)||config.taxPercentage<0||config.taxPercentage>100||typeof config.isTaxPayer!=='boolean')throw new HttpError(409,'fiscal_data_required');
+ const fiscalText=['companyVatCode','series','productName','taxName'].every(key=>typeof config[key]==='string'&&config[key].trim()&&config[key].length<=200&&!/[<>\x00-\x1f]/.test(config[key]));
+ const date=typeof config.issueDate==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(config.issueDate)?new Date(config.issueDate+'T00:00:00Z'):null;
+ if(!fiscalText||!date||!Number.isFinite(date.getTime())||date.toISOString().slice(0,10)!==config.issueDate||!Number.isFinite(config.taxPercentage)||config.taxPercentage<0||config.taxPercentage>100||typeof config.isTaxPayer!=='boolean')throw new HttpError(409,'fiscal_data_required');
  if(!Number.isSafeInteger(order.amount)||order.amount<=0||! /^[a-z]{3}$/.test(order.currency||''))throw new HttpError(400,'billing_amount');
+ if(typeof order.id!=='string'||!order.id||typeof order.payment_intent!=='string'||!/^pi_[A-Za-z0-9]+$/.test(order.payment_intent))throw new HttpError(409,'payment_reference_required');
  const c=validateBillingClient(client);
  return {companyVatCode:config.companyVatCode,seriesName:config.series,issueDate:config.issueDate,
   client:{name:c.name,vatCode:c.taxId||'',isTaxPayer:config.clientIsTaxPayer===true,address:c.address,city:c.city,country:c.country,saveToDb:false},

@@ -1,0 +1,26 @@
+{
+  "preparedOn": "2026-11-13",
+  "branch": "pregatire-infrastructura-email-plati",
+  "report": "VALIDARE-FINALA-PREGATIRE-2026-11-13.md",
+  "cloudflareOffPreserved": true,
+  "externalWrites": 0,
+  "realEmails": 0,
+  "newDeployments": 0,
+  "oldBackupsVerified": {
+    "oldTotal": 321,
+    "oldSources": 291,
+    "oldAdditionalCloudEvidence": 30,
+    "newSources": 294,
+    "newSourceFiles": 3,
+    "missingSourceFiles": 0,
+    "allHashesPass": true
+  },
+  "preparationTestsPassed": 6,
+  "onlyRecipientHashConfiguredPrivately": true,
+  "defaultDoiRun": "not_executed",
+  "browserAuthenticatedApplication": "not_executed",
+  "performanceHTTP": "prepared_not_executed",
+  "brevoEndToEnd": "prepared_not_executed",
+  "cloudHTTPRegistrationProfile": "requires_local_revision_before_approval",
+  "externalApprovalRequired": true
+}
