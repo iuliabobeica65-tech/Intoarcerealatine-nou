@@ -1,5 +1,15 @@
 # Versiune completă locală — 16 noiembrie 2026
 
+## Actualizare: sincronizare sigură autorizată (17 noiembrie 2026, ora locală)
+
+Iulia a aprobat explicit excluderea temporară a unei singure ramuri. Configurația Cloudflare a fost salvată și recitită: `preview_deployment_setting=custom`, includere `*`, excludere exactă `codex/newsletter-complet-gdpr-2026-11-16`. Excluderea rămâne până la aprobare separată; nu se reactivează automat.
+
+Comparația configurației înainte/după confirmă că ramura și regulile de producție, domeniile, configurația de build și mediile sunt neschimbate. Access rămâne activ pe proiectul izolat. Lista deploymenturilor nu s-a schimbat înainte de push. Site-ul public răspunde HTTP 200; conținutul este stabil după normalizarea exclusivă a codificării hex dinamice Cloudflare pentru adresele de e-mail.
+
+Versiunea funcțională conservată este commitul `5612e66a669d4d3dca501a98b6d57f46a9969444`; commitul curent adaugă numai această actualizare de control. Destinația autorizată este [ramura GitHub de test](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/tree/codex/newsletter-complet-gdpr-2026-11-16). Niciun merge, PR, deployment manual sau e-mail nu este inclus în această sincronizare.
+
+Excluderile explicite au prioritate față de includere, conform [documentației Cloudflare](https://developers.cloudflare.com/pages/configuration/branch-build-controls/). Rezultatele verificărilor după push, SHA-ul final și backupurile sunt consemnate în punctul privat de reluare `.local/git-gdpr-integration-2026-11-16/RESUME.json`. Secțiunea de blocaj de mai jos descrie starea istorică de dinaintea aprobării. Colectarea publică, DOI în producție, welcome, promovarea, automatizările, plățile și facturarea rămân OFF.
+
 Ramură: `codex/newsletter-complet-gdpr-2026-11-16`.
 Punct local de plecare: `07791384cb869f18c168277a94ae3288b7c0ba7e`.
 Comparație read-only cu `verificare-gdpr-2026-11-16`, commit `765973e6e8780320fd023a765acd643171cb4138`.
