@@ -138,8 +138,8 @@ if(origin){
 if(origin){
  const sitemapPath=resolve(out,"sitemap.xml");
  let sitemap=readFileSync(sitemapPath,"utf8");
- const entries=englishPages.map(name=>"  <url><loc>"+origin+"/en/"+(name==="index"?"":name)+"</loc></url>").join("\\n");
- sitemap=sitemap.replace("</urlset>",entries+"\\n</urlset>");
+ const entries=englishPages.map(name=>"  <url><loc>"+origin+"/en/"+(name==="index"?"":name)+"</loc></url>").join("\n");
+ sitemap=sitemap.replace("</urlset>",entries+"\n</urlset>");
  writeFileSync(sitemapPath,sitemap,"utf8");
 }
 console.log("Cloudflare Pages: build static pregătit în dist; origin:",origin||"(local, sursa Netlify)"); 
