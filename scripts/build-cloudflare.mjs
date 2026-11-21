@@ -197,40 +197,35 @@ for (const file of consentPages) {
  }
 }
 
-// Browser language on first visit, without redirecting crawlers or deep links.
-// A manual RO/EN choice takes precedence. No IP/geolocation or cookies are used.
+// Detect browser language only on the Romanian home page; never redirect an explicit /en/ URL.
+// Remember the visitor's manual choice without cookies.
 const languagePreferenceScript=`<script>
 (function(){
- var isBot=/bot|crawler|spider|google|bing|duckduckgo|yandex|baidu|facebookexternalhit|twitterbot|linkedinbot/i.test(navigator.userAgent||"");
- var path=location.pathname.replace(/\\.html$/,"").replace(/\\/$/,"");
- var isRomanianHome=path==="/acasa"||path==="";
- var isEnglishHome=path==="/en"||path==="/en/index";
- if(!isRomanianHome&&!isEnglishHome)return;
- function preferred(){
-  try{var saved=localStorage.getItem("iulia-site-language");if(saved==="ro"||saved==="en")return saved;}catch(e){}
-  var languages=navigator.languages||[navigator.language||"ro"];
-  for(var i=0;i<languages.length;i++){
-   var lang=String(languages[i]||"").toLowerCase().split("-")[0];
-   if(lang==="ro")return "ro";
-   if(lang==="en")return "en";
-  }
-  return "ro";
- }
- if(isBot)return;
- var lang=preferred();
- if(lang==="en"&&isRomanianHome)location.replace("/en/");
- else if(lang==="ro"&&isEnglishHome)location.replace("/acasa");
- document.addEventListener("click",function(e){
-  var a=e.target.closest&&e.target.closest("a[lang]");
-  if(!a)return;
-  var selected=a.getAttribute("lang");
-  if(selected==="ro"||selected==="en")try{localStorage.setItem("iulia-site-language",selected);}catch(err){}
+ var bot=/bot|crawler|spider|google|bing|duckduckgo|yandex|baidu|facebookexternalhit|twitterbot|linkedinbot/i.test(navigator.userAgent||"");
+ document.addEventListener("click",function(event){
+  var link=event.target.closest&&event.target.closest("a[lang]");
+  if(!link)return;
+  var chosen=link.getAttribute("lang");
+  if(chosen==="en"||chosen==="ro")try{localStorage.setItem("iulia-site-language",chosen);}catch(e){}
  });
+ if(bot)return;
+ var path=location.pathname.replace(/\\.html$/,"").replace(/\\/$/,"");
+ if(path!=="/acasa"&&path!=="")return;
+ var saved=null;
+ try{saved=localStorage.getItem("iulia-site-language");}catch(e){}
+ if(saved==="ro")return;
+ if(saved==="en"){location.replace("/en/");return;}
+ var langs=navigator.languages||[navigator.language||"ro"];
+ for(var i=0;i<langs.length;i++){
+  var primary=String(langs[i]||"").toLowerCase().split("-")[0];
+  if(primary==="ro")return;
+  if(primary==="en"){location.replace("/en/");return;}
+ }
 })();
 </script>`;
-for(const page of ["acasa.html","en/index.html"]){
+for(const page of ["acasa.html",...englishPages.map(name=>"en/"+name+".html")]){
  const path=resolve(out,page);
- if(!existsSync(path))throw Error("Missing language landing page: "+page);
+ if(!existsSync(path))throw Error("Missing page: "+page);
  let html=readFileSync(path,"utf8");
  if(!html.includes("iulia-site-language"))html=html.replace("</head>",languagePreferenceScript+"</head>");
  writeFileSync(path,html,"utf8");
