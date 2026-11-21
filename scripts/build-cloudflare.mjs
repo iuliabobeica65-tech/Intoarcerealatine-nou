@@ -71,7 +71,7 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  writeFileSync(resolve(out,file),text,"utf8");
 }
 // English pages: copy source files to /en/ in the Cloudflare output.
-const englishPages=["index","root-balancing","systemic-constellations","universal-laws"];
+const englishPages=["index","root-balancing","systemic-constellations","universal-laws","work-with-me","individual-sessions","four-month-programme","self-worth-programme","about"];
 mkdirSync(resolve(out,"en"),{recursive:true});
 for(const name of englishPages){
  const src=resolve(root,"en",name+".html");
