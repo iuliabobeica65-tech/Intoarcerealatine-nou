@@ -70,6 +70,14 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  }
  writeFileSync(resolve(out,file),text,"utf8");
 }
+// English pages: copy source files to /en/ in the Cloudflare output.
+const englishPages=["index","root-balancing","systemic-constellations","universal-laws"];
+mkdirSync(resolve(out,"en"),{recursive:true});
+for(const name of englishPages){
+ const src=resolve(root,"en",name+".html");
+ if(!existsSync(src))throw Error("English page missing: "+src);
+ copyFileSync(src,resolve(out,"en",name+".html"));
+}
 for(const dir of ["assets","content","Intoarcerea_la_tine_files"]){
  const src=resolve(root,dir);if(!existsSync(src))throw Error("Director necesar absent: "+dir);
  cpSync(src,resolve(out,dir),{recursive:true});
@@ -125,6 +133,14 @@ if(origin){
  const urls=[...publicPages,...articlePages].map(p=>"  <url><loc>"+origin+"/"+p+"</loc></url>").join("\n");
  writeFileSync(resolve(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls+'\n</urlset>\n',"utf8");
  writeFileSync(resolve(out,"robots.txt"),"User-agent: *\nAllow: /\nSitemap: "+origin+"/sitemap.xml\n","utf8");
+}
+// Add English URLs to the generated sitemap without changing Romanian entries.
+if(origin){
+ const sitemapPath=resolve(out,"sitemap.xml");
+ let sitemap=readFileSync(sitemapPath,"utf8");
+ const entries=englishPages.map(name=>"  <url><loc>"+origin+"/en/"+(name==="index"?"":name)+"</loc></url>").join("\\n");
+ sitemap=sitemap.replace("</urlset>",entries+"\\n</urlset>");
+ writeFileSync(sitemapPath,sitemap,"utf8");
 }
 console.log("Cloudflare Pages: build static pregătit în dist; origin:",origin||"(local, sursa Netlify)"); 
 
