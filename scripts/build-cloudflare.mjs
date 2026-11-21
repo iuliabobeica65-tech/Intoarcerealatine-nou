@@ -134,18 +134,6 @@ if(origin){
  writeFileSync(resolve(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls+'\n</urlset>\n',"utf8");
  writeFileSync(resolve(out,"robots.txt"),"User-agent: *\nAllow: /\nSitemap: "+origin+"/sitemap.xml\n","utf8");
 }
-// Language switch for the existing Romanian pages, added only to build output.
-// Do not change source HTML or interfere with existing navigation and consent scripts.
-for(const name of ["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","legi-universale","sedinte-individuale","program-individual-patru-luni","program-nivelul-de-merit"]){
- const path=resolve(out,name+".html");
- if(!existsSync(path))continue;
- let html=readFileSync(path,"utf8");
- if(html.includes('id="en-language-switch"'))continue;
- const switchHtml='<a id="en-language-switch" lang="en" href="/en/" style="position:fixed;right:14px;bottom:16px;z-index:9999;background:#70405d;color:white;border-radius:24px;padding:10px 15px;font:600 14px Arial,sans-serif;text-decoration:none;box-shadow:0 4px 18px #0002" aria-label="View website in English">EN</a>';
- html=html.replace("</body>",switchHtml+"</body>");
- writeFileSync(path,html,"utf8");
-}
-
 // Add English URLs to the generated sitemap without changing Romanian entries.
 if(origin){
  const sitemapPath=resolve(out,"sitemap.xml");
@@ -207,4 +195,35 @@ for (const file of consentPages) {
   html = html.replace("</body>", '<script defer src="/assets/analytics-consent.js"></script></body>');
   writeFileSync(filePath, html, "utf8");
  }
+}
+
+// Bilingual navigation and search-engine language alternates.
+// Added after all existing build transforms to preserve the site's current content.
+const bilingualPairs=[
+ ["acasa","index"],
+ ["echilibrarea-radacinilor","root-balancing"],
+ ["constelatii","systemic-constellations"],
+ ["lucram-impreuna","work-with-me"],
+ ["sedinte-individuale","individual-sessions"],
+ ["program-individual-patru-luni","four-month-programme"],
+ ["program-nivelul-de-merit","self-worth-programme"],
+ ["despre-mine","about"],
+ ["legi-universale","universal-laws"]
+];
+for(const [ro,en] of bilingualPairs){
+ const roFile=resolve(out,ro+".html");
+ const enFile=resolve(out,"en",en+".html");
+ if(!existsSync(roFile)||!existsSync(enFile))throw Error("Bilingual pair missing: "+ro+" / "+en);
+ const roUrl=origin+"/"+ro;
+ const enUrl=origin+"/en/"+(en==="index"?"":en);
+ const alternates='<link rel="alternate" hreflang="ro" href="'+roUrl+'"><link rel="alternate" hreflang="en" href="'+enUrl+'"><link rel="alternate" hreflang="x-default" href="'+roUrl+'">';
+ let roHtml=readFileSync(roFile,"utf8");
+ let enHtml=readFileSync(enFile,"utf8");
+ if(!roHtml.includes('hreflang="en"'))roHtml=roHtml.replace("</head>",alternates+"</head>");
+ if(!enHtml.includes('hreflang="ro"'))enHtml=enHtml.replace("</head>",alternates+"</head>");
+ const languageLink='<a id="en-language-switch" lang="en" href="'+enUrl+'" style="position:fixed;right:14px;bottom:16px;z-index:9999;background:#70405d;color:white;border-radius:24px;padding:10px 15px;font:600 14px Arial,sans-serif;text-decoration:none;box-shadow:0 4px 18px #0002" aria-label="View this page in English">EN</a>';
+ if(!roHtml.includes('id="en-language-switch"'))roHtml=roHtml.replace("</body>",languageLink+"</body>");
+ enHtml=enHtml.replace('<a href="/acasa" lang="ro">RO</a>','<a href="'+roUrl+'" lang="ro">RO</a>');
+ writeFileSync(roFile,roHtml,"utf8");
+ writeFileSync(enFile,enHtml,"utf8");
 }
