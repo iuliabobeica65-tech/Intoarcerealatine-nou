@@ -197,6 +197,45 @@ for (const file of consentPages) {
  }
 }
 
+// Browser language on first visit, without redirecting crawlers or deep links.
+// A manual RO/EN choice takes precedence. No IP/geolocation or cookies are used.
+const languagePreferenceScript=`<script>
+(function(){
+ var isBot=/bot|crawler|spider|google|bing|duckduckgo|yandex|baidu|facebookexternalhit|twitterbot|linkedinbot/i.test(navigator.userAgent||"");
+ var path=location.pathname.replace(/\\.html$/,"").replace(/\\/$/,"");
+ var isRomanianHome=path==="/acasa"||path==="";
+ var isEnglishHome=path==="/en"||path==="/en/index";
+ if(!isRomanianHome&&!isEnglishHome)return;
+ function preferred(){
+  try{var saved=localStorage.getItem("iulia-site-language");if(saved==="ro"||saved==="en")return saved;}catch(e){}
+  var languages=navigator.languages||[navigator.language||"ro"];
+  for(var i=0;i<languages.length;i++){
+   var lang=String(languages[i]||"").toLowerCase().split("-")[0];
+   if(lang==="ro")return "ro";
+   if(lang==="en")return "en";
+  }
+  return "ro";
+ }
+ if(isBot)return;
+ var lang=preferred();
+ if(lang==="en"&&isRomanianHome)location.replace("/en/");
+ else if(lang==="ro"&&isEnglishHome)location.replace("/acasa");
+ document.addEventListener("click",function(e){
+  var a=e.target.closest&&e.target.closest("a[lang]");
+  if(!a)return;
+  var selected=a.getAttribute("lang");
+  if(selected==="ro"||selected==="en")try{localStorage.setItem("iulia-site-language",selected);}catch(err){}
+ });
+})();
+</script>`;
+for(const page of ["acasa.html","en/index.html"]){
+ const path=resolve(out,page);
+ if(!existsSync(path))throw Error("Missing language landing page: "+page);
+ let html=readFileSync(path,"utf8");
+ if(!html.includes("iulia-site-language"))html=html.replace("</head>",languagePreferenceScript+"</head>");
+ writeFileSync(path,html,"utf8");
+}
+
 // Bilingual navigation and search-engine language alternates.
 // Added after all existing build transforms to preserve the site's current content.
 const bilingualPairs=[
