@@ -1,6 +1,6 @@
 {
-  "sourceCommit": "daa4f939e2c05e2100cf9707e31d839edb0247ac",
-  "branch": "preview-integrare-bilingv-seo-2026-11-23",
+  "sourceCommit": "4544e48",
+  "branch": "preview-fidelitate-ro-en-2026-11-23",
   "method": "Comparație editorială integrală RO–EN, susținută de teste structurale și de linkuri. Numărul headingurilor nu certifică sensul.",
   "productionApproval": false,
   "records": [
@@ -90,7 +90,7 @@
       "status": "VERIFICATĂ în această revizie",
       "review": "Originalul integral, secțiunile, cardurile, FAQ, CTA, prețurile, duratele, condițiile, metadatele și textele alternative au fost comparate.",
       "sourceSha256": "3804a9b8af8a72eb248f8b875156301876d8086c2017bc41d9df3630696a8a9b",
-      "targetSha256": "66f9b623663e03eb7e3df2ccfc221f45a88ecd16d1d068c0b54ee44245b3a328"
+      "targetSha256": "6e22fcd22749ce8bed6f407b285be0dfe2640003fde774beae52554e29064734"
     },
     {
       "source": "resurse.html",
@@ -194,7 +194,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "3e96eec5e4a20ffd9a627313d8d2174d0faa708d2041303b4886aa1207fc94a9",
-      "targetSha256": "e3982d47767ae8d8fac6bd56af5bc0c635ba734446bb923e8876031f56765244"
+      "targetSha256": "6a34948b9c19463833d827aa584b64e8534630a64087aea48bd4b0df5702386c"
     },
     {
       "source": "editorial/articole/legea-ordinii-prioritati-si-valorile-mele.json",
@@ -202,7 +202,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "c2b295a5679215ddee29f7e8f1b9f8a2bdf694dc1648d47775ee88f7ba282fd6",
-      "targetSha256": "b5292b9dec9a3e969c48d34e47945c55773016ca1c90437070ca1bc925e74ded"
+      "targetSha256": "e751821c67ae8c62786fc7f66ab2093bb00fb6623b77ac84cd07c4d54cb90208"
     },
     {
       "source": "editorial/articole/legea-reflexiei-de-ce-ma-doare-judecata-celorlalti.json",
@@ -210,7 +210,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "89c80f0e6093bdf05fef4a62b475c4c6df5802d276b1d32493ab0597254cb39d",
-      "targetSha256": "df32137c72ddbb84da12bba06b215eab7a4d30ace0e66f6ed1b5fcf627405586"
+      "targetSha256": "64f0914c0cc88f744044c77ba21d8a08d004f804ac84de89bf11ab6c5dc55175"
     },
     {
       "source": "editorial/articole/legea-sincronicitatii-provocare-si-sprijin.json",
@@ -218,7 +218,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "c2b22d4c99ae8f949f69f881f25e89c3692a53bdb81c56f289a15218176d380f",
-      "targetSha256": "37433a0eebdc5e0b187afdd4a9dd4e1165ae584fb1efe57ffe1fc72c91454458"
+      "targetSha256": "3f346da1cbb08d3855d091eb68210ddb8ce707d1933cab72ef97998c298490ff"
     },
     {
       "source": "editorial/articole/legea-transformarii-cand-simt-ca-am-pierdut-totul.json",
@@ -226,7 +226,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "10c022b5a5ac0b39dfc110ba2055c187f4a81cf503e08d5be706081def3228a3",
-      "targetSha256": "1213b65265923bd6eb99fc51d63ff9ee3faedb27f0e1a6422bd77a0d635c27cb"
+      "targetSha256": "27472e89652a858331dd6cb3fe8b9b89f03ffbb66cb3c920c72b91ac1e07f7e3"
     },
     {
       "source": "editorial/articole/escalarea-eristica-cand-imi-doresc-ceva-cu-disperare.json",
@@ -234,7 +234,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "de2181315972c97bc67a400e6d98570f63551d97a5c217eb2570dccb16d80665",
-      "targetSha256": "9358c70dd66c8d510689a3dde4b8a8d5b487ec96a730e5ac9885b36c4dc268eb"
+      "targetSha256": "3101b5254c745036e8bdda7337b6e835e0d669a0cb75fa44921a847b9c89cda1"
     },
     {
       "source": "editorial/articole/constelatii-familiale-divort-infidelitate-copii-separare.json",
@@ -242,7 +242,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "aa235918f02011c0ab79687e3bd513810ae6fa6952021f10a4ba1c6ef04f2f88",
-      "targetSha256": "71b09aa5093b67d11b0755c9bab36134abcdbac0a253d5a9b2699104c7ba08d1"
+      "targetSha256": "0c4c660d2f35eee5725e1adc7488e92fbab0ff99eeff800faf62e9747ee383a5"
     },
     {
       "source": "editorial/articole/constelatii-roluri-in-familie-si-tipare.json",
@@ -250,7 +250,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "3d1d0b1d6859f17f11dfa67a14db6d0507621212935c6b1edb713810b31ca0ef",
-      "targetSha256": "528478e61256b206d47a5969f52634acdd969e742e037f4753de702ac4485c86"
+      "targetSha256": "2af90ed5ffd0d4ff3fe6d5fd179bfb69ba51b564bb291a9e87027316cf4db937"
     },
     {
       "source": "editorial/articole/constelatii-sistemice-ce-sunt-si-cum-se-desfasoara.json",
@@ -258,7 +258,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "f056087f8a8ab1182bff62e33428e1797d9e1f3e0f39fd20a3492106016fee1d",
-      "targetSha256": "a22bc2847b0a9b36addb30759fd37750ad60d4004aae418f6e0319ee222d8e3d"
+      "targetSha256": "13ed0226c0a285739bd1aa343b98eb865c707f3db644d6479f4737a9ca415550"
     },
     {
       "source": "editorial/articole/traume-transgenerationale-loialitati-ascunse-arbore-genealogic.json",
@@ -266,7 +266,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "bc43c469180c58a19e769c3e07fa5cb79c96b9d6ae69053f5aa57aaa49f8521c",
-      "targetSha256": "9dae24c83cdb3abce8d59e345cf6e718ff32b86f7bc05690099504b5f8828bdc"
+      "targetSha256": "4333cca46bc97557daefdadd2da75d30b73bd26b22a95901fa3139c80243bd2d"
     },
     {
       "source": "editorial/articole/in-familie-eu-fac-mereu-pace.json",
@@ -274,7 +274,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "802da3ea6a45c23868123aa0d1fbd0348684b42265416d24be7b126db65be9ca",
-      "targetSha256": "8b5585331c4d7d6631910d04a150f78b198967e77b3d6b6b139cf953b9d206a6"
+      "targetSha256": "4b702a55f70dcc581fca4d83c949a8acf66e930cfa284b7e3de6f6f3b3178f78"
     },
     {
       "source": "editorial/articole/doliu-cand-viata-merge-inainte.json",
@@ -282,7 +282,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "8fb1260eac4234282790061472cfc666098fc41586394a513ee2a9c43bdb9134",
-      "targetSha256": "899aa93452a39d240e0e834a73c0ea5f553d216ce75e6b81f88d9561529253b6"
+      "targetSha256": "c60196228ec6f75227e7af3878f57acda8814dbea3f099ac25c5d04d83b7b9c3"
     },
     {
       "source": "editorial/articole/ma-simt-invizibila-in-relatia-mea.json",
@@ -290,7 +290,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "200c3f152e8f0b43e034c2df10b2818994a5d184960f167367b8a6429557e5b6",
-      "targetSha256": "f7db7474b53a64deb7ec39d6a50b2e8e7ee159f4cb99edf70e69e499a40065bb"
+      "targetSha256": "634a238a8658f0624b9a7489c056021b121b8439a230e0f1a3fe0636640a6898"
     },
     {
       "source": "editorial/articole/ma-doare-cand-sunt-criticata.json",
@@ -298,7 +298,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "66310b53c3dfc667bd19427e6a70f3992a111bc6ae5a074e025e10cc13e0e40f",
-      "targetSha256": "3988a7e67f593b2200d0635228453398bc72a832a80264054eed5a5b85250dcd"
+      "targetSha256": "5426e21430cd680e9a09025e42f2b365d8348038a93803ce0f9e6acbd6de4d56"
     },
     {
       "source": "editorial/articole/cand-refuzi-ajutorul.json",
@@ -306,7 +306,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "656d2cc619deecbdbfa8aac940e8bbfe373de30e668fbf10ccf973583e837712",
-      "targetSha256": "977902f3cfdb579819b1f9a335f5e41dbeb4b36e3725305f82d951265ab4a62e"
+      "targetSha256": "b1467ca4680ed5041967d003c6ac96ea5f779ef32110aec0aa6135a2a9a57650"
     },
     {
       "source": "editorial/articole/cand-te-pui-mereu-pe-ultimul-loc.json",
@@ -314,7 +314,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "c483fb94287faaa59210bf0c2dc3e78e52c88c19cec25d47d3067329bfc6a349",
-      "targetSha256": "e90376b1ac8180df18e95637cf22d11fb3a4e2e5876e792dd5fda158ae8c6c5d"
+      "targetSha256": "a46ad8ce976a90f54e37f0a10d29e8f4807c56ff1197e57ba1b2dbfeb881b86a"
     },
     {
       "source": "editorial/articole/cand-te-simti-responsabila-pentru-toti.json",
@@ -322,7 +322,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "34a83a4d565b15686aeee9a1e9cbfe792d7ab378e62ceb529bb39a84cfc08388",
-      "targetSha256": "2a62c18f879e238d3c5e2d716d13fde8eb8c682905aedbbae4b8ec4c92cfbdef"
+      "targetSha256": "beae68081fc23ef09c78c26921af78f672a1a82bd71aca0850a598c1aca60ff5"
     },
     {
       "source": "editorial/articole/am-grija-de-toti-dar-eu-ce-vreau.json",
@@ -330,7 +330,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "9dad6a597404b8d4c53449933eefd157552e1a2ce4e73edc94944a071a72cea7",
-      "targetSha256": "1987119f2b05c959b0388f30bdd402ea6b5b8b1fbd3e162dbefda1c013c97d18"
+      "targetSha256": "9d87a50836bdf3da26423591c0683070994837ad16ac636111228c98ce63b448"
     },
     {
       "source": "editorial/articole/am-un-vis-dar-nu-indraznesc-sa-incep.json",
@@ -338,7 +338,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "88072b18be6d234dc0d7fd9a03389086466255f1317f180391b71f7f36f4efc4",
-      "targetSha256": "d403b0dd334e1bb9ecd710a0c79be38c021c43089f8f1d4c2c97258752440cd7"
+      "targetSha256": "b714c70d3d9f3312d624684cbfa7cd13c4dfe4881f8ba90e5dfa0f3907bf05ce"
     },
     {
       "source": "editorial/articole/cand-a-fi-puternica-devine-o-responsabilitate.json",
@@ -346,7 +346,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "70aaba91b4356bb2feb37f65b1a417056fe2687eeb447bf3bda7869517b5ac42",
-      "targetSha256": "d7621d1872b8c48d3b166dad70c4e4836741591629f2cea90af956dc8bc33c10"
+      "targetSha256": "96275df45ecbc927bee7ee956d20f3f84bb6d9347b2251f6ef2e4dfee5bf71d7"
     },
     {
       "source": "editorial/articole/cand-banii-pentru-tine-par-o-risipa.json",
@@ -354,7 +354,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "8bcc26ff3963034f9d6f8925c0107e183be5d66c3807e5393a59d108651247f0",
-      "targetSha256": "f8a2169b847dc5a21c8748add736840f83a8a9d41c4883b76c8101742ca5b31e"
+      "targetSha256": "e5b3a5d98be6f61c9b2bbab821e6a184342e5b3811696ab9276693918f7b5b69"
     },
     {
       "source": "editorial/articole/cand-ceri-aprobare-inainte-sa-decizi.json",
@@ -362,7 +362,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "9998adf84611c8bf4158ef537be2674895f5c5db77611eaa2f01b5a93882bc41",
-      "targetSha256": "812dd911ffd36662f953517d616e4b380cd203bae2135049e36f5352535d1d53"
+      "targetSha256": "b30ddf01071200388098250e0cbe0394bd6daa9ed902143517c3171c5718818c"
     },
     {
       "source": "editorial/articole/cand-ceri-aprobare.json",
@@ -370,7 +370,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "06d5fa09fe5b2b669e9dc4bf38a3e21ac2ad66ab9ede3c81e789033f32982121",
-      "targetSha256": "a4ae89c38105f762e4a2f94fd2fd799fd059fc46775a2466f127001b30b0fe3b"
+      "targetSha256": "d4b0a2db0cd6a2e32c01e80d7f5c80c73817a1129c940fff8caafba5e41adfe6"
     },
     {
       "source": "editorial/articole/cand-copiii-cresc-cine-sunt-eu.json",
@@ -378,7 +378,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "b299dd15782dc1fbebbf0557b814ece6a6b59b6cca2270b8d0bdbb467a2c1f77",
-      "targetSha256": "6cc07172cc7feee60598f852adb11b79f5ccbab3067f9d235e78308bcca064fb"
+      "targetSha256": "16cba7e3c5f6547f98ba81a96654f9f53c69a7a4132e1d11187dcf22a6b1b1df"
     },
     {
       "source": "editorial/articole/cand-copilul-creste-si-nu-mai-are-nevoie-la-fel.json",
@@ -386,7 +386,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "1644e715e5c1d9bd19e452997cb5ea07258fc3a9c2f404e89bd63a9b22bfbde8",
-      "targetSha256": "b98c7e23bc93be947445b17646483f51262b10630719c10c92a136680dd22323"
+      "targetSha256": "6db4b11bd32e11aa07be9299f88e3c146f2fb5204d3e23a309fe7ba747fc3cf3"
     },
     {
       "source": "editorial/articole/cand-frica-de-schimbare-te-tine-pe-loc.json",
@@ -394,7 +394,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "6493080cfb12df657475303e4e709c75e5b743f6a46cabe89335b30a427db33b",
-      "targetSha256": "d66813aa0b815c814aeb8bf30ac66c55cd3cf86d590f6ffb09ca2097fd8845f0"
+      "targetSha256": "656db69f771d1ea97acf00ced3dbbc6d781b564da0fe48c5d3417b248f61f4ec"
     },
     {
       "source": "editorial/articole/cand-minimalizezi-un-compliment.json",
@@ -402,7 +402,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "abecd97e8ec667ad69e4fce1d23bb95a25a4fda989a9f4f3e446afc34c7eec32",
-      "targetSha256": "ff5f2ea21515ba04ffcaf8f31870afc15009e4d26ee6c61d8714a55a1d065b02"
+      "targetSha256": "1693cfc01d84c430e9b929b8bd691fc6a89212025cdfd7b8cac37b56d9a1f90a"
     },
     {
       "source": "editorial/articole/cand-munca-ta-nu-este-vazuta.json",
@@ -410,7 +410,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "bac47f392c5e4e16894f3304ff160749d97b5291917189d9a59b053c58e278ae",
-      "targetSha256": "ec1609c37f457f0aeeadcff7bcb547925ce57c7c453e09311bb76f421c856885"
+      "targetSha256": "5000697267bef96ea7a44ecf7d44539cb07d62169a3bb889d8ad3b5205bc1df6"
     },
     {
       "source": "editorial/articole/cand-nu-mai-ai-incredere-dupa-o-minciuna.json",
@@ -418,7 +418,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "5c6bae031b4ed94be0934bc00429d9d108269eafd9e556747058d8ee8687807a",
-      "targetSha256": "dab097d52df7aa3597450f78439738d82e268087063a1d814813b61bff56a037"
+      "targetSha256": "0c5e88962c242ab2c13baf80e5be67246fe694f6756a8f0bd8f44ac4e395e2e6"
     },
     {
       "source": "editorial/articole/cand-nu-poti-sa-te-odihnesti.json",
@@ -426,7 +426,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "ef489b92b820eb9f5b8d1b4ebe2e83b2bb02e0dd44fba4a8ce3e1e7615e10ea8",
-      "targetSha256": "5ebd323aabf0422fb95b76fac183097afbc3e70562c1dbd1e2c2d54b3de03b01"
+      "targetSha256": "b7c3e799585ff853bf5741790d4541532d10427eef4ac6ad24e2178115938904"
     },
     {
       "source": "editorial/articole/cand-nu-poti-spune-nu.json",
@@ -434,7 +434,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "a3faa388cf0be15554b9d62d91edf59e2ce92c035a6d28d49311eaa2fde829c8",
-      "targetSha256": "d01f59ede103e635d8fe20619c0445150c397174d20967182e0a8b7c0bd014bb"
+      "targetSha256": "0f73af8fad2c6abd327f2725737e9c08807d7be7b02f134dcd9f713c5eb944c7"
     },
     {
       "source": "editorial/articole/cand-nu-te-poti-bucura-de-ce-ai.json",
@@ -442,7 +442,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "8f391e5169f2b9bca1b27a9e6e97e672042732c880f6ba8e3ac63e754c86bff9",
-      "targetSha256": "050252fe65225d42299270b38fb4e5dfa980fbc14d8df2b56c8610571543b826"
+      "targetSha256": "f11292aa32aabc814d153a553d038cb212f03aebb7ca23090e62f52505932ef9"
     },
     {
       "source": "editorial/articole/cand-nu-te-poti-desprinde-de-o-relatie.json",
@@ -450,7 +450,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "f5b0526607901beb9a4a5d35ad33ea6b87bfcfd0e71633888bbb01f8ee6cb460",
-      "targetSha256": "e69ace06f24ccf79afe834be063a6d451828745e3af78d9496b393343bcc3d55"
+      "targetSha256": "75afb08992191d955974478886fb4463586ab7302a65b8c215d8e1d063a57f56"
     },
     {
       "source": "editorial/articole/cand-porti-grijile-familiei.json",
@@ -458,7 +458,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "9bc3c29bc2bcac17fbf1a7cb01de3b1cb2097159f92a09ca3a0cd12976c9b4eb",
-      "targetSha256": "1e452968470f921e8ff11ba4563db99399145f6b802dc200d54ac53de270984d"
+      "targetSha256": "439bc8ae3e45d0452ca8fa4f41afe868c38f85d0d07d920b488c8b83a1717249"
     },
     {
       "source": "editorial/articole/cand-refuzi-ajutorul-dar-te-doare-ca-nu-l-primesti.json",
@@ -466,7 +466,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "8aa4ddb5ec27d577f612e46c3ffadf84795a9ec36e44849747e92992c7ff58a1",
-      "targetSha256": "683ffacf3af734e9d6e13f02745cc457f7b890113e77d3c19fbf98cedb96e60e"
+      "targetSha256": "3ed303e200ebb4be9856590079b4e84f94c5a088c66ae809d0e42cadf5cd16c6"
     },
     {
       "source": "editorial/articole/cand-repeta-familia-aceleasi-conflicte.json",
@@ -474,7 +474,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "d2baa01a14c71da5f62092f97f8167109e638f8ca31fdc86e35557ba0a952663",
-      "targetSha256": "ff8f59d89613451ad491bccd95d491e2474f7b1025ace465a9fde51e05cee3a7"
+      "targetSha256": "644b7c941adfb9740f60b2497b5072af2d033d3c2541aa2fe54c0cf3041bd800"
     },
     {
       "source": "editorial/articole/cand-repeti-aceeasi-cearta.json",
@@ -482,7 +482,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "1f08719cf3737aaf6ddcb126cf78c96ba53ffc7b85b1c01c3d85ff8d6b7592db",
-      "targetSha256": "d41909509b7a27068d7ea2245316fbcfa7370fd9698c499f606ee7178dedf0dc"
+      "targetSha256": "56d5311dd2ea7e031740a5360c5a17eeca1da8d7aa0cff22c8072d5dcfac7324"
     },
     {
       "source": "editorial/articole/cand-te-compari-cu-alte-femei.json",
@@ -490,7 +490,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "57d74120f7028cff052e558118ab62db42a0369a53bfb8c76decbb9f7a96fae7",
-      "targetSha256": "d08830d024631aecb0b52441b7d10684a226e3fe93e7d7e4b083794b2e53dccd"
+      "targetSha256": "72eb3a2eeeebb5547ef10a451873597f3ae36efeaa1ae45559ee7e427410ba54"
     },
     {
       "source": "editorial/articole/cand-te-intorci-la-rolul-de-copil-langa-parinti.json",
@@ -498,7 +498,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "4304a7268fb2f83eb15b9d353e5834624263c9944c3366483738f9f106c8366c",
-      "targetSha256": "3885f777bb9ae6774602f1ca5b4fc65a2c263eb8c1dc0b05587ab85c04b6ac71"
+      "targetSha256": "11408c1b2441f577db7266af8c5bb81b82c1ea6cc5bdeb2939e32696df42c082"
     },
     {
       "source": "editorial/articole/cand-te-pui-pe-ultimul-loc.json",
@@ -506,7 +506,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "61c252dbf473ad7090bdd06bfc540951b681c34aaad020cfc1dd7fe5c85a9954",
-      "targetSha256": "0593c4293b27d5e3e31eed6742c429814bbc9376d2122fe15ee4fe6e4cbf6ccd"
+      "targetSha256": "bd97e9d687e1ffa29e8da810076c4e81377d1fd16d542713141cb85bdd44c457"
     },
     {
       "source": "editorial/articole/cand-te-simti-blocata-dupa-multe-incercari.json",
@@ -514,7 +514,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "90a6768439675442c251f16dbf10227df6bd22a6dda2b0efeb437e973238564d",
-      "targetSha256": "4c24ccebf2d4e26dc75018b4feb1d7cc599d2ca255ee0bb9b4b81c9b8fb76bdc"
+      "targetSha256": "87be6b4d8b860aad811aeee139bf49f8eebf0bf6835a2d47e1b2a4cefdf76e04"
     },
     {
       "source": "editorial/articole/cand-te-simti-neputincioasa.json",
@@ -522,7 +522,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "d338368a41dcec89ba1281469631183b4b7047f9a569c3c02b1895b45a1e8ce0",
-      "targetSha256": "dca52b9ea1358236280a40900937f3c79453b31bfe95c7345f72879e4d7af0c3"
+      "targetSha256": "534eb58dfec89d4af8aa4e35e53d6328589d42a84825fe2f268eda1308bb31dd"
     },
     {
       "source": "editorial/articole/cand-te-simti-o-mama-insuficienta.json",
@@ -530,7 +530,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "5581c9afd72e14ffce26f320d71f79179478fef72ac223e324c68d2e4d66dae8",
-      "targetSha256": "1f14d675980f54ca5beee18b1f24610492cf2ae6ac5be4eb444f23ce1b62a294"
+      "targetSha256": "069ef8d6bb95defbd8aaca3d8684810dd590773b87e15b2fd240671d882db572"
     },
     {
       "source": "editorial/articole/cand-te-simti-singura-in-cuplu.json",
@@ -538,7 +538,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "0dd475243c89157420c73efc7d83d9fba88353cc8b19d7c283ffec5ff074bf82",
-      "targetSha256": "c9d0fabf25530f258bd1b5c0becb59a314c8768834552cfb518f7fabe28e2846"
+      "targetSha256": "b3affec430e06d9d6fa5b380c6556b5228b9cf6a6e472aa4a1eb0a4aa222bbd9"
     },
     {
       "source": "editorial/articole/cand-te-temi-sa-fii-parasita.json",
@@ -546,7 +546,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "97488d61e4dc6cb27748d573247870d60c34f9d779550cde6bd664b7cb73bffb",
-      "targetSha256": "c62b674c9422f4a0824a2630c36142015e2aa767b0ebf61b63864b1df3ae0d85"
+      "targetSha256": "a94bcb10b6e51139b9375c87fac564028b7eb7ffd7b1f595b864eb5f821852e8"
     },
     {
       "source": "editorial/articole/cand-ti-e-rusine-sa-ceri-bani-pentru-munca.json",
@@ -554,7 +554,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "7d485271248975811129181e7e37b00809d3cf79e65723a2553d01b337f17ef7",
-      "targetSha256": "e7eeca35d7673b96a303acb5aade20f640eedc84a93f41e99f5c75979eec0b38"
+      "targetSha256": "e72a30f952e3183084a430bd95547f8f359fb695084c322adf550c89fe0df977"
     },
     {
       "source": "editorial/articole/ce-mi-au-spus-parintii-si-inca-ma-doare.json",
@@ -562,7 +562,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "476e13779cf5cde6acf7715ae016fcfea77667545651389b8c12779343b65c53",
-      "targetSha256": "45351a322af9dde443c81f33d9659b4fb56e59645ac78c27f2fb9a7d81787470"
+      "targetSha256": "387c43dad56cc2d43c6629a0d9ca949a7dc187916dd7f7d5589338be8038be3c"
     },
     {
       "source": "editorial/articole/cele-cinci-rani-emotionale-abandon-tradare-respingere-umilinta-nedreptate.json",
@@ -570,7 +570,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "82c4803f1d6186e76846198e06b9eef2e3203929010beb1b66aeb1cc9ffd73c2",
-      "targetSha256": "2b01fabd35f6ceea5425fb3a24ad5294d8f2436bc08d80492b2de5fbbb22cb9f"
+      "targetSha256": "30ba4f748d7f97253cc9599a24b620efdaed146b8396473ddc213e3edff5e881"
     },
     {
       "source": "editorial/articole/creatie-constienta-si-echilibrarea-perceptiilor.json",
@@ -578,7 +578,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "ab87e4b7a4a416caad105de1d5b356aede874958682fb004630f4582f68899b2",
-      "targetSha256": "785abbef3c60eb5754a83a2b753581da1ea8f7dedc1ead36167a7f4fcd665ce4"
+      "targetSha256": "dc3c189e72c76d5e093842d7dd54830e95f2a327098c8b9f766cece16521f967"
     },
     {
       "source": "editorial/articole/de-ce-imi-este-frica-sa-iau-o-decizie.json",
@@ -586,7 +586,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "c0f77e301c0aa06b2ba8b184be2780aae7127e12d48fe8f83e45941e7c7056a2",
-      "targetSha256": "b076af244b096fd48f24245ad1340aa2f259c1d22513585c9bb55e3a55968d36"
+      "targetSha256": "e7bc67a4e43faa737745635119ac5f8a9ef3dda539cccb1fce8b19d533eaf33d"
     },
     {
       "source": "editorial/articole/de-ce-imi-este-greu-sa-cer-si-sa-primesc.json",
@@ -594,7 +594,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "6060ac5c040b595adc64ac1c0f78d0f02dac1f6e3ea103e5d57a54857d35e48e",
-      "targetSha256": "e40a2109a37575fcbe29d84aaca607b17e5eef274ee63270a9b3ce4d777ad520"
+      "targetSha256": "0ed7125f3c8170b11b599bb21cc8eede2bc600d40fa302b357da3c5932e29987"
     },
     {
       "source": "editorial/articole/de-ce-imi-este-greu-sa-spun-nu.json",
@@ -602,7 +602,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "db6508ca2579f9f9a68f870e071bb6b5d797debafe7ba5922613e28bf580ee85",
-      "targetSha256": "2cb1f13f5501c39d66e51f693ee9346a601f0fef33083db29bf7d4357820dce6"
+      "targetSha256": "9d4abe877a4e4be2980d8eef22d3f617461ab35c125ce55b06148d07d41f8ce9"
     },
     {
       "source": "editorial/articole/de-ce-inteleg-dar-continui-sa-fac-la-fel.json",
@@ -610,7 +610,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "258bcafba2b87a5ebdb525bc996ebfdc6786f90cc4c0fdae045e82486734b88c",
-      "targetSha256": "65b7dfff7ffde95786817a777dd450c42e91f4a8af5dc0031ca73fcbeb575730"
+      "targetSha256": "6d780fbb7db4a4509d18360bcaf17f268e3739592e7840c37736c3823ae4dfab"
     },
     {
       "source": "editorial/articole/de-ce-ma-compar-cu-alte-femei.json",
@@ -618,7 +618,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "f4a82aa7e5db1d9a01940076317c7c8d9f6a93d99ce0a32b021a18ed23b5218e",
-      "targetSha256": "e8cfad8f790126ea96e2c3b251c92a7a9b2a1936362a1d2e0c05e6067ce06693"
+      "targetSha256": "7052694f3f0a49b11946e741a7bcd0fc9031e6555985add1e4a5767c1d6c8bec"
     },
     {
       "source": "editorial/articole/de-ce-ma-simt-blocata-desi-stiu-ce-vreau-sa-schimb.json",
@@ -626,7 +626,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "87f6d60bd8aacd9b10956c09ce75b27660541a9ad3d5957cdcb1ccd18c5e36e4",
-      "targetSha256": "6885bff329e6664554211f6eb3f5f8746a26045ba5985b7faf4f1be3cc9175e0"
+      "targetSha256": "a33944b2840f5f47690e5721a77d03574659dc6e29b137b5804558cb85126941"
     },
     {
       "source": "editorial/articole/de-ce-ma-simt-vinovata-cand-ma-aleg-pe-mine.json",
@@ -634,7 +634,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "48adba34c653c1d2cf25a4b9b9270f9ef1820f2c9e16b80b9f8905795c693a26",
-      "targetSha256": "6d6ecc073ae3b8e7516c1715d89f12d0a06d065e01545dc45100f47e493a91f0"
+      "targetSha256": "2c39767a6d563d9fb14bb9cb3a1401f6c98bc602934bd904de65c72a2b708c20"
     },
     {
       "source": "editorial/articole/de-ce-repet-aceleasi-tipare-in-relatii.json",
@@ -642,7 +642,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "6f169795f43b536ee0f4a72582fc90e38c35e877327c24b5a89a9a13d7cada6c",
-      "targetSha256": "8f5acd36b53030de34576f7edfd6762ce74cc9f529ae2d60a435d89af109b4f2"
+      "targetSha256": "bf0a74b7f64ca6b69dbf7e5fe930e13b3f9a8524dd731cc7595fbadd265d8eff"
     },
     {
       "source": "editorial/articole/dupa-infidelitate-ce-ai-inteles-despre-tine.json",
@@ -650,7 +650,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "3635472b53612ae0962ad83ac3303c36f3d787c71601a9572618a69329fa64c6",
-      "targetSha256": "8e7e7db5a137bbdd347c0218697506a5fb5edb647b213229f8499ae4768275ea"
+      "targetSha256": "0eaae8b39e4f8d7608d1898156110828c687a16dc96f1f0a07b4e350585981f5"
     },
     {
       "source": "editorial/articole/feminitate-dupa-40-de-ani.json",
@@ -658,7 +658,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "770e307117dde3e3e90afac212b224e8f3382633da18b00390cafab9e6a50732",
-      "targetSha256": "8e137634220f8c6f38714b0d421a360975adfe4f2a9adab8063e0bb6aee96e7b"
+      "targetSha256": "aa8348b59b33da4979f45b09e99d61babe1d36412b6335b79b233dde8c166368"
     },
     {
       "source": "editorial/articole/frica-de-a-dezamagi-cand-alegi-pentru-tine.json",
@@ -666,7 +666,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "aabd5a921e1b62a9f2ad429984a6d32db7451bd1e829488b26d1783b07bf2d49",
-      "targetSha256": "80c3c5881f940f9a16bd7ff03773f23341510fe5e6e3bfc9d4c8fca8fabdf50f"
+      "targetSha256": "0ad1a2a9f4d5d8157a25772c0a5799eb5a4f5970fbee03a07dabcb1c9f4d5650"
     },
     {
       "source": "editorial/articole/frica-de-abandon-cand-celalalt-se-indeparteaza.json",
@@ -674,7 +674,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "cc705f6a280817a58e3d935b2f99e6cfaf58fe4d5511cbf0370ffa9299f3f11d",
-      "targetSha256": "352e9efaaab152af67493f11fd79b3e5df31144a7ace92644e038f979a24c5e9"
+      "targetSha256": "9795bfb351d8941ded6a9ab868431c727b261a28357f931d4a84fdf54a122844"
     },
     {
       "source": "editorial/articole/frica-de-abandon-in-relatii.json",
@@ -682,7 +682,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "9db555899c2f3858aecdde1d19976eae3081eacf6435a081024e98c1865a706e",
-      "targetSha256": "6d641df36225e4248152a3a2069ef81a0caaa87bc00543f8868a1b71818dd247"
+      "targetSha256": "f23dc77e22d00f73cf78bcdf20166c9913c9bfe7379eb8525b28301a6e805d80"
     },
     {
       "source": "editorial/articole/frica-de-conflict-cand-taci-ca-sa-nu-superi.json",
@@ -690,7 +690,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "09faa4df9d2cbc2b12bed33bc7c3baca408c9953c5fd6250fe7240a457249562",
-      "targetSha256": "0ea36bb1c526157895bb17002ded8b7b90a173b55a2062e663833ae1570ad90e"
+      "targetSha256": "890b7e66b1deb1f2f9628242d54af51948788a02899eeded34441f73de8688bc"
     },
     {
       "source": "editorial/articole/frica-de-critica-si-expunere.json",
@@ -698,7 +698,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "723acfaea95842554daafa657b3e2d7be6e9fd4ade575c1434e8de02f1e66da3",
-      "targetSha256": "9ed6cc80c60c3aba94b19bbb56e256b6f92410b9e57d9ac53f56152c78515a4c"
+      "targetSha256": "0dde60b6bfd6c1faefa2c4230ee4f4c159ec0873a6b3b152421891e372a18db1"
     },
     {
       "source": "editorial/articole/frica-de-esec-cand-nu-mai-incerci.json",
@@ -706,7 +706,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "7f7f4995909bdd59902db9d125591ee310c704af75c303b16559b8a788207431",
-      "targetSha256": "1964cabd8c685049399e180364bd7f99f6f2502bd7ff8f650cf70a302fabc43f"
+      "targetSha256": "d1e2fff55a08da1f768f3d7e31b395cda13bde2455b3f37e3e91c7b87b90ccbe"
     },
     {
       "source": "editorial/articole/frica-de-esec-si-munca.json",
@@ -714,7 +714,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "a5ce3aa64821a42ca4d452f35cf40f860e4490b2657307d9975b36bbd813cd1c",
-      "targetSha256": "c5d0977b6fca1bb2f3908068711f53ae9b8b4c9f7a5d0ce3eab7d2d7fffb90d6"
+      "targetSha256": "5aa9628e8157343002057bfaca5c6e7b23baed31e65236c036a2a4c077caa071"
     },
     {
       "source": "editorial/articole/frica-de-judecata-si-vizibilitate.json",
@@ -722,7 +722,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "30159cd2515361daba6b9b2e5c058427345b19f0c7294f24c5219e2c0e633eab",
-      "targetSha256": "e1c8a368ee317b3d7136ea2f692e607d782f78fae6829fdd6c206bb91534e98d"
+      "targetSha256": "610a211bf52ca39c4dfb4bea480ede4b5e001ccfae9dc5cf214792b65481c387"
     },
     {
       "source": "editorial/articole/frica-de-respingere-cand-nu-spui-ce-vrei.json",
@@ -730,7 +730,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "8e299c9e71302f4782c29c0bd99ba226f1d804497283343b1f175ad1f6c2fc9e",
-      "targetSha256": "559dfd8f57c191a2b2beffb02c0b267dc9376650990a47d8850fcb10152f185a"
+      "targetSha256": "caf3f33d128e1561e888d6e982341db5a611acbcbf271e92ce00e54d22e3e97a"
     },
     {
       "source": "editorial/articole/frica-de-respingere-si-limite.json",
@@ -738,7 +738,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "361b9b5b57e6d366df7b82b62f0cc56055f74f2220de8a3398403d7da3c8f128",
-      "targetSha256": "42eb4240fd4c7b83ab413220d54e49e9fff5bb49111e42663d7de9329027952b"
+      "targetSha256": "71eb3e124675b68a68d4a2611fb9c17db813f81c49e1cf7c91090c239f61c770"
     },
     {
       "source": "editorial/articole/frica-de-succes-si-vizibilitate.json",
@@ -746,7 +746,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "b6c0dd509a8eefacb04807cd212c59b40efe582849dcf8821527e00e3a9686a2",
-      "targetSha256": "0f555febec0476b2d8883cb98a1a42d7b38e209d7d6ec3640fc5d63296b2a573"
+      "targetSha256": "583141f2331801b6c028e797801d589a58367c2503065cba1ca402e5e22cd0b4"
     },
     {
       "source": "editorial/articole/frica-si-polarizarea-perceptiilor.json",
@@ -754,7 +754,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "66f1226d26898bdb79cdda886abf835e54660c8b97aa13ad3fafa39b9d3995bd",
-      "targetSha256": "4c1e215777ae5cdd5fe7d8591d943c6b687110f4e9ee046c96508585be1b2e71"
+      "targetSha256": "0d5c9dbe789dbc7cc53ea9a3ea961f5fc28822638d02b5fb0cf407ef196a6b09"
     },
     {
       "source": "editorial/articole/imi-este-frica-sa-cer-bani-pentru-munca-mea.json",
@@ -762,7 +762,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "bd21b0d0005cc4d43636f82099ccbde54d5974bb6be054b838df035e5eac7ff4",
-      "targetSha256": "8d1ac83a2f828a691228b09640a2d731eec576b8849f7502279336e64d6fb751"
+      "targetSha256": "1c42455aefcd05f6830e3e1d3f5b21ca3b6533557b88514cb0a3944e06622410"
     },
     {
       "source": "editorial/articole/incredere-in-sine-si-teama-de-judecata.json",
@@ -770,7 +770,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "a100808431449445975a1888a2974e491333feff1f1bec6a50c0999c25aba51e",
-      "targetSha256": "4e27eff4ea36f335e984c2a6268f2f1597e8153ff3e84841a6d0fbb5658d7917"
+      "targetSha256": "5f2bce43012d56078b4b2739f822414522017e8596d9f98abb9035460ed11997"
     },
     {
       "source": "editorial/articole/joe-dispenza-creatie-constienta-parcurs-iulia-bobeica.json",
@@ -778,7 +778,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "d460dc837ac454075abb2e8536bf232ee2238994d7927afac6c2094c0a9194bd",
-      "targetSha256": "bfd2bf41d5953ee0c7ff959f4000d97387dd4e7e9a0c56da7ebcaf675357f19d"
+      "targetSha256": "b1fb0eee97849f5bbabd397b3eecd7080fa560e51227094948094ef6c6112ca5"
     },
     {
       "source": "editorial/articole/perfectionismul-care-te-opreste.json",
@@ -786,7 +786,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "1a6780a20ed777774a2bcf94af8dc27be99241f21264e090edb28b9d1d3e7f15",
-      "targetSha256": "f74077554c3263f1445307000f0121ab9700a847094c6f028db68e87031670e7"
+      "targetSha256": "46c83f20cd24e0083ea057bca39d62e9002783d265116e687130af23e651b3bc"
     },
     {
       "source": "editorial/articole/rusinea-de-a-fi-vazuta-asa-cum-esti.json",
@@ -794,7 +794,7 @@
       "status": "VERIFICAT în această revizie",
       "review": "Corpul integral, întrebările, exemplele, legăturile recomandate, CTA și metadatele au fost comparate cu sursa editorială.",
       "sourceSha256": "bf38c73a3ad09be8560814f6a75a67f9822ac5d4447f9842b66117919d3bbd6c",
-      "targetSha256": "0ed34e87b76fb67d2d5ac39235743e5fb892f05865d1d5541997cf1d50df6d83"
+      "targetSha256": "530de6fa65d7d17875a2e643ecdebc4b5066bdefab64a4bc3ee069413ec47db4"
     }
   ]
 }

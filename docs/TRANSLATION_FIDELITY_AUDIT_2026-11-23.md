@@ -1,6 +1,6 @@
 # Revizie de fidelitate RO–EN — 23 noiembrie 2026
 
-Ramură: `preview-integrare-bilingv-seo-2026-11-23`. Bază verificată: `daa4f93`. **Fără aprobare de publicare; fără merge sau deploy.**
+Ramură: `preview-fidelitate-ro-en-2026-11-23`. Bază verificată: `4544e48`. **Fără aprobare de publicare; fără merge sau deploy.**
 
 ## Traduceri verificate și corectate
 
@@ -32,14 +32,14 @@ Lista celor 99 de corespondențe, starea fiecăreia și amprentele SHA-256 se g�
 - Testul existent `qa/browser-smoke.mjs`: **36 de combinații**, 9 pagini × 4 lățimi, fără probleme. Testul anunță că verificarea câmpului CMS `contact-title` este omisă deoarece selectorul nu există; nu a fost modificat pentru această revizie.
 - Verificare EN suplimentară: **150 de combinații** (toate cele 82 articole la 390 px și cele 17 pagini la 320/390/768/1440 px), fără erori, depășire orizontală sau excepții JavaScript; galeria și legăturile Calendar funcționează.
 - Verificare finală carusel: 4 lățimi, cu cele 7 texte EN deschise și asociate imaginilor originale.
-- `qa/check-cms.py` nu poate fi rulat local: mediul Windows nu are un interpret Python utilizabil. Rezultatul său din GitHub Actions va fi raportat separat; nu este declarat trecut prin presupunere.
+- `qa/check-cms.py` nu poate fi rulat local: mediul Windows nu are un interpret Python utilizabil. Testul rămâne neverificat; nu este declarat trecut prin presupunere.
 
 ## Aspecte pentru decizia Iuliei
 
-1. **NECONFIRMAT**: în mărturia din fotografia `marturie-10.jpg`, formularea „Și mi-a zis de la 1 este closer” nu permite stabilirea sigură a sensului lui „de la 1”. Fragmentul EN este păstrat literal, cu atribut intern `data-translation-status="unconfirmed"`; nu este prezentată o interpretare inventată. Este necesară clarificarea Iuliei.
+1. **NECONFIRMAT**: în mărturia din fotografia `marturie-10.jpg`, formularea „Și mi-a zis de la 1 este closer” nu permite stabilirea sigură a sensului lui „de la 1”. Fragmentul EN este păstrat literal, cu atribut intern `data-translation-status="unconfirmed"`; nu este prezentată o interpretare inventată. Mărturiile sunt amânate pentru final, conform indicației Iuliei.
 2. Pagina programului de grup păstrează înscrierea până la **15 noiembrie 2026**, termen trecut la data reviziei. Nu am schimbat termenul, prețurile, duratele sau disponibilitatea din sursa RO. Actualizarea lor necesită decizia Iuliei.
 3. Grafica originală a metodei folosește titlul „Întoarcerea la tine” și expresii despre „vindecare”, „energie” și „dinamică ascunsă”. Acestea au fost traduse fidel, fără atenuare automată sau afirmații adăugate. Orice armonizare cu textele actuale ale metodei este o decizie editorială separată; imaginile RO au rămas intacte.
 
 Nu există alte omisiuni identificate în textele HTML și sursele editoriale comparate. Fragmentul de mărturie nu este declarat finalizat.
 
-[Ramura de test](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/tree/preview-integrare-bilingv-seo-2026-11-23) · [PR #85, draft](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/pull/85). Fără merge sau publicare.
+[Ramura de test](https://github.com/iuliabobeica65-tech/Intoarcerealatine-nou/tree/preview-fidelitate-ro-en-2026-11-23). Fără merge sau publicare.
