@@ -40,5 +40,7 @@ for(const file of pages){
    warnings.push("Potential broken internal link: "+rel+" -> "+href);
  }
 }
-console.log(JSON.stringify({checkedPages:pages.length,sitemapUrls:urls.length,errors,warnings},null,2));
+const report={checkedPages:pages.length,sitemapUrls:urls.length,errors,warnings};
+console.log(JSON.stringify(report,null,2));
+if(process.env.GITHUB_STEP_SUMMARY){const {appendFileSync}=await import("node:fs");appendFileSync(process.env.GITHUB_STEP_SUMMARY,`## SEO/GEO audit\\nPages: ${pages.length}; sitemap URLs: ${urls.length}; errors: ${errors.length}; warnings: ${warnings.length}\\n\\n`+warnings.map(w=>`- ${w}`).join("\\n")+"\\n");}
 if(errors.length)process.exitCode=1;
