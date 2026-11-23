@@ -22,6 +22,18 @@ if(!methodHtml.includes('/assets/analytics-consent.js'))errors.push("Missing con
 const redirects=readFileSync(join(root,"_redirects"),"utf8");if(!redirects.includes("/metoda-clar /echilibrarea-radacinilor 301"))errors.push("Missing old method redirect");
 
 
+// Priority GEO topics: verify distinct, indexable articles for all five emotional wounds.
+const woundSlugs=["rana-de-abandon","rana-de-respingere","rana-de-tradare","rana-de-umilinta","rana-de-nedreptate"];
+for(const slug of woundSlugs){
+ const file=join(root,"articole",slug+".html");
+ if(!existsSync(file))errors.push("Missing distinct wound article: "+slug);
+ else if(!urls.includes(origin+"/articole/"+slug))errors.push("Wound article absent from sitemap: "+slug);
+}
+// Method page and universal laws page must be discoverable from the sitemap.
+for(const slug of ["echilibrarea-radacinilor","legi-universale","constelatii","sedinte-individuale"]){
+ if(!urls.includes(origin+"/"+slug))errors.push("Core GEO page missing from sitemap: "+slug);
+}
+
 // Generated editorial integrity: all published articles should have structured data and a relevant next step.
 const articleFiles=pages.filter(p=>p.includes("/articole/"));
 for(const file of articleFiles){
