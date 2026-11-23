@@ -17,6 +17,8 @@ if(/noindex/i.test(html)&&urls.some(u=>u.endsWith("/"+rel.replace(/\.html$/,""))
 if(/\/metoda-clar(?:["'/?#]|$)/i.test(html))warnings.push("Old method link: "+rel);
 }
 for(const p of ["sedinte-individuale.html","constelatii.html"]){const html=readFileSync(join(root,p),"utf8");if(!html.includes('"@type":"Service"'))errors.push("Missing Service schema: "+p)}
+const methodHtml=readFileSync(join(root,"echilibrarea-radacinilor.html"),"utf8");
+if(!methodHtml.includes('/assets/analytics-consent.js'))errors.push("Missing consent manager on generated method page");
 const redirects=readFileSync(join(root,"_redirects"),"utf8");if(!redirects.includes("/metoda-clar /echilibrarea-radacinilor 301"))errors.push("Missing old method redirect");
 
 
