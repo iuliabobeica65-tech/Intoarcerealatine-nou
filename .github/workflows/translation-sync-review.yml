@@ -32,12 +32,11 @@ jobs:
               return;
             }
             const changed = [];
-            const result = await github.paginate(github.rest.repos.compareCommitsWithBasehead, {
+            const comparison = await github.rest.repos.compareCommitsWithBasehead({
               owner: context.repo.owner, repo: context.repo.repo,
               basehead: event.before + '...' + event.after, per_page: 100
             });
-            // paginate returns the comparison's files when available.
-            for (const file of result) {
+            for (const file of comparison.data.files || []) {
               if (file.filename && pairs[file.filename]) changed.push(file.filename);
             }
             if (!changed.length) { core.info('No mapped Romanian pages changed.'); return; }
