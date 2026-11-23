@@ -270,7 +270,7 @@ const englishSchema={
  "@type":"WebSite",
  "@id":origin+"/#website",
  "url":origin+"/",
- "name":"Iulia Bobeica — Echilibrarea rădăcinilor",
+ "name":"Iulia Bobeica — Root Balancing",
  "inLanguage":["ro","en"]
 };
 const practitionerSchema={
