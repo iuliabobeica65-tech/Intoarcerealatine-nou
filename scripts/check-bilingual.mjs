@@ -41,6 +41,20 @@ for (const [ro, en] of pairs) {
   if (!enHtml.includes("application/ld+json")) errors.push("Missing English GEO structured data: " + en);
   if (enHtml.includes("Balancing the Roots")) errors.push("Unapproved English method name: " + en);
 }
+const bookingUrl = "https://calendar.app.google/USL6MFdEhyjbdNgH8";
+for (const page of ["sedinte-individuale", "en/individual-sessions"]) {
+  const html = readFileSync(resolve(base, page + ".html"), "utf8");
+  if (!html.includes(bookingUrl)) errors.push("Missing real Google booking URL: " + page);
+  if (!html.includes("/assets/google-calendar-links.js")) errors.push("Missing Google Calendar JS: " + page);
+}
+for (const page of ["live", "en/weekly-live"]) {
+  const html = readFileSync(resolve(base, page + ".html"), "utf8");
+  if (!html.includes("data-google-calendar-live")) errors.push("Missing LIVE calendar button: " + page);
+  if (!html.includes("/assets/google-calendar-links.js")) errors.push("Missing LIVE calendar JS: " + page);
+}
+for (const asset of ["assets/google-calendar-links.js", "assets/root-balancing-lotus.svg"]) {
+  if (!existsSync(resolve(base, asset))) errors.push("Missing build asset: " + asset);
+}
 if (errors.length) {
   console.error("Bilingual checks failed:\n" + errors.map(e => "- " + e).join("\n"));
   process.exit(1);
