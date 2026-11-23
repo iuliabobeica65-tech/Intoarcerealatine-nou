@@ -171,7 +171,7 @@ if(origin){
 // Optional GA4: attach consent manager to every generated HTML page, including articles.
 // The Google tag itself is never loaded by this script; visitors must opt in.
 const { readdirSync: consentReadDir } = await import("node:fs");
-const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
+const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), "echilibrarea-radacinilor.html", ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
 for (const file of consentPages) {
  const filePath = resolve(out, file);
  let html = readFileSync(filePath, "utf8");
