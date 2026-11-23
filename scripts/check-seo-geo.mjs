@@ -19,6 +19,17 @@ if(/\/metoda-clar(?:["'/?#]|$)/i.test(html))warnings.push("Old method link: "+re
 for(const p of ["sedinte-individuale.html","constelatii.html"]){const html=readFileSync(join(root,p),"utf8");if(!html.includes('"@type":"Service"'))errors.push("Missing Service schema: "+p)}
 const redirects=readFileSync(join(root,"_redirects"),"utf8");if(!redirects.includes("/metoda-clar /echilibrarea-radacinilor 301"))errors.push("Missing old method redirect");
 
+
+// Generated editorial integrity: all published articles should have structured data and a relevant next step.
+const articleFiles=pages.filter(p=>p.includes("/articole/"));
+for(const file of articleFiles){
+ const html=readFileSync(file,"utf8"),rel=file.slice(root.length+1);
+ if(!html.includes('"@type":"BlogPosting"'))errors.push("Missing BlogPosting schema: "+rel);
+ if(!html.includes("blog-next-step"))warnings.push("Missing contextual next step: "+rel);
+ if(!html.includes("https://wa.me/"))warnings.push("Missing WhatsApp contact CTA: "+rel);
+}
+if(articleFiles.length!==82)errors.push("Expected 82 published Romanian articles; found "+articleFiles.length);
+
 // Conversion and internal-link checks (do not modify editorial copy).
 const servicePages=["sedinte-individuale.html","constelatii.html","lucram-impreuna.html"];
 for(const p of servicePages){
