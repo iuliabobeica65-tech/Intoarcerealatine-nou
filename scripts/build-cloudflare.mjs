@@ -128,7 +128,7 @@ for(const file of iconPages){
 // SEO: sitemap-ul trebuie să includă toate paginile publicate, inclusiv articolele generate.
 if(origin){
  const {readdirSync}=await import("node:fs");
- const publicPages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","program-vinovatie-inconstienta","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+ const publicPages=["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","program-vinovatie-inconstienta","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"];
  const articlePages=readdirSync(resolve(out,"articole"),{withFileTypes:true}).filter(e=>e.isFile()&&e.name.endsWith(".html")).map(e=>"articole/"+e.name.slice(0,-5));
  const urls=[...publicPages,...articlePages].map(p=>"  <url><loc>"+origin+"/"+p+"</loc></url>").join("\n");
  writeFileSync(resolve(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls+'\n</urlset>\n',"utf8");
@@ -187,7 +187,7 @@ if(origin){
 // Optional GA4: attach consent manager to every generated HTML page, including articles.
 // The Google tag itself is never loaded by this script; visitors must opt in.
 const { readdirSync: consentReadDir } = await import("node:fs");
-const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
+const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f), ...englishPages.map(f => "en/" + f + ".html")];
 for (const file of consentPages) {
  const filePath = resolve(out, file);
  let html = readFileSync(filePath, "utf8");
@@ -260,4 +260,37 @@ for(const [ro,en] of bilingualPairs){
  enHtml=enHtml.replace('<a href="/acasa" lang="ro">RO</a>','<a href="'+roUrl+'" lang="ro">RO</a>');
  writeFileSync(roFile,roHtml,"utf8");
  writeFileSync(enFile,enHtml,"utf8");
+}
+
+
+// GEO: factual, machine-readable page descriptions; no unverified reviews or outcomes.
+const englishSchema={
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "@id":origin+"/#website",
+ "url":origin+"/",
+ "name":"Iulia Bobeica — Echilibrarea rădăcinilor",
+ "inLanguage":["ro","en"]
+};
+const practitionerSchema={
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "@id":origin+"/#iulia-bobeica",
+ "name":"Iulia Bobeica",
+ "url":origin+"/",
+ "jobTitle":"Personal development counsellor",
+ "knowsLanguage":["ro","en"],
+ "hasOfferCatalog":{"@type":"OfferCatalog","name":"Personal development services","itemListElement":[
+  {"@type":"OfferCatalog","name":"Individual personal development sessions","url":origin+"/en/individual-sessions"},
+  {"@type":"OfferCatalog","name":"Online systemic constellations","url":origin+"/en/systemic-constellations"}
+ ]}
+};
+for(const name of englishPages){
+ const filePath=resolve(out,"en",name+".html");
+ let html=readFileSync(filePath,"utf8");
+ const pageUrl=origin+"/en/"+(name==="index"?"":name);
+ const pageSchema={"@context":"https://schema.org","@type":"WebPage","url":pageUrl,"inLanguage":"en","isPartOf":{"@id":origin+"/#website"},"about":{"@id":origin+"/#iulia-bobeica"}};
+ const schema=[englishSchema,practitionerSchema,pageSchema].map(data=>'<script type="application/ld+json">'+JSON.stringify(data).replace(/</g,"\\u003c")+'</script>').join("");
+ if(!html.includes('application/ld+json'))html=html.replace("</head>",schema+"</head>");
+ writeFileSync(filePath,html,"utf8");
 }
