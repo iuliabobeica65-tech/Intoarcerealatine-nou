@@ -1,4 +1,5 @@
 import { renderArticles } from "./generate-articles.mjs";
+import { newEnglishArticlePairs } from "./english-article-pairs.mjs";
 /**
  * Pregateste doar fisierele publice pentru Cloudflare Pages, fara modificari in GitHub/Netlify.
  * Cloudflare: Build command = node scripts/build-cloudflare.mjs ; Output directory = dist
@@ -79,7 +80,7 @@ for(const name of englishPages){
  copyFileSync(src,resolve(out,"en",name+".html"));
 }
 // Translated editorial articles (source Romanian articles remain unchanged).
-const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound","law-of-duality-saying-no"];
+const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound","law-of-duality-saying-no",...newEnglishArticlePairs.map(([,en])=>en)];
 mkdirSync(resolve(out,"en","articles"),{recursive:true});
 for(const slug of englishArticles){
  const src=resolve(root,"en","articles",slug+".html");
@@ -273,6 +274,29 @@ for(const [ro,en] of bilingualPairs){
 
 
 // GEO: factual, machine-readable page descriptions; no unverified reviews or outcomes.
+// Only newly translated articles receive new language links and alternates.
+for(const [ro,en] of newEnglishArticlePairs){
+ const roFile=resolve(out,"articole",ro+".html");
+ const roUrl=origin+"/articole/"+ro;
+ const enUrl=origin+"/en/articles/"+en;
+ let html=readFileSync(roFile,"utf8");
+ const alternates='<link rel="alternate" hreflang="ro" href="'+roUrl+'"><link rel="alternate" hreflang="en" href="'+enUrl+'"><link rel="alternate" hreflang="x-default" href="'+roUrl+'">';
+ html=html.replace("</head>",alternates+"</head>");
+ const link='<a id="en-language-switch" lang="en" href="'+enUrl+'" style="position:fixed;right:14px;bottom:16px;z-index:9999;background:#70405d;color:white;border-radius:24px;padding:10px 15px;font:600 14px Arial,sans-serif;text-decoration:none;box-shadow:0 4px 18px #0002" aria-label="View this page in English">EN</a>';
+ html=html.replace("</body>",link+"</body>");
+ writeFileSync(roFile,html,"utf8");
+}
+// Add reading links for the new translations without rewriting existing page copy.
+for(const [page,pairs] of [["universal-laws",newEnglishArticlePairs.slice(0,6)],["systemic-constellations",newEnglishArticlePairs.slice(6,10)]]){
+ const file=resolve(out,"en",page+".html");
+ const links=pairs.map(([,en])=>{
+  const article=readFileSync(resolve(out,"en","articles",en+".html"),"utf8");
+  const title=article.match(/<h1>(.*?)<\/h1>/)[1];
+  return '<li><a href="/en/articles/'+en+'">'+title+'</a></li>';
+ }).join("");
+ const html=readFileSync(file,"utf8").replace("</main>",'<section><h2>Further reading in English</h2><ul>'+links+'</ul></section></main>');
+ writeFileSync(file,html,"utf8");
+}
 const englishSchema={
  "@context":"https://schema.org",
  "@type":"WebSite",
