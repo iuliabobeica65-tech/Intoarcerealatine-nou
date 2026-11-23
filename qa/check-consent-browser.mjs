@@ -21,6 +21,11 @@ try{
  await page.waitForTimeout(400);
  assert.equal(await page.evaluate(()=>localStorage.getItem("iulia-analytics-consent")),"allow");
  assert.ok(requests.some(x=>x.includes("googletagmanager.com/gtag")),"Analytics tag should load after opt-in");
- console.log("Consent browser QA passed: initial dialog, denied by default, persistence, reopen, opt-in");
+ await page.locator("#ib-preferences").click();
+ await page.locator('#ib-consent [data-choice="deny"]').click();
+ await page.waitForLoadState("domcontentloaded");
+ assert.equal(await page.evaluate(()=>localStorage.getItem("iulia-analytics-consent")),"deny","Withdrawal must persist");
+ assert.equal(await page.evaluate(()=>window["ga-disable-G-DCLDSBZ2S8"]),true,"Analytics must be disabled after withdrawal");
+ console.log("Consent browser QA passed: initial dialog, denied by default, persistence, reopen, opt-in, withdrawal");
  await context.close();
 }finally{await browser.close()}
