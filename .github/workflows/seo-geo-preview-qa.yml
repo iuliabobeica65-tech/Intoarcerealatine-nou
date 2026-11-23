@@ -19,3 +19,9 @@ jobs:
         run: CF_SITE_URL=https://iuliabobeica.ro node scripts/build-cloudflare.mjs
       - name: Check generated SEO/GEO
         run: node scripts/check-seo-geo.mjs
+      - name: Browser consent test (no production deployment)
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 4173 --directory dist --bind 127.0.0.1 >/tmp/seo-qa-http.log 2>&1 &
+          node qa/check-consent-browser.mjs
