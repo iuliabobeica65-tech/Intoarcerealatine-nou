@@ -71,7 +71,7 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  writeFileSync(resolve(out,file),text,"utf8");
 }
 // English pages: copy source files to /en/ in the Cloudflare output.
-const englishPages=["index","root-balancing","systemic-constellations","universal-laws","work-with-me","individual-sessions","four-month-programme","self-worth-programme","about"];
+const englishPages=["index","root-balancing","systemic-constellations","universal-laws","work-with-me","individual-sessions","four-month-programme","self-worth-programme","about","weekly-live"];
 mkdirSync(resolve(out,"en"),{recursive:true});
 for(const name of englishPages){
  const src=resolve(root,"en",name+".html");
@@ -242,7 +242,8 @@ const bilingualPairs=[
  ["program-individual-patru-luni","four-month-programme"],
  ["program-nivelul-de-merit","self-worth-programme"],
  ["despre-mine","about"],
- ["legi-universale","universal-laws"]
+ ["legi-universale","universal-laws"],
+ ["live","weekly-live"]
 ];
 for(const [ro,en] of bilingualPairs){
  const roFile=resolve(out,ro+".html");
