@@ -1,7 +1,7 @@
 import {readFileSync,existsSync} from "node:fs";
 import {join} from "node:path";
 const pairs=[
- ["metoda-clar.html","en/root-balancing.html"],
+ ["echilibrarea-radacinilor.html","en/root-balancing.html"],
  ["legi-universale.html","en/universal-laws.html"],
  ["acasa.html","en/index.html"],
  ["constelatii.html","en/systemic-constellations.html"],
