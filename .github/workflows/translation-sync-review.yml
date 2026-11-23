@@ -1,0 +1,60 @@
+name: Flag Romanian changes requiring English review
+on:
+  push:
+    branches: [pregatire-cloudflare-2026-10-20]
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detect translated pages affected by Romanian changes
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pairs = {
+              'acasa.html': 'en/index.html',
+              'metoda-clar.html': 'en/root-balancing.html',
+              'constelatii.html': 'en/systemic-constellations.html',
+              'lucram-impreuna.html': 'en/work-with-me.html',
+              'sedinte-individuale.html': 'en/individual-sessions.html',
+              'program-individual-patru-luni.html': 'en/four-month-programme.html',
+              'program-nivelul-de-merit.html': 'en/self-worth-programme.html',
+              'despre-mine.html': 'en/about.html',
+              'legi-universale.html': 'en/universal-laws.html',
+              'live.html': 'en/weekly-live.html'
+            };
+            const event = context.payload;
+            if (!event.before || !event.after || /^0+$/.test(event.before)) {
+              core.info('No comparable push range; review manually.');
+              return;
+            }
+            const changed = [];
+            const result = await github.paginate(github.rest.repos.compareCommitsWithBasehead, {
+              owner: context.repo.owner, repo: context.repo.repo,
+              basehead: event.before + '...' + event.after, per_page: 100
+            });
+            // paginate returns the comparison's files when available.
+            for (const file of result) {
+              if (file.filename && pairs[file.filename]) changed.push(file.filename);
+            }
+            if (!changed.length) { core.info('No mapped Romanian pages changed.'); return; }
+            const title = 'Review English translations after Romanian source changes';
+            const body = [
+              'Romanian source pages changed on the production branch:',
+              ...changed.map(f => '- `' + f + '` → `' + pairs[f] + '`'),
+              '',
+              'Review translation, SEO titles, descriptions, hreflang, schema, internal links and consent text.',
+              'Do not translate or publish automatically without review of the method and service claims.',
+              'Commit: ' + context.sha
+            ].join('\n');
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              ...context.repo, state: 'open', per_page: 100
+            });
+            const existing = issues.find(issue => issue.title === title && !issue.pull_request);
+            if (existing) await github.rest.issues.createComment({
+              ...context.repo, issue_number: existing.number, body
+            });
+            else await github.rest.issues.create({ ...context.repo, title, body });
