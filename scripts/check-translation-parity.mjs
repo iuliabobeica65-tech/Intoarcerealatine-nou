@@ -2,7 +2,14 @@ import {readFileSync,existsSync} from "node:fs";
 import {join} from "node:path";
 const pairs=[
  ["metoda-clar.html","en/root-balancing.html"],
- ["legi-universale.html","en/universal-laws.html"]
+ ["legi-universale.html","en/universal-laws.html"],
+ ["acasa.html","en/index.html"],
+ ["constelatii.html","en/systemic-constellations.html"],
+ ["lucram-impreuna.html","en/work-with-me.html"],
+ ["sedinte-individuale.html","en/individual-sessions.html"],
+ ["despre-mine.html","en/about.html"],
+ ["live.html","en/weekly-live.html"],
+ ["program-nivelul-de-merit.html","en/self-worth-programme.html"]
 ];
 const root="dist";
 const count=(s)=>[...s.matchAll(/<h[1-3]\b[^>]*>/gi)].length;
