@@ -79,7 +79,7 @@ for(const name of englishPages){
  copyFileSync(src,resolve(out,"en",name+".html"));
 }
 // Translated editorial articles (source Romanian articles remain unchanged).
-const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound"];
+const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound","law-of-duality-saying-no"];
 mkdirSync(resolve(out,"en","articles"),{recursive:true});
 for(const slug of englishArticles){
  const src=resolve(root,"en","articles",slug+".html");
