@@ -78,6 +78,14 @@ for(const name of englishPages){
  if(!existsSync(src))throw Error("English page missing: "+src);
  copyFileSync(src,resolve(out,"en",name+".html"));
 }
+// Translated editorial articles (source Romanian articles remain unchanged).
+const englishArticles=["abandonment-wound","rejection-wound"];
+mkdirSync(resolve(out,"en","articles"),{recursive:true});
+for(const slug of englishArticles){
+ const src=resolve(root,"en","articles",slug+".html");
+ if(!existsSync(src))throw Error("English article missing: "+src);
+ copyFileSync(src,resolve(out,"en","articles",slug+".html"));
+}
 for(const dir of ["assets","content","Intoarcerea_la_tine_files"]){
  const src=resolve(root,dir);if(!existsSync(src))throw Error("Director necesar absent: "+dir);
  cpSync(src,resolve(out,dir),{recursive:true});
@@ -139,7 +147,7 @@ if(origin){
  const sitemapPath=resolve(out,"sitemap.xml");
  let sitemap=readFileSync(sitemapPath,"utf8");
  const entries=englishPages.map(name=>"  <url><loc>"+origin+"/en/"+(name==="index"?"":name)+"</loc></url>").join("\n");
- sitemap=sitemap.replace("</urlset>",entries+"\n</urlset>");
+ sitemap=sitemap.replace("</urlset>",entries+"\n"+englishArticles.map(slug=>"  <url><loc>"+origin+"/en/articles/"+slug+"</loc></url>").join("\n")+"\n</urlset>");
  writeFileSync(sitemapPath,sitemap,"utf8");
 }
 console.log("Cloudflare Pages: build static pregătit în dist; origin:",origin||"(local, sursa Netlify)"); 
