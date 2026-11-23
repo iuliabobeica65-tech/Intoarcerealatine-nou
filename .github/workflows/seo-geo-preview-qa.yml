@@ -4,6 +4,7 @@ on:
     branches:
       - audit-seo-geo-2026-11-23
       - preview-integrare-bilingv-seo-2026-11-23
+      - preview-fidelitate-ro-en-2026-11-23
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,6 +25,12 @@ jobs:
         run: node scripts/check-translation-parity.mjs
       - name: Check bilingual pages, calendar links and metadata
         run: node scripts/check-bilingual.mjs
+      - name: Check full translation integrity
+        run: node qa/check-translation-integrity.mjs
+      - name: Check CMS with Python
+        run: |
+          python3 -m pip install --quiet PyYAML==6.0.2
+          python3 qa/check-cms.py
       - name: Browser consent test (no production deployment)
         run: |
           npm install --no-save playwright@1.56.1
