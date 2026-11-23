@@ -7,7 +7,7 @@ const walk=(dir)=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory
 const pages=walk(root).filter(p=>!p.includes("/Intoarcerea_la_tine_files/"));
 const sitemap=readFileSync(join(root,"sitemap.xml"),"utf8");
 const urls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
-for(const u of urls){if(!u.startsWith(origin+"/"))errors.push("Off-domain sitemap URL: "+u);const p=new URL(u).pathname;const target=join(root,p.slice(1)+".html");if(!existsSync(target))errors.push("Sitemap page missing: "+p)}
+for(const u of urls){if(!u.startsWith(origin+"/"))errors.push("Off-domain sitemap URL: "+u);const p=new URL(u).pathname;const target=p==="/en/"?join(root,"en","index.html"):join(root,p.slice(1)+".html");if(!existsSync(target))errors.push("Sitemap page missing: "+p)}
 if(new Set(urls).size!==urls.length)errors.push("Duplicate sitemap URLs");
 for(const file of pages){const html=readFileSync(file,"utf8"),rel=file.slice(root.length+1);if(rel==="index.html")continue;
 const canon=html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];if(!canon)warnings.push("Missing canonical: "+rel);else if(!canon.startsWith(origin+"/"))errors.push("Off-domain canonical: "+rel+" "+canon);
