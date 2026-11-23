@@ -60,6 +60,12 @@ jobs:
               raise SystemExit("LIPSESC ARTICOLELE DISTINCTE: "+str(sorted(required_wounds-set(articles))))
           expected = {"https://iuliabobeica.ro/"+p for p in pages}
           expected.update("https://iuliabobeica.ro/articole/"+p for p in articles)
+          en_pages = sorted(p.stem for p in (root/"en").glob("*.html"))
+          en_articles = sorted(p.stem for p in (root/"en"/"articles").glob("*.html"))
+          if len(en_pages) != 17 or len(en_articles) != 82:
+              raise SystemExit(f"EN INCOMPLETE: {len(en_pages)} pages and {len(en_articles)} articles")
+          expected.update("https://iuliabobeica.ro/en/"+("" if p=="index" else p) for p in en_pages)
+          expected.update("https://iuliabobeica.ro/en/articles/"+p for p in en_articles)
           if set(urls)!=expected or len(urls)!=len(expected):
               raise SystemExit("SITEMAP INVALID: lipsesc "+str(sorted(expected-set(urls)))+"; exces "+str(sorted(set(urls)-expected)))
           robot=(root/"robots.txt").read_text()

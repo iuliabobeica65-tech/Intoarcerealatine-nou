@@ -35,18 +35,31 @@
     if (started) location.reload();
   }
   function init() {
+    const english = document.documentElement.lang.toLowerCase().startsWith('en');
     const style = document.createElement("style");
     style.textContent = "#ib-consent{position:fixed;z-index:2147483646;bottom:15px;left:15px;right:15px;max-width:620px;margin:auto;padding:20px;background:#fff9ef;color:#28231f;border:1px solid #b88a42;border-radius:12px;box-shadow:0 10px 36px #0003;font:15px/1.5 Arial,sans-serif}#ib-consent h2{font:24px Georgia,serif;margin:0 0 8px}#ib-consent p{margin:0 0 12px}#ib-consent button,#ib-preferences{padding:10px 14px;margin:3px;border:1px solid #8b6333;border-radius:5px;background:#fff9ef;color:#28231f;cursor:pointer}#ib-consent button.accept{background:#28231f;color:white}#ib-preferences{position:fixed;z-index:2147483645;bottom:8px;left:8px;font-size:12px}#ib-consent a{color:#66451f}";
     document.head.append(style);
     const opener = document.createElement("button");
     opener.id = "ib-preferences";
-    opener.textContent = "Preferințe cookies";
+    opener.textContent = english ? "Cookie preferences" : "Preferințe cookies";
     document.body.append(opener);
     const panel = document.createElement("section");
     panel.id = "ib-consent";
     panel.setAttribute("role", "dialog");
-    panel.setAttribute("aria-label", "Preferințe cookies");
+    panel.setAttribute("aria-label", english ? "Cookie preferences" : "Preferințe cookies");
     panel.innerHTML = '<h2>Preferințele tale contează</h2><p>Folosim Google Analytics numai dacă accepți, pentru a înțelege ce pagini sunt vizitate. Poți refuza fără să pierzi accesul la site.</p><p><a href="/politica-cookies">Politica de cookies</a> · <a href="/politica-confidentialitate">Confidențialitate</a></p><button data-choice="deny">Refuză</button><button data-choice="details">Preferințe</button><button class="accept" data-choice="allow">Acceptă</button><p id="ib-detail" hidden>Cookie-uri necesare: active. Cookie-uri de analiză: opționale. Alege Acceptă sau Refuză pentru a salva preferința.</p>';
+    if (english) {
+      panel.querySelector("h2").textContent = "Your preferences matter";
+      const paragraphs = panel.querySelectorAll("p");
+      paragraphs[0].textContent = "We use Google Analytics only with your consent, to understand which pages are visited. You can decline without losing access to the website.";
+      const links = panel.querySelectorAll("a");
+      links[0].textContent = "Cookie policy (Romanian)";
+      links[1].textContent = "Privacy policy (Romanian)";
+      panel.querySelector('[data-choice="deny"]').textContent = "Decline";
+      panel.querySelector('[data-choice="details"]').textContent = "Preferences";
+      panel.querySelector('[data-choice="allow"]').textContent = "Accept";
+      panel.querySelector("#ib-detail").textContent = "Necessary cookies: active. Analytics cookies: optional. Choose Accept or Decline to save your preference.";
+    }
     document.body.append(panel);
     const show = () => { panel.hidden = false; panel.style.display = "block"; };
     const hide = () => { panel.hidden = true; panel.style.display = "none"; };

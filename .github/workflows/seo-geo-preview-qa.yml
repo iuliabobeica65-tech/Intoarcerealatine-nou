@@ -1,0 +1,33 @@
+name: SEO GEO QA (test branch only)
+on:
+  push:
+    branches:
+      - audit-seo-geo-2026-11-23
+      - preview-integrare-bilingv-seo-2026-11-23
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build without publishing
+        run: CF_SITE_URL=https://iuliabobeica.ro node scripts/build-cloudflare.mjs
+      - name: Check generated SEO/GEO
+        run: node scripts/check-seo-geo.mjs
+      - name: Translation parity gate (requires editorial review)
+        run: node scripts/check-translation-parity.mjs
+      - name: Check bilingual pages, calendar links and metadata
+        run: node scripts/check-bilingual.mjs
+      - name: Browser consent test (no production deployment)
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 4173 --directory dist --bind 127.0.0.1 >/tmp/seo-qa-http.log 2>&1 &
+          node qa/check-consent-browser.mjs
+          node qa/check-mobile-conversion.mjs

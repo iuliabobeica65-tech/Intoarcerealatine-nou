@@ -1,4 +1,6 @@
 import { renderArticles } from "./generate-articles.mjs";
+import { newEnglishArticlePairs } from "./english-article-pairs.mjs";
+import { remainingEnglishArticlePairs, remainingEnglishPagePairs } from "./remaining-english-translations.mjs";
 /**
  * Pregateste doar fisierele publice pentru Cloudflare Pages, fara modificari in GitHub/Netlify.
  * Cloudflare: Build command = node scripts/build-cloudflare.mjs ; Output directory = dist
@@ -70,6 +72,22 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  }
  writeFileSync(resolve(out,file),text,"utf8");
 }
+// English pages: copy source files to /en/ in the Cloudflare output.
+const englishPages=["index","root-balancing","systemic-constellations","universal-laws","work-with-me","individual-sessions","four-month-programme","self-worth-programme","about","weekly-live",...remainingEnglishPagePairs.map(([,en])=>en)];
+mkdirSync(resolve(out,"en"),{recursive:true});
+for(const name of englishPages){
+ const src=resolve(root,"en",name+".html");
+ if(!existsSync(src))throw Error("English page missing: "+src);
+ copyFileSync(src,resolve(out,"en",name+".html"));
+}
+// Translated editorial articles (source Romanian articles remain unchanged).
+const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound","law-of-duality-saying-no",...newEnglishArticlePairs.map(([,en])=>en),...remainingEnglishArticlePairs.map(([,en])=>en)];
+mkdirSync(resolve(out,"en","articles"),{recursive:true});
+for(const slug of englishArticles){
+ const src=resolve(root,"en","articles",slug+".html");
+ if(!existsSync(src))throw Error("English article missing: "+src);
+ copyFileSync(src,resolve(out,"en","articles",slug+".html"));
+}
 for(const dir of ["assets","content","Intoarcerea_la_tine_files"]){
  const src=resolve(root,dir);if(!existsSync(src))throw Error("Director necesar absent: "+dir);
  cpSync(src,resolve(out,dir),{recursive:true});
@@ -120,11 +138,19 @@ for(const file of iconPages){
 // SEO: sitemap-ul trebuie să includă toate paginile publicate, inclusiv articolele generate.
 if(origin){
  const {readdirSync}=await import("node:fs");
- const publicPages=["acasa","metoda-clar","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","program-vinovatie-inconstienta","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"];
+ const publicPages=["acasa","echilibrarea-radacinilor","constelatii","lucram-impreuna","despre-mine","live","resurse","articole","legi-universale","program-nivelul-de-merit","program-alegeri-fara-vinovatie","program-vinovatie-inconstienta","sedinte-individuale","program-individual-patru-luni","politica-confidentialitate","politica-cookies","termeni-utilizare"];
  const articlePages=readdirSync(resolve(out,"articole"),{withFileTypes:true}).filter(e=>e.isFile()&&e.name.endsWith(".html")).map(e=>"articole/"+e.name.slice(0,-5));
  const urls=[...publicPages,...articlePages].map(p=>"  <url><loc>"+origin+"/"+p+"</loc></url>").join("\n");
  writeFileSync(resolve(out,"sitemap.xml"),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls+'\n</urlset>\n',"utf8");
  writeFileSync(resolve(out,"robots.txt"),"User-agent: *\nAllow: /\nSitemap: "+origin+"/sitemap.xml\n","utf8");
+}
+// Add English URLs to the generated sitemap without changing Romanian entries.
+if(origin){
+ const sitemapPath=resolve(out,"sitemap.xml");
+ let sitemap=readFileSync(sitemapPath,"utf8");
+ const entries=englishPages.map(name=>"  <url><loc>"+origin+"/en/"+(name==="index"?"":name)+"</loc></url>").join("\n");
+ sitemap=sitemap.replace("</urlset>",entries+"\n"+englishArticles.map(slug=>"  <url><loc>"+origin+"/en/articles/"+slug+"</loc></url>").join("\n")+"\n</urlset>");
+ writeFileSync(sitemapPath,sitemap,"utf8");
 }
 console.log("Cloudflare Pages: build static pregătit în dist; origin:",origin||"(local, sursa Netlify)"); 
 
@@ -171,7 +197,7 @@ if(origin){
 // Optional GA4: attach consent manager to every generated HTML page, including articles.
 // The Google tag itself is never loaded by this script; visitors must opt in.
 const { readdirSync: consentReadDir } = await import("node:fs");
-const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f)];
+const consentPages = [...files.filter(f => f.endsWith(".html") && existsSync(resolve(out, f))), "echilibrarea-radacinilor.html", ...consentReadDir(resolve(out, "articole")).filter(f => f.endsWith(".html")).map(f => "articole/" + f), ...englishPages.map(f => "en/" + f + ".html")];
 for (const file of consentPages) {
  const filePath = resolve(out, file);
  let html = readFileSync(filePath, "utf8");
@@ -179,4 +205,127 @@ for (const file of consentPages) {
   html = html.replace("</body>", '<script defer src="/assets/analytics-consent.js"></script></body>');
   writeFileSync(filePath, html, "utf8");
  }
+}
+
+// Detect browser language only on the Romanian home page; never redirect an explicit /en/ URL.
+// Remember the visitor's manual choice without cookies.
+const languagePreferenceScript=`<script>
+(function(){
+ var bot=/bot|crawler|spider|google|bing|duckduckgo|yandex|baidu|facebookexternalhit|twitterbot|linkedinbot/i.test(navigator.userAgent||"");
+ document.addEventListener("click",function(event){
+  var link=event.target.closest&&event.target.closest("a[lang]");
+  if(!link)return;
+  var chosen=link.getAttribute("lang");
+  if(chosen==="en"||chosen==="ro")try{localStorage.setItem("iulia-site-language",chosen);}catch(e){}
+ });
+ if(bot)return;
+ var path=location.pathname.replace(/\\.html$/,"").replace(/\\/$/,"");
+ if(path!=="/acasa"&&path!=="")return;
+ var saved=null;
+ try{saved=localStorage.getItem("iulia-site-language");}catch(e){}
+ if(saved==="ro")return;
+ if(saved==="en"){location.replace("/en/");return;}
+ var langs=navigator.languages||[navigator.language||"ro"];
+ for(var i=0;i<langs.length;i++){
+  var primary=String(langs[i]||"").toLowerCase().split("-")[0];
+  if(primary==="ro")return;
+  if(primary==="en"){location.replace("/en/");return;}
+ }
+})();
+</script>`;
+for(const page of ["acasa.html",...englishPages.map(name=>"en/"+name+".html")]){
+ const path=resolve(out,page);
+ if(!existsSync(path))throw Error("Missing page: "+page);
+ let html=readFileSync(path,"utf8");
+ if(!html.includes("iulia-site-language"))html=html.replace("</head>",languagePreferenceScript+"</head>");
+ writeFileSync(path,html,"utf8");
+}
+
+// Bilingual navigation and search-engine language alternates.
+// Added after all existing build transforms to preserve the site's current content.
+const bilingualPairs=[
+ ["acasa","index"],
+ ["echilibrarea-radacinilor","root-balancing"],
+ ["constelatii","systemic-constellations"],
+ ["lucram-impreuna","work-with-me"],
+ ["sedinte-individuale","individual-sessions"],
+ ["program-individual-patru-luni","four-month-programme"],
+ ["program-nivelul-de-merit","self-worth-programme"],
+ ["despre-mine","about"],
+ ["legi-universale","universal-laws"],
+ ["live","weekly-live"],
+ ...remainingEnglishPagePairs
+];
+for(const [ro,en] of bilingualPairs){
+ const roFile=resolve(out,ro+".html");
+ const enFile=resolve(out,"en",en+".html");
+ if(!existsSync(roFile)||!existsSync(enFile))throw Error("Bilingual pair missing: "+ro+" / "+en);
+ const roUrl=origin+"/"+ro;
+ const enUrl=origin+"/en/"+(en==="index"?"":en);
+ const alternates='<link rel="alternate" hreflang="ro" href="'+roUrl+'"><link rel="alternate" hreflang="en" href="'+enUrl+'"><link rel="alternate" hreflang="x-default" href="'+roUrl+'">';
+ let roHtml=readFileSync(roFile,"utf8");
+ let enHtml=readFileSync(enFile,"utf8");
+ if(!roHtml.includes('hreflang="en"'))roHtml=roHtml.replace("</head>",alternates+"</head>");
+ if(!enHtml.includes('hreflang="ro"'))enHtml=enHtml.replace("</head>",alternates+"</head>");
+ const languageLink='<a id="en-language-switch" lang="en" href="'+enUrl+'" style="position:fixed;right:14px;bottom:16px;z-index:9999;background:#70405d;color:white;border-radius:24px;padding:10px 15px;font:600 14px Arial,sans-serif;text-decoration:none;box-shadow:0 4px 18px #0002" aria-label="View this page in English">EN</a>';
+ if(!roHtml.includes('id="en-language-switch"'))roHtml=roHtml.replace("</body>",languageLink+"</body>");
+ enHtml=enHtml.replace('<a href="/acasa" lang="ro">RO</a>','<a href="'+roUrl+'" lang="ro">RO</a>');
+ writeFileSync(roFile,roHtml,"utf8");
+ writeFileSync(enFile,enHtml,"utf8");
+}
+
+
+// GEO: factual, machine-readable page descriptions; no unverified reviews or outcomes.
+// Only newly translated articles receive new language links and alternates.
+for(const [ro,en] of [...newEnglishArticlePairs,...remainingEnglishArticlePairs]){
+ const roFile=resolve(out,"articole",ro+".html");
+ const roUrl=origin+"/articole/"+ro;
+ const enUrl=origin+"/en/articles/"+en;
+ let html=readFileSync(roFile,"utf8");
+ const alternates='<link rel="alternate" hreflang="ro" href="'+roUrl+'"><link rel="alternate" hreflang="en" href="'+enUrl+'"><link rel="alternate" hreflang="x-default" href="'+roUrl+'">';
+ html=html.replace("</head>",alternates+"</head>");
+ const link='<a id="en-language-switch" lang="en" href="'+enUrl+'" style="position:fixed;right:14px;bottom:16px;z-index:9999;background:#70405d;color:white;border-radius:24px;padding:10px 15px;font:600 14px Arial,sans-serif;text-decoration:none;box-shadow:0 4px 18px #0002" aria-label="View this page in English">EN</a>';
+ html=html.replace("</body>",link+"</body>");
+ writeFileSync(roFile,html,"utf8");
+}
+// Add reading links for the new translations without rewriting existing page copy.
+for(const [page,pairs] of [["universal-laws",newEnglishArticlePairs.slice(0,6)],["systemic-constellations",newEnglishArticlePairs.slice(6,10)]]){
+ const file=resolve(out,"en",page+".html");
+ const links=pairs.map(([,en])=>{
+  const article=readFileSync(resolve(out,"en","articles",en+".html"),"utf8");
+  const title=article.match(/<h1>(.*?)<\/h1>/)[1];
+  return '<li><a href="/en/articles/'+en+'">'+title+'</a></li>';
+ }).join("");
+ const html=readFileSync(file,"utf8").replace("</main>",'<section><h2>Further reading in English</h2><ul>'+links+'</ul></section></main>');
+ writeFileSync(file,html,"utf8");
+}
+const englishSchema={
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "@id":origin+"/#website",
+ "url":origin+"/",
+ "name":"Iulia Bobeica — Root Balancing",
+ "inLanguage":["ro","en"]
+};
+const practitionerSchema={
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "@id":origin+"/#iulia-bobeica",
+ "name":"Iulia Bobeica",
+ "url":origin+"/",
+ "jobTitle":"Personal development counsellor",
+ "knowsLanguage":["ro","en"],
+ "hasOfferCatalog":{"@type":"OfferCatalog","name":"Personal development services","itemListElement":[
+  {"@type":"OfferCatalog","name":"Individual personal development sessions","url":origin+"/en/individual-sessions"},
+  {"@type":"OfferCatalog","name":"Online systemic constellations","url":origin+"/en/systemic-constellations"}
+ ]}
+};
+for(const name of englishPages){
+ const filePath=resolve(out,"en",name+".html");
+ let html=readFileSync(filePath,"utf8");
+ const pageUrl=origin+"/en/"+(name==="index"?"":name);
+ const pageSchema={"@context":"https://schema.org","@type":"WebPage","url":pageUrl,"inLanguage":"en","isPartOf":{"@id":origin+"/#website"},"about":{"@id":origin+"/#iulia-bobeica"}};
+ const schema=[englishSchema,practitionerSchema,pageSchema].map(data=>'<script type="application/ld+json">'+JSON.stringify(data).replace(/</g,"\\u003c")+'</script>').join("");
+ if(!html.includes('application/ld+json'))html=html.replace("</head>",schema+"</head>");
+ writeFileSync(filePath,html,"utf8");
 }
