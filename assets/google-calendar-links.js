@@ -28,7 +28,7 @@
   /* Only expose direct booking when an actual public Google Appointment Schedule URL is supplied. */
   document.querySelectorAll("[data-google-booking-url]").forEach(link => {
     const url = link.getAttribute("data-google-booking-url") || "";
-    if (/^https:\/\/calendar\.google\.com\/calendar\/appointments\/schedules\/[a-zA-Z0-9_-]+/.test(url)) {
+    if (/^https:\/\/(?:calendar\.app\.google\/[a-zA-Z0-9_-]+|calendar\.google\.com\/calendar\/appointments\/schedules\/[a-zA-Z0-9_-]+)$/.test(url)) {
       link.href = url;
       link.hidden = false;
       link.target = "_blank";
