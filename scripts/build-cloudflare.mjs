@@ -1,5 +1,6 @@
 import { renderArticles } from "./generate-articles.mjs";
 import { newEnglishArticlePairs } from "./english-article-pairs.mjs";
+import { remainingEnglishArticlePairs, remainingEnglishPagePairs } from "./remaining-english-translations.mjs";
 /**
  * Pregateste doar fisierele publice pentru Cloudflare Pages, fara modificari in GitHub/Netlify.
  * Cloudflare: Build command = node scripts/build-cloudflare.mjs ; Output directory = dist
@@ -72,7 +73,7 @@ for(const file of files){const src=resolve(root,file);if(!existsSync(src))throw 
  writeFileSync(resolve(out,file),text,"utf8");
 }
 // English pages: copy source files to /en/ in the Cloudflare output.
-const englishPages=["index","root-balancing","systemic-constellations","universal-laws","work-with-me","individual-sessions","four-month-programme","self-worth-programme","about","weekly-live"];
+const englishPages=["index","root-balancing","systemic-constellations","universal-laws","work-with-me","individual-sessions","four-month-programme","self-worth-programme","about","weekly-live",...remainingEnglishPagePairs.map(([,en])=>en)];
 mkdirSync(resolve(out,"en"),{recursive:true});
 for(const name of englishPages){
  const src=resolve(root,"en",name+".html");
@@ -80,7 +81,7 @@ for(const name of englishPages){
  copyFileSync(src,resolve(out,"en",name+".html"));
 }
 // Translated editorial articles (source Romanian articles remain unchanged).
-const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound","law-of-duality-saying-no",...newEnglishArticlePairs.map(([,en])=>en)];
+const englishArticles=["abandonment-wound","rejection-wound","betrayal-wound","humiliation-wound","injustice-wound","law-of-duality-saying-no",...newEnglishArticlePairs.map(([,en])=>en),...remainingEnglishArticlePairs.map(([,en])=>en)];
 mkdirSync(resolve(out,"en","articles"),{recursive:true});
 for(const slug of englishArticles){
  const src=resolve(root,"en","articles",slug+".html");
@@ -252,7 +253,8 @@ const bilingualPairs=[
  ["program-nivelul-de-merit","self-worth-programme"],
  ["despre-mine","about"],
  ["legi-universale","universal-laws"],
- ["live","weekly-live"]
+ ["live","weekly-live"],
+ ...remainingEnglishPagePairs
 ];
 for(const [ro,en] of bilingualPairs){
  const roFile=resolve(out,ro+".html");
@@ -275,7 +277,7 @@ for(const [ro,en] of bilingualPairs){
 
 // GEO: factual, machine-readable page descriptions; no unverified reviews or outcomes.
 // Only newly translated articles receive new language links and alternates.
-for(const [ro,en] of newEnglishArticlePairs){
+for(const [ro,en] of [...newEnglishArticlePairs,...remainingEnglishArticlePairs]){
  const roFile=resolve(out,"articole",ro+".html");
  const roUrl=origin+"/articole/"+ro;
  const enUrl=origin+"/en/articles/"+en;

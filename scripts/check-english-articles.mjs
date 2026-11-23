@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
 import { newEnglishArticlePairs } from './english-article-pairs.mjs';
+import { remainingEnglishArticlePairs } from './remaining-english-translations.mjs';
 
 const root=resolve(import.meta.dirname,'..'), dist=resolve(root,'dist');
 const origin='https://iuliabobeica.ro';
@@ -10,9 +11,10 @@ const locations=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
 assert.equal(locations.length,new Set(locations).size,'Duplicate sitemap entries');
 assert.equal(new Set(newEnglishArticlePairs.map(([ro])=>ro)).size,newEnglishArticlePairs.length,'Duplicate Romanian sources');
 assert.equal(new Set(newEnglishArticlePairs.map(([,en])=>en)).size,newEnglishArticlePairs.length,'Duplicate English slugs');
+const articlePairs=[...newEnglishArticlePairs,...remainingEnglishArticlePairs];
 let localLinks=0, externalLinks=0;
 const decode=s=>s.replaceAll('&amp;','&');
-for(const [ro,en] of newEnglishArticlePairs){
+for(const [ro,en] of articlePairs){
  const source=JSON.parse(readFileSync(resolve(root,'editorial/articole',ro+'.json'),'utf8'));
  const sourcePath=resolve(root,'en/articles',en+'.html');
  const html=readFileSync(resolve(dist,'en/articles',en+'.html'),'utf8');
@@ -22,8 +24,8 @@ for(const [ro,en] of newEnglishArticlePairs){
  assert.match(html,/<html lang="en">/);
  assert.equal((html.match(/<h1>/g)||[]).length,1,en+': H1 count');
  assert.equal((html.match(/<h2>/g)||[]).length,(source.continut.match(/^## /gm)||[]).length,en+': heading structure changed');
- const body=html.split('</h1>')[1].split('</div><p><small>')[0];
- const paragraphs=source.continut.trim().split(/\n\n+/).filter(p=>!p.startsWith('## '));
+ const body=html.split('</h1>')[1].split('</div>')[0];
+ const paragraphs=source.continut.trim().split(/\n\n+/).filter(p=>!p.startsWith('## ')&&!p.startsWith('- ')&&p!=='---');
  assert.equal((body.match(/<p>/g)||[]).length,paragraphs.length,en+': paragraph structure changed');
  assert.match(html,/<meta name="description" content="[^"]+">/);
  for(const url of [roUrl,enUrl]) assert(locations.includes(url),'Missing sitemap URL: '+url);
@@ -60,4 +62,4 @@ for(const [ro,en] of newEnglishArticlePairs){
  }
  if(source.imagine) assert(html.includes(source.imagine),en+': original image missing');
 }
-console.log(`English article checks passed: ${newEnglishArticlePairs.length} new translations; ${localLinks} local references; ${externalLinks} source contact links; reciprocal hreflang, sitemap, schema and source structure.`);
+console.log(`English article checks passed: ${articlePairs.length} translations across both batches; ${localLinks} local references; ${externalLinks} original external links; reciprocal hreflang, sitemap, schema and source structure.`);
