@@ -1,7 +1,7 @@
 name: Flag Romanian changes requiring English review
 on:
   push:
-    branches: [pregatire-cloudflare-2026-10-20]
+    branches: [pregatire-cloudflare-2026-10-20, preview-site-bilingv-en-2026-11-21]
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,6 +17,7 @@ jobs:
             const pairs = {
               'acasa.html': 'en/index.html',
               'metoda-clar.html': 'en/root-balancing.html',
+              'echilibrarea-radacinilor.html': 'en/root-balancing.html',
               'constelatii.html': 'en/systemic-constellations.html',
               'lucram-impreuna.html': 'en/work-with-me.html',
               'sedinte-individuale.html': 'en/individual-sessions.html',
