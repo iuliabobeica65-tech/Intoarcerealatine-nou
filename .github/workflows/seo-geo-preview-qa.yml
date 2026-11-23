@@ -25,3 +25,4 @@ jobs:
           npx playwright install --with-deps chromium
           python3 -m http.server 4173 --directory dist --bind 127.0.0.1 >/tmp/seo-qa-http.log 2>&1 &
           node qa/check-consent-browser.mjs
+          node qa/check-mobile-conversion.mjs
