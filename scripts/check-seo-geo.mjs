@@ -35,7 +35,7 @@ for(const slug of ["echilibrarea-radacinilor","legi-universale","constelatii","s
 }
 
 // Generated editorial integrity: all published articles should have structured data and a relevant next step.
-const articleFiles=pages.filter(p=>p.includes("/articole/"));
+const articleFiles=pages.filter(p=>p.replaceAll("\\","/").includes("/articole/"));
 for(const file of articleFiles){
  const html=readFileSync(file,"utf8"),rel=file.slice(root.length+1);
  if(!html.includes('"@type":"BlogPosting"'))errors.push("Missing BlogPosting schema: "+rel);

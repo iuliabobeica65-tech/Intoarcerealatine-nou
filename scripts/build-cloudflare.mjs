@@ -277,7 +277,8 @@ for(const [ro,en] of bilingualPairs){
 
 // GEO: factual, machine-readable page descriptions; no unverified reviews or outcomes.
 // Only newly translated articles receive new language links and alternates.
-for(const [ro,en] of [...newEnglishArticlePairs,...remainingEnglishArticlePairs]){
+const earlierEnglishArticlePairs=[['rana-de-abandon','abandonment-wound'],['rana-de-respingere','rejection-wound'],['rana-de-tradare','betrayal-wound'],['rana-de-umilinta','humiliation-wound'],['rana-de-nedreptate','injustice-wound'],['legea-dualitatii-de-ce-imi-este-frica-sa-spun-nu','law-of-duality-saying-no']];
+for(const [ro,en] of [...earlierEnglishArticlePairs,...newEnglishArticlePairs,...remainingEnglishArticlePairs]){
  const roFile=resolve(out,"articole",ro+".html");
  const roUrl=origin+"/articole/"+ro;
  const enUrl=origin+"/en/articles/"+en;
@@ -288,23 +289,13 @@ for(const [ro,en] of [...newEnglishArticlePairs,...remainingEnglishArticlePairs]
  html=html.replace("</body>",link+"</body>");
  writeFileSync(roFile,html,"utf8");
 }
-// Add reading links for the new translations without rewriting existing page copy.
-for(const [page,pairs] of [["universal-laws",newEnglishArticlePairs.slice(0,6)],["systemic-constellations",newEnglishArticlePairs.slice(6,10)]]){
- const file=resolve(out,"en",page+".html");
- const links=pairs.map(([,en])=>{
-  const article=readFileSync(resolve(out,"en","articles",en+".html"),"utf8");
-  const title=article.match(/<h1>(.*?)<\/h1>/)[1];
-  return '<li><a href="/en/articles/'+en+'">'+title+'</a></li>';
- }).join("");
- const html=readFileSync(file,"utf8").replace("</main>",'<section><h2>Further reading in English</h2><ul>'+links+'</ul></section></main>');
- writeFileSync(file,html,"utf8");
-}
+// The faithful EN pages already contain the original reading links in their source sections.
 const englishSchema={
  "@context":"https://schema.org",
  "@type":"WebSite",
  "@id":origin+"/#website",
  "url":origin+"/",
- "name":"Iulia Bobeica — Root Balancing",
+ "name":"Iulia Bobeica — Echilibrarea rădăcinilor",
  "inLanguage":["ro","en"]
 };
 const practitionerSchema={

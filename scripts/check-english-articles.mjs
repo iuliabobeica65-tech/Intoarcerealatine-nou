@@ -11,7 +11,7 @@ const locations=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
 assert.equal(locations.length,new Set(locations).size,'Duplicate sitemap entries');
 assert.equal(new Set(newEnglishArticlePairs.map(([ro])=>ro)).size,newEnglishArticlePairs.length,'Duplicate Romanian sources');
 assert.equal(new Set(newEnglishArticlePairs.map(([,en])=>en)).size,newEnglishArticlePairs.length,'Duplicate English slugs');
-const articlePairs=[...newEnglishArticlePairs,...remainingEnglishArticlePairs];
+const articlePairs=[['rana-de-abandon','abandonment-wound'],['rana-de-respingere','rejection-wound'],['rana-de-tradare','betrayal-wound'],['rana-de-umilinta','humiliation-wound'],['rana-de-nedreptate','injustice-wound'],['legea-dualitatii-de-ce-imi-este-frica-sa-spun-nu','law-of-duality-saying-no'],...newEnglishArticlePairs,...remainingEnglishArticlePairs];
 let localLinks=0, externalLinks=0;
 const decode=s=>s.replaceAll('&amp;','&');
 for(const [ro,en] of articlePairs){
@@ -24,7 +24,7 @@ for(const [ro,en] of articlePairs){
  assert.match(html,/<html lang="en">/);
  assert.equal((html.match(/<h1>/g)||[]).length,1,en+': H1 count');
  assert.equal((html.match(/<h2>/g)||[]).length,(source.continut.match(/^## /gm)||[]).length,en+': heading structure changed');
- const body=html.split('</h1>')[1].split('</div>')[0];
+ const body=html.split('</h1>')[1].split('</div>')[0].replace(/<p class="blog-meta">[\s\S]*?<\/p>/,'');
  const paragraphs=source.continut.trim().split(/\n\n+/).filter(p=>!p.startsWith('## ')&&!p.startsWith('- ')&&p!=='---');
  assert.equal((body.match(/<p>/g)||[]).length,paragraphs.length,en+': paragraph structure changed');
  assert.match(html,/<meta name="description" content="[^"]+">/);
@@ -45,7 +45,7 @@ for(const [ro,en] of articlePairs){
   const url=new URL(decode(match[1]),enUrl);
   if(url.origin!==origin){
    externalLinks++;
-   assert(source.continut.includes(decode(match[1])),en+': external link not present in source: '+match[1]);
+   assert(source.continut.includes(decode(match[1]))||roHtml.includes(match[1]),en+': external link not present in source article or its original shared footer: '+match[1]);
    continue;
   }
   localLinks++;
