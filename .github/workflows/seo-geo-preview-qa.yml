@@ -1,0 +1,21 @@
+name: SEO GEO QA (test branch only)
+on:
+  push:
+    branches:
+      - audit-seo-geo-2026-11-23
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build without publishing
+        run: CF_SITE_URL=https://iuliabobeica.ro node scripts/build-cloudflare.mjs
+      - name: Check generated SEO/GEO
+        run: node scripts/check-seo-geo.mjs
